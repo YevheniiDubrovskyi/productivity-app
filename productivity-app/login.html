@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Log In</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <!-- TODO: import from local folder -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css"/>
+  <link rel="stylesheet" href="fonts/icomoon/style.css"/>
+  <link rel="stylesheet" href="css/static.css"/>
+
+  <link rel="stylesheet" href="css/login.css"/>
+</head>
+<body>
+
+  <main class="main">
+    <section class="logo">
+
+      <svg viewBox="3 0 33 37">
+        <use xlink:href="img/logo.svg#pomodoro-logo-view"></use>
+      </svg>
+
+    </section>
+
+    <section class="login-frm">
+      <form action="" method="POST">
+
+        <section class="login-frm-sect">
+          <input class="login-frm-inpt" id="username" type="text" placeholder="Username" pattern="[A-Za-z0-9]{4,}"/>
+          <i class="icon-login"></i>
+          <span class="login-frm-hint">Lorem ipsum dolor sit amet.</span>
+        </section>
+
+        <section class="login-frm-sect">
+          <input class="login-frm-inpt" id="password" type="password" placeholder="Password" pattern="[A-Za-z0-9]{6,}"/>
+          <i class="icon-password"></i>
+          <span class="login-frm-hint">Lorem ipsum dolor.</span>
+        </section>
+
+        <button class="login-frm-btn btn-niagara" type="submit">Log In</button>
+      </form>
+    </section>
+  </main>
+
+</body>
+</html>

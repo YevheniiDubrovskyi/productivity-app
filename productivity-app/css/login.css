@@ -1,0 +1,85 @@
+body {
+  background: linear-gradient(rgba(27, 58, 78, .92), rgba(27, 58, 78, .92)),
+  url(../img/login_bg.jpg) center no-repeat;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+}
+
+.main {
+  font-size: 1rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 17em;
+
+  transform: translate(-50%, -50%);
+}
+
+.login-frm-btn {
+  margin: 0 auto;
+}
+
+.login-frm-sect {
+  position: relative;
+
+  margin: 1.65em 0;
+  font-size: .95rem;
+
+  color: #8da5b8;
+}
+
+.login-frm-inpt {
+  display: block;
+
+  width: 100%;
+  font-size: inherit;
+  padding: .6em 1.8em;
+
+  color: #8da5b8;
+  border-bottom: 1px solid #425869;
+  background: none;
+}
+
+.login-frm-hint {
+  font-size: .75em;
+
+  position: absolute;
+  bottom: -1.65em;
+  left: 0;
+
+  display: none;
+
+  color: #f75c4c;
+}
+
+.login-frm-inpt:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.login-frm-inpt:focus + i {
+  color: #fff;
+}
+
+.login-frm-inpt:invalid {
+  border-bottom-color: #f75c4c;
+  box-shadow: none;
+}
+
+.login-frm-inpt:invalid ~ .login-frm-hint {
+  display: block;
+}
+
+.login-frm-sect .icon-login,
+.login-frm-sect .icon-login:before,
+.login-frm-sect .icon-password,
+.login-frm-sect .icon-password:before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: -1;
+
+  transform: translate(0, -50%);
+}

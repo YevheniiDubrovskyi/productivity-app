@@ -1,0 +1,39 @@
+html,
+body {
+  position: relative;
+
+  height: 100%;
+}
+
+button,
+input {
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.btn-niagara {
+  display: block;
+}
+
+.btn-niagara {
+  font-size: 1.125rem;
+  font-weight: bold;
+
+  width: 6.8333em;
+  height: 2.3333em;
+
+  color: #fff;
+  background-color: #1abc9c;
+}
+
+.btn-niagara:hover,
+.btn-niagara:focus {
+  background-color: #62d3bd;
+}
+
+.btn-niagara:active {
+  background-color: #62d3bd;
+}
