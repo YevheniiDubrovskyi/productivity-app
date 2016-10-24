@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const connect = require('gulp-connect');
+const autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('default', ['connect',
                       'watch']);
@@ -19,6 +20,11 @@ gulp.task('watch', () => {
 
 gulp.task('css', () => 
   gulp.src('./css/*.css')
+      .pipe(autoprefixer({
+        cascade: false,
+        browsers: ['ie 6-8', 'last 10 versions']
+      }))
+      .pipe(gulp.dest('./css'))
       .pipe(connect.reload())
 );
 
