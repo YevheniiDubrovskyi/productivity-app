@@ -1,8 +1,15 @@
 body {
-  background: linear-gradient(rgba(27, 58, 78, .92), rgba(27, 58, 78, .92)),
+  font-family: 'Roboto', sans-serif;
+
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(42, 63, 80, .92)), to(rgba(42, 63, 80, .92))),
+  url(../img/login_bg.jpg) center no-repeat;
+
+  background: -webkit-linear-gradient(rgba(42, 63, 80, .92), rgba(42, 63, 80, .92)),
+  url(../img/login_bg.jpg) center no-repeat;
+
+  background: linear-gradient(rgba(42, 63, 80, .92), rgba(42, 63, 80, .92)),
   url(../img/login_bg.jpg) center no-repeat;
   background-size: cover;
-  font-family: 'Roboto', sans-serif;
 }
 
 .main {
@@ -12,29 +19,44 @@ body {
   top: 50%;
   left: 50%;
 
-  width: 17em;
+  width: 20.625em;
 
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
-.login-frm-btn {
+.logo {
+  width: 246px;
+  margin: 0 auto 2.85rem auto;
+}
+
+.logo img {
+  display: block;
+}
+
+.login-form-btn {
   margin: 0 auto;
 }
 
-.login-frm-sect {
+.login-form-sect {
+  font-size: 1rem;
+
   position: relative;
 
-  margin: 1.65em 0;
-  font-size: .95rem;
+  margin: 0 0 1.255em 0;
 
   color: #8da5b8;
 }
 
-.login-frm-inpt {
+.login-form-inpt {
+  font-size: inherit;
+
   display: block;
 
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
-  font-size: inherit;
   padding: .6em 1.8em;
 
   color: #8da5b8;
@@ -42,7 +64,7 @@ body {
   background: none;
 }
 
-.login-frm-hint {
+.login-form-hint {
   font-size: .75em;
 
   position: absolute;
@@ -54,32 +76,37 @@ body {
   color: #f75c4c;
 }
 
-.login-frm-inpt:focus {
+.login-form-inpt:focus {
   color: #fff;
   border-bottom-color: #fff;
 }
 
-.login-frm-inpt:focus + i {
+.login-form-inpt:focus + i {
   color: #fff;
 }
 
-.login-frm-inpt:invalid {
+.login-form-inpt:invalid {
   border-bottom-color: #f75c4c;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
-.login-frm-inpt:invalid ~ .login-frm-hint {
+.login-form-inpt:invalid ~ .login-form-hint {
   display: block;
 }
 
-.login-frm-sect .icon-login,
-.login-frm-sect .icon-login:before,
-.login-frm-sect .icon-password,
-.login-frm-sect .icon-password:before {
+.login-form-sect .icon-login:before,
+.login-form-sect .icon-password:before {
   position: absolute;
+  z-index: -1;
   top: 50%;
   left: 0;
-  z-index: -1;
 
-  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.login-form-btn.btn-niagara {
+  margin-top: 3.2rem;
 }

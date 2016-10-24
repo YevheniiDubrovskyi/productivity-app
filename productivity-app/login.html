@@ -17,32 +17,25 @@
 <body>
 
   <main class="main">
-    <section class="logo">
+    <figure class="logo">
+      <img src="img/Logo_1.svg" alt="Logo image" title="Logo"/>
+    </figure>
 
-      <svg viewBox="3 0 33 37">
-        <use xlink:href="img/logo.svg#pomodoro-logo-view"></use>
-      </svg>
-
-    </section>
-
-    <section class="login-frm">
-      <form action="" method="POST">
-
-        <section class="login-frm-sect">
-          <input class="login-frm-inpt" id="username" type="text" placeholder="Username" pattern="[A-Za-z0-9]{4,}"/>
+      <form class="login-form" action="/" method="POST">
+        <section class="login-form-sect">
+          <input class="login-form-inpt" id="username" type="text" placeholder="Username" pattern="[A-Za-z0-9]{4,}"/>
           <i class="icon-login"></i>
-          <span class="login-frm-hint">Lorem ipsum dolor sit amet.</span>
+          <span class="login-form-hint">Lorem ipsum dolor sit amet.</span>
         </section>
 
-        <section class="login-frm-sect">
-          <input class="login-frm-inpt" id="password" type="password" placeholder="Password" pattern="[A-Za-z0-9]{6,}"/>
+        <section class="login-form-sect">
+          <input class="login-form-inpt" id="password" type="password" placeholder="Password" pattern="[A-Za-z0-9]{6,}"/>
           <i class="icon-password"></i>
-          <span class="login-frm-hint">Lorem ipsum dolor.</span>
+          <span class="login-form-hint">Lorem ipsum dolor.</span>
         </section>
 
-        <button class="login-frm-btn btn-niagara" type="submit">Log In</button>
+        <button class="login-form-btn btn-niagara" type="submit">Log In</button>
       </form>
-    </section>
   </main>
 
 </body>
