@@ -1,12 +1,12 @@
 html,
 body {
+  font-family: 'Roboto', sans-serif;
+
   position: relative;
 
-  height: 100%;
-
-  /* !!! ATTENTION !!! */
-  width: 1365px;
-  height: 765px;
+  width: 1365px;/* !!! ATTENTION !!! */
+  min-height: 100%;
+  height: 765px;/* !!! ATTENTION !!! */
 }
 
 main,
@@ -22,43 +22,258 @@ figure {
 
 button,
 input {
+  font-size: inherit;
+
+  color: inherit;
   border: none;
+  background: none;
 }
 
 button:hover {
   cursor: pointer;
 }
 
-button:active {
-  outline: none;
-}
-
+button:active,
+button:focus,
 input:focus {
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.btn-niagara {
-  display: block;
+.tabs-list:after,
+.clearfix:after {
+  display: table;
+  clear: both;
+
+  content: '';
 }
 
-.btn-niagara {
+.hidden {
+  position: absolute;
+  top: auto;
+  left: -9999px;
+
+  overflow: hidden;
+}
+
+/* BUTTONS */
+
+.btn {
   font-size: 1.125rem;
   font-weight: bold;
 
+  display: block;
+
   width: 6.8333em;
   height: 2.3333em;
-
   color: #fff;
+  font-weight: 'Open Sans', sans-serif;
+}
+
+/* NIAGARA BUTTON */
+
+.btn-niagara {
   background-color: #1abc9c;
 }
 
 .btn-niagara:hover,
 .btn-niagara:focus {
-  background-color: #62d3bd;
+  background-color: #16a085;
 }
 
 .btn-niagara:active {
   background-color: #62d3bd;
+}
+
+/* PICTON BLUE BUTTON */
+
+.btn-picton-blue {
+  background-color: #59abe3;
+}
+
+.btn-picton-blue:hover,
+.btn-picton-blue:focus {
+  background-color: #368bc5;
+}
+
+.btn-picton-blue:active {
+  background-color: #82c7e0;
+}
+
+/* TOMATO BUTTON */
+
+.btn-tomato {
+  background-color: #f85c4c;
+}
+
+.btn-tomato:hover,
+.btn-tomato:focus {
+  background-color: #c94d47;
+}
+
+.btn-tomato:active {
+  background-color: #f99595;
+}
+
+/* ACTIONS */
+
+.action {
+  font-size: 1rem;
+
+  position: relative;
+
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 9.0625em;
+}
+
+.action-btn {
+  font-family: 'icomoon';
+
+  color: #8da5b8;
+}
+
+.action-viewport {
+  display: block;
+
+  padding: .58em 1.1em;
+
+  -webkit-transition: color .1s ease-in-out;
+          transition: color .1s ease-in-out;
+  text-align: center;
+
+  color: #8da5b8;
+}
+
+.action-viewport:after {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+
+  display: block;
+
+  height: 1px;
+
+  content: '';
+  -webkit-transition: background-color .1s ease-in-out;
+          transition: background-color .1s ease-in-out;
+
+  background-color: #8da5b8;
+}
+
+.action-btn {
+  position: absolute;
+  top: 45%;
+
+  height: 100%;
+  padding: 0;
+
+  -webkit-transition: color .1s ease-in-out;
+          transition: color .1s ease-in-out;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.action-add {
+  right: 0;
+}
+
+.action-minus {
+  left: 0;
+}
+
+.action--changed .action-viewport,
+.action-btn:hover,
+.action-btn:hover ~ .action-viewport {
+  color: #fff;
+}
+
+.action-btn:hover ~ .action-viewport:after {
+  background-color: #fff;
+}
+
+/* MAIN CONTROL BUTTONS */
+
+.main-btn-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  font-size: 1.25rem;
+  width: 7em;
+  margin: 0 0 0 auto;
+
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-btn-list__item:first-child {
+  font-size: .8em;
+  line-height: 1.6em;
+}
+
+.main-btn-list__item-btn {
+  font-family: 'icomoon';
+
+  -webkit-transition: color .1s ease-in-out;
+          transition: color .1s ease-in-out;
+
+  color: #8da5b8;
+}
+
+.main-btn-list__item-btn.active,
+.main-btn-list__item-btn:hover {
+  color: #fff;
+}
+
+.main-btn-list__item-btn:focus,
+.main-btn-list__item-btn:active {
+  color: #82c7e0;
+}
+
+/* TABS */
+
+.tabs-list {
+  font-size: .95rem;
+
+  display: inline-block;
+}
+
+.tabs-list__item {
+  position: relative;
+
+  float: left;
+}
+
+.tabs-list__item-btn {
+  padding: 0 .5em;
+
+  color: #8da5b8;
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+}
+
+.tabs-list__item-btn:after {
+  position: absolute;
+  top: -.04em;
+  font-size: .85em;
+  right: -.21em;
+
+  content: '|';
+  color: #8da5b8 !important; /* SORRY */
+}
+
+.tabs-list__item:last-child .tabs-list__item-btn:after {
+  display: none;
+}
+
+.tabs-list__item-btn.active,
+.tabs-list__item-btn:hover {
+  color: #fff;
 }

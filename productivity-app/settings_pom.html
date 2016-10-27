@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pomodoro Settings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css"/>
+  <link rel="stylesheet" href="fonts/icomoon/style.css"/>
+  <link rel="stylesheet" href="css/static.css"/>
+
+  <link rel="stylesheet" href="css/settings_pom.css"/>
+</head>
+<!-- .common-state .changing-state -->
+<body class="changing-state">
+
+  <main class="main">
+    <header class="header">
+      <h1 class="header-main">Settings</h1>
+      <h2 class="header-sub">Pomodoros settings</h2>
+    </header>
+
+    <ul class="settings-list">
+      <li class="settings-list-item after-orange">
+        <h3 class="settings-list-item-heading">Work time</h3>
+        <div class="action">
+          <button class="action-btn action-minus" type="button">&#xe911;</button>
+          <button class="action-btn action-add" type="button">&#xe900;</button>
+          <span class="action-viewport">25 min</span>
+        </div>
+        <p class="settings-list-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
+      </li>
+
+      <li class="settings-list-item after-dark-turquoise">
+        <h3 class="settings-list-item-heading">Work iteration</h3>
+        <div class="action">
+          <button class="action-btn action-minus" type="button">&#xe911;</button>
+          <button class="action-btn action-add" type="button">&#xe900;</button>
+          <span class="action-viewport">25 min</span>
+        </div>
+        <p class="settings-list-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
+      </li>
+
+      <li class="settings-list-item after-picton-blue">
+        <h3 class="settings-list-item-heading">Short break</h3>
+        <div class="action">
+          <button class="action-btn action-minus" type="button">&#xe911;</button>
+          <button class="action-btn action-add" type="button">&#xe900;</button>
+          <span class="action-viewport">25 min</span>
+        </div>
+        <p class="settings-list-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, voluptates, vero.</p>
+      </li>
+
+      <li class="settings-list-item after-picton-blue">
+        <h3 class="settings-list-item-heading">Long break</h3>
+        <div class="action">
+          <button class="action-btn action-minus" type="button">&#xe911;</button>
+          <button class="action-btn action-add" type="button">&#xe900;</button>
+          <span class="action-viewport">25 min</span>
+        </div>
+        <p class="settings-list-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
+      </li>
+    </ul>
+
+    <section class="cycle-chart">
+      <h2 class="cycle-chart-heading">Your cycle</h2>
+      <div class="cycle-chart__chart"></div>
+    </section>
+
+    <div class="controls common-state">
+      <button class="btn btn-niagara" id="next-btn" type="button">Next</button>
+
+      <button class="btn btn-picton-blue" id="back-btn" type="button">Back</button>
+
+      <button class="btn btn-niagara" id="save-btn" type="button">Save</button>
+    </div>
+  </main>
+
+  <aside class="aside">
+    <ul class="main-btn-list">
+      <li class="main-btn-list__item">
+        <button class="main-btn-list__item-btn" id="statistics-btn" type="button">&#xe90c;</button>
+      </li>
+
+      <li class="main-btn-list__item">
+        <button class="main-btn-list__item-btn active" id="settigns-btn" type="button">&#xe90b;</button>
+      </li>
+
+      <li class="main-btn-list__item">
+        <button class="main-btn-list__item-btn" id="logout-btn" type="button">&#xe908;</button>
+      </li>
+    </ul>
+
+    <ul class="settings-tabs tabs-list">
+      <li class="tabs-list__item">
+        <button class="tabs-list__item-btn active" id="pomodoros-tab" type="button">Pomodoros</button>
+      </li>
+
+      <li class="tabs-list__item">
+        <button class="tabs-list__item-btn" id="categories-tab" type="button">Categories</button>
+      </li>
+    </ul>
+  </aside>
+
+</body>
+</html>
