@@ -154,7 +154,7 @@ body {
   display: -ms-flexbox;
   display:         flex;
 
-  width: 22%;
+  width: 16em;
   margin: 5.2em auto 0 auto;
 
   -webkit-box-pack: justify;

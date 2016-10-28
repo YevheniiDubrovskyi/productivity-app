@@ -15,10 +15,14 @@
   <link rel="stylesheet" href="css/task_list.css"/>
 </head>
 <!-- .add-first-task .common-state .deleting-state -->
-<body class="deleting-state">
+<!-- .sticky-header -->
+<body class="common-state">
 
   <main class="main">
     <h1 class="main-heading"><span class="main-heading-inner">Daily Task List</span></h1>
+    <figure class="logo">
+      <img class="logo-image" src="img/Logo.svg" title="Logo" alt="Logo image"/>
+    </figure>
 
     <h2 class="add-first-heading">Add your first task</h2>
 
@@ -51,10 +55,10 @@
         <!-- CATEGORIES: .hobby-category .work-category .education-category .sport-category .other-category -->
         <!-- IMPORTANCE: .urgent-imp .hight-imp .middle-imp .low-imp -->
         <!-- .moved-to-trash -->
-        <li class="task-list-item hobby-category urgent-imp">
+        <li class="task-list-item hobby-category urgent-imp moved-to-trash">
           <div class="task-hidden-btns">
-            <button class="task-hidden-btns__btn btn-trash" id="move-to-trash-btn" type="button">&#xe912;</button>
-            <button class="task-hidden-btns__btn btn-close" id="restore-btn" type="button">&#xe910;</button>
+            <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>
+            <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>
           </div>
 
           <time class="task-date" datetime="">
@@ -69,8 +73,8 @@
           </section>
 
           <div class="task-main-btns">
-            <button class="task-main-btns__btn btn-up" id="move-to-daily-btn" type="button">&#xe904;</button>
-            <button class="task-main-btns__btn btn-edit" id="edit-btn" type="button">&#xe905;</button>
+            <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>
+            <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>
           </div>
 
           <div class="task-pomidoro-count">
@@ -115,18 +119,18 @@
         </ul>
       </div>
 
-      <!-- SPORT CATEGORY -->
+      <!-- WORK CATEGORY -->
 
-      <section class="tasks-grp-by-category sport-category">
-        <h2 class="tasks-grp-by-category__heading">Sport</h2>
+      <section class="tasks-grp-by-category work-category">
+        <h2 class="tasks-grp-by-category__heading">Work</h2>
 
         <ul class="task-list">
           <!-- IMPORTANCE: .urgent-imp .hight-imp .middle-imp .low-imp -->
           <!-- .moved-to-trash -->
-          <li class="task-list-item middle-imp">
+          <li class="task-list-item hight-imp">
             <div class="task-hidden-btns">
-              <button class="task-hidden-btns__btn btn-trash" id="move-to-trash-btn" type="button">&#xe912;</button>
-              <button class="task-hidden-btns__btn btn-close" id="restore-btn" type="button">&#xe910;</button>
+              <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>
+              <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>
             </div>
 
             <time class="task-date" datetime="">
@@ -141,8 +145,8 @@
             </section>
 
             <div class="task-main-btns">
-              <button class="task-main-btns__btn btn-up" id="move-to-daily-btn" type="button">&#xe904;</button>
-              <button class="task-main-btns__btn btn-edit" id="edit-btn" type="button">&#xe905;</button>
+              <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>
+              <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>
             </div>
 
             <div class="task-pomidoro-count">
@@ -150,10 +154,10 @@
             </div>
           </li>
 
-          <li class="task-list-item low-imp">
+          <li class="task-list-item middle-imp moved-to-trash">
             <div class="task-hidden-btns">
-              <button class="task-hidden-btns__btn btn-trash" id="move-to-trash-btn" type="button">&#xe912;</button>
-              <button class="task-hidden-btns__btn btn-close" id="restore-btn" type="button">&#xe910;</button>
+              <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>
+              <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>
             </div>
 
             <time class="task-date" datetime="">
@@ -168,8 +172,72 @@
             </section>
 
             <div class="task-main-btns">
-              <button class="task-main-btns__btn btn-up" id="move-to-daily-btn" type="button">&#xe904;</button>
-              <button class="task-main-btns__btn btn-edit" id="edit-btn" type="button">&#xe905;</button>
+              <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>
+              <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>
+            </div>
+
+            <div class="task-pomidoro-count">
+              <span class="task-pomidoro-count__num">3</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- EDUCATION CATEGORY -->
+
+      <section class="tasks-grp-by-category education-category">
+        <h2 class="tasks-grp-by-category__heading">Education</h2>
+
+        <ul class="task-list">
+          <!-- IMPORTANCE: .urgent-imp .hight-imp .middle-imp .low-imp -->
+          <!-- .moved-to-trash -->
+          <li class="task-list-item low-imp">
+            <div class="task-hidden-btns">
+              <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>
+              <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>
+            </div>
+
+            <time class="task-date" datetime="">
+              <span class="task-date-number">23</span>
+              <span class="task-date-month">May</span>
+              <span class="task-date-today">Today</span>
+            </time>
+
+            <section class="task-content">
+              <h3 class="task-content-heading">Lorem ipsum sit amet</h3>
+              <p class="task-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nobis ipsam sint maxime consectetur.</p>
+            </section>
+
+            <div class="task-main-btns">
+              <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>
+              <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>
+            </div>
+
+            <div class="task-pomidoro-count">
+              <span class="task-pomidoro-count__num">3</span>
+            </div>
+          </li>
+
+          <li class="task-list-item urgent-imp">
+            <div class="task-hidden-btns">
+              <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>
+              <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>
+            </div>
+
+            <time class="task-date" datetime="">
+              <span class="task-date-number">23</span>
+              <span class="task-date-month">May</span>
+              <span class="task-date-today">Today</span>
+            </time>
+
+            <section class="task-content">
+              <h3 class="task-content-heading">Lorem ipsum sit amet</h3>
+              <p class="task-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nobis ipsam sint maxime consectetur.</p>
+            </section>
+
+            <div class="task-main-btns">
+              <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>
+              <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>
             </div>
 
             <div class="task-pomidoro-count">

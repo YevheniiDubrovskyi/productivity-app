@@ -24,14 +24,55 @@ body {
 .daily-tasks .task-date-number,
 .daily-tasks .task-date-month,
 .task-date-today,
-.deleting-state .moved-to-trash #move-to-rash-btn,
-.deleting-state #restore-btn {
+.deleting-state .moved-to-trash .btn-trash,
+.deleting-state .btn-close,
+.logo {
   position: absolute;
   top: auto;
   right: auto;
   left: -9999px;
 
   overflow: hidden;
+}
+
+.sticky-header .logo {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 8.5em;
+  font-size: 1rem;
+
+  overflow: visible;
+
+  background-color: #2a3f50;
+  z-index: 999;
+  -webkit-box-shadow: 2px 0 5px #000;
+  box-shadow: 2px 0 15px #000;
+}
+
+.sticky-header .aside {
+  position: fixed;
+  top: 0;
+  margin: 3.5em 0 0 0;
+  right: 8%;
+  z-index: 9999;
+}
+
+.sticky-header #add-btn {
+  position: static;
+  font-size: .8em;
+}
+
+.logo-image {
+  display: block;
+  height: 70%;
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
 }
 
 .common-state #trash-btn,
@@ -41,8 +82,6 @@ body {
 }
 
 .deleting-state #trash-btn {
-  position: relative;
-
   overflow: visible;
 }
 
@@ -64,6 +103,12 @@ body {
   color: #fff;
   border-radius: 50%;
   background-color: #f75c4c;
+}
+
+.deleting-state .moved-to-trash .btn-close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 .main-btn-list {
@@ -143,6 +188,8 @@ body {
 }
 
 .task-list {
+  position: relative;
+
   margin: 1em 0 0 0;
 }
 
@@ -179,9 +226,9 @@ body {
 
   -webkit-transition: .3s ease-in-out;
           transition: .3s ease-in-out;
-  -webkit-transform: translate(-87%, 0);
-      -ms-transform: translate(-87%, 0);
-          transform: translate(-87%, 0);
+  -webkit-transform: translate(-89%, 0);
+      -ms-transform: translate(-89%, 0);
+          transform: translate(-89%, 0);
 }
 
 .deleting-state .task-hidden-btns {
@@ -436,7 +483,11 @@ body {
 
 .global-tasks .sellecting-tabs {
   width: 100%;
-  margin: .5em 0 0 0;
+  margin: 1.5em 0 0 0;
+}
+
+.tasks-grp-by-category {
+  margin: 0 0 1.4375rem 0;
 }
 
 .tasks-grp-by-category__heading {
@@ -454,7 +505,7 @@ body {
 .tasks-grp-by-category__heading:after {
   position: absolute;
   top: 30%;
-  left: -.3rem;
+  left: -.26rem;
 
   content: '';
   -webkit-transform: translate(0, -50%);
@@ -465,12 +516,15 @@ body {
 }
 
 .tasks-grp-by-category__heading:before {
+  z-index: 100;
+
   width: 1.0625em;
   height: 1.0625em;
 }
 
 .tasks-grp-by-category__heading:after {
-  left: -.05rem;
+  z-index: 150;
+  left: -.015rem;
 
   width: .32em;
   height: .32em;
@@ -482,6 +536,17 @@ body {
   border-radius: 50%;
 }
 
+.tasks-grp-by-category .task-list:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: .5625rem;
+  height: 114%;
+
+  content: '';
+}
+
 /* CATEGORIES FOR GROUPS */
 
 /* WORK */
@@ -490,6 +555,7 @@ body {
   color: #ffb200;
 }
 
+.work-category .task-list:after,
 .work-category .tasks-grp-by-category__heading:before {
   background-color: #ffb200;
 }
@@ -500,6 +566,7 @@ body {
   color: #00d4d9;
 }
 
+.sport-category .task-list:after,
 .sport-category .tasks-grp-by-category__heading:before {
   background-color: #00d4d9;
 }
@@ -510,6 +577,7 @@ body {
   color: #b470d0;
 }
 
+.hobby-category .task-list:after,
 .hobby-category .tasks-grp-by-category__heading:before {
   background-color: #b470d0;
 }
@@ -520,6 +588,7 @@ body {
   color: #59abe3;
 }
 
+.education-category .task-list:after,
 .education-category .tasks-grp-by-category__heading:before {
   background-color: #59abe3;
 }
@@ -530,6 +599,7 @@ body {
   color: #00cbd0;
 }
 
+.other-cateogry .task-list:after,
 .other-category .tasks-grp-by-category__heading:before {
   background-color: #00cbd0;
 }
