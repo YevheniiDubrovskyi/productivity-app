@@ -91,8 +91,8 @@ body {
 }
 
 .radio-btn-list__item-lbl:after {
-  width: .3em;
-  height: .3em;
+  width: .32em;
+  height: .32em;
   left: .272em;
 
   -webkit-transition: .1s ease-in-out;
@@ -159,7 +159,7 @@ body {
   display: -ms-flexbox;
   display:         flex;
 
-  width: 22%;
+  width: 15.75em;
   margin: 5.2em auto 0 auto;
 
   -webkit-box-pack: justify;
