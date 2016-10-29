@@ -15,20 +15,25 @@
   <link rel="stylesheet" href="css/task_list.css"/>
 </head>
 <!-- .add-first-task .common-state .deleting-state -->
+<!-- .common-state+: .common-state--nothing-in-daily .common-sate--all-done -->
 <!-- .sticky-header -->
-<body class="common-state">
+<!-- .modal-opened . -->
+<!-- MODALS TYPES(.modal-opened+): .modal-opened-add .modal-opened-edit .modal-opened-remove -->
+<body class="common-state modal-opened modal-opened-add">
+
 
   <main class="main">
-    <h1 class="main-heading"><span class="main-heading-inner">Daily Task List</span></h1>
     <figure class="logo">
       <img class="logo-image" src="img/Logo.svg" title="Logo" alt="Logo image"/>
     </figure>
+    <button class="main-top-add-btn">Daily Task List</button>
 
     <h2 class="add-first-heading">Add your first task</h2>
 
     <!-- DAILY TASKS -->
 
     <div class="tasks-block daily-tasks">
+
       <div class="tabs-block">
         <ul class="tabs-list sellecting-tabs">
           <li class="tabs-list__item">
@@ -50,6 +55,18 @@
           </li>
         </ul>
       </div>
+
+      <!-- HEADINGS FOR NOTICES -->
+
+      <h2 class="drag-to-top-heading">
+        <span class="drag-to-top-heading__row">Task added,</span>
+        <span class="drag-to-top-heading__row">drag it to the top 5 in daily task list</span>
+      </h2>
+
+      <h2 class="all-done-heading">
+        <span class="all-done-heading__row">Excellent,</span>
+        <span class="all-done-heading__row">all daily tasks done! :)</span>
+      </h2>
 
       <ul class="task-list">
         <!-- CATEGORIES: .hobby-category .work-category .education-category .sport-category .other-category -->
@@ -86,10 +103,15 @@
     </div>
 
     <!-- GLOBAL TASKS -->
+    <!-- .closed -->
 
     <div class="tasks-block global-tasks">
+
       <div class="tabs-block">
         <button class="tabs-block-global-btn" type="button" id="#show-global">Global list</button>
+
+        <!-- TOOLTIP -->
+        <div class="tooltip">Go to Global List</div>
 
         <ul class="tabs-list to-do-tabs">
           <li class="tabs-list__item">
@@ -127,7 +149,7 @@
         <ul class="task-list">
           <!-- IMPORTANCE: .urgent-imp .hight-imp .middle-imp .low-imp -->
           <!-- .moved-to-trash -->
-          <li class="task-list-item hight-imp">
+          <li class="task-list-item hight-imp done">
             <div class="task-hidden-btns">
               <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>
               <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>
@@ -244,6 +266,60 @@
               <span class="task-pomidoro-count__num">3</span>
             </div>
           </li>
+
+          <li class="task-list-item middle-imp done">
+            <div class="task-hidden-btns">
+              <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>
+              <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>
+            </div>
+
+            <time class="task-date" datetime="">
+              <span class="task-date-number">23</span>
+              <span class="task-date-month">May</span>
+              <span class="task-date-today">Today</span>
+            </time>
+
+            <section class="task-content">
+              <h3 class="task-content-heading">Lorem ipsum sit amet</h3>
+              <p class="task-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nobis ipsam sint maxime consectetur.</p>
+            </section>
+
+            <div class="task-main-btns">
+              <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>
+              <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>
+            </div>
+
+            <div class="task-pomidoro-count">
+              <span class="task-pomidoro-count__num">3</span>
+            </div>
+          </li>
+
+          <li class="task-list-item hight-imp">
+            <div class="task-hidden-btns">
+              <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>
+              <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>
+            </div>
+
+            <time class="task-date" datetime="">
+              <span class="task-date-number">23</span>
+              <span class="task-date-month">May</span>
+              <span class="task-date-today">Today</span>
+            </time>
+
+            <section class="task-content">
+              <h3 class="task-content-heading">Lorem ipsum sit amet</h3>
+              <p class="task-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nobis ipsam sint maxime consectetur.</p>
+            </section>
+
+            <div class="task-main-btns">
+              <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>
+              <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>
+            </div>
+
+            <div class="task-pomidoro-count">
+              <span class="task-pomidoro-count__num">3</span>
+            </div>
+          </li>
         </ul>
       </section>
 
@@ -252,11 +328,11 @@
 
   <aside class="aside">
     <ul class="main-btn-list">
-      <!-- Add .active here when .deleting-state is enabled -->
       <li class="main-btn-list__item">
         <button class="main-btn-list__item-btn" id="add-btn" type="button">&#xe900;</button>
       </li>
 
+      <!-- Add .active here when .deleting-state is enabled -->
       <li class="main-btn-list__item">
         <button class="main-btn-list__item-btn" id="trash-btn" type="button">&#xe912;</button>
       </li>
@@ -274,6 +350,111 @@
       </li>
     </ul>
   </aside>
+
+  <!-- MODALS -->
+
+  <!-- ADDING MODAL -->
+  <aside class="modal modal-add-task">
+    <h2 class="modal-heading">Add Task</h2>
+
+    <label for="modal-add-task__title" class="modal-lbl">Title</label>
+    <input type="text" class="modal-inpt" id="modal-add-task__title" placeholder="Add title here"/>
+
+    <label for="modal-add-task__desc" class="modal-lbl">Description</label>
+    <input type="text" class="modal-inpt" id="modal-add-task__desc" placeholder="Ass description here"/>
+
+    <fieldset class="modal-fset">
+      <h4 class="modal-fset-heading">Category</h4>
+      <ul class="modal-fset-list">
+        <li class="modal-fset-list-item">
+          <input type="radio" class="modal-fset-list-item-radio" name="category" id="modal-add-task__radio-work"/>
+          <label for="modal-add-task__radio-work" class="modal-fset-list-item-lbl">Work</label>
+        </li>
+        <li class="modal-fset-list-item">
+          <input type="radio" class="modal-fset-list-item-radio" name="category" id="modal-add-task__radio-edu"/>
+          <label for="modal-add-task__radio-edu" class="modal-fset-list-item-lbl">Education</label>
+        </li>
+        <li class="modal-fset-list-item">
+          <input type="radio" class="modal-fset-list-item-radio" name="category" id="modal-add-task__radio-hobby"/>
+          <label for="modal-add-task__radio-hobby" class="modal-fset-list-item-lbl">Hobby</label>
+        </li>
+        <li class="modal-fset-list-item">
+          <input type="radio" class="modal-fset-list-item-radio" name="category" id="modal-add-task__radio-sport"/>
+          <label for="modal-add-task__radio-sport" class="modal-fset-list-item-lbl">Sport</label>
+        </li>
+        <li class="modal-fset-list-item">
+          <input type="radio" class="modal-fset-list-item-radio" name="category" id="modal-add-task__radio-other">
+          <label for="modal-add-task__radio-other" class="modal-fset-list-item-lbl">Other</label>
+        </li>
+      </ul>
+    </fieldset>
+
+    <label for="modal-add-task__deadline" class="modal-lbl">Deadline</label>
+    <input type="text" class="modal-inpt" id="modal-add-task__deadline" placeholder="May 23, 2016"/>
+
+    <div class="modal-estimation">
+      <h4 class="modal-estimation-heading">Estimation</h4>
+      <ul class="modal-estimation-list">
+        <li class="modal-estimation-list-item">
+          <img src="img/tomato_fill.svg" alt="Tomato image" title="Tomato" class="modal-estimation-list-item-img"/>
+        </li>
+        <li class="modal-estimation-list-item">
+          <img src="img/tomato_fill.svg" alt="Tomato image" title="Tomato" class="modal-estimation-list-item-img"/>
+        </li>
+        <li class="modal-estimation-list-item">
+          <img src="img/tomato_fill.svg" alt="Tomato image" title="Tomato" class="modal-estimation-list-item-img"/>
+        </li>
+        <li class="modal-estimation-list-item">
+          <img src="img/tomato.svg" alt="Tomato image" title="Tomato" class="modal-estimation-list-item-img"/>
+        </li>
+        <li class="modal-estimation-list-item">
+          <img src="img/tomato.svg" alt="Tomato image" title="Tomato" class="modal-estimation-list-item-img"/>
+        </li>
+      </ul>
+    </div>
+
+    <fieldset class="modal-fset">
+      <h4 class="modal-fset-heading">Priority</h4>
+      <ul class="modal-fset-list">
+        <li class="modal-fset-list-item">
+          <input type="radio" class="modal-fset-list-item-radio" id="modal-add-task__urgent" name="priority"/>
+          <label for="modal-add-task__urgent" class="modal-fset-list-item-lbl">Urgent</label>
+        </li>
+        <li class="modal-fset-list-item">
+          <input type="radio" class="modal-fset-list-item-radio" id="modal-add-task__high" name="priority"/>
+          <label for="modal-add-task__high" class="modal-fset-list-item-lbl">High</label>
+        </li>
+        <li class="modal-fset-list-item">
+          <input type="radio" class="modal-fset-list-item-radio" id="modal-add-task__middle" name="priority"/>
+          <label for="modal-add-task__middle" class="modal-fset-list-item-lbl">Middle</label>
+        </li>
+        <li class="modal-fset-list-item">
+          <input type="radio" class="modal-fset-list-item-radio" id="modal-add-task__low" name="priority"/>
+          <label for="modal-add-task__low" class="modal-fset-list-item-lbl">Low</label>
+        </li>
+      </ul>
+    </fieldset>
+
+    <!-- <button class="modal-btn-delete" type="button">&#xe912;</button> -->
+    <button class="modal-btn-accept" type="button">&#xe90f;</button>
+    <button class="modal-btn-cancel" type="button">&#xe910;</button>
+  </aside>
+
+  <!-- EDITING MODAL -->
+  <aside class="modal modal-edit-task"></aside>
+
+  <!-- REMOVING MODAL -->
+  <aside class="modal modal-remove-task"></aside>
+
+  <!-- NOTIFICATION -->
+
+  <aside class="notification notification-success"></aside>
+
+  <aside class="notification notification-error"></aside>
+
+  <aside class="notification notification-warning"></aside>
+
+  <aside class="notification notification-message-info"></aside>
 
 </body>
 </html>
