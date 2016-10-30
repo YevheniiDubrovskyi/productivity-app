@@ -1,0 +1,267 @@
+body {
+  color: #fff;
+  background-color: #2a3f50;
+}
+
+.main {
+  width: 86.8%;
+  margin: 0 auto;
+  padding: 6.1em 0 4.6875em 0;
+
+  text-align: center;
+}
+
+.aside {
+  position: absolute;
+  top: 3.5em;
+  right: 6.2%;
+}
+
+.header-main {
+  font-size: 1.75rem;
+  font-weight: 700;
+
+  letter-spacing: .02em;
+}
+
+.header-sub {
+  font-size: 1rem;
+
+  margin: 1.8em 0 0 0;
+
+  letter-spacing: .03em;
+
+  color: #fff;
+}
+
+.btn-fail-pom,
+.btn-finish-pom,
+.btn-start-pom,
+.btn-finish-task,
+.timer .in-pomodoro,
+.timer .break-over,
+.timer .in-break,
+.timer .completed-all,
+.timer-wrapper .btn-arrow-right,
+.pomodoro-list-item-btn,
+.in-pomodoro .start-text,
+.in-pomodoro .btn-start,
+.in-pomodoro .btn-arrow-left,
+.in-break .start-text,
+.in-break .btn-start,
+.in-break .btn-arrow-left,
+.break-over .start-text,
+.break-over .btn-start,
+.break-over .btn-arrow-left,
+.completed-all .btn-start,
+.completed-all .start-text {
+  position: absolute;
+  top: auto;
+  right: auto;
+  left: -9999px;
+
+  overflow: hidden;
+}
+
+.pomodoro-list {
+  position: relative;
+
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display:         inline-flex;
+
+  margin: 2.25em 0;
+
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pomodoro-list-item {
+  width: 1.6rem;
+  padding: 0 .3em;
+}
+
+.pomodoro-list-item-img {
+  width: 100%;
+}
+
+.in-pomodoro .pomodoro-list-item-btn {
+  position: absolute;
+  top: 45%;
+  right: -2em;
+  left: auto;
+
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.btn-add-pomodoro {
+  font-family: 'icomoon';
+  font-size: 1em;
+
+  width: 2em;
+
+  -webkit-transition: .1s ease-in-out;
+          transition: .1s ease-in-out;
+
+  color: #8da8b8;
+}
+
+.in-pomodoro .btn-add-pomodoro:hover {
+  color: #fff;
+}
+
+.timer-wrapper {
+  position: relative;
+
+  margin: 1em auto 4.4em auto;
+}
+
+.btn-arrow {
+  font-family: 'icomoon';
+  font-size: 2.55em;
+
+  position: absolute;
+  top: 50%;
+
+  -webkit-transition: .1s ease-in-out;
+          transition: .1s ease-in-out;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+
+  color: #8da5b8;
+}
+
+.btn-arrow:hover {
+  color: #fff;
+}
+
+.btn-arrow-left {
+  left: 0;
+}
+
+.btn-arrow-right {
+  right: 0;
+}
+
+.completed-all .btn-arrow-right {
+  position: absolute;
+  left: auto;
+  top: 50%;
+  right: 0;
+}
+
+.timer {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1.625rem;
+
+  position: relative;
+
+  width: 15.8rem;
+  height: 15.8rem;
+  margin: 0 auto;
+
+  border: 5px solid #ff8d22;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 60px rgba(0,0,0,.4);
+          box-shadow: 0 0 60px rgba(0,0,0,.4);
+}
+
+.in-break .timer,
+.break-over .timer {
+  border-color: #5AACE3;
+}
+
+.in-pomodoro .timer-text.in-pomodoro,
+.in-break .timer-text.in-break,
+.break-over .timer-text.break-over,
+.completed-all .timer-text.completed-all,
+.timer-text {
+  font-family: 'Roboto', sans-serif;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+          flex-direction: column;
+
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.timer-text-row {
+  display: block;
+}
+
+.break-over .timer-text-row,
+.completed-all .timer-text-row {
+  margin: 0 0 .4em 0;
+}
+
+.timer-text-min {
+  font-size: 6.25rem;
+  line-height: .85em;
+}
+
+.timer-text-low {
+  font-size: .6em;
+  line-height: 2em;
+}
+
+.in-pomodoro .timer-text,
+.in-break .timer-text,
+.break-over .timer-text,
+.completed-all .timer-text {
+  width: 63%;
+  height: 63%;
+
+  border: 2.4rem solid #8da5b8;
+  border-radius: 50%;
+}
+
+.in-pomodoro .btn-fail-pom,
+.in-pomodoro .btn-finish-pom,
+.in-break .btn-start-pom,
+.break-over .btn-start-pom,
+.break-over .btn-finish-task {
+  position: static;
+}
+
+.buttons-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.btn-fail-pom,
+.btn-finish-pom,
+.btn-start-pom,
+.btn-finish-task {
+  width: 10.6rem;
+  margin: 0 .5em;
+}

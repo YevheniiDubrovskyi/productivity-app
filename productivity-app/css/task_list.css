@@ -11,7 +11,7 @@ body {
 
 .aside {
   position: absolute;
-  top: 7.3%;
+  top: 3.5em;
   right: 6.2%;
 }
 
@@ -675,42 +675,6 @@ body .notification {
   background-color: #00cbd0;
 }
 
-/* TOOLTIP */
-
-.tooltip {
-  font-size: .75rem;
-  font-weight: 700;
-
-  position: absolute;
-  z-index: 999;
-  top: 2.8em;
-  left: 3em;
-
-  padding: .916em 1.583em;
-
-  white-space: nowrap;
-
-  color: #3c5162;
-  border: 1px solid #cddbe3;
-  border-radius: .2em;
-  background-color: rgba(229, 233, 235, .9);
-}
-
-.tooltip:after {
-  position: absolute;
-  top: -.45em;
-  left: 1em;
-
-  width: 0;
-  height: 0;
-
-  content: '';
-
-  border-width: 0 4.5px 5px 4.5px;
-  border-style: solid;
-  border-color: transparent transparent rgba(229, 233, 235, .9) transparent;
-}
-
 .common-state--nothing-in-daily .drag-to-top-heading {
   position: static;
 }
@@ -808,12 +772,16 @@ body .notification {
   background-color: #2a3f50;
 }
 
-.modal-opened-add .modal-add-task,
-.modal-opened-edit .modal-edit-task,
+.modal-opened-add-edit .modal-add-task,
+.modal-opened-add-edit .modal-edit-task,
 .modal-opened-remove .modal-remove-task {
   position: fixed;
   top: 50%;
   left: 50%;
+}
+
+.modal-add-task .modal-btn-delete {
+  display: none;
 }
 
 .modal-heading {
@@ -839,7 +807,7 @@ body .notification {
   margin: 0 0 2.2em 0;
   padding: .6em 0 .4em 0;
 
-  border-bottom: 1px solid #3D5364;
+  border-bottom: 1px solid #3d5364;
 }
 
 .modal-btn-accept,
@@ -915,14 +883,22 @@ body .notification {
   right: 2.3em;
 }
 
+.modal-remove-task .modal-btn-cancel {
+  right: .5em;
+}
+
 .modal-btn-delete {
-  left: .95em;
+  font-size: 1.3em;
+
+  top: .55em;
+  left: .45em;
 }
 
 .modal-fset {
-  padding: 0 0 .4em 0;
-  border-bottom: 1px solid #3D5364;
   margin: 0 0 2.1em 0;
+  padding: 0 0 .4em 0;
+
+  border-bottom: 1px solid #3d5364;
 }
 
 .modal-fset-heading {
@@ -930,9 +906,11 @@ body .notification {
 }
 
 .modal-fset-list-item-lbl {
-  display: block;
-  padding: 0 1em 0 1.28em;
   position: relative;
+
+  display: block;
+
+  padding: 0 1em 0 1.28em;
 }
 
 .modal-fset-list-item-lbl:before,
@@ -947,7 +925,7 @@ body .notification {
           transform: translate(0, -50%);
 
   border-radius: 50%;
-  background-color: #8DA5B8;
+  background-color: #8da5b8;
 }
 
 .modal-fset-list-item-lbl:before {
@@ -956,17 +934,18 @@ body .notification {
 }
 
 .modal-fset-list-item-lbl:after {
+  left: .1em;
+
   width: .32em;
   height: .32em;
-  left: .1em;
 
   -webkit-transition: .1s ease-in-out;
           transition: .1s ease-in-out;
 
   opacity: 0;
-  background-color: transparent;
   border: 2px solid #2a3f50;
   border-radius: 50%;
+  background-color: transparent;
 }
 
 .modal-fset-list-item-radio:checked + .modal-fset-list-item-lbl,
@@ -984,50 +963,50 @@ body .notification {
 
 /* CATEGORIES */
 
-#modal-add-task__radio-work + .modal-fset-list-item-lbl:hover:before,
-#modal-add-task__radio-work:checked + .modal-fset-list-item-lbl:before {
+#modal-add-edit-task__radio-work + .modal-fset-list-item-lbl:hover:before,
+#modal-add-edit-task__radio-work:checked + .modal-fset-list-item-lbl:before {
   background-color: #ffb200;
 }
 
-#modal-add-task__radio-edu + .modal-fset-list-item-lbl:hover:before,
-#modal-add-task__radio-edu:checked + .modal-fset-list-item-lbl:before {
+#modal-add-edit-task__radio-edu + .modal-fset-list-item-lbl:hover:before,
+#modal-add-edit-task__radio-edu:checked + .modal-fset-list-item-lbl:before {
   background-color: #59abe3;
 }
 
-#modal-add-task__radio-hobby + .modal-fset-list-item-lbl:hover:before,
-#modal-add-task__radio-hobby:checked + .modal-fset-list-item-lbl:before {
+#modal-add-edit-task__radio-hobby + .modal-fset-list-item-lbl:hover:before,
+#modal-add-edit-task__radio-hobby:checked + .modal-fset-list-item-lbl:before {
   background-color: #b470d0;
 }
 
-#modal-add-task__radio-sport + .modal-fset-list-item-lbl:hover:before,
-#modal-add-task__radio-sport:checked + .modal-fset-list-item-lbl:before {
+#modal-add-edit-task__radio-sport + .modal-fset-list-item-lbl:hover:before,
+#modal-add-edit-task__radio-sport:checked + .modal-fset-list-item-lbl:before {
   background-color: #e16c65;
 }
 
-#modal-add-task__radio-other + .modal-fset-list-item-lbl:hover:before,
-#modal-add-task__radio-other:checked + .modal-fset-list-item-lbl:before {
+#modal-add-edit-task__radio-other + .modal-fset-list-item-lbl:hover:before,
+#modal-add-edit-task__radio-other:checked + .modal-fset-list-item-lbl:before {
   background-color: #00d4d9;
 }
 
 /* PRIORITY */
 
-#modal-add-task__urgent + .modal-fset-list-item-lbl:hover:before,
-#modal-add-task__urgent:checked + .modal-fset-list-item-lbl:before {
+#modal-add-edit-task__urgent + .modal-fset-list-item-lbl:hover:before,
+#modal-add-edit-task__urgent:checked + .modal-fset-list-item-lbl:before {
   background-color: #f75c4c;
 }
 
-#modal-add-task__high + .modal-fset-list-item-lbl:hover:before,
-#modal-add-task__high:checked + .modal-fset-list-item-lbl:before {
+#modal-add-edit-task__high + .modal-fset-list-item-lbl:hover:before,
+#modal-add-edit-task__high:checked + .modal-fset-list-item-lbl:before {
   background-color: #ffa841;
 }
 
-#modal-add-task__middle + .modal-fset-list-item-lbl:hover:before,
-#modal-add-task__middle:checked + .modal-fset-list-item-lbl:before {
+#modal-add-edit-task__middle + .modal-fset-list-item-lbl:hover:before,
+#modal-add-edit-task__middle:checked + .modal-fset-list-item-lbl:before {
   background-color: #fddc43;
 }
 
-#modal-add-task__low + .modal-fset-list-item-lbl:hover:before,
-#modal-add-task__low:checked + .modal-fset-list-item-lbl:before {
+#modal-add-edit-task__low + .modal-fset-list-item-lbl:hover:before,
+#modal-add-edit-task__low:checked + .modal-fset-list-item-lbl:before {
   background-color: #1abc9c;
 }
 
@@ -1044,8 +1023,10 @@ body .notification {
   display: -webkit-flex;
   display: -ms-flexbox;
   display:         flex;
-  border-bottom: 1px solid #3D5364;
+
   padding: 0 0 .4em 0;
+
+  border-bottom: 1px solid #3d5364;
 }
 
 .modal-estimation-list-item {
@@ -1055,4 +1036,50 @@ body .notification {
 
 .modal-estimation-list-item-img {
   width: 100%;
+}
+
+.modal-remove-task .modal-question {
+  font-size: 2.25rem;
+  font-weight: 300;
+  line-height: 1.3em;
+
+  width: 94%;
+  margin: 3.9em auto 5.2em auto;
+
+  text-align: center;
+
+  color: #8da8b8;
+}
+
+.modal-remove-task .buttons-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+
+  width: 65%;
+  margin: 0 auto;
+
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.notification-shown-success .notification-success,
+.notification-shown-error .notification-error,
+.notification-shown-warning .notification-warning,
+.notification-shown-message-info .notification-message-info {
+  position: fixed;
+  bottom: 5%;
+  right: 6.5%;
+  left: auto;
+}
+
+.notification.notification--top {
+  top: 7%;
+  bottom: auto;
+  right: 6.5%;
+
+  width: 87.2%;
 }

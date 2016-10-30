@@ -1,0 +1,39 @@
+body {
+  color: #fff;
+  background-color: #2a3f50;
+}
+
+.main {
+  width: 86.8%;
+  margin: 0 auto;
+  padding: 6.1em 0 4.6875em 0;
+
+  text-align: center;
+}
+
+.aside {
+  position: absolute;
+  top: 3.5em;
+  right: 6.2%;
+}
+
+.main-heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+
+  letter-spacing: .02em;
+  margin: 0 0 1.1em 0;
+}
+
+.chart {
+  width: 16.5em;
+  height: 16.5em;
+
+  border-radius: 50%;
+  margin: 6.8em auto 5.7em auto;
+  background-color: orange;
+}
+
+.tabs-list {
+  font-size: 1.05em;
+}
