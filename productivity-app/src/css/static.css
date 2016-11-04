@@ -4,10 +4,8 @@ body {
 
   position: relative;
 
-  width: 1365px;
-  /*height: 1px;*/
-  height: 765px;
-  /*min-height: 100%;*/
+  height: 1px;
+  min-height: 100%;
 }
 
 main,

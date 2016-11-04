@@ -3,25 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Reports</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/reset.css"/>
-  <link rel="stylesheet" href="fonts/icomoon/style.css"/>
-  <link rel="stylesheet" href="css/static.css"/>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="css/static.css">
 
-  <link rel="stylesheet" href="css/reports.css"/>
+  <link rel="stylesheet" href="css/reports.css">
 
   <script src="lib/highcharts/highcharts.js" defer></script>
+  <!-- TODO: use modules system -->
+  <script src="js/reports_chart_config.js" defer></script>
+  <script src="js/reports_chart_data.js" defer></script>
   <script src="js/reports.js" defer></script>
 </head>
 <body>
 
   <main class="main">
     <h1 class="main-heading">Report</h1>
-
+    <!-- Generated markup -->
+<!--
     <ul class="tabs-list" data-chart-controls>
       <li class="tabs-list__item">
         <button class="tabs-list__item-btn active" data-chart="day" type="button">Day</button>
@@ -34,9 +38,9 @@
       </li>
     </ul>
 
-    <div id="chart"></div>
+    <div id="chart"></div> -->
 
-    <ul class="tabs-list">
+    <ul class="tabs-list tabs-list-bottom">
       <li class="tabs-list__item">
         <button class="tabs-list__item-btn" type="button">Pomodoros</button>
       </li>

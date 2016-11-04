@@ -27,10 +27,9 @@ body {
 
 .tabs-list {
   font-size: 1.05em;
+  margin: 0 0 7.5rem 0;
 }
 
-#chart {
-  width: 60%;
-  height: 20rem;
-  margin: 2rem auto;
+.tabs-list-bottom {
+  margin: 1.5rem 0 0 0;
 }
