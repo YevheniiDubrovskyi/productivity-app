@@ -25,15 +25,12 @@ body {
   margin: 0 0 1.1em 0;
 }
 
-.chart {
-  width: 16.5em;
-  height: 16.5em;
-
-  border-radius: 50%;
-  margin: 6.8em auto 5.7em auto;
-  background-color: orange;
-}
-
 .tabs-list {
   font-size: 1.05em;
+}
+
+#chart {
+  width: 60%;
+  height: 20rem;
+  margin: 2rem auto;
 }

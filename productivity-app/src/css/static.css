@@ -439,3 +439,34 @@ input:focus {
   border-style: solid;
   border-color: transparent transparent rgba(229, 233, 235, .9) transparent;
 }
+
+/* ARROW BUTTONS */
+
+.btn-arrow {
+  font-family: 'icomoon';
+  font-size: 2.55em;
+  text-decoration: none;
+
+  position: absolute;
+  top: 50%;
+
+  -webkit-transition: .1s ease-in-out;
+          transition: .1s ease-in-out;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+
+  color: #8da5b8;
+}
+
+.btn-arrow:hover {
+  color: #fff;
+}
+
+.btn-arrow-left {
+  left: 2rem;
+}
+
+.btn-arrow-right {
+  right: 2rem;
+}
