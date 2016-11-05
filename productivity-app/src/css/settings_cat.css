@@ -71,36 +71,19 @@ body {
   display: block;
 }
 
-.radio-btn-list__item-lbl:before,
-.radio-btn-list__item-lbl:after {
+.radio-btn-list__item-lbl:before {
   position: absolute;
-  top: 30%;
+  top: 28%;
   left: 0;
+  width: 18px;
+  height: 18px;
 
   content: '';
   -webkit-transform: translate(0, -50%);
       -ms-transform: translate(0, -50%);
           transform: translate(0, -50%);
 
-  border-radius: 50%;
-}
-
-.radio-btn-list__item-lbl:before {
-  width: 1.0625em;
-  height: 1.0625em;
-}
-
-.radio-btn-list__item-lbl:after {
-  width: .32em;
-  height: .32em;
-  left: .272em;
-
-  -webkit-transition: .1s ease-in-out;
-          transition: .1s ease-in-out;
-
-  opacity: 0;
-  border: 2px solid #2a3f50;
-  border-radius: 50%;
+  background: url(../img/label_sprite.png) no-repeat;
 }
 
 .radio-btn-list__item-lbl-span {
@@ -129,28 +112,44 @@ body {
   cursor: pointer;
 }
 
-.radio-btn-list__item-radio:checked + .radio-btn-list__item-lbl:after {
-  opacity: 1;
+#work-radio + .radio-btn-list__item-lbl:before {
+  background-position: -1px -21px;
 }
 
-#work-radio + .radio-btn-list__item-lbl:before {
-  background-color: #ffb200;
+#work-radio:checked + .radio-btn-list__item-lbl:before {
+  background-position: -1px -2px;
 }
 
 #education-radio + .radio-btn-list__item-lbl:before {
-  background-color: #59abe3;
+  background-position: -77px -21px;
+}
+
+#education-radio:checked + .radio-btn-list__item-lbl:before {
+  background-position: -77px -2px;
 }
 
 #hobby-radio + .radio-btn-list__item-lbl:before {
-  background-color: #b470d0;
+  background-position: -58px -21px;
+}
+
+#hobby-radio:checked + .radio-btn-list__item-lbl:before {
+  background-position: -58px -2px;
 }
 
 #sport-radio + .radio-btn-list__item-lbl:before {
-  background-color: #e16c65;
+  background-position: -39px -21px;
+}
+
+#sport-radio:checked + .radio-btn-list__item-lbl:before {
+  background-position: -39px -2px;
 }
 
 #other-radio + .radio-btn-list__item-lbl:before {
-  background-color: #00d4d9;
+  background-position: -20px -21px;
+}
+
+#other-radio:checked + .radio-btn-list__item-lbl:before {
+  background-position: -20px -2px;
 }
 
 .controls {

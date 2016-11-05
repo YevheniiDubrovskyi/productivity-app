@@ -1,37 +1,50 @@
 body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(42, 63, 80, .92)), to(rgba(42, 63, 80, .92))),
   url(../img/login_bg.jpg) center no-repeat;
-
   background: -webkit-linear-gradient(rgba(42, 63, 80, .92), rgba(42, 63, 80, .92)),
   url(../img/login_bg.jpg) center no-repeat;
-
-  background: linear-gradient(rgba(42, 63, 80, .92), rgba(42, 63, 80, .92)),
+  background:         linear-gradient(rgba(42, 63, 80, .92), rgba(42, 63, 80, .92)),
   url(../img/login_bg.jpg) center no-repeat;
   background-size: cover;
+
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+          align-items: center;
+  padding: 1px 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .main {
   font-size: 1rem;
 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
   width: 20.625em;
-
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  padding: 1px 0;
 }
 
 .logo {
   width: 15.375em;
-  margin: 0 auto 2.85rem auto;
+  margin: 0 auto 2.5rem auto;
 }
 
 .logo-image {
   display: block;
+
   width: 100%;
+}
+
+.login-form {
+  padding: 1px 0;
 }
 
 .login-form-sect {
