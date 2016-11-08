@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pomodoro Settings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="css/static.css">
+
+  <link rel="stylesheet" href="css/settings_pom.css">
+  <link rel="stylesheet" href="../src/components/action/main.css">
+  <link rel="stylesheet" href="../src/components/cycle/main.css">
+  <link rel="stylesheet" href="../src/wrappers/settings_input/main.css">
+
+  <script src="../src/helpers/custom_event_polyfill.js" defer></script>
+  <script src="js/settings_pom.bundle.js" defer></script>
+</head>
+<!-- .common-state .changing-state -->
+<body class="changing-state">
+
+  <main class="main">
+    <header class="header">
+      <h1 class="header-main">Settings</h1>
+      <h2 class="header-sub">Pomodoros settings</h2>
+    </header>
+
+<!--     <section class="cycle-chart">
+      <h2 class="cycle-chart-heading">Your cycle</h2>
+      <div class="cycle-chart__chart"></div>
+    </section> -->
+
+    <div class="controls common-state">
+      <button class="btn btn-niagara" id="next-btn" type="button">Next</button>
+
+      <button class="btn btn-picton-blue" id="back-btn" type="button">Back</button>
+
+      <button class="btn btn-niagara" id="save-btn" type="button">Save</button>
+    </div>
+  </main>
+
+  <aside class="aside">
+    <ul class="main-btn-list">
+      <li class="main-btn-list__item">
+        <button class="main-btn-list__item-btn" id="statistics-btn" type="button">&#xe90c;</button>
+      </li>
+
+      <li class="main-btn-list__item">
+        <button class="main-btn-list__item-btn active" id="settigns-btn" type="button">&#xe90b;</button>
+      </li>
+
+      <li class="main-btn-list__item">
+        <button class="main-btn-list__item-btn" id="logout-btn" type="button">&#xe908;</button>
+      </li>
+    </ul>
+
+    <ul class="settings-tabs tabs-list">
+      <li class="tabs-list__item">
+        <button class="tabs-list__item-btn active" id="pomodoros-tab" type="button">Pomodoros</button>
+      </li>
+
+      <li class="tabs-list__item">
+        <button class="tabs-list__item-btn" id="categories-tab" type="button">Categories</button>
+      </li>
+    </ul>
+  </aside>
+
+</body>
+</html>

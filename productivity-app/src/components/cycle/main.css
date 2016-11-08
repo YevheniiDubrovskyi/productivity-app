@@ -1,0 +1,28 @@
+.cycle-chart {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1rem;
+
+  margin: .38em 0 0 0;
+}
+
+.cycle-chart-heading {
+  font-size: 1.25em;
+  font-weight: 700;
+
+  margin: 0 0 1.9em 0;
+
+  text-align: center;
+}
+
+.cycle-chart__chart {
+  height: .75em;
+  display: flex;
+}
+
+.cycle-chart__chart-work {
+  background-color: #FFB200;
+}
+
+.cycle-chart__chart-break {
+  background-color: #59ABE3;
+}
