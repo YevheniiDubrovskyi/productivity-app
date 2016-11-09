@@ -9,20 +9,74 @@
   font-size: 1.25em;
   font-weight: 700;
 
-  margin: 0 0 1.9em 0;
+  margin: 0 0 1.5em 0;
 
   text-align: center;
 }
 
 .cycle-chart__chart {
-  height: .75em;
   display: flex;
+  justify-content: flex-start;
+
+  height: .75em;
+  margin: 2.9em 0 0 0;
 }
 
 .cycle-chart__chart-work {
-  background-color: #FFB200;
+  background-color: #ffb200;
 }
 
 .cycle-chart__chart-break {
-  background-color: #59ABE3;
+  background-color: #59abe3;
+}
+
+.long-break {
+  position: relative;
+}
+
+.cycle-chart .long-break .long-break-span,
+.cycle-chart .cycle-chart__rule-point .point-value-span {
+  font-family: 'PT Sans';
+
+  position: absolute;
+  right: 0;
+
+  display: inline-block;
+
+  transform: translate(50%, 0);
+
+  color: #8da5b8;
+}
+
+.long-break .long-break-span {
+  bottom: 1.5em;
+}
+
+.cycle-chart__rule-point .point-value-span {
+  font-size: .8em;
+
+  top: 1.3em;
+}
+
+.cycle-chart__rule-point .point-value-span:after {
+  position: absolute;
+  top: -.5rem;
+  left: 50%;
+
+  height: .2rem;
+  width: .2rem;
+  border-radius: 50%;
+  content: '';
+  transform: translate(-50%, 0);
+
+  background-color: #00d4d9;
+}
+
+.cycle-chart__rule {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.cycle-chart__rule-point {
+  position: relative;
 }

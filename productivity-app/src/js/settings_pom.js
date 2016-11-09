@@ -5,7 +5,7 @@ import Cycle from '../components/cycle/main';
 const main = document.querySelector('.main');
 const controls = document.querySelector('.controls.common-state');
 const settingsList = document.createElement('ul');
-const defaultValues = [];
+const defaultValues = {};
 
 settingsList.classList.add('settings-list');
 settingsData.forEach((el) => {
@@ -24,10 +24,10 @@ settingsData.forEach((el) => {
   listItem.appendChild(section);
   settingsList.appendChild(listItem);
 
-  defaultValues.push(el.defaultValue);
+  defaultValues[el.name] = el.defaultValue;
 });
 
-const cycle = new Cycle(30, ...defaultValues);
+const cycle = new Cycle('Your cycle', 30, defaultValues);
 
 // Handle all custom events from actions
 settingsList.addEventListener('actionValueChanged', (event) => {

@@ -60,8 +60,8 @@
 	
 	var main = document.querySelector('.main');
 	var controls = document.querySelector('.controls.common-state');
-	
 	var settingsList = document.createElement('ul');
+	var defaultValues = {};
 	
 	settingsList.classList.add('settings-list');
 	_settings_pom_data.settingsData.forEach(function (el) {
@@ -71,14 +71,21 @@
 	  listItem.classList.add('settings-list-item');
 	  listItem.appendChild(section);
 	  settingsList.appendChild(listItem);
+	
+	  defaultValues[el.name] = el.defaultValue;
 	});
+	
+	var cycle = new _main4.default('Your cycle', 30, defaultValues);
 	
 	// Handle all custom events from actions
 	settingsList.addEventListener('actionValueChanged', function (event) {
-	  console.log(event.detail);
+	  var detail = event.detail;
+	
+	  cycle.updateData(detail.name, detail.value);
 	});
 	
 	main.insertBefore(settingsList, controls);
+	main.insertBefore(cycle.markup, controls);
 
 /***/ },
 /* 1 */,
@@ -304,7 +311,7 @@
 /* 8 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -315,23 +322,142 @@
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	var Cycle = function () {
-	  function Cycle(ruleStep, workTime, workIteration, shortBreak, longBreak) {
+	  function Cycle(title, ruleStep, initParams) {
 	    _classCallCheck(this, Cycle);
 	
-	    this.markup = this.createMarkup();
+	    this.title = title;
+	    this.ruleStep = ruleStep;
+	    this.params = initParams;
+	
+	    this.timeAmount = null;
+	    this.firstCycle = null;
+	    this.markup = createSection();
+	    this.percents = {};
+	
+	    this.render();
+	
+	    function createSection() {
+	      var section = document.createElement('section');
+	
+	      section.classList.add('cycle-chart');
+	      return section;
+	    }
 	  }
 	
 	  _createClass(Cycle, [{
-	    key: "updateData",
+	    key: 'updateData',
 	    value: function updateData(name, value) {
-	      this[name] = value;
+	      this.params[name] = value;
+	      this.render();
 	    }
 	  }, {
-	    key: "render",
-	    value: function render() {}
+	    key: 'render',
+	    value: function render() {
+	      this.calcPercents();
+	      this.markup.innerHTML = '';
+	      this.markup.appendChild(this.createMarkup());
+	    }
 	  }, {
-	    key: "createMarkup",
-	    value: function createMarkup() {}
+	    key: 'calcPercents',
+	    value: function calcPercents() {
+	      var params = this.params;
+	
+	      this.timeAmount = params['work-time'] * params['work-iteration'] * 2 + params['short-break'] * (params['work-iteration'] - 1) * 2 + params['long-break'];
+	      this.firstCycle = params['work-time'] * params['work-iteration'] + params['short-break'] * (params['work-iteration'] - 1) + params['long-break'];
+	
+	      this.percents['work-time'] = params['work-time'] / this.timeAmount * 100;
+	      this.percents['short-break'] = params['short-break'] / this.timeAmount * 100;
+	      this.percents['long-break'] = params['long-break'] / this.timeAmount * 100;
+	      this.percents['rule-step'] = this.ruleStep / this.timeAmount * 100;
+	    }
+	  }, {
+	    key: 'createMarkup',
+	    value: function createMarkup() {
+	      var fragment = document.createDocumentFragment();
+	      var heading = document.createElement('h2');
+	
+	      fragment.appendChild(heading);
+	      createChartList.call(this, fragment);
+	      createRuleList.call(this, fragment);
+	
+	      heading.classList.add('cycle-chart-heading');
+	      heading.innerHTML = this.title;
+	
+	      return fragment;
+	
+	      function createChartList(fragment) {
+	        var chartList = document.createElement('ul');
+	
+	        fragment.appendChild(chartList);
+	        chartList.classList.add('cycle-chart__chart');
+	
+	        var length = this.params['work-iteration'] * 2 + (this.params['work-iteration'] - 1) * 2 + 1;
+	        var half = ~~(length / 2);
+	        var i = -1;
+	        while (++i < length) {
+	          var li = document.createElement('li');
+	
+	          if (i % 2 === 0) {
+	            li.classList.add('cycle-chart__chart-work');
+	            li.style.width = this.percents['work-time'] + '%';
+	          } else {
+	            li.classList.add('cycle-chart__chart-break');
+	            li.style.width = this.percents['short-break'] + '%';
+	          }
+	
+	          if (i === half) {
+	            var span = document.createElement('span');
+	            var hours = ~~(this.firstCycle / 60);
+	            var minutes = this.firstCycle % 60;
+	
+	            li.appendChild(span);
+	            li.style.width = this.percents['long-break'] + '%';
+	            li.classList.add('long-break');
+	            span.classList.add('long-break-span');
+	
+	            span.innerHTML = minutes ? 'Full cycle: ' + hours + 'h ' + minutes + 'm' : 'Full cycle: ' + hours + 'h';
+	          }
+	
+	          chartList.appendChild(li);
+	        }
+	      }
+	
+	      function createRuleList(fragment) {
+	        var ruleList = document.createElement('ul');
+	
+	        fragment.appendChild(ruleList);
+	        ruleList.classList.add('cycle-chart__rule');
+	
+	        var length = ~~(this.timeAmount / this.ruleStep);
+	        var i = -1;
+	        var tempHours = void 0,
+	            tempMinutes = void 0,
+	            minutesAmount = void 0;
+	        console.log(length);
+	        while (++i < length) {
+	          var li = document.createElement('li');
+	          var span = document.createElement('span');
+	
+	          minutesAmount = (i + 1) * this.ruleStep;
+	          tempHours = ~~(minutesAmount / 60);
+	          tempMinutes = minutesAmount % 60;
+	
+	          li.style.width = this.percents['rule-step'] + '%';
+	          li.classList.add('cycle-chart__rule-point');
+	          span.classList.add('point-value-span');
+	          if (tempHours && tempMinutes) {
+	            span.innerHTML = tempHours + 'h ' + tempMinutes + 'm';
+	          } else if (!tempHours) {
+	            span.innerHTML = tempMinutes + 'm';
+	          } else {
+	            span.innerHTML = tempHours + 'h';
+	          }
+	
+	          li.appendChild(span);
+	          ruleList.appendChild(li);
+	        }
+	      }
+	    }
 	  }]);
 	
 	  return Cycle;
