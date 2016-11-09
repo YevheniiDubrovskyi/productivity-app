@@ -433,7 +433,6 @@
 	        var tempHours = void 0,
 	            tempMinutes = void 0,
 	            minutesAmount = void 0;
-	        console.log(length);
 	        while (++i < length) {
 	          var li = document.createElement('li');
 	          var span = document.createElement('span');

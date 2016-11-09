@@ -110,7 +110,6 @@ export default class Cycle {
       const length = ~~(this.timeAmount / this.ruleStep);
       let i = -1;
       let tempHours, tempMinutes, minutesAmount;
-      console.log(length);
       while(++i < length) {
         const li = document.createElement('li');
         const span = document.createElement('span');
