@@ -49,7 +49,8 @@
 }
 
 .long-break .long-break-span {
-  bottom: 1.5em;
+  bottom: 1.7em;
+  position: relative;
 }
 
 .cycle-chart__rule-point .point-value-span {
@@ -58,9 +59,9 @@
   top: 1.3em;
 }
 
+.long-break .long-break-span:after,
 .cycle-chart__rule-point .point-value-span:after {
   position: absolute;
-  top: -.5rem;
   left: 50%;
 
   height: .2rem;
@@ -70,6 +71,14 @@
   transform: translate(-50%, 0);
 
   background-color: #00d4d9;
+}
+
+.cycle-chart__rule-point .point-value-span:after {
+  top: -.5rem;
+}
+
+.long-break .long-break-span:after {
+  bottom: -.5em;
 }
 
 .cycle-chart__rule {
