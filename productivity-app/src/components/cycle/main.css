@@ -16,10 +16,11 @@
 
 .cycle-chart__chart {
   display: flex;
-  justify-content: flex-start;
 
   height: .75em;
   margin: 2.9em 0 0 0;
+
+  justify-content: flex-start;
 }
 
 .cycle-chart__chart-work {
@@ -44,19 +45,24 @@
   display: inline-block;
 
   transform: translate(50%, 0);
+  text-align: center;
 
   color: #8da5b8;
 }
 
 .long-break .long-break-span {
-  bottom: 1.7em;
   position: relative;
+  bottom: 1.7em;
+
+  width: 9.5rem;
 }
 
 .cycle-chart__rule-point .point-value-span {
   font-size: .8em;
 
   top: 1.3em;
+
+  width: 3.5rem;
 }
 
 .long-break .long-break-span:after,
@@ -64,12 +70,13 @@
   position: absolute;
   left: 50%;
 
-  height: .2rem;
   width: .2rem;
-  border-radius: 50%;
+  height: .2rem;
+
   content: '';
   transform: translate(-50%, 0);
 
+  border-radius: 50%;
   background-color: #00d4d9;
 }
 
@@ -83,6 +90,7 @@
 
 .cycle-chart__rule {
   display: flex;
+
   justify-content: flex-start;
 }
 
