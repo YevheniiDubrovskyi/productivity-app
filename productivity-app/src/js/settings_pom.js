@@ -29,7 +29,7 @@ settingsData.forEach((el) => {
 
 const cycle = new Cycle('Your cycle', 30, defaultValues);
 
-// Handle all custom events from actions
+// Implement Pub/Sub pattern
 settingsList.addEventListener('actionValueChanged', (event) => {
   const detail = event.detail;
 

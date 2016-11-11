@@ -50,20 +50,20 @@
 	
 	var _main2 = _interopRequireDefault(_main);
 	
-	var _reports_config = __webpack_require__(3);
+	var _reports_config = __webpack_require__(5);
 	
-	var _reports_data = __webpack_require__(4);
+	var _reports_data = __webpack_require__(6);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	window.addEventListener('DOMContentLoaded', function () {
-	  new _main2.default('chart', {
+	  var parent = document.querySelector('.main');
+	  var insertBeforeElement = document.querySelector('.tabs-list-bottom');
+	
+	  var chartViewPort = new _main2.default('chart', {
 	    width: '53%',
 	    height: '20rem',
 	    margin: '0 auto'
-	  }, {
-	    parent: '.main',
-	    insertBefore: '.tabs-list-bottom'
 	  }, {
 	    name: 'day',
 	    data: _reports_data.dayChartData,
@@ -77,6 +77,9 @@
 	    data: _reports_data.monthChartData,
 	    conf: _reports_config.monthChartConfig
 	  });
+	
+	  parent.insertBefore(chartViewPort.markup, insertBeforeElement);
+	  chartViewPort.render();
 	});
 
 /***/ },
@@ -91,7 +94,11 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _highstock = __webpack_require__(2);
+	var _template = __webpack_require__(2);
+	
+	var _template2 = _interopRequireDefault(_template);
+	
+	var _highstock = __webpack_require__(4);
 	
 	var _highstock2 = _interopRequireDefault(_highstock);
 	
@@ -100,31 +107,26 @@
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	var ChartViewPort = function () {
-	  function ChartViewPort(elementID, elementStyles, insertPos) {
+	  function ChartViewPort(elementID, stylesObj) {
 	    var _this = this;
 	
 	    _classCallCheck(this, ChartViewPort);
 	
 	    this.elementID = elementID;
-	    this.elementStyles = elementStyles;
-	    this.insertPos = insertPos;
 	
-	    for (var _len = arguments.length, dataArr = Array(_len > 3 ? _len - 3 : 0), _key = 3; _key < _len; _key++) {
-	      dataArr[_key - 3] = arguments[_key];
+	    for (var _len = arguments.length, dataArr = Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
+	      dataArr[_key - 2] = arguments[_key];
 	    }
 	
 	    this.dataArr = dataArr;
 	
-	    // Create and insert viewport and controls
-	    // Push initial data to charts
-	    // Render active chart
-	    this.insertComponent();
+	    this.template = new _template2.default(elementID, stylesObj, this.dataArr);
+	
 	    this.dataArr.forEach(function (el) {
 	      _this.pushData(el.name, el.data);
 	    });
-	    this.render();
 	
-	    this.controlsList.addEventListener('click', function (event) {
+	    this.template.controlsList.addEventListener('click', function (event) {
 	      var name = event.target.getAttribute('data-chart');
 	
 	      if (name === _this.active) return;
@@ -134,32 +136,19 @@
 	    });
 	  }
 	
-	  // Get string name of chart and set it to active state
-	
-	
 	  _createClass(ChartViewPort, [{
 	    key: 'render',
-	
-	
-	    // Shows active chart depends on active tab
 	    value: function render() {
 	      this.showChart(this.active);
 	    }
-	
-	    // Invoke highchart
-	
 	  }, {
 	    key: 'showChart',
 	    value: function showChart(name) {
 	      _highstock2.default.chart(this.elementID, this.findDataByName(name).conf);
 	    }
-	
-	    // Recieve name, and data. Insert new data
-	
 	  }, {
 	    key: 'pushData',
 	    value: function pushData(name, data) {
-	      // Does it make sense?
 	      var COLUMN = 'column';
 	      var PIE = 'pie';
 	
@@ -192,92 +181,19 @@
 	        }
 	      }
 	    }
-	
-	    // Return view port element
-	
 	  }, {
-	    key: 'createViewPort',
-	    value: function createViewPort() {
-	      var viewport = document.createElement('div');
-	
-	      for (var styleName in this.elementStyles) {
-	        viewport.style[styleName] = this.elementStyles[styleName];
-	      }
-	      viewport.setAttribute('id', this.elementID);
-	
-	      return viewport;
-	    }
-	
-	    // Return controls element
-	
-	  }, {
-	    key: 'createControls',
-	    value: function createControls() {
-	      var controlsList = document.createElement('ul');
-	
-	      controlsList.classList.add('tabs-list');
-	      controlsList.setAttribute('data-chart-controls', '');
-	      this.dataArr.forEach(function (el, i) {
-	        if (i === 0) {
-	          controlsList.appendChild(createItem(el.name, true));
-	        } else {
-	          controlsList.appendChild(createItem(el.name));
-	        }
-	      });
-	
-	      return controlsList;
-	
-	      function createItem(name) {
-	        var activeFlag = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-	
-	        var item = document.createElement('li');
-	        var button = document.createElement('button');
-	
-	        item.classList.add('tabs-list__item');
-	        button.classList.add('tabs-list__item-btn');
-	        button.setAttribute('type', 'button');
-	        button.setAttribute('data-chart', name);
-	        button.appendChild(document.createTextNode(capitalize(name)));
-	        if (activeFlag) {
-	          button.classList.add('active');
-	        }
-	        item.appendChild(button);
-	
-	        return item;
-	      }
-	
-	      function capitalize(string) {
-	        return string.slice(0, 1).toUpperCase() + string.slice(1);
-	      }
-	    }
-	
-	    // Insert viewport and controls before some element
-	
-	  }, {
-	    key: 'insertComponent',
-	    value: function insertComponent() {
-	      var parent = document.querySelector(this.insertPos.parent);
-	      var insertBefore = document.querySelector(this.insertPos.insertBefore);
-	      var viewport = this.createViewPort();
-	
-	      this.controlsList = this.createControls();
-	      parent.insertBefore(this.controlsList, insertBefore);
-	      parent.insertBefore(viewport, insertBefore);
+	    key: 'markup',
+	    get: function get() {
+	      return this.template.markup;
 	    }
 	  }, {
 	    key: 'active',
 	    set: function set(name) {
-	      Array.from(this.controlsList.children, function (el) {
-	        el.children[0].classList.remove('active');
-	      });
-	
-	      this.controlsList.querySelector('[data-chart=' + name + ']').classList.add('active');
-	    }
-	
-	    // Return string name of active chart
-	    ,
+	      this.template.active.classList.remove('active');
+	      this.template.getButton(name).classList.add('active');
+	    },
 	    get: function get() {
-	      return this.controlsList.querySelector('[data-chart].active').getAttribute('data-chart');
+	      return this.template.active.getAttribute('data-chart');
 	    }
 	  }]);
 	
@@ -288,6 +204,94 @@
 
 /***/ },
 /* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _main = __webpack_require__(3);
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var Template = function () {
+	  function Template(elementID, stylesObj, dataArr) {
+	    _classCallCheck(this, Template);
+	
+	    this.markup = document.createElement('div');
+	    this.markup.classList.add('chart-view-port');
+	
+	    this.markup.innerHTML += this.createControls(dataArr);
+	    this.markup.innerHTML += this.createViewPort(elementID, stylesObj);
+	  }
+	
+	  _createClass(Template, [{
+	    key: 'getButton',
+	    value: function getButton(name) {
+	      return this.markup.querySelector('[data-chart=' + name + ']');
+	    }
+	  }, {
+	    key: 'createViewPort',
+	    value: function createViewPort(elementID, stylesObj) {
+	      var styles = '';
+	
+	      for (var styleName in stylesObj) {
+	        styles += styleName + ': ' + stylesObj[styleName] + '; ';
+	      }
+	
+	      return '\n<div id="' + elementID + '" style="' + styles + '"></div>';
+	    }
+	  }, {
+	    key: 'createControls',
+	    value: function createControls(dataArr) {
+	      return '\n<ul class="tabs-list" data-chart-controls>\n  ' + dataArr.reduce(function (acc, el, i) {
+	        return acc + '\n' + createListItem(el, i);
+	      }, '') + '\n</ul>';
+	
+	      function createListItem(element, index) {
+	        return '\n<li class="tabs-list__item">\n  <button class="tabs-list__item-btn ' + (index === 0 ? 'active' : '') + '" type="button" data-chart="' + element.name + '">' + _main.utils.capitalize(element.name) + '</button>\n</li>';
+	      }
+	    }
+	  }, {
+	    key: 'controlsList',
+	    get: function get() {
+	      return this.markup.querySelector('[data-chart-controls].tabs-list');
+	    }
+	  }, {
+	    key: 'active',
+	    get: function get() {
+	      return this.markup.querySelector('[data-chart].active');
+	    }
+	  }]);
+	
+	  return Template;
+	}();
+	
+	exports.default = Template;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var utils = exports.utils = {
+	
+	  capitalize: function capitalize(word) {
+	    return word.slice(0, 1).toUpperCase() + word.slice(1);
+	  }
+	
+	};
+
+/***/ },
+/* 4 */
 /***/ function(module, exports) {
 
 	/*
@@ -789,7 +793,7 @@
 
 
 /***/ },
-/* 3 */
+/* 5 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1062,7 +1066,7 @@
 	};
 
 /***/ },
-/* 4 */
+/* 6 */
 /***/ function(module, exports) {
 
 	'use strict';

@@ -1,18 +1,17 @@
+import Template from './template.js';
+
 export default class Action {
 
   constructor(defaultValue, step, min, limit, suffix, name) {
-    this.incrementButton = null;
-    this.decrementButton = null;
-    this.viewport = null;
-
     this.step = step;
     this.min = min;
     this.limit = limit;
     this.suffix = suffix;
     this.name = name;
 
-    this.markup = this.createMarkup();
-    this.value = defaultValue;
+    this.template = new Template(defaultValue, this.suffix);
+    this.viewport = this.template.viewport;
+
     this.current = this.value; // Variable for check that prevent useless reflow
 
     this.eventObj = {
@@ -24,42 +23,18 @@ export default class Action {
       },
     };
 
+    // Implement Sub/Pub pattern
     this.event = new CustomEvent('actionValueChanged', this.eventObj);
-  }
 
-  createMarkup() {
-    const div = document.createElement('div');
-    this.incrementButton = document.createElement('button');
-    this.decrementButton = document.createElement('button');
-    this.viewport = document.createElement('span');
+    this.template.markup.addEventListener('click', (event) => {
+      const classList = event.target.classList;
 
-    div.classList.add('action');
-    this.incrementButton.classList.add('action-btn');
-    this.incrementButton.classList.add('action-add');
-
-    this.decrementButton.classList.add('action-btn');
-    this.decrementButton.classList.add('action-minus');
-
-    this.viewport.classList.add('action-viewport');
-
-    this.incrementButton.setAttribute('type', 'button');
-    this.decrementButton.setAttribute('type', 'button');
-
-    this.incrementButton.innerHTML = '&#xe900;';
-    this.decrementButton.innerHTML = '&#xe911;';
-
-    this.incrementButton.addEventListener('click', () => {
-      this.increment();
+      if (classList.contains('action-add')) {
+        this.increment();
+      } else if (classList.contains('action-minus')) {
+        this.decrement();
+      }
     });
-    this.decrementButton.addEventListener('click', () => {
-      this.decrement();
-    });
-
-    div.appendChild(this.decrementButton);
-    div.appendChild(this.incrementButton);
-    div.appendChild(this.viewport);
-
-    return div;
   }
 
   increment() {
@@ -98,5 +73,9 @@ export default class Action {
 
   get value() {
     return parseInt(this.viewport.innerHTML, 10);
+  }
+
+  get markup() {
+    return this.template.markup;
   }
 }

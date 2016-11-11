@@ -3,16 +3,15 @@ import {dayChartConfig, weekChartConfig, monthChartConfig} from './reports_confi
 import {dayChartData, weekChartData, monthChartData} from './reports_data';
 
 window.addEventListener('DOMContentLoaded', () => {
-  new ChartViewPort(
+  const parent = document.querySelector('.main');
+  const insertBeforeElement = document.querySelector('.tabs-list-bottom');
+
+  const chartViewPort = new ChartViewPort(
     'chart',
     {
       width: '53%',
       height: '20rem',
       margin: '0 auto',
-    },
-    {
-      parent: '.main',
-      insertBefore: '.tabs-list-bottom',
     },
     {
       name: 'day',
@@ -28,6 +27,8 @@ window.addEventListener('DOMContentLoaded', () => {
       name: 'month',
       data: monthChartData,
       conf: monthChartConfig,
-    }
-  );
+    });
+
+  parent.insertBefore(chartViewPort.markup, insertBeforeElement);
+  chartViewPort.render();
 });

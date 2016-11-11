@@ -46,13 +46,13 @@
 
 	'use strict';
 	
-	var _settings_pom_data = __webpack_require__(5);
+	var _settings_pom_data = __webpack_require__(7);
 	
-	var _main = __webpack_require__(6);
+	var _main = __webpack_require__(8);
 	
 	var _main2 = _interopRequireDefault(_main);
 	
-	var _main3 = __webpack_require__(8);
+	var _main3 = __webpack_require__(11);
 	
 	var _main4 = _interopRequireDefault(_main3);
 	
@@ -77,7 +77,7 @@
 	
 	var cycle = new _main4.default('Your cycle', 30, defaultValues);
 	
-	// Handle all custom events from actions
+	// Implement Pub/Sub pattern
 	settingsList.addEventListener('actionValueChanged', function (event) {
 	  var detail = event.detail;
 	
@@ -92,7 +92,9 @@
 /* 2 */,
 /* 3 */,
 /* 4 */,
-/* 5 */
+/* 5 */,
+/* 6 */,
+/* 7 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -106,8 +108,8 @@
 	  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing',
 	  defaultValue: 25,
 	  step: 5,
-	  min: 5,
-	  limit: 90,
+	  min: 15,
+	  limit: 40,
 	  suffix: 'min',
 	  name: 'work-time'
 	}, {
@@ -116,18 +118,18 @@
 	  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing',
 	  defaultValue: 5,
 	  step: 1,
-	  min: 2,
-	  limit: 50,
+	  min: 1,
+	  limit: 5,
 	  suffix: '',
 	  name: 'work-iteration'
 	}, {
 	  title: 'Short break',
 	  afterClass: 'after-picton-blue',
 	  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, voluptates, vero.',
-	  defaultValue: 5,
-	  step: 5,
-	  min: 0,
-	  limit: 30,
+	  defaultValue: 1,
+	  step: 1,
+	  min: 1,
+	  limit: 15,
 	  suffix: 'min',
 	  name: 'short-break'
 	}, {
@@ -136,14 +138,14 @@
 	  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing',
 	  defaultValue: 45,
 	  step: 5,
-	  min: 0,
-	  limit: 180,
+	  min: 30,
+	  limit: 60,
 	  suffix: 'min',
 	  name: 'long-break'
 	}];
 
 /***/ },
-/* 6 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -153,7 +155,7 @@
 	});
 	exports.default = getSettingsInput;
 	
-	var _main = __webpack_require__(7);
+	var _main = __webpack_require__(9);
 	
 	var _main2 = _interopRequireDefault(_main);
 	
@@ -184,8 +186,8 @@
 	}
 
 /***/ },
-/* 7 */
-/***/ function(module, exports) {
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -195,15 +197,19 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
+	var _template = __webpack_require__(10);
+	
+	var _template2 = _interopRequireDefault(_template);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	var Action = function () {
 	  function Action(defaultValue, step, min, limit, suffix, name) {
-	    _classCallCheck(this, Action);
+	    var _this = this;
 	
-	    this.incrementButton = null;
-	    this.decrementButton = null;
-	    this.viewport = null;
+	    _classCallCheck(this, Action);
 	
 	    this.step = step;
 	    this.min = min;
@@ -211,8 +217,9 @@
 	    this.suffix = suffix;
 	    this.name = name;
 	
-	    this.markup = this.createMarkup();
-	    this.value = defaultValue;
+	    this.template = new _template2.default(defaultValue, this.suffix);
+	    this.viewport = this.template.viewport;
+	
 	    this.current = this.value; // Variable for check that prevent useless reflow
 	
 	    this.eventObj = {
@@ -223,48 +230,21 @@
 	        value: null }
 	    };
 	
+	    // Implement Sub/Pub pattern
 	    this.event = new CustomEvent('actionValueChanged', this.eventObj);
+	
+	    this.template.markup.addEventListener('click', function (event) {
+	      var classList = event.target.classList;
+	
+	      if (classList.contains('action-add')) {
+	        _this.increment();
+	      } else if (classList.contains('action-minus')) {
+	        _this.decrement();
+	      }
+	    });
 	  }
 	
 	  _createClass(Action, [{
-	    key: 'createMarkup',
-	    value: function createMarkup() {
-	      var _this = this;
-	
-	      var div = document.createElement('div');
-	      this.incrementButton = document.createElement('button');
-	      this.decrementButton = document.createElement('button');
-	      this.viewport = document.createElement('span');
-	
-	      div.classList.add('action');
-	      this.incrementButton.classList.add('action-btn');
-	      this.incrementButton.classList.add('action-add');
-	
-	      this.decrementButton.classList.add('action-btn');
-	      this.decrementButton.classList.add('action-minus');
-	
-	      this.viewport.classList.add('action-viewport');
-	
-	      this.incrementButton.setAttribute('type', 'button');
-	      this.decrementButton.setAttribute('type', 'button');
-	
-	      this.incrementButton.innerHTML = '&#xe900;';
-	      this.decrementButton.innerHTML = '&#xe911;';
-	
-	      this.incrementButton.addEventListener('click', function () {
-	        _this.increment();
-	      });
-	      this.decrementButton.addEventListener('click', function () {
-	        _this.decrement();
-	      });
-	
-	      div.appendChild(this.decrementButton);
-	      div.appendChild(this.incrementButton);
-	      div.appendChild(this.viewport);
-	
-	      return div;
-	    }
-	  }, {
 	    key: 'increment',
 	    value: function increment() {
 	      var value = this.value;
@@ -300,6 +280,11 @@
 	    get: function get() {
 	      return parseInt(this.viewport.innerHTML, 10);
 	    }
+	  }, {
+	    key: 'markup',
+	    get: function get() {
+	      return this.template.markup;
+	    }
 	  }]);
 	
 	  return Action;
@@ -308,7 +293,7 @@
 	exports.default = Action;
 
 /***/ },
-/* 8 */
+/* 10 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -321,27 +306,58 @@
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
+	var Template = function () {
+	  function Template(defaultValue, suffix) {
+	    _classCallCheck(this, Template);
+	
+	    this.markup = document.createElement('div');
+	    this.markup.classList.add('action');
+	
+	    this.markup.innerHTML = '\n  <button class="action-btn action-add" type="button">&#xe900;</button>\n  <button class="action-btn action-minus" type="button">&#xe911;</button>\n  <span class="action-viewport">' + defaultValue + suffix + '</span>';
+	  }
+	
+	  _createClass(Template, [{
+	    key: 'viewport',
+	    get: function get() {
+	      return this.markup.querySelector('.action-viewport');
+	    }
+	  }]);
+	
+	  return Template;
+	}();
+	
+	exports.default = Template;
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _template = __webpack_require__(12);
+	
+	var _template2 = _interopRequireDefault(_template);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
 	var Cycle = function () {
 	  function Cycle(title, ruleStep, initParams) {
 	    _classCallCheck(this, Cycle);
 	
-	    this.title = title;
 	    this.ruleStep = ruleStep;
 	    this.params = initParams;
 	
-	    this.timeAmount = null;
-	    this.firstCycle = null;
-	    this.markup = createSection();
-	    this.percents = {};
+	    this.template = new _template2.default(title);
 	
 	    this.render();
-	
-	    function createSection() {
-	      var section = document.createElement('section');
-	
-	      section.classList.add('cycle-chart');
-	      return section;
-	    }
 	  }
 	
 	  _createClass(Cycle, [{
@@ -353,109 +369,40 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      this.calcPercents();
-	      this.markup.innerHTML = '';
-	      this.markup.appendChild(this.createMarkup());
+	      this.template.render(this.calcParams());
 	    }
 	  }, {
-	    key: 'calcPercents',
-	    value: function calcPercents() {
+	    key: 'calcParams',
+	    value: function calcParams() {
 	      var params = this.params;
+	      var ruleStep = this.ruleStep;
+	      var percents = {};
 	
-	      this.timeAmount = params['work-time'] * params['work-iteration'] * 2 + params['short-break'] * (params['work-iteration'] - 1) * 2 + params['long-break'];
-	      this.firstCycle = params['work-time'] * params['work-iteration'] + params['short-break'] * (params['work-iteration'] - 1) + params['long-break'];
+	      var timeAmount = 0;
+	      var firstCycle = 0;
+	      var chartSegmentsCount = 0;
 	
-	      this.percents['work-time'] = params['work-time'] / this.timeAmount * 100;
-	      this.percents['short-break'] = params['short-break'] / this.timeAmount * 100;
-	      this.percents['long-break'] = params['long-break'] / this.timeAmount * 100;
-	      this.percents['rule-step'] = this.ruleStep / this.timeAmount * 100;
+	      timeAmount = params['work-time'] * params['work-iteration'] * 2 + params['short-break'] * (params['work-iteration'] - 1) * 2 + params['long-break'];
+	      firstCycle = params['work-time'] * params['work-iteration'] + params['short-break'] * (params['work-iteration'] - 1) + params['long-break'];
+	      chartSegmentsCount = params['work-iteration'] * 2 + (params['work-iteration'] - 1) * 2 + 1;
+	
+	      percents['work-time'] = params['work-time'] / timeAmount * 100;
+	      percents['short-break'] = params['short-break'] / timeAmount * 100;
+	      percents['long-break'] = params['long-break'] / timeAmount * 100;
+	      percents['rule-step'] = ruleStep / timeAmount * 100;
+	
+	      return {
+	        ruleStep: ruleStep,
+	        percents: percents,
+	        timeAmount: timeAmount,
+	        firstCycle: firstCycle,
+	        chartSegmentsCount: chartSegmentsCount
+	      };
 	    }
 	  }, {
-	    key: 'createMarkup',
-	    value: function createMarkup() {
-	      var fragment = document.createDocumentFragment();
-	      var heading = document.createElement('h2');
-	
-	      fragment.appendChild(heading);
-	      createChartList.call(this, fragment);
-	      createRuleList.call(this, fragment);
-	
-	      heading.classList.add('cycle-chart-heading');
-	      heading.innerHTML = this.title;
-	
-	      return fragment;
-	
-	      function createChartList(fragment) {
-	        var chartList = document.createElement('ul');
-	
-	        fragment.appendChild(chartList);
-	        chartList.classList.add('cycle-chart__chart');
-	
-	        var length = this.params['work-iteration'] * 2 + (this.params['work-iteration'] - 1) * 2 + 1;
-	        var half = ~~(length / 2);
-	        var i = -1;
-	        while (++i < length) {
-	          var li = document.createElement('li');
-	
-	          if (i % 2 === 0) {
-	            li.classList.add('cycle-chart__chart-work');
-	            li.style.width = this.percents['work-time'] + '%';
-	          } else {
-	            li.classList.add('cycle-chart__chart-break');
-	            li.style.width = this.percents['short-break'] + '%';
-	          }
-	
-	          if (i === half) {
-	            var span = document.createElement('span');
-	            var hours = ~~(this.firstCycle / 60);
-	            var minutes = this.firstCycle % 60;
-	
-	            li.appendChild(span);
-	            li.style.width = this.percents['long-break'] + '%';
-	            li.classList.add('long-break');
-	            span.classList.add('long-break-span');
-	
-	            span.innerHTML = minutes ? 'Full cycle: ' + hours + 'h ' + minutes + 'm' : 'Full cycle: ' + hours + 'h';
-	          }
-	
-	          chartList.appendChild(li);
-	        }
-	      }
-	
-	      function createRuleList(fragment) {
-	        var ruleList = document.createElement('ul');
-	
-	        fragment.appendChild(ruleList);
-	        ruleList.classList.add('cycle-chart__rule');
-	
-	        var length = ~~(this.timeAmount / this.ruleStep);
-	        var i = -1;
-	        var tempHours = void 0,
-	            tempMinutes = void 0,
-	            minutesAmount = void 0;
-	        while (++i < length) {
-	          var li = document.createElement('li');
-	          var span = document.createElement('span');
-	
-	          minutesAmount = (i + 1) * this.ruleStep;
-	          tempHours = ~~(minutesAmount / 60);
-	          tempMinutes = minutesAmount % 60;
-	
-	          li.style.width = this.percents['rule-step'] + '%';
-	          li.classList.add('cycle-chart__rule-point');
-	          span.classList.add('point-value-span');
-	          if (tempHours && tempMinutes) {
-	            span.innerHTML = tempHours + 'h ' + tempMinutes + 'm';
-	          } else if (!tempHours) {
-	            span.innerHTML = tempMinutes + 'm';
-	          } else {
-	            span.innerHTML = tempHours + 'h';
-	          }
-	
-	          li.appendChild(span);
-	          ruleList.appendChild(li);
-	        }
-	      }
+	    key: 'markup',
+	    get: function get() {
+	      return this.template.markup;
 	    }
 	  }]);
 	
@@ -463,6 +410,106 @@
 	}();
 	
 	exports.default = Cycle;
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var Template = function () {
+	  function Template(title) {
+	    _classCallCheck(this, Template);
+	
+	    this.markup = document.createElement('section');
+	    this.markup.classList.add('cycle-chart');
+	
+	    this.markup.innerHTML = '\n<h2 class="cycle-chart-heading">' + title + '</h2>\n<div class="cycle-chart__viewport"></div>';
+	    this.viewport = this.markup.querySelector('.cycle-chart__viewport');
+	  }
+	
+	  _createClass(Template, [{
+	    key: 'render',
+	    value: function render(paramsObj) {
+	      this.viewport.innerHTML = '\n';
+	      this.viewport.innerHTML += this.createChartList(paramsObj.chartSegmentsCount, paramsObj.firstCycle, paramsObj.percents);
+	      this.viewport.innerHTML += this.createRuleList(paramsObj.timeAmount, paramsObj.ruleStep, paramsObj.percents);
+	    }
+	  }, {
+	    key: 'createChartList',
+	    value: function createChartList(chartSegmentsCount, firstCycle, percents) {
+	      var half = ~~(chartSegmentsCount / 2);
+	      var listItems = '\n';
+	      var i = -1;
+	
+	      while (++i < chartSegmentsCount) {
+	        var options = {
+	          class: null,
+	          width: null
+	        };
+	
+	        if (i % 2 === 0) {
+	          options.class = 'cycle-chart__chart-work';
+	          options.width = percents['work-time'];
+	        } else {
+	          options.class = 'cycle-chart__chart-break';
+	          options.width = percents['short-break'];
+	        }
+	
+	        if (i === half) {
+	          var hours = ~~(firstCycle / 60);
+	          var minutes = firstCycle % 60;
+	          var spanText = minutes ? 'Full cycle: ' + hours + 'h ' + minutes + 'm' : 'Full cycle: ' + hours + 'h';
+	
+	          listItems += '  <li class="' + options.class + ' long-break" style="width: ' + percents['long-break'] + '%">\n    <span class="long-break-span">' + spanText + '</span>\n  </li>\n';
+	          continue;
+	        }
+	
+	        listItems += '  <li class="' + options.class + '" style="width: ' + options.width + '%"></li>\n';
+	      }
+	
+	      return '<ul class="cycle-chart__chart">' + listItems + '</ul>\n';
+	    }
+	  }, {
+	    key: 'createRuleList',
+	    value: function createRuleList(timeAmount, ruleStep, percents) {
+	      var length = ~~(timeAmount / ruleStep);
+	      var listItems = '\n';
+	      var i = -1;
+	
+	      while (++i < length) {
+	        var minutesAmount = (i + 1) * ruleStep;
+	        var tempHours = ~~(minutesAmount / 60);
+	        var tempMinutes = minutesAmount % 60;
+	        var spanText = void 0;
+	
+	        if (tempHours && tempMinutes) {
+	          spanText = tempHours + 'h ' + tempMinutes + 'm';
+	        } else if (!tempHours) {
+	          spanText = tempMinutes + 'm';
+	        } else {
+	          spanText = tempHours + 'h';
+	        }
+	
+	        listItems += '  <li class="cycle-chart__rule-point" style="width: ' + percents['rule-step'] + '%">\n    <span class="point-value-span">' + spanText + '</span>\n  </li>\n';
+	      }
+	
+	      return '<ul class="cycle-chart__rule">' + listItems + '</ul>\n';
+	    }
+	  }]);
+	
+	  return Template;
+	}();
+	
+	exports.default = Template;
 
 /***/ }
 /******/ ]);
