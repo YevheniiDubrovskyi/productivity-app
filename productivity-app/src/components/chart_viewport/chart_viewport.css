@@ -1,3 +1,9 @@
+#chart {
+  width: 53%;
+  height: 20rem;
+  margin: 0 auto;
+}
+
 .tabs-list {
   font-size: .95rem;
 

@@ -1,34 +1,14 @@
-import ChartViewPort from '../components/chart_view_port/main';
-import {dayChartConfig, weekChartConfig, monthChartConfig} from './reports_config';
-import {dayChartData, weekChartData, monthChartData} from './reports_data';
+import PageController from '../pages.controller';
+import View from './reports.view';
+import './reports.css';
 
-window.addEventListener('DOMContentLoaded', () => {
-  const parent = document.querySelector('.main');
-  const insertBeforeElement = document.querySelector('.tabs-list-bottom');
+export default class Reports extends PageController {
 
-  const chartViewPort = new ChartViewPort(
-    'chart',
-    {
-      width: '53%',
-      height: '20rem',
-      margin: '0 auto',
-    },
-    {
-      name: 'day',
-      data: dayChartData,
-      conf: dayChartConfig,
-    },
-    {
-      name: 'week',
-      data: weekChartData,
-      conf: weekChartConfig,
-    },
-    {
-      name: 'month',
-      data: monthChartData,
-      conf: monthChartConfig,
-    });
+  constructor(viewport) {
+    super();
+    this.view = new View(viewport);
 
-  parent.insertBefore(chartViewPort.markup, insertBeforeElement);
-  chartViewPort.render();
-});
+    this.render();
+  }
+
+}

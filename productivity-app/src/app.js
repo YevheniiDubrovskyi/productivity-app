@@ -1,17 +1,20 @@
 import Router from './router.js';
+import Reports from './pages/reports/reports.controller';
+import './assets/css/reset.css';
+import './assets/css/base.css';
+import './assets/css/common.css';
 
-const viewport = document.querySelector('.main');
+const viewport = document.body;
 
-const router = new Router(viewport,
-  {
-    controller: './pages/reports.controller',
-    url: '/reports'
-  },
-  {
-    controller: './pages/settings_pom.controller',
-    url: '/settings_pom'
-  }
-);
+new Reports(viewport);
+
+// const router = new Router(viewport,
+//   {
+//     name: 'reports',
+//     controller: './pages/reports.controller',
+//     url: '/reports'
+//   }
+// );
 
 // let thisObj = {
 //   test: 'This is this object',
