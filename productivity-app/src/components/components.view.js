@@ -8,27 +8,58 @@ export default class ComponentView {
   /**
    * Create component view
    */
-  constructor(container) {
+  constructor(container, dataArray) {
     this.container = container;
-    this.events = new EventBus();
+    this.dataArray = dataArray;
     this.domEventsList = [];
+    this.componentsList = [];
+    this.template = null;
+    this.events = new EventBus();
   }
 
   /**
    * Render component
    */
   render() {
-    this.container.appendChild(this.markup);
     this.attachDettachAllDomEvents(this.domEventsList, true);
+  }
+
+  /**
+   * Add class to component root element
+   * @param {String} class - Class to add
+   */
+  addClassToRoot(className) {
+    this.markup.classList.add(className);
+  }
+
+  /**
+   * Get component markup from template property
+   * @return {HTMLElement} markup - Root component's HTMLElement
+   */
+  get markup() {
+    return this.template.markup;
   }
 
   /**
    * Destroy component
    */
   destroy() {
+    delete this.events;
+
+    this.destroyAllComponents(this.componentsList);
     this.attachDettachAllDomEvents(this.domEventsList, false);
     this.domEventsList = [];
     this.container.removeChild(this.markup);
+  }
+
+  /**
+   * Fire destroy method in each component
+   * @param  {Array} componentsArray - Components array
+   */
+  destroyAllComponents(componentsArray) {
+    componentsArray.forEach((component) => {
+      component.destroy();
+    });
   }
 
   /**
@@ -53,9 +84,9 @@ export default class ComponentView {
   attachDettachAllDomEvents(eventsArray, attachFlag = true) {
     eventsArray.forEach((eventObject) => {
       this.attachDettachDomEvent(attachFlag,
-                                eventObject.element,
-                                eventObject.eventName,
-                                eventObject.callback);
+                                 eventObject.element,
+                                 eventObject.eventName,
+                                 eventObject.callback);
     });
   }
 

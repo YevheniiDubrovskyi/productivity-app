@@ -13,20 +13,10 @@ export default class Template {
   }
 
   createMain() {
-    return `  <main class="main">
-    <h1 class="main-heading">Report</h1>
-
-    <ul class="tabs-list tabs-list-bottom">
-      <li class="tabs-list__item">
-        <button class="tabs-list__item-btn" type="button">Pomodoros</button>
-      </li>
-      <li class="tabs-list__item">
-        <button class="tabs-list__item-btn active" type="button">Tasks</button>
-      </li>
-    </ul>
-
-    <a class="btn-arrow btn-arrow-left" href="#" title="Go somewhere">&#xe902;</a>
-  </main>\n`;
+    return [`<main class="main">`,
+            `<h1 class="main-heading">Report</h1>`,
+            `<a class="btn-arrow btn-arrow-left" href="#" title="Go somewhere">&#xe902;</a>`,
+            `</main>\n`].join('\n');
   }
 
   createAside() {

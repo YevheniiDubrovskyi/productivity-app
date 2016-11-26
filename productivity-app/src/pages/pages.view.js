@@ -11,9 +11,10 @@ export default class PageView {
    */
   constructor(viewport) {
     this.viewport = viewport;
-    this.events = new EventBus();
     this.domEventsList = [];
     this.componentsList = [];
+    this.template = null;
+    this.events = new EventBus();
   }
 
   /**
@@ -21,6 +22,14 @@ export default class PageView {
    */
   render() {
     this.attachDettachAllDomEvents(this.domEventsList, true);
+  }
+
+  /**
+   * Get page markup from template property
+   * @return {HTMLElement} markup - Root page's HTMLElement
+   */
+  get markup() {
+    return this.template.markup;
   }
 
   /**

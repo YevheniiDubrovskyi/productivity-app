@@ -1,4 +1,4 @@
-export var dayChartData = [
+const dayChartData = [
   {
     name: 'Urgent',
     y: 2,
@@ -26,7 +26,7 @@ export var dayChartData = [
   }
 ];
 
-export var weekChartData = [
+const weekChartData = [
   {
     name: 'Urgent',
     data: [3, 1, 2, 7, 2],
@@ -59,7 +59,7 @@ export var weekChartData = [
   }
 ];
 
-export var monthChartData = [
+const monthChartData = [
   {
     name: 'Urgent',
     data: [3, 1, 2, 7, 2, 5, 3, 2, 1, 3, 4, 5, 6, 7, 3, 2, 1, 2, 3, 4, 2, 3, 5, 3, 4, 5 ,6 ,2 ,3, 6, 5],
@@ -91,3 +91,10 @@ export var monthChartData = [
     color: '#8da5b8'
   }
 ];
+
+const tempTabsData = [
+  { name: 'pomodoros' },
+  { name: 'tasks' }
+];
+
+export {dayChartData, weekChartData, monthChartData, tempTabsData};

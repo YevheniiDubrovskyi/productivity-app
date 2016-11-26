@@ -1,8 +1,12 @@
 import PageView from '../pages.view';
 import Template from './reports.template';
+import './reports.css';
+
 import ChartViewport from '../../components/chart_viewport/chart_viewport.controller';
+import Tabs from '../../components/tabs/tabs.controller';
+
 import {dayChartConfig, weekChartConfig, monthChartConfig} from './reports.config';
-import {dayChartData, weekChartData, monthChartData} from './reports.data';
+import {dayChartData, weekChartData, monthChartData, tempTabsData} from './reports.data';
 
 /**
  * Page view
@@ -16,12 +20,6 @@ export default class View extends PageView {
   constructor(viewport) {
     super(viewport);
     this.template = new Template();
-
-    // this.domEventsList.push({
-    //   element: viewport.querySelector('.some_btn'),
-    //   eventName: 'click',
-    //   callback: function someFunction() {}
-    // });
   }
 
   /**
@@ -31,10 +29,6 @@ export default class View extends PageView {
     this.viewport.appendChild(this.markup);
     this.createComponents();
     super.render(); // Attach page DOM events if exist
-  }
-
-  get markup() {
-    return this.template.markup;
   }
 
   /**
@@ -58,8 +52,14 @@ export default class View extends PageView {
         data: monthChartData,
         conf: monthChartConfig,
       });
-
     this.componentsList.push(chartViewport);
+
+    const bottomTabs = new Tabs(true,
+                                this.markup.querySelector('.main'),
+                                '',
+                                ...tempTabsData);
+    bottomTabs.addClassToRoot('tabs-list-bottom');
+    this.componentsList.push(bottomTabs);
   }
 
 }

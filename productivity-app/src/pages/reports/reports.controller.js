@@ -1,6 +1,5 @@
 import PageController from '../pages.controller';
 import View from './reports.view';
-import './reports.css';
 
 export default class Reports extends PageController {
 

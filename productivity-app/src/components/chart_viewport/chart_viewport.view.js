@@ -1,7 +1,9 @@
 import ComponentView from '../components.view';
 import Template from './chart_viewport.template';
-import Highcharts from 'highcharts/highstock';
 import './chart_viewport.css';
+
+import Tabs from '../tabs/tabs.controller';
+import Highcharts from 'highcharts/highstock';
 
 /**
  * Component view
@@ -14,25 +16,34 @@ export default class View extends ComponentView {
    * @param  {Array} data - Data array
    */
   constructor(container, dataArray) {
-    super(container);
-    this.dataArray = dataArray;
-    this.template = new Template(this.dataArray);
+    super(container, dataArray);
 
-    const controlsClickHandler = (event) => {
-      const name = event.target.getAttribute('data-chart');
+    this.template = new Template();
+  }
 
-      if (name === this.active) return;
+  /**
+   * Render component
+   */
+  render() {
+    this.container.appendChild(this.markup);
+    this.createComponents();
+    super.render();
+  }
 
-      this.activeButton = name;
+  /**
+   * Create inner components
+   */
+  createComponents() {
+    const tabs = new Tabs(false,
+                          this.markup,
+                          this.markup.querySelector('#chart'),
+                          ...this.dataArray);
+
+    tabs.events.on('tab:changed', function(name) {
       this.showChart(name);
-    };
+    }, this);
 
-    this.domEventsList
-      .push({
-        element: this.controlsList,
-        eventName: 'click',
-        callback: controlsClickHandler
-      });
+    this.componentsList.push(tabs);
   }
 
   /**
@@ -49,73 +60,7 @@ export default class View extends ComponentView {
    * @return {Object} Data object
    */
   findDataByName(name) {
-    const length = this.dataArray.length;
-    let i = -1;
-
-    while (++i < length) {
-      if (this.dataArray[i].name === name) {
-        return this.dataArray[i];
-      }
-    }
-  }
-
-  /**
-   * Get component markup from template property
-   * @return {HTMLElement} markup - Root component's HTMLElement
-   */
-  get markup() {
-    return this.template.markup;
-  }
-
-  /**
-   * Get active chart name from button attribute
-   * @return {String} Active chart name
-   */
-  get activeChart() {
-    return this.activeButton.getAttribute('data-chart');
-  }
-
-  /**
-   * Set active button by chart name
-   * @param  {String} name - Curret active chart name
-   */
-  set activeButton(name) {
-    this.activeButton.classList.remove('active');
-    this.getButtonByName(name).classList.add('active');
-  }
-
-  /**
-   * Get active button
-   * @return {HTMLElement} Active button markup
-   */
-  get activeButton() {
-    return this.markup.querySelector(`[data-chart].active`);
-  }
-
-  /**
-   * Get button markup by char name
-   * @param  {String} name - Chart name
-   * @return {HTMLElement} Button markup
-   */
-  getButtonByName(name) {
-    return this.markup.querySelector(`[data-chart=${name}]`);
-  }
-
-  /**
-   * Return controls list markup
-   * @return {HTMLElement}
-   */
-  get controlsList() {
-    return this.markup.querySelector('[data-chart-controls].tabs-list');
-  }
-
-  /**
-   * Return button markup
-   * @param  {String} name - Button name
-   * @return {HTMLElement}
-   */
-  getButton(name) {
-    return this.markup.querySelector(`[data-chart=${name}]`);
+    return this.dataArray.filter((element) => element.name === name)[0];
   }
 
 }

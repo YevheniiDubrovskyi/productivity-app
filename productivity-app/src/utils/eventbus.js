@@ -97,19 +97,22 @@ export default class EventBus {
   /**
    * Fire namespace and key events
    * @param  {String} eventPath - The string containing two colon separated values
-   * @param  {...Object} [data] - Data that will be passed in callbacks
+   * @param  {...} [data] - Data that will be passed in callbacks
    * @return {Object} this
    */
   trigger(eventPath, ...data) {
     const parsedEventPath = this.parseEventPath(eventPath);
-    let namespaceCallbacks;
+    const namespaceCallbacks = this.getNamespaceCallbacks(parsedEventPath.namespace);
     let keyCallbacks;
 
-    if ((namespaceCallbacks = this.getNamespaceCallbacks(parsedEventPath.namespace)) &&
-        (keyCallbacks = this.getKeyCallbacks(namespaceCallbacks, parsedEventPath.key)).length
-    ) {
-      this.fireCallbacksArray(keyCallbacks, data);
-      this.fireCallbacksArray(namespaceCallbacks.common, data);
+    if (namespaceCallbacks) {
+      if ((keyCallbacks = this.getKeyCallbacks(namespaceCallbacks, parsedEventPath.key)) &&
+          keyCallbacks.length
+      ) {
+        this.fireCallbacksArray(keyCallbacks, ...data);
+      }
+
+      this.fireCallbacksArray(namespaceCallbacks.common, eventPath, ...data);
     }
 
     return this;
@@ -118,8 +121,9 @@ export default class EventBus {
   /**
    * Fire each events from array
    * @param  {Array} callbacksArray - Array with callbacks which will be fired
+   * @param {...} [data] - Data that will be passed in callbacks
    */
-  fireCallbacksArray(callbacksArray, data) {
+  fireCallbacksArray(callbacksArray, ...data) {
     callbacksArray.forEach((event) => {
       const callback = event.callback;
       const context = event.context;

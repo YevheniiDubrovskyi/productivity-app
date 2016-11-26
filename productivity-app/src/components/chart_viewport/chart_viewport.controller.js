@@ -2,22 +2,24 @@ import ComponentController from '../components.controller';
 import View from './chart_viewport.view';
 
 /**
- * Component view
+ * Component controller
  */
 export default class ChartViewport extends ComponentController {
 
   /**
-   * Create component view
+   * Create component
    * @param {HTMLElement} container - Append to element
    * @param {...Object} dataArray - Data array
    */
   constructor(container, ...dataArray) {
     super();
+
     this.dataArray = dataArray;
-    this.view = new View(container, this.dataArray);
     this.dataArray.forEach((el) => {
       this.pushData(el.name, el.data);
     });
+
+    this.view = new View(container, this.dataArray);
 
     this.render();
   }
@@ -59,14 +61,7 @@ export default class ChartViewport extends ComponentController {
    * @return {Object} Data object
    */
   findDataByName(name) {
-    const length = this.dataArray.length;
-    let i = -1;
-
-    while (++i < length) {
-      if (this.dataArray[i].name === name) {
-        return this.dataArray[i];
-      }
-    }
+    return this.dataArray.filter((element) => element.name === name)[0];
   }
 
 }
