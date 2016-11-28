@@ -39,7 +39,7 @@ export default class View extends ComponentView {
                           this.markup.querySelector('#chart'),
                           ...this.dataArray);
 
-    tabs.events.on('tab:changed', function(name) {
+    tabs.events.on('tabs:changed', function(name) {
       this.showChart(name);
     }, this);
 

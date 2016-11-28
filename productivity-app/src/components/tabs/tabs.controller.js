@@ -1,4 +1,5 @@
 import ComponentController from '../components.controller';
+import Model from './tabs.model';
 import View from './tabs.view';
 
 /**
@@ -15,13 +16,18 @@ export default class Tabs extends ComponentController {
    */
   constructor(appendFlag, container, insertBefore, ...dataArray) {
     super();
+    this.model = new Model();
     this.view = new View(appendFlag, container, insertBefore, dataArray);
 
-    this.render();
-
-    this.view.events.on('tab', function(...data) {
-      this.events.trigger(data[0], ...data.slice(1));
+    this.view.events.on('view:updated', function(data) {
+      this.model.update(data);
     }, this);
+
+    this.model.events.on('model:updated', function(data) {
+      this.events.trigger('tabs:changed', data);
+    }, this);
+
+    this.render();
   }
 
 }

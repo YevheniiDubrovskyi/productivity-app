@@ -1222,6 +1222,7 @@
 	  function ComponentController() {
 	    _classCallCheck(this, ComponentController);
 	
+	    this.model = null;
 	    this.view = null;
 	    this.events = new _eventbus2.default();
 	  }
@@ -1350,7 +1351,7 @@
 	    value: function createComponents() {
 	      var tabs = new (Function.prototype.bind.apply(_tabs2.default, [null].concat([false, this.markup, this.markup.querySelector('#chart')], _toConsumableArray(this.dataArray))))();
 	
-	      tabs.events.on('tab:changed', function (name) {
+	      tabs.events.on('tabs:changed', function (name) {
 	        this.showChart(name);
 	      }, this);
 	
@@ -1436,6 +1437,41 @@
 	    key: 'render',
 	    value: function render() {
 	      this.attachDettachAllDomEvents(this.domEventsList, true);
+	    }
+	
+	    /**
+	     * !!! Method for common components
+	     * Update data in view
+	     * @param {...} data - Any data, any type
+	     */
+	
+	  }, {
+	    key: 'update',
+	    value: function update(data) {}
+	
+	    /**
+	     * !!! Method for collection components
+	     * @param {...} data - Any data, any type
+	     */
+	
+	  }, {
+	    key: 'addData',
+	    value: function addData() {}
+	
+	    /**
+	     * Trigger event with new data
+	     */
+	
+	  }, {
+	    key: 'sendUpdate',
+	    value: function sendUpdate() {
+	      var _events;
+	
+	      for (var _len = arguments.length, data = Array(_len), _key = 0; _key < _len; _key++) {
+	        data[_key] = arguments[_key];
+	      }
+	
+	      (_events = this.events).trigger.apply(_events, ['view:updated'].concat(data));
 	    }
 	
 	    /**
@@ -1664,13 +1700,15 @@
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _tabs = __webpack_require__(21);
+	var _tabs = __webpack_require__(34);
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	var _tabs3 = __webpack_require__(21);
 	
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+	var _tabs4 = _interopRequireDefault(_tabs3);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -1696,23 +1734,23 @@
 	
 	    var _this = _possibleConstructorReturn(this, (Tabs.__proto__ || Object.getPrototypeOf(Tabs)).call(this));
 	
+	    _this.model = new _tabs2.default();
+	
 	    for (var _len = arguments.length, dataArray = Array(_len > 3 ? _len - 3 : 0), _key = 3; _key < _len; _key++) {
 	      dataArray[_key - 3] = arguments[_key];
 	    }
 	
-	    _this.view = new _tabs2.default(appendFlag, container, insertBefore, dataArray);
+	    _this.view = new _tabs4.default(appendFlag, container, insertBefore, dataArray);
+	
+	    _this.view.events.on('view:updated', function (data) {
+	      this.model.update(data);
+	    }, _this);
+	
+	    _this.model.events.on('model:updated', function (data) {
+	      this.events.trigger('tabs:changed', data);
+	    }, _this);
 	
 	    _this.render();
-	
-	    _this.view.events.on('tab', function () {
-	      var _events;
-	
-	      for (var _len2 = arguments.length, data = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-	        data[_key2] = arguments[_key2];
-	      }
-	
-	      (_events = this.events).trigger.apply(_events, [data[0]].concat(_toConsumableArray(data.slice(1))));
-	    }, _this);
 	    return _this;
 	  }
 	
@@ -1764,7 +1802,6 @@
 	   * @param  {Boolean} appendFlag - Flag for swtiching injection type
 	   * @param  {HTMLElement} container - Append to element
 	   * @param  {HTMLElement | String} insertBefore - InsertBefore element or empty string if appendFlag === true
-	   * @param  {...Object} dataArray - Data array
 	   */
 	  function View(appendFlag, container, insertBefore, dataArray) {
 	    _classCallCheck(this, View);
@@ -1791,19 +1828,13 @@
 	  _createClass(View, [{
 	    key: 'render',
 	    value: function render() {
-	      var _this2 = this;
-	
 	      if (this.appendFlag) {
 	        this.container.appendChild(this.markup);
 	      } else {
 	        this.container.insertBefore(this.markup, this.insertBefore);
 	      }
 	
-	      // "Feature"
-	      setTimeout(function () {
-	        _this2.events.trigger('tab:changed', _this2.activeName);
-	      }, 50);
-	
+	      this.sendUpdate(this.activeName);
 	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'render', this).call(this);
 	    }
 	
@@ -1814,14 +1845,14 @@
 	  }, {
 	    key: 'createDOMHendlers',
 	    value: function createDOMHendlers() {
-	      var _this3 = this;
+	      var _this2 = this;
 	
 	      var tabClickHandler = function tabClickHandler(event) {
 	        var name = event.target.getAttribute('data-tab-name');
 	
-	        if (name && name === _this3.activeName) return;
+	        if (name && name === _this2.activeName) return;
 	
-	        _this3.active = name;
+	        _this2.active = name;
 	      };
 	
 	      this.domEventsList.push({
@@ -1869,7 +1900,7 @@
 	      this.active.classList.remove('active');
 	      this.getTabByName(name).classList.add('active');
 	
-	      this.events.trigger('tab:changed', name);
+	      this.sendUpdate(name);
 	    }
 	  }, {
 	    key: 'activeName',
@@ -2967,6 +2998,135 @@
 	
 	// exports
 
+
+/***/ },
+/* 34 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _components = __webpack_require__(35);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * Component model
+	 */
+	var Model = function (_ComponentModel) {
+	  _inherits(Model, _ComponentModel);
+	
+	  /**
+	   * Create component model
+	   */
+	  function Model() {
+	    _classCallCheck(this, Model);
+	
+	    return _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this));
+	  }
+	
+	  return Model;
+	}(_components2.default);
+	
+	exports.default = Model;
+
+/***/ },
+/* 35 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _eventbus = __webpack_require__(2);
+	
+	var _eventbus2 = _interopRequireDefault(_eventbus);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	/**
+	 * Abstract class for component model
+	 */
+	var ComponentModel = function () {
+	
+	  /**
+	   * Create component model
+	   */
+	  function ComponentModel() {
+	    _classCallCheck(this, ComponentModel);
+	
+	    this.dataCollection = []; // For collection components
+	    this.dataStatic = {}; // For common components
+	    this.events = new _eventbus2.default();
+	  }
+	
+	  /**
+	   * !!! Method for collection components
+	   * Add data to model and trigger event with added data
+	   * @param {...} data - Any data, any type
+	   */
+	
+	
+	  _createClass(ComponentModel, [{
+	    key: 'addData',
+	    value: function addData() {
+	      var _dataCollection, _events;
+	
+	      for (var _len = arguments.length, data = Array(_len), _key = 0; _key < _len; _key++) {
+	        data[_key] = arguments[_key];
+	      }
+	
+	      (_dataCollection = this.dataCollection).push.apply(_dataCollection, data);
+	      (_events = this.events).trigger.apply(_events, ['model:added'].concat(data));
+	    }
+	
+	    /**
+	     * !!! Method for common components
+	     * Rewrite data and trigger event with new data
+	     * @param {Object} data - Data object
+	     */
+	
+	  }, {
+	    key: 'update',
+	    value: function update(data) {
+	      this.updateWithoutEvent(data);
+	      this.events.trigger('model:updated', this.dataStatic);
+	    }
+	
+	    /**
+	     * !!! Method for common components
+	     * Rewrite data in model (without event for preventing infinite loop in some cases)
+	     * @param {Object} data - Data object
+	     */
+	
+	  }, {
+	    key: 'updateWithoutEvent',
+	    value: function updateWithoutEvent(data) {
+	      this.dataStatic = data;
+	    }
+	  }]);
+	
+	  return ComponentModel;
+	}();
+	
+	exports.default = ComponentModel;
 
 /***/ }
 /******/ ]);

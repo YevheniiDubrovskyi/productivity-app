@@ -9,6 +9,7 @@ export default class ComponentController {
    * Create component controller
    */
   constructor() {
+    this.model = null;
     this.view = null;
     this.events = new EventBus();
   }

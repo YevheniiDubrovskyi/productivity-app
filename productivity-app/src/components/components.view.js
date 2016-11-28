@@ -25,6 +25,26 @@ export default class ComponentView {
   }
 
   /**
+   * !!! Method for common components
+   * Update data in view
+   * @param {...} data - Any data, any type
+   */
+  update(data) {}
+
+  /**
+   * !!! Method for collection components
+   * @param {...} data - Any data, any type
+   */
+  addData(...data) {}
+
+  /**
+   * Trigger event with new data
+   */
+  sendUpdate(...data) {
+    this.events.trigger('view:updated', ...data);
+  }
+
+  /**
    * Add class to component root element
    * @param {String} class - Class to add
    */

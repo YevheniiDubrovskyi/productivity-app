@@ -12,7 +12,6 @@ export default class View extends ComponentView {
    * @param  {Boolean} appendFlag - Flag for swtiching injection type
    * @param  {HTMLElement} container - Append to element
    * @param  {HTMLElement | String} insertBefore - InsertBefore element or empty string if appendFlag === true
-   * @param  {...Object} dataArray - Data array
    */
   constructor(appendFlag, container, insertBefore, dataArray) {
     if (!appendFlag && !(insertBefore instanceof HTMLElement)) {
@@ -38,11 +37,7 @@ export default class View extends ComponentView {
       this.container.insertBefore(this.markup, this.insertBefore);
     }
 
-    // "Feature"
-    setTimeout(() => {
-      this.events.trigger('tab:changed', this.activeName);
-    }, 50);
-
+    this.sendUpdate(this.activeName);
     super.render();
   }
 
@@ -89,7 +84,7 @@ export default class View extends ComponentView {
     this.active.classList.remove('active');
     this.getTabByName(name).classList.add('active');
 
-    this.events.trigger('tab:changed', name);
+    this.sendUpdate(name);
   }
 
   /**
