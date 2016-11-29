@@ -7,9 +7,19 @@ export default class Model extends ComponentModel {
 
   /**
    * Create component model
+   * @param {Array} data - Data array
    */
   constructor(data) {
     super(data);
+  }
+
+  /**
+   * Change data for chart by chart name
+   * @param {String} name - Chart name
+   * @param {Array} newDataArray - New data array which will replace old data array
+   */
+  changeDataByChartName(name, newDataArray) {
+    this.getChartData(name).data = newDataArray.slice();
   }
 
   /**

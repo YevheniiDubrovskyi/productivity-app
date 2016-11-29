@@ -38,4 +38,12 @@ export default class ComponentController {
     this.view.addClassToRoot(className);
   }
 
+  /**
+   * Set inline styles to root element
+   * @param {String} inlineStyles - Styles which will be applied to root element
+   */
+  set inlineStyles(inlineStyles) {
+    this.view.inlineStyles = inlineStyles;
+  }
+
 }

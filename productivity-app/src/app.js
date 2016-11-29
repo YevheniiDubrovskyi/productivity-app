@@ -1,12 +1,17 @@
 import Router from './router.js';
+
 import Reports from './pages/reports/reports.controller';
+import Settings from './pages/settings/settings.controller';
+
 import './assets/css/reset.css';
 import './assets/css/base.css';
 import './assets/css/common.css';
 
 const viewport = document.body;
 
-new Reports(viewport);
+const settingsPage = new Settings(viewport);
+
+// const reportsPage = new Reports(viewport);
 
 // const router = new Router(viewport,
 //   {

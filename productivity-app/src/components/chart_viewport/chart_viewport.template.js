@@ -7,20 +7,19 @@ export default class Template {
 
   /**
    * Create component template
-   * @param  {Array} dataArray - Data array
    */
-  constructor(dataArray) {
+  constructor() {
     this.markup = document.createElement('div');
     this.markup.classList.add('chart-viewport');
-    this.markup.innerHTML = this.createViewPort();
+    this.markup.innerHTML = this.createViewport();
   }
 
   /**
    * Create element for charts viewport
    * @return {String} Charts viewport markup
    */
-  createViewPort() {
-    return `\n<div id="chart"></div>`;
+  createViewport() {
+    return '\n<div id="chart"></div>';
   }
 
 }

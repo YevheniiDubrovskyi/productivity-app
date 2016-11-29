@@ -25,6 +25,11 @@ export default class PageView {
   }
 
   /**
+   * createComponents
+   */
+  createComponents() {}
+
+  /**
    * Get page markup from template property
    * @return {HTMLElement} markup - Root page's HTMLElement
    */

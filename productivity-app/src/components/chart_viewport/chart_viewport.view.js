@@ -13,7 +13,6 @@ export default class View extends ComponentView {
   /**
    * Create component view
    * @param  {HTMLElement} container - Append to element
-   * @param  {Array} data - Data array
    */
   constructor(container) {
     super(container);
@@ -21,6 +20,7 @@ export default class View extends ComponentView {
 
   /**
    * Render component
+   * @param  {Array} data - Data array
    */
   render(dataArray) {
     this.template = new Template();
@@ -32,6 +32,7 @@ export default class View extends ComponentView {
 
   /**
    * Create inner components
+   * @param  {Array} data - Data array
    */
   createComponents(dataArray) {
     const tabs = new Tabs(false,

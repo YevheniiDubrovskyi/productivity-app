@@ -24,13 +24,15 @@ export default class ComponentView {
   }
 
   /**
-   * !!! Method for common components
-   * Update data in view
-   * @param {...} data - Any data, any type
+   * Fire event with recevied data
+   * @param  {...} data - Any data, any type
    */
-  update(data) {}
+  update(...data) {
+    this.events.trigger('view:dataRecived', ...data);
+  }
 
   /**
+   * Not used yet
    * !!! Method for collection components
    * @param {...} data - Any data, any type
    */
@@ -50,6 +52,14 @@ export default class ComponentView {
    */
   addClassToRoot(className) {
     this.markup.classList.add(className);
+  }
+
+  /**
+   * Set inline styles to root element
+   * @param {String} inlineStyles - Styles which will be applied to root element
+   */
+  set inlineStyles(inlineStyles) {
+    this.markup.style = inlineStyles;
   }
 
   /**

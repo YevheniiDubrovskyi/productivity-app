@@ -10,13 +10,16 @@ export default class Template extends PageTemplate {
    */
   constructor() {
     super();
+    // this.markup.classList.add('changing-state');
     this.markup.innerHTML = this.createMain() + this.createAside();
   }
 
   createMain() {
     return [`<main class="main">`,
-            `<h1 class="main-heading">Report</h1>`,
-            `<a class="btn-arrow btn-arrow-left" href="#" title="Go somewhere">&#xe902;</a>`,
+            `<header class="header">`,
+            `<h1 class="header-main">Settings</h1>`,
+            `<h2 class="header-sub"></h2>`,
+            `</header>`,
             `</main>\n`].join('\n');
   }
 
@@ -28,7 +31,7 @@ export default class Template extends PageTemplate {
       </li>
 
       <li class="main-btn-list__item">
-        <button class="main-btn-list__item-btn" id="settigns-btn" type="button">&#xe90b;</button>
+        <button class="main-btn-list__item-btn" id="settigns-btn active" type="button">&#xe90b;</button>
       </li>
 
       <li class="main-btn-list__item">

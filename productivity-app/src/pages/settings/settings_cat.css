@@ -1,0 +1,189 @@
+body {
+  color: #fff;
+  background-color: #2a3f50;
+}
+
+.main {
+  width: 86.8%;
+  margin: 0 auto;
+  padding: 6.1em 0 4.6875em 0;
+}
+
+.aside {
+  position: absolute;
+  top: 3.5em;
+  right: 6.2%;
+}
+
+.common-state .aside {
+  position: absolute;
+  top: auto;
+  right: auto;
+  left: -9999px;
+
+  overflow: hidden;
+}
+
+.settings-tabs {
+  margin: 4.98em 0 0 0;
+}
+
+.header {
+  text-align: center;
+}
+
+.header-main {
+  font-size: 1.75rem;
+  font-weight: 700;
+
+  letter-spacing: .02em;
+}
+
+.header-sub {
+  font-size: 1.25rem;
+  font-weight: 300;
+
+  margin: 1.25em 0 0 0;
+
+  letter-spacing: .03em;
+
+  color: #8da5b8;
+}
+
+.radio-btn-list {
+  font-size: 1rem;
+
+  width: 18.11em;
+  margin: 4.79em auto 6.1em auto;
+}
+
+.radio-btn-list__item {
+  margin: 0 0 2.255em 0;
+}
+
+.radio-btn-list__item-radio {
+  display: none;
+}
+
+.radio-btn-list__item-lbl {
+  position: relative;
+
+  display: block;
+}
+
+.radio-btn-list__item-lbl:before {
+  position: absolute;
+  top: 28%;
+  left: 0;
+  width: 18px;
+  height: 18px;
+
+  content: '';
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+
+  background: url(../img/label_sprite.png) no-repeat;
+}
+
+.radio-btn-list__item-lbl-span {
+  display: block;
+
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 85%;
+  margin: 0 0 0 auto;
+  padding: 0 0 .55em 0;
+
+  -webkit-transition: .1s ease-in-out;
+          transition: .1s ease-in-out;
+
+  color: #829aac;
+  border-bottom: 1px solid #3f5566;
+}
+
+.radio-btn-list__item-radio:checked + .radio-btn-list__item-lbl .radio-btn-list__item-lbl-span,
+.radio-btn-list__item:hover .radio-btn-list__item-radio + .radio-btn-list__item-lbl .radio-btn-list__item-lbl-span {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.radio-btn-list__item-lbl:hover {
+  cursor: pointer;
+}
+
+#work-radio + .radio-btn-list__item-lbl:before {
+  background-position: -1px -21px;
+}
+
+#work-radio:checked + .radio-btn-list__item-lbl:before {
+  background-position: -1px -2px;
+}
+
+#education-radio + .radio-btn-list__item-lbl:before {
+  background-position: -77px -21px;
+}
+
+#education-radio:checked + .radio-btn-list__item-lbl:before {
+  background-position: -77px -2px;
+}
+
+#hobby-radio + .radio-btn-list__item-lbl:before {
+  background-position: -58px -21px;
+}
+
+#hobby-radio:checked + .radio-btn-list__item-lbl:before {
+  background-position: -58px -2px;
+}
+
+#sport-radio + .radio-btn-list__item-lbl:before {
+  background-position: -39px -21px;
+}
+
+#sport-radio:checked + .radio-btn-list__item-lbl:before {
+  background-position: -39px -2px;
+}
+
+#other-radio + .radio-btn-list__item-lbl:before {
+  background-position: -20px -21px;
+}
+
+#other-radio:checked + .radio-btn-list__item-lbl:before {
+  background-position: -20px -2px;
+}
+
+.controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+
+  width: 16em;
+  margin: 5.2em auto 0 auto;
+
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.changing-state .controls .btn:first-child,
+.common-state .controls .btn {
+  position: absolute;
+  top: auto;
+  right: auto;
+  left: -9999px;
+
+  overflow: hidden;
+}
+
+.common-state .controls {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.common-state .controls .btn:first-child {
+  position: static;
+}

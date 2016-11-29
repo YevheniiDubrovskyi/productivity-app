@@ -1,10 +1,10 @@
 import PageController from '../pages.controller';
-import View from './reports.view';
+import View from './settings.view';
 
 /**
  * Page controller
  */
-export default class Reports extends PageController {
+export default class Settings extends PageController {
 
   /**
    * Create page controller
