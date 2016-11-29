@@ -39,16 +39,19 @@ export default class View extends PageView {
       this.markup.querySelector('.main'),
       {
         name: 'day',
+        active: true,
         data: dayChartData,
         conf: dayChartConfig,
       },
       {
         name: 'week',
+        active: false,
         data: weekChartData,
         conf: weekChartConfig,
       },
       {
         name: 'month',
+        active: false,
         data: monthChartData,
         conf: monthChartConfig,
       });

@@ -21,10 +21,10 @@ export default class Template {
    * @return {String} List items markup
    */
   createListItems(dataArray) {
-    return dataArray.reduce((acc, element, index) => {
+    return dataArray.reduce((acc, element) => {
       return [`${acc}`,
               `<li class="tabs-list__item">`,
-              `<button class="tabs-list__item-btn ${index === 0 ? 'active' : ''}" type="button" data-tab-name="${element.name}">${utils.capitalize(element.name)}</button>`,
+              `<button class="tabs-list__item-btn ${element.active ? 'active' : ''}" type="button" data-tab-name="${element.name}">${utils.capitalize(element.name)}</button>`,
               `</li>\n`].join('\n');
     }, '');
   };

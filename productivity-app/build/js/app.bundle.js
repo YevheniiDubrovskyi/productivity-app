@@ -54,11 +54,11 @@
 	
 	var _reports2 = _interopRequireDefault(_reports);
 	
-	__webpack_require__(28);
-	
 	__webpack_require__(30);
 	
 	__webpack_require__(32);
+	
+	__webpack_require__(34);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -225,6 +225,38 @@
 	    }
 	
 	    /**
+	     * Attach listener for some event which will be detached after first execution
+	     * @param  {String} eventPath - The string containing two colon separated values
+	     * @param  {Function} callback - Callback that will be called when event will be fired
+	     * @param  {Object} [context] - Context that will be applied to callback
+	     * @return {Object} this
+	     */
+	
+	  }, {
+	    key: 'once',
+	    value: function once(eventPath, callback, context) {
+	      var parsedPath = this.parseEventPath(eventPath);
+	      var events = this.events;
+	      var namespace = parsedPath.namespace;
+	      var key = parsedPath.key;
+	
+	      if (!namespace) throw new Error('Event path don\'t have namespace part');
+	
+	      function carryingCallback() {
+	        for (var _len = arguments.length, data = Array(_len), _key = 0; _key < _len; _key++) {
+	          data[_key] = arguments[_key];
+	        }
+	
+	        setTimeout(callback.bind.apply(callback, [context].concat(data)), 0);
+	        this.off(eventPath, carryingCallback);
+	      };
+	
+	      this.on(eventPath, carryingCallback, this);
+	
+	      return this;
+	    }
+	
+	    /**
 	     * Delete callback from callback object array
 	     * @param  {Array} callbackArray - Callback object array
 	     * @param  {Function} callback - Callback that will be deleted
@@ -257,8 +289,8 @@
 	      var keyCallbacks = void 0;
 	
 	      if (namespaceCallbacks) {
-	        for (var _len = arguments.length, data = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-	          data[_key - 1] = arguments[_key];
+	        for (var _len2 = arguments.length, data = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+	          data[_key2 - 1] = arguments[_key2];
 	        }
 	
 	        if ((keyCallbacks = this.getKeyCallbacks(namespaceCallbacks, parsedEventPath.key)) && keyCallbacks.length) {
@@ -280,8 +312,8 @@
 	  }, {
 	    key: 'fireCallbacksArray',
 	    value: function fireCallbacksArray(callbacksArray) {
-	      for (var _len2 = arguments.length, data = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
-	        data[_key2 - 1] = arguments[_key2];
+	      for (var _len3 = arguments.length, data = Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+	        data[_key3 - 1] = arguments[_key3];
 	      }
 	
 	      callbacksArray.forEach(function (event) {
@@ -477,9 +509,9 @@
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
-	var _reports3 = __webpack_require__(26);
+	var _reports3 = __webpack_require__(28);
 	
-	var _reports4 = __webpack_require__(27);
+	var _reports4 = __webpack_require__(29);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -532,14 +564,17 @@
 	    value: function createComponents() {
 	      var chartViewport = new _chart_viewport2.default(this.markup.querySelector('.main'), {
 	        name: 'day',
+	        active: true,
 	        data: _reports4.dayChartData,
 	        conf: _reports3.dayChartConfig
 	      }, {
 	        name: 'week',
+	        active: false,
 	        data: _reports4.weekChartData,
 	        conf: _reports3.weekChartConfig
 	      }, {
 	        name: 'month',
+	        active: false,
 	        data: _reports4.monthChartData,
 	        conf: _reports3.monthChartConfig
 	      });
@@ -1235,7 +1270,9 @@
 	  _createClass(ComponentController, [{
 	    key: 'render',
 	    value: function render() {
-	      this.view.render();
+	      var _view;
+	
+	      (_view = this.view).render.apply(_view, arguments);
 	    }
 	
 	    /**
@@ -1295,7 +1332,7 @@
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
-	var _highstock = __webpack_require__(25);
+	var _highstock = __webpack_require__(27);
 	
 	var _highstock2 = _interopRequireDefault(_highstock);
 	
@@ -1323,8 +1360,9 @@
 	  function View(container, dataArray) {
 	    _classCallCheck(this, View);
 	
-	    var _this = _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this, container, dataArray));
+	    var _this = _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this, container));
 	
+	    _this.dataArray = dataArray;
 	    _this.template = new _chart_viewport2.default();
 	    return _this;
 	  }
@@ -1417,11 +1455,10 @@
 	  /**
 	   * Create component view
 	   */
-	  function ComponentView(container, dataArray) {
+	  function ComponentView(container) {
 	    _classCallCheck(this, ComponentView);
 	
 	    this.container = container;
-	    this.dataArray = dataArray;
 	    this.domEventsList = [];
 	    this.componentsList = [];
 	    this.template = null;
@@ -1460,6 +1497,7 @@
 	
 	    /**
 	     * Trigger event with new data
+	     * @param {...} data - Any data, any type
 	     */
 	
 	  }, {
@@ -1700,11 +1738,11 @@
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _tabs = __webpack_require__(34);
+	var _tabs = __webpack_require__(21);
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
-	var _tabs3 = __webpack_require__(21);
+	var _tabs3 = __webpack_require__(23);
 	
 	var _tabs4 = _interopRequireDefault(_tabs3);
 	
@@ -1734,23 +1772,22 @@
 	
 	    var _this = _possibleConstructorReturn(this, (Tabs.__proto__ || Object.getPrototypeOf(Tabs)).call(this));
 	
-	    _this.model = new _tabs2.default();
-	
 	    for (var _len = arguments.length, dataArray = Array(_len > 3 ? _len - 3 : 0), _key = 3; _key < _len; _key++) {
 	      dataArray[_key - 3] = arguments[_key];
 	    }
 	
-	    _this.view = new _tabs4.default(appendFlag, container, insertBefore, dataArray);
+	    _this.model = new _tabs2.default(dataArray);
+	    _this.view = new _tabs4.default(appendFlag, container, insertBefore);
 	
-	    _this.view.events.on('view:updated', function (data) {
-	      this.model.update(data);
+	    _this.render(_this.model.data);
+	
+	    _this.view.events.on('view:updated', function (name) {
+	      this.model.active = name;
 	    }, _this);
 	
-	    _this.model.events.on('model:updated', function (data) {
-	      this.events.trigger('tabs:changed', data);
+	    _this.model.events.on('model:new_active', function (name) {
+	      this.events.trigger('tabs:changed', name);
 	    }, _this);
-	
-	    _this.render();
 	    return _this;
 	  }
 	
@@ -1771,17 +1808,211 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
+	var _components = __webpack_require__(22);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * Component model
+	 */
+	var Model = function (_ComponentModel) {
+	  _inherits(Model, _ComponentModel);
+	
+	  /**
+	   * Create component model
+	   * @param {Array} data - Dirty data array
+	   */
+	  function Model(data) {
+	    _classCallCheck(this, Model);
+	
+	    var _this = _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this));
+	
+	    _this.dataStatic = _this.formTabsData(data);
+	    return _this;
+	  }
+	
+	  /**
+	   * Filter each array object
+	   * @param  {Array} data - Dirty data array
+	   * @return {Array} Pure data array
+	   */
+	
+	
+	  _createClass(Model, [{
+	    key: 'formTabsData',
+	    value: function formTabsData(data) {
+	      return data.map(function (el) {
+	        return {
+	          name: el.name,
+	          active: el.active
+	        };
+	      });
+	    }
+	
+	    /**
+	     * Return copy of pure data array
+	     * @return {[type]} [description]
+	     */
+	
+	  }, {
+	    key: 'data',
+	    get: function get() {
+	      return this.dataStatic.slice();
+	    }
+	
+	    /**
+	     * Set active tab
+	     * @param  {String} name - Tab name
+	     */
+	
+	  }, {
+	    key: 'active',
+	    set: function set(name) {
+	      this.dataStatic = this.dataStatic.map(function (el) {
+	        return {
+	          name: el.name,
+	          active: el.name === name ? true : false
+	        };
+	      });
+	
+	      this.events.trigger('model:new_active', this.active);
+	    }
+	
+	    /**
+	     * Get name of active tab
+	     * @return {String} Active tab name
+	     */
+	    ,
+	    get: function get() {
+	      return this.dataStatic.filter(function (el) {
+	        return el.active;
+	      })[0].name;
+	    }
+	  }]);
+	
+	  return Model;
+	}(_components2.default);
+	
+	exports.default = Model;
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _eventbus = __webpack_require__(2);
+	
+	var _eventbus2 = _interopRequireDefault(_eventbus);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	/**
+	 * Abstract class for component model
+	 */
+	var ComponentModel = function () {
+	
+	  /**
+	   * Create component model
+	   */
+	  function ComponentModel(data) {
+	    _classCallCheck(this, ComponentModel);
+	
+	    this.dataCollection = []; // For collection components
+	    this.dataStatic = data ? data : {}; // For common components
+	    this.events = new _eventbus2.default();
+	  }
+	
+	  /**
+	   * !!! Method for collection components
+	   * Add data to model and trigger event with added data
+	   * @param {...} data - Any data, any type
+	   */
+	
+	
+	  _createClass(ComponentModel, [{
+	    key: 'addData',
+	    value: function addData() {
+	      var _dataCollection, _events;
+	
+	      for (var _len = arguments.length, data = Array(_len), _key = 0; _key < _len; _key++) {
+	        data[_key] = arguments[_key];
+	      }
+	
+	      (_dataCollection = this.dataCollection).push.apply(_dataCollection, data);
+	      (_events = this.events).trigger.apply(_events, ['model:added'].concat(data));
+	    }
+	
+	    /**
+	     * !!! Method for common components
+	     * Rewrite data and trigger event with new data
+	     * @param {Object} data - Data object
+	     */
+	
+	  }, {
+	    key: 'update',
+	    value: function update(data) {
+	      this.updateWithoutEvent(data);
+	      this.events.trigger('model:updated', this.dataStatic);
+	    }
+	
+	    /**
+	     * !!! Method for common components
+	     * Rewrite data in model (without event for preventing infinite loop in some cases)
+	     * @param {Object} data - Data object
+	     */
+	
+	  }, {
+	    key: 'updateWithoutEvent',
+	    value: function updateWithoutEvent(data) {
+	      this.dataStatic = data;
+	    }
+	  }]);
+	
+	  return ComponentModel;
+	}();
+	
+	exports.default = ComponentModel;
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
 	var _components = __webpack_require__(15);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _tabs = __webpack_require__(22);
+	var _tabs = __webpack_require__(24);
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
-	__webpack_require__(23);
+	__webpack_require__(25);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -1803,38 +2034,45 @@
 	   * @param  {HTMLElement} container - Append to element
 	   * @param  {HTMLElement | String} insertBefore - InsertBefore element or empty string if appendFlag === true
 	   */
-	  function View(appendFlag, container, insertBefore, dataArray) {
+	  function View(appendFlag, container, insertBefore) {
 	    _classCallCheck(this, View);
 	
 	    if (!appendFlag && !(insertBefore instanceof HTMLElement)) {
 	      throw new TypeError('insertBefore argument is not instance of HTMLElement');
 	    }
 	
-	    var _this = _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this, container, dataArray));
+	    var _this = _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this, container));
 	
 	    _this.appendFlag = appendFlag;
 	    _this.insertBefore = insertBefore;
-	    _this.template = new _tabs2.default(_this.dataArray);
-	
-	    _this.createDOMHendlers();
 	    return _this;
 	  }
 	
 	  /**
 	   * Render component
+	   * @param {Array} dataArray - Data array
 	   */
 	
 	
 	  _createClass(View, [{
 	    key: 'render',
-	    value: function render() {
+	    value: function render(dataArray) {
+	      var _this2 = this;
+	
+	      this.template = new _tabs2.default(dataArray);
+	      this.createDOMHendlers();
+	
 	      if (this.appendFlag) {
 	        this.container.appendChild(this.markup);
 	      } else {
 	        this.container.insertBefore(this.markup, this.insertBefore);
 	      }
 	
-	      this.sendUpdate(this.activeName);
+	      // "Feature" :D
+	      setTimeout(function () {
+	        _this2.sendUpdate(_this2.activeName);
+	      }, 0);
+	
 	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'render', this).call(this);
 	    }
 	
@@ -1845,14 +2083,14 @@
 	  }, {
 	    key: 'createDOMHendlers',
 	    value: function createDOMHendlers() {
-	      var _this2 = this;
+	      var _this3 = this;
 	
 	      var tabClickHandler = function tabClickHandler(event) {
 	        var name = event.target.getAttribute('data-tab-name');
 	
-	        if (name && name === _this2.activeName) return;
+	        if (name && name === _this3.activeName) return;
 	
-	        _this2.active = name;
+	        _this3.active = name;
 	      };
 	
 	      this.domEventsList.push({
@@ -1915,7 +2153,7 @@
 	exports.default = View;
 
 /***/ },
-/* 22 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1961,8 +2199,8 @@
 	  _createClass(Template, [{
 	    key: 'createListItems',
 	    value: function createListItems(dataArray) {
-	      return dataArray.reduce(function (acc, element, index) {
-	        return ['' + acc, '<li class="tabs-list__item">', '<button class="tabs-list__item-btn ' + (index === 0 ? 'active' : '') + '" type="button" data-tab-name="' + element.name + '">' + _utils2.default.capitalize(element.name) + '</button>', '</li>\n'].join('\n');
+	      return dataArray.reduce(function (acc, element) {
+	        return ['' + acc, '<li class="tabs-list__item">', '<button class="tabs-list__item-btn ' + (element.active ? 'active' : '') + '" type="button" data-tab-name="' + element.name + '">' + _utils2.default.capitalize(element.name) + '</button>', '</li>\n'].join('\n');
 	      }, '');
 	    }
 	  }]);
@@ -1973,13 +2211,13 @@
 	exports.default = Template;
 
 /***/ },
-/* 23 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(24);
+	var content = __webpack_require__(26);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(11)(content, {});
@@ -1999,7 +2237,7 @@
 	}
 
 /***/ },
-/* 24 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(10)();
@@ -2013,7 +2251,7 @@
 
 
 /***/ },
-/* 25 */
+/* 27 */
 /***/ function(module, exports) {
 
 	/*
@@ -2515,7 +2753,7 @@
 
 
 /***/ },
-/* 26 */
+/* 28 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2788,7 +3026,7 @@
 	};
 
 /***/ },
-/* 27 */
+/* 29 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2872,7 +3110,13 @@
 	  color: '#8da5b8'
 	}];
 	
-	var tempTabsData = [{ name: 'pomodoros' }, { name: 'tasks' }];
+	var tempTabsData = [{
+	  name: 'pomodoros',
+	  active: true
+	}, {
+	  name: 'tasks',
+	  active: false
+	}];
 	
 	exports.dayChartData = dayChartData;
 	exports.weekChartData = weekChartData;
@@ -2880,13 +3124,13 @@
 	exports.tempTabsData = tempTabsData;
 
 /***/ },
-/* 28 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(29);
+	var content = __webpack_require__(31);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(11)(content, {});
@@ -2906,46 +3150,6 @@
 	}
 
 /***/ },
-/* 29 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(10)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/ \n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed, \nfigure, figcaption, footer, header, hgroup, \nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure, \nfooter, header, hgroup, menu, nav, section {\n  display: block;\n}\nbody {\n  line-height: 1;\n}\nol, ul {\n  list-style: none;\n}\nblockquote, q {\n  quotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 30 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(31);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(11)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./base.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./base.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
 /* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -2954,7 +3158,7 @@
 	
 	
 	// module
-	exports.push([module.id, "html,\nbody {\n  font-family: 'Roboto', sans-serif;\n\n  position: relative;\n\n  height: 1px;\n  min-height: 100%;\n}\n\nmain,\nheader,\nfooter,\naside,\nsection,\narticle,\nnav,\nfigure {\n  display: block;\n}\n\nbutton,\ninput {\n  font-size: inherit;\n\n  color: inherit;\n  border: none;\n  background: none;\n}\n\nbutton:hover {\n  cursor: pointer;\n}\n\nbutton:active,\nbutton:focus,\ninput:focus {\n  outline: none;\n  box-shadow: none;\n}\n", ""]);
+	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/ \n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed, \nfigure, figcaption, footer, header, hgroup, \nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure, \nfooter, header, hgroup, menu, nav, section {\n  display: block;\n}\nbody {\n  line-height: 1;\n}\nol, ul {\n  list-style: none;\n}\nblockquote, q {\n  quotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}", ""]);
 	
 	// exports
 
@@ -2975,8 +3179,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./common.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./common.css");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./base.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./base.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -2994,7 +3198,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".tabs-list:after,\n.clearfix:after {\n  display: table;\n  clear: both;\n\n  content: '';\n}\n\n.hidden {\n  position: absolute;\n  top: auto;\n  left: -9999px;\n\n  overflow: hidden;\n}\n\n/* BUTTONS */\n\n.btn {\n  font-family: 'PT Sans', sans-serif;\n  font-size: 1.125rem;\n  font-weight: bold;\n\n  display: block;\n\n  width: 6.8333em;\n  height: 2.3333em;\n  transition: .1s ease-in-out;\n\n  color: #fff;\n}\n\n/* NIAGARA BUTTON */\n\n.btn-niagara {\n  background-color: #1abc9c;\n}\n\n.btn-niagara:hover,\n.btn-niagara:focus {\n  background-color: #16a085;\n}\n\n.btn-niagara:active {\n  background-color: #62d3bd;\n}\n\n/* PICTON BLUE BUTTON */\n\n.btn-picton-blue {\n  background-color: #59abe3;\n}\n\n.btn-picton-blue:hover,\n.btn-picton-blue:focus {\n  background-color: #368bc5;\n}\n\n.btn-picton-blue:active {\n  background-color: #82c7e0;\n}\n\n/* TOMATO BUTTON */\n\n.btn-tomato {\n  background-color: #f85c4c;\n}\n\n.btn-tomato:hover,\n.btn-tomato:focus {\n  background-color: #c94d47;\n}\n\n.btn-tomato:active {\n  background-color: #f99595;\n}\n\n/* MAIN CONTROL BUTTONS */\n\n.main-btn-list {\n  font-size: 1.25rem;\n  display: -ms-flexbox;\n  display:         flex;\n\n  width: 7em;\n  margin: 0 0 0 auto;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n}\n\n#statistics-btn {\n  font-size: .8em;\n  line-height: 1.6em;\n}\n\n.main-btn-list__item-btn {\n  font-family: 'icomoon';\n  transition: color .1s ease-in-out;\n\n  color: #8da5b8;\n}\n\n.main-btn-list__item-btn.active,\n.main-btn-list__item-btn:hover {\n  color: #fff;\n}\n\n.main-btn-list__item-btn:focus,\n.main-btn-list__item-btn:active {\n  color: #82c7e0;\n}\n\n/* TABS */\n\n.tabs-list {\n  font-size: .95rem;\n\n  display: inline-block;\n}\n\n.tabs-list__item {\n  position: relative;\n\n  float: left;\n}\n\n.tabs-list__item:first-child .tabs-list__item-btn {\n  padding-left: 0;\n}\n\n.tabs-list__item:last-child .tabs-list__item-btn {\n  padding-right: 0;\n}\n\n.tabs-list__item-btn {\n  font-family: 'PT Sans', sans-serif;\n\n  padding: 0 .5em;\n  transition: .1s ease-in-out;\n\n  color: #8da5b8;\n}\n\n.tabs-list__item-btn:after {\n  font-size: .9em;\n\n  position: absolute;\n  top: -.01rem;\n  right: -.21em;\n\n  content: '|';\n\n  color: #8da5b8 !important;\n}\n\n.tabs-list__item:last-child .tabs-list__item-btn:after {\n  display: none;\n}\n\n.tabs-list__item-btn.active,\n.tabs-list__item-btn:hover {\n  color: #fff;\n}\n\n/* NOTIFICATIONS */\n\n.notification {\n  font-size: .9375rem;\n  line-height: 3.4em;\n\n  position: relative;\n  z-index: 999;\n  display: -ms-flexbox;\n  display:         flex;\n  box-sizing: border-box;\n  width: 30em;\n  height: 3.4em;\n  padding: 0 0 0 5.3em;\n\n  color: #fff;\n  border: 1px solid #fff;\n  border-radius: .3em;\n}\n\n.notification:after {\n  font-family: 'icomoon';\n  font-size: 2.3em;\n\n  position: absolute;\n  top: 0;\n  left: 0;\n\n  height: 100%;\n  padding: 0 .45em;\n}\n\n.notification-text {\n  font-size: 1.05em;\n  font-weight: 700;\n\n  height: 100%;\n}\n\n.notification-btn-close {\n  font-family: 'icomoon';\n  font-size: 1.6em;\n  position: absolute;\n  right: 0;\n\n  height: 100%;\n  margin: 0;\n  padding: 0 .65em;\n}\n\n/* NOTIFICATION SUCCESS */\n\n.notification-success {\n  background-color: #1ca991;\n}\n\n.notification-success:after {\n  content: '\\E913';\n\n  background-color: #49baa7;\n}\n\n/* NOTIFICATION ERROR */\n\n.notification-error {\n  background-color: #d8584d;\n}\n\n.notification-error:after {\n  content: '\\E914';\n\n  background-color: #e07971;\n}\n\n/* NOTIFICATION WARNING */\n\n.notification-warning {\n  background-color: #df9843;\n}\n\n.notification-warning:after {\n  content: '\\E915';\n\n  background-color: #e5ad69;\n}\n\n/* NOTIFICATION MESSAGE INFO */\n\n.notification-message-info {\n  background-color: #529bcd;\n}\n\n.notification-message-info:after {\n  content: '\\E916';\n\n  background-color: #75afd7;\n}\n\n/* TOOLTIP */\n\n.tooltip {\n  font-size: .75rem;\n  font-weight: 700;\n\n  position: absolute;\n  z-index: 999;\n  top: 2.8em;\n  left: 3em;\n\n  padding: .916em 1.583em;\n\n  white-space: nowrap;\n\n  color: #3c5162;\n  border: 1px solid #cddbe3;\n  border-radius: .2em;\n  background-color: rgba(229, 233, 235, .9);\n}\n\n.tooltip:after {\n  position: absolute;\n  top: -.45em;\n  left: 1em;\n\n  width: 0;\n  height: 0;\n\n  content: '';\n\n  border-width: 0 4.5px 5px 4.5px;\n  border-style: solid;\n  border-color: transparent transparent rgba(229, 233, 235, .9) transparent;\n}\n\n/* ARROW BUTTONS */\n\n.btn-arrow {\n  font-family: 'icomoon';\n  font-size: 2.55em;\n\n  position: absolute;\n  top: 50%;\n  transition: .1s ease-in-out;\n  transform: translate(0, -50%);\n  text-decoration: none;\n\n  color: #8da5b8;\n}\n\n.btn-arrow:hover {\n  color: #fff;\n}\n\n.btn-arrow-left {\n  left: 2rem;\n}\n\n.btn-arrow-right {\n  right: 2rem;\n}\n\n/* MODALS */\n\n/* MODAL STYLES FOR BODY */\n.modal-opened {\n  position: relative;\n\n  overflow-y: hidden;\n}\n\n.modal-opened:after {\n  position: absolute;\n  z-index: 9999;\n  top: 0;\n  left: 0;\n\n  width: 100%;\n  height: 100%;\n\n  content: '';\n\n  background-color: rgba(0, 0, 0, .7);\n}\n\n/* MODAL STYLES FOR MODAL ELEMENTS */\n.modal-wrapper {\n  position: fixed;\n  z-index: 99999;\n  top: 0;\n  left: 0;\n  display: -ms-flexbox;\n  display:         flex;\n\n  width: 100%;\n  height: 100%;\n  -ms-flex-align: center;\n  align-items: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n\n.modal {\n  font-size: 1rem;\n\n  position: relative;\n\n  overflow-y: auto;\n  box-sizing: border-box;\n  width: 31.25em;\n  max-width: 100%;\n  max-height: 100%;\n  padding: 1.2em 2.81rem;\n\n  background-color: #2a3f50;\n}\n", ""]);
+	exports.push([module.id, "html,\nbody {\n  font-family: 'Roboto', sans-serif;\n\n  position: relative;\n\n  height: 1px;\n  min-height: 100%;\n}\n\nmain,\nheader,\nfooter,\naside,\nsection,\narticle,\nnav,\nfigure {\n  display: block;\n}\n\nbutton,\ninput {\n  font-size: inherit;\n\n  color: inherit;\n  border: none;\n  background: none;\n}\n\nbutton:hover {\n  cursor: pointer;\n}\n\nbutton:active,\nbutton:focus,\ninput:focus {\n  outline: none;\n  box-shadow: none;\n}\n", ""]);
 	
 	// exports
 
@@ -3003,130 +3207,41 @@
 /* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _components = __webpack_require__(35);
-	
-	var _components2 = _interopRequireDefault(_components);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	/**
-	 * Component model
-	 */
-	var Model = function (_ComponentModel) {
-	  _inherits(Model, _ComponentModel);
-	
-	  /**
-	   * Create component model
-	   */
-	  function Model() {
-	    _classCallCheck(this, Model);
-	
-	    return _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this));
-	  }
-	
-	  return Model;
-	}(_components2.default);
-	
-	exports.default = Model;
+	// load the styles
+	var content = __webpack_require__(35);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(11)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./common.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./common.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
 
 /***/ },
 /* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _eventbus = __webpack_require__(2);
-	
-	var _eventbus2 = _interopRequireDefault(_eventbus);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	/**
-	 * Abstract class for component model
-	 */
-	var ComponentModel = function () {
-	
-	  /**
-	   * Create component model
-	   */
-	  function ComponentModel() {
-	    _classCallCheck(this, ComponentModel);
-	
-	    this.dataCollection = []; // For collection components
-	    this.dataStatic = {}; // For common components
-	    this.events = new _eventbus2.default();
-	  }
-	
-	  /**
-	   * !!! Method for collection components
-	   * Add data to model and trigger event with added data
-	   * @param {...} data - Any data, any type
-	   */
+	exports = module.exports = __webpack_require__(10)();
+	// imports
 	
 	
-	  _createClass(ComponentModel, [{
-	    key: 'addData',
-	    value: function addData() {
-	      var _dataCollection, _events;
+	// module
+	exports.push([module.id, ".tabs-list:after,\n.clearfix:after {\n  display: table;\n  clear: both;\n\n  content: '';\n}\n\n.hidden {\n  position: absolute;\n  top: auto;\n  left: -9999px;\n\n  overflow: hidden;\n}\n\n/* BUTTONS */\n\n.btn {\n  font-family: 'PT Sans', sans-serif;\n  font-size: 1.125rem;\n  font-weight: bold;\n\n  display: block;\n\n  width: 6.8333em;\n  height: 2.3333em;\n  transition: .1s ease-in-out;\n\n  color: #fff;\n}\n\n/* NIAGARA BUTTON */\n\n.btn-niagara {\n  background-color: #1abc9c;\n}\n\n.btn-niagara:hover,\n.btn-niagara:focus {\n  background-color: #16a085;\n}\n\n.btn-niagara:active {\n  background-color: #62d3bd;\n}\n\n/* PICTON BLUE BUTTON */\n\n.btn-picton-blue {\n  background-color: #59abe3;\n}\n\n.btn-picton-blue:hover,\n.btn-picton-blue:focus {\n  background-color: #368bc5;\n}\n\n.btn-picton-blue:active {\n  background-color: #82c7e0;\n}\n\n/* TOMATO BUTTON */\n\n.btn-tomato {\n  background-color: #f85c4c;\n}\n\n.btn-tomato:hover,\n.btn-tomato:focus {\n  background-color: #c94d47;\n}\n\n.btn-tomato:active {\n  background-color: #f99595;\n}\n\n/* MAIN CONTROL BUTTONS */\n\n.main-btn-list {\n  font-size: 1.25rem;\n  display: -ms-flexbox;\n  display:         flex;\n\n  width: 7em;\n  margin: 0 0 0 auto;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n}\n\n#statistics-btn {\n  font-size: .8em;\n  line-height: 1.6em;\n}\n\n.main-btn-list__item-btn {\n  font-family: 'icomoon';\n  transition: color .1s ease-in-out;\n\n  color: #8da5b8;\n}\n\n.main-btn-list__item-btn.active,\n.main-btn-list__item-btn:hover {\n  color: #fff;\n}\n\n.main-btn-list__item-btn:focus,\n.main-btn-list__item-btn:active {\n  color: #82c7e0;\n}\n\n/* TABS */\n\n.tabs-list {\n  font-size: .95rem;\n\n  display: inline-block;\n}\n\n.tabs-list__item {\n  position: relative;\n\n  float: left;\n}\n\n.tabs-list__item:first-child .tabs-list__item-btn {\n  padding-left: 0;\n}\n\n.tabs-list__item:last-child .tabs-list__item-btn {\n  padding-right: 0;\n}\n\n.tabs-list__item-btn {\n  font-family: 'PT Sans', sans-serif;\n\n  padding: 0 .5em;\n  transition: .1s ease-in-out;\n\n  color: #8da5b8;\n}\n\n.tabs-list__item-btn:after {\n  font-size: .9em;\n\n  position: absolute;\n  top: -.01rem;\n  right: -.21em;\n\n  content: '|';\n\n  color: #8da5b8 !important;\n}\n\n.tabs-list__item:last-child .tabs-list__item-btn:after {\n  display: none;\n}\n\n.tabs-list__item-btn.active,\n.tabs-list__item-btn:hover {\n  color: #fff;\n}\n\n/* NOTIFICATIONS */\n\n.notification {\n  font-size: .9375rem;\n  line-height: 3.4em;\n\n  position: relative;\n  z-index: 999;\n  display: -ms-flexbox;\n  display:         flex;\n  box-sizing: border-box;\n  width: 30em;\n  height: 3.4em;\n  padding: 0 0 0 5.3em;\n\n  color: #fff;\n  border: 1px solid #fff;\n  border-radius: .3em;\n}\n\n.notification:after {\n  font-family: 'icomoon';\n  font-size: 2.3em;\n\n  position: absolute;\n  top: 0;\n  left: 0;\n\n  height: 100%;\n  padding: 0 .45em;\n}\n\n.notification-text {\n  font-size: 1.05em;\n  font-weight: 700;\n\n  height: 100%;\n}\n\n.notification-btn-close {\n  font-family: 'icomoon';\n  font-size: 1.6em;\n  position: absolute;\n  right: 0;\n\n  height: 100%;\n  margin: 0;\n  padding: 0 .65em;\n}\n\n/* NOTIFICATION SUCCESS */\n\n.notification-success {\n  background-color: #1ca991;\n}\n\n.notification-success:after {\n  content: '\\E913';\n\n  background-color: #49baa7;\n}\n\n/* NOTIFICATION ERROR */\n\n.notification-error {\n  background-color: #d8584d;\n}\n\n.notification-error:after {\n  content: '\\E914';\n\n  background-color: #e07971;\n}\n\n/* NOTIFICATION WARNING */\n\n.notification-warning {\n  background-color: #df9843;\n}\n\n.notification-warning:after {\n  content: '\\E915';\n\n  background-color: #e5ad69;\n}\n\n/* NOTIFICATION MESSAGE INFO */\n\n.notification-message-info {\n  background-color: #529bcd;\n}\n\n.notification-message-info:after {\n  content: '\\E916';\n\n  background-color: #75afd7;\n}\n\n/* TOOLTIP */\n\n.tooltip {\n  font-size: .75rem;\n  font-weight: 700;\n\n  position: absolute;\n  z-index: 999;\n  top: 2.8em;\n  left: 3em;\n\n  padding: .916em 1.583em;\n\n  white-space: nowrap;\n\n  color: #3c5162;\n  border: 1px solid #cddbe3;\n  border-radius: .2em;\n  background-color: rgba(229, 233, 235, .9);\n}\n\n.tooltip:after {\n  position: absolute;\n  top: -.45em;\n  left: 1em;\n\n  width: 0;\n  height: 0;\n\n  content: '';\n\n  border-width: 0 4.5px 5px 4.5px;\n  border-style: solid;\n  border-color: transparent transparent rgba(229, 233, 235, .9) transparent;\n}\n\n/* ARROW BUTTONS */\n\n.btn-arrow {\n  font-family: 'icomoon';\n  font-size: 2.55em;\n\n  position: absolute;\n  top: 50%;\n  transition: .1s ease-in-out;\n  transform: translate(0, -50%);\n  text-decoration: none;\n\n  color: #8da5b8;\n}\n\n.btn-arrow:hover {\n  color: #fff;\n}\n\n.btn-arrow-left {\n  left: 2rem;\n}\n\n.btn-arrow-right {\n  right: 2rem;\n}\n\n/* MODALS */\n\n/* MODAL STYLES FOR BODY */\n.modal-opened {\n  position: relative;\n\n  overflow-y: hidden;\n}\n\n.modal-opened:after {\n  position: absolute;\n  z-index: 9999;\n  top: 0;\n  left: 0;\n\n  width: 100%;\n  height: 100%;\n\n  content: '';\n\n  background-color: rgba(0, 0, 0, .7);\n}\n\n/* MODAL STYLES FOR MODAL ELEMENTS */\n.modal-wrapper {\n  position: fixed;\n  z-index: 99999;\n  top: 0;\n  left: 0;\n  display: -ms-flexbox;\n  display:         flex;\n\n  width: 100%;\n  height: 100%;\n  -ms-flex-align: center;\n  align-items: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n\n.modal {\n  font-size: 1rem;\n\n  position: relative;\n\n  overflow-y: auto;\n  box-sizing: border-box;\n  width: 31.25em;\n  max-width: 100%;\n  max-height: 100%;\n  padding: 1.2em 2.81rem;\n\n  background-color: #2a3f50;\n}\n", ""]);
 	
-	      for (var _len = arguments.length, data = Array(_len), _key = 0; _key < _len; _key++) {
-	        data[_key] = arguments[_key];
-	      }
-	
-	      (_dataCollection = this.dataCollection).push.apply(_dataCollection, data);
-	      (_events = this.events).trigger.apply(_events, ['model:added'].concat(data));
-	    }
-	
-	    /**
-	     * !!! Method for common components
-	     * Rewrite data and trigger event with new data
-	     * @param {Object} data - Data object
-	     */
-	
-	  }, {
-	    key: 'update',
-	    value: function update(data) {
-	      this.updateWithoutEvent(data);
-	      this.events.trigger('model:updated', this.dataStatic);
-	    }
-	
-	    /**
-	     * !!! Method for common components
-	     * Rewrite data in model (without event for preventing infinite loop in some cases)
-	     * @param {Object} data - Data object
-	     */
-	
-	  }, {
-	    key: 'updateWithoutEvent',
-	    value: function updateWithoutEvent(data) {
-	      this.dataStatic = data;
-	    }
-	  }]);
-	
-	  return ComponentModel;
-	}();
-	
-	exports.default = ComponentModel;
+	// exports
+
 
 /***/ }
 /******/ ]);

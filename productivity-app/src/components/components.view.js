@@ -8,9 +8,8 @@ export default class ComponentView {
   /**
    * Create component view
    */
-  constructor(container, dataArray) {
+  constructor(container) {
     this.container = container;
-    this.dataArray = dataArray;
     this.domEventsList = [];
     this.componentsList = [];
     this.template = null;
@@ -39,6 +38,7 @@ export default class ComponentView {
 
   /**
    * Trigger event with new data
+   * @param {...} data - Any data, any type
    */
   sendUpdate(...data) {
     this.events.trigger('view:updated', ...data);

@@ -16,18 +16,19 @@ export default class Tabs extends ComponentController {
    */
   constructor(appendFlag, container, insertBefore, ...dataArray) {
     super();
-    this.model = new Model();
-    this.view = new View(appendFlag, container, insertBefore, dataArray);
 
-    this.view.events.on('view:updated', function(data) {
-      this.model.update(data);
+    this.model = new Model(dataArray);
+    this.view = new View(appendFlag, container, insertBefore);
+
+    this.render(this.model.data);
+
+    this.view.events.on('view:updated', function(name) {
+      this.model.active = name;
     }, this);
 
-    this.model.events.on('model:updated', function(data) {
-      this.events.trigger('tabs:changed', data);
+    this.model.events.on('model:new_active', function(name) {
+      this.events.trigger('tabs:changed', name);
     }, this);
-
-    this.render();
   }
 
 }

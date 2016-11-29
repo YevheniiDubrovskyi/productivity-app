@@ -16,8 +16,9 @@ export default class View extends ComponentView {
    * @param  {Array} data - Data array
    */
   constructor(container, dataArray) {
-    super(container, dataArray);
+    super(container);
 
+    this.dataArray = dataArray;
     this.template = new Template();
   }
 

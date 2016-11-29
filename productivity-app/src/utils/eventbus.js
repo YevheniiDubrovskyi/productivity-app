@@ -78,6 +78,31 @@ export default class EventBus {
   }
 
   /**
+   * Attach listener for some event which will be detached after first execution
+   * @param  {String} eventPath - The string containing two colon separated values
+   * @param  {Function} callback - Callback that will be called when event will be fired
+   * @param  {Object} [context] - Context that will be applied to callback
+   * @return {Object} this
+   */
+  once(eventPath, callback, context) {
+    const parsedPath = this.parseEventPath(eventPath);
+    const events = this.events;
+    const namespace = parsedPath.namespace;
+    const key = parsedPath.key;
+
+    if (!namespace) throw new Error('Event path don\'t have namespace part');
+
+    function carryingCallback(...data) {
+      setTimeout(callback.bind(context, ...data), 0);
+      this.off(eventPath, carryingCallback);
+    };
+
+    this.on(eventPath, carryingCallback, this);
+
+    return this;
+  }
+
+  /**
    * Delete callback from callback object array
    * @param  {Array} callbackArray - Callback object array
    * @param  {Function} callback - Callback that will be deleted

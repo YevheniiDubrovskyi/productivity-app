@@ -17,8 +17,8 @@ export default class ComponentController {
   /**
    * Render component
    */
-  render() {
-    this.view.render();
+  render(...data) {
+    this.view.render(...data);
   }
 
   /**

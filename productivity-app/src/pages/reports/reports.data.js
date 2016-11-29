@@ -93,8 +93,14 @@ const monthChartData = [
 ];
 
 const tempTabsData = [
-  { name: 'pomodoros' },
-  { name: 'tasks' }
+  {
+    name: 'pomodoros',
+    active: true
+  },
+  {
+    name: 'tasks',
+    active: false
+  }
 ];
 
 export {dayChartData, weekChartData, monthChartData, tempTabsData};

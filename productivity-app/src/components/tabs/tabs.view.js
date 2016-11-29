@@ -13,31 +13,36 @@ export default class View extends ComponentView {
    * @param  {HTMLElement} container - Append to element
    * @param  {HTMLElement | String} insertBefore - InsertBefore element or empty string if appendFlag === true
    */
-  constructor(appendFlag, container, insertBefore, dataArray) {
+  constructor(appendFlag, container, insertBefore) {
     if (!appendFlag && !(insertBefore instanceof HTMLElement)) {
       throw new TypeError('insertBefore argument is not instance of HTMLElement');
     }
 
-    super(container, dataArray);
+    super(container);
 
     this.appendFlag = appendFlag;
     this.insertBefore = insertBefore;
-    this.template = new Template(this.dataArray);
-
-    this.createDOMHendlers();
   }
 
   /**
    * Render component
+   * @param {Array} dataArray - Data array
    */
-  render() {
+  render(dataArray) {
+    this.template = new Template(dataArray);
+    this.createDOMHendlers();
+
     if (this.appendFlag) {
       this.container.appendChild(this.markup);
     } else {
       this.container.insertBefore(this.markup, this.insertBefore);
     }
 
-    this.sendUpdate(this.activeName);
+    // "Feature" :D
+    setTimeout(() => {
+      this.sendUpdate(this.activeName);
+    }, 0);
+
     super.render();
   }
 
