@@ -10,7 +10,7 @@ export default class ComponentModel {
    */
   constructor(data) {
     this.dataCollection = []; // For collection components
-    this.dataStatic = data ? data : {}; // For common components
+    this.dataStatic = data ? data : {}; // For common components (For cases when data is pure)
     this.events = new EventBus();
   }
 

@@ -15,53 +15,52 @@ export default class View extends ComponentView {
    * @param  {HTMLElement} container - Append to element
    * @param  {Array} data - Data array
    */
-  constructor(container, dataArray) {
+  constructor(container) {
     super(container);
-
-    this.dataArray = dataArray;
-    this.template = new Template();
   }
 
   /**
    * Render component
    */
-  render() {
+  render(dataArray) {
+    this.template = new Template();
+
     this.container.appendChild(this.markup);
-    this.createComponents();
+    this.createComponents(dataArray);
     super.render();
   }
 
   /**
    * Create inner components
    */
-  createComponents() {
+  createComponents(dataArray) {
     const tabs = new Tabs(false,
                           this.markup,
                           this.markup.querySelector('#chart'),
-                          ...this.dataArray);
+                          ...dataArray);
 
     tabs.events.on('tabs:changed', function(name) {
-      this.showChart(name);
+      this.sendUpdate(name);
     }, this);
 
     this.componentsList.push(tabs);
   }
 
   /**
-   * Render chart by name
-   * @param {String} name - Chart name
+   * !!! Method for common components
+   * Update data in view
+   * @param {...} data - Any data, any type
    */
-  showChart(name) {
-    Highcharts.chart('chart', this.findDataByName(name).conf)
+  update(config) {
+    this.showChart(config);
   }
 
   /**
-   * Get data object from array by name
-   * @param  {String} name - Chart name
-   * @return {Object} Data object
+   * Render chart by name
+   * @param {String} name - Chart name
    */
-  findDataByName(name) {
-    return this.dataArray.filter((element) => element.name === name)[0];
+  showChart(config) {
+    Highcharts.chart('chart', config)
   }
 
 }

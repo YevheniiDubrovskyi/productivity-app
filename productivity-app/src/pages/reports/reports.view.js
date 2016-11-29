@@ -41,19 +41,19 @@ export default class View extends PageView {
         name: 'day',
         active: true,
         data: dayChartData,
-        conf: dayChartConfig,
+        config: dayChartConfig,
       },
       {
         name: 'week',
         active: false,
         data: weekChartData,
-        conf: weekChartConfig,
+        config: weekChartConfig,
       },
       {
         name: 'month',
         active: false,
         data: monthChartData,
-        conf: monthChartConfig,
+        config: monthChartConfig,
       });
     this.componentsList.push(chartViewport);
 

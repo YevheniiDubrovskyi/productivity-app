@@ -54,11 +54,11 @@
 	
 	var _reports2 = _interopRequireDefault(_reports);
 	
-	__webpack_require__(30);
+	__webpack_require__(31);
 	
-	__webpack_require__(32);
+	__webpack_require__(33);
 	
-	__webpack_require__(34);
+	__webpack_require__(35);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -509,9 +509,9 @@
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
-	var _reports3 = __webpack_require__(28);
+	var _reports3 = __webpack_require__(29);
 	
-	var _reports4 = __webpack_require__(29);
+	var _reports4 = __webpack_require__(30);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -566,17 +566,17 @@
 	        name: 'day',
 	        active: true,
 	        data: _reports4.dayChartData,
-	        conf: _reports3.dayChartConfig
+	        config: _reports3.dayChartConfig
 	      }, {
 	        name: 'week',
 	        active: false,
 	        data: _reports4.weekChartData,
-	        conf: _reports3.weekChartConfig
+	        config: _reports3.weekChartConfig
 	      }, {
 	        name: 'month',
 	        active: false,
 	        data: _reports4.monthChartData,
-	        conf: _reports3.monthChartConfig
+	        config: _reports3.monthChartConfig
 	      });
 	      this.componentsList.push(chartViewport);
 	
@@ -1126,8 +1126,6 @@
 	  value: true
 	});
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
 	var _components = __webpack_require__(13);
 	
 	var _components2 = _interopRequireDefault(_components);
@@ -1135,6 +1133,10 @@
 	var _chart_viewport = __webpack_require__(14);
 	
 	var _chart_viewport2 = _interopRequireDefault(_chart_viewport);
+	
+	var _chart_viewport3 = __webpack_require__(28);
+	
+	var _chart_viewport4 = _interopRequireDefault(_chart_viewport3);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -1164,62 +1166,16 @@
 	      dataArray[_key - 1] = arguments[_key];
 	    }
 	
-	    _this.dataArray = dataArray;
-	    _this.dataArray.forEach(function (el) {
-	      _this.pushData(el.name, el.data);
-	    });
+	    _this.model = new _chart_viewport4.default(dataArray);
+	    _this.view = new _chart_viewport2.default(container);
 	
-	    _this.view = new _chart_viewport2.default(container, _this.dataArray);
+	    _this.render(_this.model.dataForTabs);
 	
-	    _this.render();
+	    _this.view.events.on('view:updated', function (name) {
+	      this.view.update(this.model.getConf(name));
+	    }, _this);
 	    return _this;
 	  }
-	
-	  /**
-	   * Push data array to config
-	   * @param  {String} name - Chart name
-	   * @param  {Array} data - Data array
-	   */
-	
-	
-	  _createClass(ChartViewport, [{
-	    key: 'pushData',
-	    value: function pushData(name, data) {
-	      var COLUMN = 'column';
-	      var PIE = 'pie';
-	
-	      var conf = this.findDataByName(name).conf;
-	      var placeToPush = void 0;
-	
-	      switch (conf.chart.type) {
-	        case COLUMN:
-	          placeToPush = conf.hasOwnProperty('series') ? conf.series : conf.series = [];
-	          break;
-	
-	        case PIE:
-	          placeToPush = conf.series[0].hasOwnProperty('data') ? conf.series[0].data : conf.series[0].data = [];
-	          break;
-	      }
-	
-	      data.forEach(function (el) {
-	        placeToPush.push(el);
-	      });
-	    }
-	
-	    /**
-	     * Get data object from array by name
-	     * @param  {String} name - Chart name
-	     * @return {Object} Data object
-	     */
-	
-	  }, {
-	    key: 'findDataByName',
-	    value: function findDataByName(name) {
-	      return this.dataArray.filter(function (element) {
-	        return element.name === name;
-	      })[0];
-	    }
-	  }]);
 	
 	  return ChartViewport;
 	}(_components2.default);
@@ -1357,14 +1313,10 @@
 	   * @param  {HTMLElement} container - Append to element
 	   * @param  {Array} data - Data array
 	   */
-	  function View(container, dataArray) {
+	  function View(container) {
 	    _classCallCheck(this, View);
 	
-	    var _this = _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this, container));
-	
-	    _this.dataArray = dataArray;
-	    _this.template = new _chart_viewport2.default();
-	    return _this;
+	    return _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this, container));
 	  }
 	
 	  /**
@@ -1374,9 +1326,11 @@
 	
 	  _createClass(View, [{
 	    key: 'render',
-	    value: function render() {
+	    value: function render(dataArray) {
+	      this.template = new _chart_viewport2.default();
+	
 	      this.container.appendChild(this.markup);
-	      this.createComponents();
+	      this.createComponents(dataArray);
 	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'render', this).call(this);
 	    }
 	
@@ -1386,14 +1340,26 @@
 	
 	  }, {
 	    key: 'createComponents',
-	    value: function createComponents() {
-	      var tabs = new (Function.prototype.bind.apply(_tabs2.default, [null].concat([false, this.markup, this.markup.querySelector('#chart')], _toConsumableArray(this.dataArray))))();
+	    value: function createComponents(dataArray) {
+	      var tabs = new (Function.prototype.bind.apply(_tabs2.default, [null].concat([false, this.markup, this.markup.querySelector('#chart')], _toConsumableArray(dataArray))))();
 	
 	      tabs.events.on('tabs:changed', function (name) {
-	        this.showChart(name);
+	        this.sendUpdate(name);
 	      }, this);
 	
 	      this.componentsList.push(tabs);
+	    }
+	
+	    /**
+	     * !!! Method for common components
+	     * Update data in view
+	     * @param {...} data - Any data, any type
+	     */
+	
+	  }, {
+	    key: 'update',
+	    value: function update(config) {
+	      this.showChart(config);
 	    }
 	
 	    /**
@@ -1403,22 +1369,8 @@
 	
 	  }, {
 	    key: 'showChart',
-	    value: function showChart(name) {
-	      _highstock2.default.chart('chart', this.findDataByName(name).conf);
-	    }
-	
-	    /**
-	     * Get data object from array by name
-	     * @param  {String} name - Chart name
-	     * @return {Object} Data object
-	     */
-	
-	  }, {
-	    key: 'findDataByName',
-	    value: function findDataByName(name) {
-	      return this.dataArray.filter(function (element) {
-	        return element.name === name;
-	      })[0];
+	    value: function showChart(config) {
+	      _highstock2.default.chart('chart', config);
 	    }
 	  }]);
 	
@@ -1833,36 +1785,16 @@
 	  function Model(data) {
 	    _classCallCheck(this, Model);
 	
-	    var _this = _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this));
-	
-	    _this.dataStatic = _this.formTabsData(data);
-	    return _this;
+	    return _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this, data));
 	  }
 	
 	  /**
-	   * Filter each array object
-	   * @param  {Array} data - Dirty data array
-	   * @return {Array} Pure data array
+	   * Return copy of pure data array
+	   * @return {[type]} [description]
 	   */
 	
 	
 	  _createClass(Model, [{
-	    key: 'formTabsData',
-	    value: function formTabsData(data) {
-	      return data.map(function (el) {
-	        return {
-	          name: el.name,
-	          active: el.active
-	        };
-	      });
-	    }
-	
-	    /**
-	     * Return copy of pure data array
-	     * @return {[type]} [description]
-	     */
-	
-	  }, {
 	    key: 'data',
 	    get: function get() {
 	      return this.dataStatic.slice();
@@ -1883,7 +1815,7 @@
 	        };
 	      });
 	
-	      this.events.trigger('model:new_active', this.active);
+	      this.events.trigger('model:new_active', name);
 	    }
 	
 	    /**
@@ -1935,7 +1867,7 @@
 	    _classCallCheck(this, ComponentModel);
 	
 	    this.dataCollection = []; // For collection components
-	    this.dataStatic = data ? data : {}; // For common components
+	    this.dataStatic = data ? data : {}; // For common components (For cases when data is pure)
 	    this.events = new _eventbus2.default();
 	  }
 	
@@ -2754,6 +2686,129 @@
 
 /***/ },
 /* 28 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _components = __webpack_require__(22);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * Component model
+	 */
+	var Model = function (_ComponentModel) {
+	  _inherits(Model, _ComponentModel);
+	
+	  /**
+	   * Create component model
+	   */
+	  function Model(data) {
+	    _classCallCheck(this, Model);
+	
+	    return _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this, data));
+	  }
+	
+	  /**
+	   * Get compiled config with data by name
+	   * @param {String} name - Chart name
+	   * @return {Object} Compiled config ready to use in Highcharts
+	   */
+	
+	
+	  _createClass(Model, [{
+	    key: 'getConf',
+	    value: function getConf(name) {
+	      var chartData = this.getChartData(name);
+	      return this.pushDataToConf(chartData.name, chartData.data, chartData.config);
+	    }
+	
+	    /**
+	     * Push data to config (Highcharts requirement)
+	     * @param  {String} name - Chart name
+	     * @param  {Array} dataArray - Data array
+	     * @param {Object} pureConfig - Pure config without data
+	     * @return {Object} Config object with data
+	     */
+	
+	  }, {
+	    key: 'pushDataToConf',
+	    value: function pushDataToConf(name, dataArray, pureConfig) {
+	      var COLUMN = 'column';
+	      var PIE = 'pie';
+	
+	      var compiledConfig = JSON.parse(JSON.stringify(pureConfig));
+	      var placeToPush = void 0;
+	
+	      switch (compiledConfig.chart.type) {
+	        case COLUMN:
+	          placeToPush = compiledConfig.hasOwnProperty('series') ? compiledConfig.series : compiledConfig.series = [];
+	          break;
+	
+	        case PIE:
+	          placeToPush = compiledConfig.series[0].hasOwnProperty('data') ? compiledConfig.series[0].data : compiledConfig.series[0].data = [];
+	          break;
+	      }
+	
+	      dataArray.forEach(function (el) {
+	        placeToPush.push(el);
+	      });
+	
+	      return compiledConfig;
+	    }
+	
+	    /**
+	     * Get chart data by name
+	     * @param  {String} name - Chart name
+	     * @return {Object} Chart data object
+	     */
+	
+	  }, {
+	    key: 'getChartData',
+	    value: function getChartData(name) {
+	      return this.dataStatic.filter(function (el) {
+	        return el.name === name;
+	      })[0];
+	    }
+	
+	    /**
+	     * Filter each array object
+	     * @return {Array} Pure data array for Tabs
+	     */
+	
+	  }, {
+	    key: 'dataForTabs',
+	    get: function get() {
+	      return this.dataStatic.map(function (el) {
+	        return {
+	          name: el.name,
+	          active: el.active
+	        };
+	      });
+	    }
+	  }]);
+	
+	  return Model;
+	}(_components2.default);
+	
+	exports.default = Model;
+
+/***/ },
+/* 29 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3026,7 +3081,7 @@
 	};
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3124,13 +3179,13 @@
 	exports.tempTabsData = tempTabsData;
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(31);
+	var content = __webpack_require__(32);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(11)(content, {});
@@ -3150,7 +3205,7 @@
 	}
 
 /***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(10)();
@@ -3164,13 +3219,13 @@
 
 
 /***/ },
-/* 32 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(33);
+	var content = __webpack_require__(34);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(11)(content, {});
@@ -3190,7 +3245,7 @@
 	}
 
 /***/ },
-/* 33 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(10)();
@@ -3204,13 +3259,13 @@
 
 
 /***/ },
-/* 34 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(35);
+	var content = __webpack_require__(36);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(11)(content, {});
@@ -3230,7 +3285,7 @@
 	}
 
 /***/ },
-/* 35 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(10)();

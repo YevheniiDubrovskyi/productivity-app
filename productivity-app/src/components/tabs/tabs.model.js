@@ -10,23 +10,7 @@ export default class Model extends ComponentModel {
    * @param {Array} data - Dirty data array
    */
   constructor(data) {
-    super();
-
-    this.dataStatic = this.formTabsData(data);
-  }
-
-  /**
-   * Filter each array object
-   * @param  {Array} data - Dirty data array
-   * @return {Array} Pure data array
-   */
-  formTabsData(data) {
-    return data.map((el) => {
-      return {
-        name: el.name,
-        active: el.active
-      };
-    });
+    super(data);
   }
 
   /**
@@ -49,7 +33,7 @@ export default class Model extends ComponentModel {
       };
     });
 
-    this.events.trigger('model:new_active', this.active);
+    this.events.trigger('model:new_active', name);
   }
 
   /**
