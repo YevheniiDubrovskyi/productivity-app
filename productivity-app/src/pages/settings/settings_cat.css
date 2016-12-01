@@ -83,7 +83,7 @@ body {
       -ms-transform: translate(0, -50%);
           transform: translate(0, -50%);
 
-  background: url(../img/label_sprite.png) no-repeat;
+  background: url(../../assets/img/label_sprite.png) no-repeat;
 }
 
 .radio-btn-list__item-lbl-span {

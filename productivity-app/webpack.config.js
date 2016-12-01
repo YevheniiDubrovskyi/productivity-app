@@ -19,7 +19,8 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, 'build/js'),
+    path: path.join(__dirname, 'build', 'js'),
+    publicPath: 'js/',
     filename: '[name].bundle.js',
   },
 
@@ -39,6 +40,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        exclude: /fonts/,
         loaders: [
           'style-loader',
           'css-loader',

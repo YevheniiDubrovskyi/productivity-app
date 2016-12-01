@@ -18,11 +18,6 @@ export default class Router {
     this.viewport = viewport;
 
     this.pushRoutes(...routes);
-    // const pattern = '#!/timer/:id/some_another/path';
-    // const regExp = utils.fromPatternToRegular(pattern);
-
-    // console.log('#!/timer/34/some_another/path/'.match(regExp));
-
     this.page = document.location.hash;
 
     window.addEventListener('popstate', (event) => {
@@ -71,16 +66,16 @@ export default class Router {
    * Get default page object
    * @return {Object} Return default page object
    */
-  get default() {
-    const default = this.routes.filter((rout) => {
+  get defaultPage() {
+    const defaultPage = this.routes.filter((rout) => {
       return rout.default;
     });
 
-    if (!default.length && default.length > 1) {
+    if (!defaultPage.length && defaultPage.length > 1) {
       throw new Error('Default page didn\'t set properly');
     }
 
-    return default[0];
+    return defaultPage[0];
   }
 
   /**
@@ -88,14 +83,16 @@ export default class Router {
    * @param {String} hash - document.location.hash
    */
   set page(hash) {
-    const hash = document.location.hash;
-
     if (!hash) {
-      this.loadPage(this.default);
+      this.loadPage(this.defaultPage);
       return;
     }
 
-    this.loadPage(this.getPageObject(hash));
+    let pageObject;
+
+    if (pageObject = this.getPageObject(hash)) {
+      this.loadPage(pageObject);
+    }
   }
 
   /**
@@ -104,13 +101,17 @@ export default class Router {
    */
   loadPage(pageObject) {
     require.ensure([], (require) => {
-      const Page = require(pageObject.path);
+      const module = require(pageObject.path);
+      const Page = module.default;
+      const params = pageObject.params ?
+        pageObject.params :
+        [];
 
       if (this.activePage) {
         this.activePage.destroy();
       }
 
-      this.activePage = new Page(this.viewport, ...pageObject.params);
+      this.activePage = new Page(this.viewport, ...params);
     });
   }
 

@@ -36,7 +36,7 @@ export default class Template extends PageTemplate {
           <span class="login-form-hint">Lorem ipsum dolor.</span>
         </section>
 
-        <button class="login-form-btn btn btn-niagara" type="submit">Log In</button>
+        <button class="login-form-btn btn btn-niagara" type="submit" onclick="history.pushState({}, '', '#!/task_list')">Log In</button>
       </form>
   </main>`;
   }

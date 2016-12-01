@@ -1,6 +1,34 @@
 /******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	var parentJsonpFunction = window["webpackJsonp"];
+/******/ 	window["webpackJsonp"] = function webpackJsonpCallback(chunkIds, moreModules) {
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, callbacks = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(installedChunks[chunkId])
+/******/ 				callbacks.push.apply(callbacks, installedChunks[chunkId]);
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			modules[moduleId] = moreModules[moduleId];
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules);
+/******/ 		while(callbacks.length)
+/******/ 			callbacks.shift().call(null, __webpack_require__);
+/******/
+/******/ 	};
+/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// "0" means "already loaded"
+/******/ 	// Array means "loading", array contains callbacks
+/******/ 	var installedChunks = {
+/******/ 		0:0
+/******/ 	};
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -26,6 +54,29 @@
 /******/ 		return module.exports;
 /******/ 	}
 /******/
+/******/ 	// This file contains only the entry chunk.
+/******/ 	// The chunk loading function for additional chunks
+/******/ 	__webpack_require__.e = function requireEnsure(chunkId, callback) {
+/******/ 		// "0" is the signal for "already loaded"
+/******/ 		if(installedChunks[chunkId] === 0)
+/******/ 			return callback.call(null, __webpack_require__);
+/******/
+/******/ 		// an array means "currently loading".
+/******/ 		if(installedChunks[chunkId] !== undefined) {
+/******/ 			installedChunks[chunkId].push(callback);
+/******/ 		} else {
+/******/ 			// start chunk loading
+/******/ 			installedChunks[chunkId] = [callback];
+/******/ 			var head = document.getElementsByTagName('head')[0];
+/******/ 			var script = document.createElement('script');
+/******/ 			script.type = 'text/javascript';
+/******/ 			script.charset = 'utf-8';
+/******/ 			script.async = true;
+/******/
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + ({}[chunkId]||chunkId) + ".bundle.js";
+/******/ 			head.appendChild(script);
+/******/ 		}
+/******/ 	};
 /******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
@@ -34,28 +85,27 @@
 /******/ 	__webpack_require__.c = installedModules;
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "js/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _router = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./router.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _router = __webpack_require__(1);
 	
 	var _router2 = _interopRequireDefault(_router);
 	
-	__webpack_require__(69);
+	__webpack_require__(11);
 	
-	__webpack_require__(71);
+	__webpack_require__(5);
 	
-	__webpack_require__(73);
+	__webpack_require__(9);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -78,48 +128,510 @@
 	  page: 'timer',
 	  pattern: '#!/timer/:id'
 	});
-	
-	// const timer = new Timer(viewport);
-	
-	// const taskList = new TaskList(viewport);
-	
-	// const loginPage = new Login(viewport);
-	
-	// const settingsPage = new Settings(viewport);
-	
-	// const reportsPage = new Reports(viewport);
-	
-	// const router = new Router(viewport,
-	//   {
-	//     name: 'reports',
-	//     controller: './pages/reports.controller',
-	//     url: '/reports'
-	//   }
-	// );
-	
-	// let thisObj = {
-	//   test: 'This is this object',
-	//   method: function(...data) {
-	//     console.log(this.test, data);
-	//   }
-	// };
-	
-	// router.events.on('model', (...data) => {
-	//   console.log('Model event, data: ', data);
-	// });
-	// router.events.on('model:remove', () => console.log('remove event'));
-	// router.events.on('model:add', thisObj.method, thisObj);
-	
-	// router.events.trigger('model:add', 1, 2, 'some test string', 5);
-	// router.events.trigger('model:remove');
-	// router.events.off('model:add', thisObj.method);
-	
-	// router.events.trigger('model:add', 'second test', 2, 'some test string', 5);
-	// router.events.trigger('model:remove');
 
 /***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
 
-/***/ 11:
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _eventbus = __webpack_require__(2);
+	
+	var _eventbus2 = _interopRequireDefault(_eventbus);
+	
+	var _utils = __webpack_require__(3);
+	
+	var _utils2 = _interopRequireDefault(_utils);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	/**
+	 * Router class
+	 */
+	var Router = function () {
+	
+	  /**
+	   * Create router
+	   * @param  {HTMLElement} viewport - Append to element
+	   * @param  {Array} routes
+	   */
+	  function Router(viewport) {
+	    var _this = this;
+	
+	    _classCallCheck(this, Router);
+	
+	    this.events = new _eventbus2.default();
+	    this.routes = [];
+	    this.activePage = null;
+	    this.viewport = viewport;
+	
+	    for (var _len = arguments.length, routes = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+	      routes[_key - 1] = arguments[_key];
+	    }
+	
+	    this.pushRoutes.apply(this, routes);
+	    this.page = document.location.hash;
+	
+	    window.addEventListener('popstate', function (event) {
+	      _this.page = document.location.hash;
+	    });
+	  }
+	
+	  /**
+	   * Push routes
+	   * @param {Object} routObject - Object with page module name and pattern
+	   */
+	
+	
+	  _createClass(Router, [{
+	    key: 'pushRoutes',
+	    value: function pushRoutes() {
+	      var _this2 = this;
+	
+	      for (var _len2 = arguments.length, routes = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+	        routes[_key2] = arguments[_key2];
+	      }
+	
+	      routes.forEach(function (rout) {
+	        _this2.routes.push({
+	          path: './pages/' + rout.page + '/' + rout.page + '.controller',
+	          regExp: _utils2.default.fromPatternToRegular(rout.pattern),
+	          default: rout.default ? true : false
+	        });
+	      });
+	    }
+	
+	    /**
+	     * Get page object
+	     * @param  {String} hash - Current hash
+	     * @return {Object | null} Return page object or null if page doesn't exist
+	     */
+	
+	  }, {
+	    key: 'getPageObject',
+	    value: function getPageObject(hash) {
+	      var match = null;
+	
+	      var matched = this.routes.filter(function (rout) {
+	        var find = hash.match(rout.regExp);
+	
+	        match = find ? find.slice(1) : match;
+	
+	        return find;
+	      });
+	
+	      return matched.length ? Object.assign(matched[0], { params: match }) : null;
+	    }
+	
+	    /**
+	     * Get default page object
+	     * @return {Object} Return default page object
+	     */
+	
+	  }, {
+	    key: 'loadPage',
+	
+	
+	    /**
+	     * Load and create page
+	     * @param  {pageObject} pageObject
+	     */
+	    value: function loadPage(pageObject) {
+	      var _this3 = this;
+	
+	      __webpack_require__.e/* nsure */(1, function (require) {
+	        var module = __webpack_require__(4)(pageObject.path);
+	        var Page = module.default;
+	        var params = pageObject.params ? pageObject.params : [];
+	
+	        if (_this3.activePage) {
+	          _this3.activePage.destroy();
+	        }
+	
+	        _this3.activePage = new (Function.prototype.bind.apply(Page, [null].concat([_this3.viewport], _toConsumableArray(params))))();
+	      });
+	    }
+	  }, {
+	    key: 'defaultPage',
+	    get: function get() {
+	      var defaultPage = this.routes.filter(function (rout) {
+	        return rout.default;
+	      });
+	
+	      if (!defaultPage.length && defaultPage.length > 1) {
+	        throw new Error('Default page didn\'t set properly');
+	      }
+	
+	      return defaultPage[0];
+	    }
+	
+	    /**
+	     * Set page by hash
+	     * @param {String} hash - document.location.hash
+	     */
+	
+	  }, {
+	    key: 'page',
+	    set: function set(hash) {
+	      if (!hash) {
+	        this.loadPage(this.defaultPage);
+	        return;
+	      }
+	
+	      var pageObject = void 0;
+	
+	      if (pageObject = this.getPageObject(hash)) {
+	        this.loadPage(pageObject);
+	      }
+	    }
+	  }]);
+	
+	  return Router;
+	}();
+	
+	exports.default = Router;
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	/**
+	 * Class representing custom events implementation
+	 */
+	var EventBus = function () {
+	
+	  /**
+	   * Create event bus
+	   */
+	  function EventBus() {
+	    _classCallCheck(this, EventBus);
+	
+	    this.events = Object.create(null);
+	  }
+	
+	  /**
+	   * Attach listenter for some event
+	   * @param  {String} eventPath - The string containing two colon separated values
+	   * @param  {Function} callback - Callback that will be called when event will be fired
+	   * @param  {Object} [context] - Context that will be applied to callback
+	   * @return {Object} this
+	   */
+	
+	
+	  _createClass(EventBus, [{
+	    key: 'on',
+	    value: function on(eventPath, callback, context) {
+	      var parsedPath = this.parseEventPath(eventPath);
+	      var events = this.events;
+	      var namespace = parsedPath.namespace;
+	      var key = parsedPath.key;
+	
+	      var callbackObject = {
+	        callback: callback,
+	        context: context
+	      };
+	
+	      var namespaceCallbacks = void 0;
+	
+	      if (!namespace) throw new Error('Event path don\'t have namespace part');
+	
+	      if (!events[namespace]) {
+	        events[namespace] = {
+	          common: [],
+	          keys: Object.create(null)
+	        };
+	      }
+	
+	      namespaceCallbacks = events[namespace];
+	
+	      if (key) {
+	        if (namespaceCallbacks.keys[key]) {
+	          namespaceCallbacks.keys[key].push(callbackObject);
+	        } else {
+	          namespaceCallbacks.keys[key] = [callbackObject];
+	        }
+	      } else {
+	        namespaceCallbacks.common.push(callbackObject);
+	      }
+	
+	      return this;
+	    }
+	
+	    /**
+	     * Detach listener for some event
+	     * @param  {String} eventPath - The string containing two colon separated values
+	     * @param  {Function} callback - Callback that will be deleted from event bus
+	     * @return {Object} this
+	     */
+	
+	  }, {
+	    key: 'off',
+	    value: function off(eventPath, callback) {
+	      var parsedPath = this.parseEventPath(eventPath);
+	      var events = this.events;
+	      var namespace = parsedPath.namespace;
+	      var key = parsedPath.key;
+	
+	      if (!namespace) throw new Error('Event path don\'t have namespace part');
+	
+	      if (key) {
+	        this.deleteCallback(events[namespace].keys[key], callback);
+	      } else {
+	        this.deleteCallback(events[namespace].common, callback);
+	      }
+	
+	      return this;
+	    }
+	
+	    /**
+	     * Attach listener for some event which will be detached after first execution
+	     * @param  {String} eventPath - The string containing two colon separated values
+	     * @param  {Function} callback - Callback that will be called when event will be fired
+	     * @param  {Object} [context] - Context that will be applied to callback
+	     * @return {Object} this
+	     */
+	
+	  }, {
+	    key: 'once',
+	    value: function once(eventPath, callback, context) {
+	      var parsedPath = this.parseEventPath(eventPath);
+	      var events = this.events;
+	      var namespace = parsedPath.namespace;
+	      var key = parsedPath.key;
+	
+	      if (!namespace) throw new Error('Event path don\'t have namespace part');
+	
+	      function carryingCallback() {
+	        for (var _len = arguments.length, data = Array(_len), _key = 0; _key < _len; _key++) {
+	          data[_key] = arguments[_key];
+	        }
+	
+	        setTimeout(callback.bind.apply(callback, [context].concat(data)), 0);
+	        this.off(eventPath, carryingCallback);
+	      };
+	
+	      this.on(eventPath, carryingCallback, this);
+	
+	      return this;
+	    }
+	
+	    /**
+	     * Delete callback from callback object array
+	     * @param  {Array} callbackArray - Callback object array
+	     * @param  {Function} callback - Callback that will be deleted
+	     */
+	
+	  }, {
+	    key: 'deleteCallback',
+	    value: function deleteCallback(callbackArray, callback) {
+	      var callbackIndex = -1;
+	
+	      callbackArray.forEach(function (callbackObject, index) {
+	        callbackIndex = callbackObject.callback === callback ? index : callbackIndex;
+	      });
+	
+	      callbackIndex !== -1 && callbackArray.splice(callbackIndex, 1);
+	    }
+	
+	    /**
+	     * Fire namespace and key events
+	     * @param  {String} eventPath - The string containing two colon separated values
+	     * @param  {...} [data] - Data that will be passed in callbacks
+	     * @return {Object} this
+	     */
+	
+	  }, {
+	    key: 'trigger',
+	    value: function trigger(eventPath) {
+	      var parsedEventPath = this.parseEventPath(eventPath);
+	      var namespaceCallbacks = this.getNamespaceCallbacks(parsedEventPath.namespace);
+	      var keyCallbacks = void 0;
+	
+	      if (namespaceCallbacks) {
+	        for (var _len2 = arguments.length, data = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+	          data[_key2 - 1] = arguments[_key2];
+	        }
+	
+	        if ((keyCallbacks = this.getKeyCallbacks(namespaceCallbacks, parsedEventPath.key)) && keyCallbacks.length) {
+	          this.fireCallbacksArray.apply(this, [keyCallbacks].concat(data));
+	        }
+	
+	        this.fireCallbacksArray.apply(this, [namespaceCallbacks.common, eventPath].concat(data));
+	      }
+	
+	      return this;
+	    }
+	
+	    /**
+	     * Fire each events from array
+	     * @param  {Array} callbacksArray - Array with callbacks which will be fired
+	     * @param {...} [data] - Data that will be passed in callbacks
+	     */
+	
+	  }, {
+	    key: 'fireCallbacksArray',
+	    value: function fireCallbacksArray(callbacksArray) {
+	      for (var _len3 = arguments.length, data = Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+	        data[_key3 - 1] = arguments[_key3];
+	      }
+	
+	      callbacksArray.forEach(function (event) {
+	        var callback = event.callback;
+	        var context = event.context;
+	
+	        setTimeout(callback.bind.apply(callback, [context].concat(data)), 0);
+	      });
+	    }
+	
+	    /**
+	     * Parse event path
+	     * @param  {String} eventPath - The string containing two colon separated values
+	     * @return {Object} parsedPath - Object that contains two properites namespace and key
+	     * @return {String} parsedPath.namespace - Event namespace
+	     * @return {String} parsedPath.key - Event specifactor
+	     */
+	
+	  }, {
+	    key: 'parseEventPath',
+	    value: function parseEventPath(eventPath) {
+	      var splitPath = eventPath.trim().split(':');
+	      return {
+	        namespace: splitPath[0],
+	        key: splitPath[1]
+	      };
+	    }
+	
+	    /**
+	     * Return namespace object with callbacks
+	     * @param {String} namespace - Event namespace
+	     * @return {Null | Object} Null or namespaceCallbacks
+	     */
+	
+	  }, {
+	    key: 'getNamespaceCallbacks',
+	    value: function getNamespaceCallbacks(namespace) {
+	      var namespaceCallbacks = this.events[namespace];
+	
+	      return namespaceCallbacks ? namespaceCallbacks : null;
+	    }
+	
+	    /**
+	     * Return array of objects with callbacks for some key
+	     * @param {Object} namespaceCallbacks - Namespace callbacks object
+	     * @param {String} key - Event key
+	     * @return {Null | Array} Null or keyCallbacks
+	     */
+	
+	  }, {
+	    key: 'getKeyCallbacks',
+	    value: function getKeyCallbacks(namespaceCallbacks, key) {
+	      var keyCallbacks = namespaceCallbacks.keys[key];
+	
+	      return keyCallbacks ? keyCallbacks : null;
+	    }
+	  }]);
+	
+	  return EventBus;
+	}();
+	
+	exports.default = EventBus;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var utils = {
+	
+	  /**
+	   * Capitalize first string letter
+	   * @param  {String} word - String wich will be capitalized
+	   * @return {String} Capitalized string;
+	   */
+	  capitalize: function capitalize(word) {
+	    return word.slice(0, 1).toUpperCase() + word.slice(1);
+	  },
+	
+	  /**
+	   * Return regular expression formed from string
+	   * @param {String} pattern - Pattern string
+	   * @return {RegExp} Regular expression for string
+	   */
+	  fromPatternToRegular: function fromPatternToRegular(pattern) {
+	    return new RegExp('^' + pattern.replace(/:\w+/, '(\\w+)') + '/?$');
+	  }
+	
+	};
+	
+	exports.default = utils;
+
+/***/ },
+/* 4 */,
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(6);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(8)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./base.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./base.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(7)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "html,\nbody {\n  font-family: 'Roboto', sans-serif;\n\n  position: relative;\n\n  height: 1px;\n  min-height: 100%;\n}\n\nmain,\nheader,\nfooter,\naside,\nsection,\narticle,\nnav,\nfigure {\n  display: block;\n}\n\nbutton,\ninput {\n  font-size: inherit;\n\n  color: inherit;\n  border: none;\n  background: none;\n}\n\nbutton:hover {\n  cursor: pointer;\n}\n\nbutton:active,\nbutton:focus,\ninput:focus {\n  outline: none;\n  box-shadow: none;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 7 */
 /***/ function(module, exports) {
 
 	/*
@@ -175,8 +687,7 @@
 
 
 /***/ },
-
-/***/ 12:
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -428,101 +939,16 @@
 
 
 /***/ },
-
-/***/ 69:
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(70);
+	var content = __webpack_require__(10);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(12)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./reset.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./reset.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-
-/***/ 70:
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(11)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/ \n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed, \nfigure, figcaption, footer, header, hgroup, \nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure, \nfooter, header, hgroup, menu, nav, section {\n  display: block;\n}\nbody {\n  line-height: 1;\n}\nol, ul {\n  list-style: none;\n}\nblockquote, q {\n  quotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}", ""]);
-	
-	// exports
-
-
-/***/ },
-
-/***/ 71:
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(72);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(12)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./base.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./base.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-
-/***/ 72:
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(11)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "html,\nbody {\n  font-family: 'Roboto', sans-serif;\n\n  position: relative;\n\n  height: 1px;\n  min-height: 100%;\n}\n\nmain,\nheader,\nfooter,\naside,\nsection,\narticle,\nnav,\nfigure {\n  display: block;\n}\n\nbutton,\ninput {\n  font-size: inherit;\n\n  color: inherit;\n  border: none;\n  background: none;\n}\n\nbutton:hover {\n  cursor: pointer;\n}\n\nbutton:active,\nbutton:focus,\ninput:focus {\n  outline: none;\n  box-shadow: none;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-
-/***/ 73:
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(74);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(12)(content, {});
+	var update = __webpack_require__(8)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -539,11 +965,10 @@
 	}
 
 /***/ },
-
-/***/ 74:
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(11)();
+	exports = module.exports = __webpack_require__(7)();
 	// imports
 	
 	
@@ -553,7 +978,46 @@
 	// exports
 
 
-/***/ }
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
 
-/******/ });
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(12);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(8)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./reset.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./reset.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(7)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/ \n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed, \nfigure, figcaption, footer, header, hgroup, \nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure, \nfooter, header, hgroup, menu, nav, section {\n  display: block;\n}\nbody {\n  line-height: 1;\n}\nol, ul {\n  list-style: none;\n}\nblockquote, q {\n  quotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}", ""]);
+	
+	// exports
+
+
+/***/ }
+/******/ ]);
 //# sourceMappingURL=app.bundle.js.map
