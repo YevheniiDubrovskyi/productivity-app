@@ -1,10 +1,10 @@
 import PageController from '../pages.controller';
-import View from './task_list.view';
+import View from './login.view';
 
 /**
  * Page controller
  */
-export default class TaskList extends PageController {
+export default class Login extends PageController {
 
   /**
    * Create page controller

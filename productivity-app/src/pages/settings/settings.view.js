@@ -1,6 +1,6 @@
 import PageView from '../pages.view';
 import Template from './settings.template';
-import './settings_pom.css';
+import './settings.css';
 
 import utils from '../../utils/utils';
 
@@ -50,7 +50,7 @@ export default class View extends PageView {
     }, this);
     topTabs.addClassToRoot('settings-tabs');
 
-    this.comopnentsList.push(topTabs);
+    this.componentsList.push(topTabs);
   }
 
   /**

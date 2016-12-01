@@ -1,6 +1,6 @@
 import PageView from '../pages.view';
-import Template from './task_list.template';
-import './task_list.css';
+import Template from './login.template';
+import './login.css';
 
 /**
  * Page view
@@ -20,9 +20,8 @@ export default class View extends PageView {
    * Render page template and components
    */
   render() {
-    // Dirty hack (until spliting to components)
-    document.body.classList.add('common-state');
-    document.body.classList.add('notification-shown-success');
+    // Dirty hack
+    document.body.classList.add('login-page');
 
     this.viewport.appendChild(this.markup);
     this.createComponents();
@@ -33,9 +32,8 @@ export default class View extends PageView {
    * Destroy page
    */
   destroy() {
-    // Dirty hack (until spliting to components)
-    document.body.classList.remove('common-state');
-    document.body.classList.remove('notification-shown-success');
+    // Dirty hack
+    document.body.classList.remove('login-page');
 
     super.destroy();
   }

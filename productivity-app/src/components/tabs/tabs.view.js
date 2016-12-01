@@ -8,7 +8,7 @@ import './tabs.css';
 export default class View extends ComponentView {
 
   /**
-   * Create component
+   * Create component view
    * @param  {Boolean} appendFlag - Flag for swtiching injection type
    * @param  {HTMLElement} container - Append to element
    * @param  {HTMLElement | String} insertBefore - InsertBefore element or empty string if appendFlag === true
@@ -30,7 +30,7 @@ export default class View extends ComponentView {
    */
   render(dataArray) {
     this.template = new Template(dataArray);
-    this.createDOMHendlers();
+    this.createDOMHandlers();
 
     if (this.appendFlag) {
       this.container.appendChild(this.markup);
@@ -38,7 +38,7 @@ export default class View extends ComponentView {
       this.container.insertBefore(this.markup, this.insertBefore);
     }
 
-    // "Feature" :D
+    // "Feature" :D (Two setTimeouts let us attach callback in outer function)
     setTimeout(() => {
       this.sendUpdate(this.activeName);
     }, 0);
@@ -47,9 +47,9 @@ export default class View extends ComponentView {
   }
 
   /**
-   * Create DOM handlers which will be attached when render will be fired
+   * Create DOM handlers which will be attached when render will be fire
    */
-  createDOMHendlers() {
+  createDOMHandlers() {
     const tabClickHandler = (event) => {
       const name = event.target.getAttribute('data-tab-name');
 

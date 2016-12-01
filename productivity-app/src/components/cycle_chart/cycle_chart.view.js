@@ -1,6 +1,6 @@
 import ComponentView from '../components.view';
 import Template from './cycle_chart.template';
-import './cyle_chart.css';
+import './cycle_chart.css';
 
 /**
  * Component view

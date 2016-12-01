@@ -1,4 +1,4 @@
-import ComponentController from ' ../components.controller';
+import ComponentController from '../components.controller';
 import View from './cycle.view';
 import Model from './cycle.model';
 
@@ -20,12 +20,12 @@ export default class Cycle extends ComponentController {
 
     this.render(this.model.optionsData, this.model.chartData);
 
-    this.model.events.on('model:updated', function(role, value) {
-      this.view.update(role, value);
-    }, this);
-
     this.view.events.on('view:updated', function(role, value) {
       this.model.changeValueByRole(role, value);
+    }, this);
+
+    this.model.events.on('model:updated', function(chartData) {
+      this.view.update(chartData);
     }, this);
   }
 

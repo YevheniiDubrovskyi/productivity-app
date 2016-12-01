@@ -1,0 +1,123 @@
+body.login-page {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(42, 63, 80, .92)), to(rgba(42, 63, 80, .92))),
+  url(../../assets/img/login_bg.jpg) center no-repeat;
+  background: -webkit-linear-gradient(rgba(42, 63, 80, .92), rgba(42, 63, 80, .92)),
+  url(../../assets/img/login_bg.jpg) center no-repeat;
+  background:         linear-gradient(rgba(42, 63, 80, .92), rgba(42, 63, 80, .92)),
+  url(../../assets/img/login_bg.jpg) center no-repeat;
+  background-size: cover;
+
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+          align-items: center;
+  padding: 1px 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.main {
+  font-size: 1rem;
+
+  width: 20.625em;
+  padding: 1px 0;
+}
+
+.logo {
+  width: 15.375em;
+  margin: 0 auto 2.5rem auto;
+}
+
+.logo-image {
+  display: block;
+
+  width: 100%;
+}
+
+.login-form {
+  padding: 1px 0;
+}
+
+.login-form-sect {
+  font-size: 1rem;
+
+  position: relative;
+
+  margin: 0 0 1.255em 0;
+
+  color: #8da5b8;
+}
+
+.login-form-icon {
+  font-size: .8em;
+}
+
+.login-form-inpt {
+  font-size: inherit;
+
+  display: block;
+
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  padding: .6em 1.8em;
+
+  color: #8da5b8;
+  border-bottom: 1px solid #425869;
+  background: none;
+}
+
+.login-form-hint {
+  font-size: .7em;
+
+  position: absolute;
+  bottom: -1.6em;
+  left: 0;
+
+  display: none;
+
+  color: #f75c4c;
+}
+
+.login-form-inpt:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.login-form-inpt:focus + i {
+  color: #fff;
+}
+
+.login-form-inpt:invalid {
+  border-bottom-color: #f75c4c;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.login-form-inpt:invalid ~ .login-form-hint {
+  display: block;
+}
+
+.login-form-icon:before {
+  position: absolute;
+  z-index: -1;
+  top: 48%;
+  left: 0;
+
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.login-form-btn.btn {
+  margin: 3.2rem auto 3.95rem auto;
+}

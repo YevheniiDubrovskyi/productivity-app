@@ -18,7 +18,18 @@ export default class CycleChart extends ComponentController {
     this.model = new Model(dataObject);
     this.view = new View(container);
 
-    this.render(this.model.getData());
+    this.render(this.model.calcData());
+
+    this.model.events.on('model:updated', function() {
+      this.view.update(this.model.calcData());
+    }, this);
+  }
+
+  /**
+   * Update component data
+   */
+  update(dataObject) {
+    this.model.update(dataObject);
   }
 
 }

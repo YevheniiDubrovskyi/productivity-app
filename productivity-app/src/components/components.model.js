@@ -15,6 +15,12 @@ export default class ComponentModel {
     this.events = new EventBus();
   }
 
+  destroy() {
+    delete this.events;
+    delete this.dataStatic;
+    delete this.dataCollection;
+  }
+
   /**
    * !!! Method for collection components
    * Add data to model and trigger event with added data

@@ -33,17 +33,20 @@ export default class View extends ComponentView {
    * @param {Object} chartData - Data object for chart component
    */
   createComponents(optionsData, chartData) {
-    const optionList = this.markup.querySelector('.cycle-option-list');
+    const optionListElement = this.markup.querySelector('.cycle-option-list');
 
     const chart = new CycleChart(this.markup, chartData);
     this.componentsList.push(chart);
 
-    this.events.on('view:dataRecived', function(role, value) {
-      chart.update(role, value);
+    this.events.on('view:dataRecived', function(chartData) {
+      chart.update(chartData);
     });
 
     optionsData.forEach((data) => {
-      const option = new CycleOption(optionList, data);
+      const optionListItemElement = optionListElement.appendChild(document.createElement('li'));
+      optionListItemElement.classList.add('cycle-option-list-item');
+
+      const option = new CycleOption(optionListItemElement, data);
 
       option.events.on('option:changed', function(role, value) {
         this.sendUpdate(role, value);

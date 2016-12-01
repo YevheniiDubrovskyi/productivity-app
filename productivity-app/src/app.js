@@ -1,15 +1,42 @@
 import Router from './router.js';
 
-import Reports from './pages/reports/reports.controller';
-import Settings from './pages/settings/settings.controller';
-
 import './assets/css/reset.css';
 import './assets/css/base.css';
 import './assets/css/common.css';
 
 const viewport = document.body;
 
-const settingsPage = new Settings(viewport);
+const router = new Router(viewport,
+  {
+    page: 'login',
+    pattern: '#!/login'
+  },
+  {
+    page: 'reports',
+    pattern: '#!/reports'
+  },
+  {
+    page: 'settings',
+    pattern: '#!/settings'
+  },
+  {
+    page: 'task_list',
+    pattern: '#!/',
+    default: true
+  },
+  {
+    page: 'timer',
+    pattern: '#!/timer/:id'
+  }
+);
+
+// const timer = new Timer(viewport);
+
+// const taskList = new TaskList(viewport);
+
+// const loginPage = new Login(viewport);
+
+// const settingsPage = new Settings(viewport);
 
 // const reportsPage = new Reports(viewport);
 

@@ -28,6 +28,7 @@ export default class ComponentController {
     delete this.events;
 
     this.view.destroy();
+    this.model.destroy();
   }
 
   /**

@@ -16,7 +16,7 @@ export default class Model extends ComponentModel {
   /**
    * Return data array by role
    * @param  {String} role - Part of data role string
-   * @return {Object}
+   * @return {Array} Data array
    */
   getDataArrayByRole(role) {
     return this.dataStatic.filter((el) => {
@@ -32,7 +32,7 @@ export default class Model extends ComponentModel {
   changeValueByRole(role, value) {
     this.getDataArrayByRole(role)[0].value = value;
 
-    this.events.trigger('model:updated', role, value);
+    this.events.trigger('model:updated', this.chartData);
   }
 
   /**
@@ -52,13 +52,16 @@ export default class Model extends ComponentModel {
 
     const rule = {
       'rule' : {
-        defaultValue: ruleObject.value,
+        value: ruleObject.value,
         step: ruleObject.step
       }
     };
 
     const options = this.optionsData.reduce((acc, data) => {
-      acc[data.role] = data.value;
+      acc[data.role] = {
+        value: data.value,
+        color: data.color
+      };
 
       return acc;
     }, {});
