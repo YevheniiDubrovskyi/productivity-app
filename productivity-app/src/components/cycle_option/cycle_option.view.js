@@ -1,6 +1,6 @@
 import ComponentView from '../components.view';
 import Template from './cycle_option.template';
-import './cycle_option.css';
+// import './cycle_option.less';
 
 /**
  * Component view

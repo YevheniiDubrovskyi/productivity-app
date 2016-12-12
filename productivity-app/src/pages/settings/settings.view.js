@@ -1,13 +1,13 @@
 import PageView from '../pages.view';
 import Template from './settings.template';
-import './settings.css';
+// import './settings.less';
 
 import utils from '../../utils/utils';
 
 import Cycle from '../../components/cycle/cycle.controller';
 import Tabs from '../../components/tabs/tabs.controller';
 
-import {settingsData, tempTabsData} from './settings.data';
+import {initinitSettingsData, tabsData} from './settings.data';
 
 /**
  * Page view
@@ -37,13 +37,13 @@ export default class View extends PageView {
    */
   createComponents() {
     const cycle = new Cycle(this.markup.querySelector('.main'),
-                            ...settingsData);
+                            ...initSettingsData);
     this.componentsList.push(cycle);
 
     const topTabs = new Tabs(true,
                              this.markup.querySelector('.aside'),
                              '',
-                             ...tempTabsData);
+                             ...tabsData);
 
     topTabs.events.on('tabs:changed', function(name) {
       this.subHeader = name;

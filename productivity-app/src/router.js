@@ -1,5 +1,6 @@
 import EventBus from './utils/eventbus.js';
 import utils from './utils/utils';
+import loginService from './services/login.service';
 
 /**
  * Router class
@@ -21,6 +22,7 @@ export default class Router {
     this.page = document.location.hash;
 
     window.addEventListener('popstate', (event) => {
+      console.log('popstate');
       this.page = document.location.hash;
     });
   }
@@ -32,8 +34,10 @@ export default class Router {
   pushRoutes(...routes) {
     routes.forEach((rout) => {
       this.routes.push({
+        page: rout.page,
         path: `./pages/${rout.page}/${rout.page}.controller`,
         regExp: utils.fromPatternToRegular(rout.pattern),
+        pattern: rout.pattern,
         default: rout.default ? true : false
       });
     });
@@ -83,8 +87,17 @@ export default class Router {
    * @param {String} hash - document.location.hash
    */
   set page(hash) {
+    if (!loginService.hasSession()) {
+      history.replaceState(null, null, '#!/login');
+      this.loadPage(this.getPageObject('#!/login'));
+      return;
+    }
+
     if (!hash) {
-      this.loadPage(this.defaultPage);
+      const defaultPage = this.defaultPage;
+
+      history.replaceState(null, null, defaultPage.pattern);
+      this.loadPage(defaultPage);
       return;
     }
 

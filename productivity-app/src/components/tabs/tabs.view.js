@@ -1,6 +1,6 @@
 import ComponentView from '../components.view';
 import Template from './tabs.template';
-import './tabs.css';
+// import './tabs.less';
 
 /**
  * Component view
@@ -9,7 +9,7 @@ export default class View extends ComponentView {
 
   /**
    * Create component view
-   * @param  {Boolean} appendFlag - Flag for swtiching injection type
+   * @param  {boolean} appendFlag - Flag for switching injection type
    * @param  {HTMLElement} container - Append to element
    * @param  {HTMLElement | String} insertBefore - InsertBefore element or empty string if appendFlag === true
    */
@@ -26,7 +26,7 @@ export default class View extends ComponentView {
 
   /**
    * Render component
-   * @param {Array} dataArray - Data array
+   * @param {array} dataArray - Data array
    */
   render(dataArray) {
     this.template = new Template(dataArray);
@@ -47,13 +47,13 @@ export default class View extends ComponentView {
   }
 
   /**
-   * Create DOM handlers which will be attached when render will be fire
+   * Create DOM handlers which will be attach when render will be fire
    */
   createDOMHandlers() {
     const tabClickHandler = (event) => {
       const name = event.target.getAttribute('data-tab-name');
 
-      if (name && name === this.activeName) return;
+      if (!name || name === this.activeName) return;
 
       this.active = name;
     }
@@ -75,7 +75,7 @@ export default class View extends ComponentView {
 
   /**
    * Get active tab name
-   * @return {String} Active tab name
+   * @return {string} Active tab name
    */
   get activeName() {
     return this.active.getAttribute('data-tab-name');
@@ -83,7 +83,7 @@ export default class View extends ComponentView {
 
   /**
    * Set active tab by name, add .active class
-   * @param {String} name - Tab's name which will be setted to active
+   * @param {string} name - Tab's name which will be setted to active
    */
   set active(name) {
     this.active.classList.remove('active');
@@ -94,7 +94,7 @@ export default class View extends ComponentView {
 
   /**
    * Get tab by name
-   * @param  {String} name - Tab name
+   * @param  {string} name - Tab name
    * @return {HTMLElement} Tab element
    */
   getTabByName(name) {

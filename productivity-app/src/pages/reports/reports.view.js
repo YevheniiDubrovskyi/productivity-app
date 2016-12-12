@@ -1,6 +1,6 @@
 import PageView from '../pages.view';
 import Template from './reports.template';
-import './reports.css';
+// import './reports.less';
 
 import ChartViewport from '../../components/chart_viewport/chart_viewport.controller';
 import Tabs from '../../components/tabs/tabs.controller';
@@ -28,7 +28,7 @@ export default class View extends PageView {
   render() {
     this.viewport.appendChild(this.markup);
     this.createComponents();
-    super.render(); // Attach page DOM events if exist
+    super.render();
   }
 
   /**

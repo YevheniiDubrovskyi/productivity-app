@@ -1,6 +1,6 @@
 import ComponentView from '../components.view';
 import Template from './cycle.template';
-import './cycle.css';
+// import './cycle.less';
 
 import CycleOption from '../cycle_option/cycle_option.controller';
 import CycleChart from '../cycle_chart/cycle_chart.controller';

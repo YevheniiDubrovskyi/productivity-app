@@ -1,4 +1,4 @@
-const settingsData = [
+const initSettingsData = [
   {
     role: 'iteration/even',
     title: 'Work time',
@@ -50,7 +50,7 @@ const settingsData = [
   }
 ];
 
-const tempTabsData = [
+const tabsData = [
   {
     name: 'pomodoros',
     active: true,
@@ -61,4 +61,4 @@ const tempTabsData = [
   }
 ];
 
-export {settingsData, tempTabsData};
+export {initSettingsData, tabsData};

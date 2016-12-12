@@ -1,6 +1,11 @@
 import PageView from '../pages.view';
 import Template from './task_list.template';
-import './task_list.css';
+// import './task_list.less';
+
+import Controls from '../../components/controls/controls.controller';
+// import Modal from '../../components/modal/modal.controller';
+import Tabs from '../../components/tabs/tabs.controller';
+// import TaskList from '../../components/task_list/task_list.controller';
 
 /**
  * Page view
@@ -20,29 +25,58 @@ export default class View extends PageView {
    * Render page template and components
    */
   render() {
-    // Dirty hack (until spliting to components)
-    document.body.classList.add('common-state');
-    document.body.classList.add('notification-shown-success');
-
     this.viewport.appendChild(this.markup);
     this.createComponents();
     super.render();
   }
 
   /**
-   * Destroy page
-   */
-  destroy() {
-    // Dirty hack (until spliting to components)
-    document.body.classList.remove('common-state');
-    document.body.classList.remove('notification-shown-success');
-
-    super.destroy();
-  }
-
-  /**
    * Create page components
    */
-  createComponents() {}
+  createComponents() {
+    const headerControls = new Controls(
+      this.markup.querySelector('.header'),
+      {
+        alias: 'add',
+        icon: '&#xe900;',
+        type: 'common',
+        active: false,
+        visible: false
+      },
+      {
+        alias: 'remove',
+        icon: '&#xe912;',
+        type: 'counter',
+        active: false,
+        visible: false
+      },
+      {
+        alias: 'reports',
+        icon: '&#xe90c;',
+        type: 'common',
+        active: false,
+        visible: true
+      },
+      {
+        alias: 'settings',
+        icon: '&#xe90b;',
+        type: 'common',
+        active: false,
+        visible: true
+      },
+      {
+        alias: 'signOut',
+        icon: '&#xe908;',
+        type: 'common',
+        visible: true
+      });
+
+    headerControls.events.on('controls:clicked', function(alias) {
+      console.log(alias);
+    }, this);
+
+    this.componentsList.push(headerControls);
+
+  }
 
 }

@@ -1,153 +1,190 @@
-webpackJsonp([1],[
-/* 0 */,
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */
+webpackJsonp([1],Array(35).concat([
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./assets/css/base.css": 5,
-		"./assets/css/common.css": 9,
-		"./assets/css/reset.css": 11,
-		"./assets/fonts/icomoon/fonts/icomoon.svg": 14,
-		"./assets/img/Logo.svg": 18,
-		"./assets/img/Logo_1.svg": 19,
-		"./assets/img/label_sprite.png": 20,
-		"./assets/img/login_bg.jpg": 21,
-		"./assets/img/tomato-failed.svg": 22,
-		"./assets/img/tomato.svg": 23,
-		"./assets/img/tomato_fill.svg": 24,
-		"./components/chart_viewport/chart_viewport.controller": 25,
-		"./components/chart_viewport/chart_viewport.controller.js": 25,
-		"./components/chart_viewport/chart_viewport.css": 30,
-		"./components/chart_viewport/chart_viewport.model": 40,
-		"./components/chart_viewport/chart_viewport.model.js": 40,
-		"./components/chart_viewport/chart_viewport.template": 29,
-		"./components/chart_viewport/chart_viewport.template.js": 29,
-		"./components/chart_viewport/chart_viewport.view": 27,
-		"./components/chart_viewport/chart_viewport.view.js": 27,
-		"./components/components.controller": 26,
-		"./components/components.controller.js": 26,
-		"./components/components.model": 34,
-		"./components/components.model.js": 34,
-		"./components/components.view": 28,
-		"./components/components.view.js": 28,
-		"./components/cycle/cycle.controller": 41,
-		"./components/cycle/cycle.controller.js": 41,
-		"./components/cycle/cycle.css": 44,
-		"./components/cycle/cycle.model": 58,
-		"./components/cycle/cycle.model.js": 58,
-		"./components/cycle/cycle.template": 43,
-		"./components/cycle/cycle.template.js": 43,
-		"./components/cycle/cycle.view": 42,
-		"./components/cycle/cycle.view.js": 42,
-		"./components/cycle_chart/cycle_chart.controller": 52,
-		"./components/cycle_chart/cycle_chart.controller.js": 52,
-		"./components/cycle_chart/cycle_chart.css": 55,
-		"./components/cycle_chart/cycle_chart.model": 57,
-		"./components/cycle_chart/cycle_chart.model.js": 57,
-		"./components/cycle_chart/cycle_chart.template": 54,
-		"./components/cycle_chart/cycle_chart.template.js": 54,
-		"./components/cycle_chart/cycle_chart.view": 53,
-		"./components/cycle_chart/cycle_chart.view.js": 53,
-		"./components/cycle_option/cycle_option.controller": 46,
-		"./components/cycle_option/cycle_option.controller.js": 46,
-		"./components/cycle_option/cycle_option.css": 49,
-		"./components/cycle_option/cycle_option.model": 51,
-		"./components/cycle_option/cycle_option.model.js": 51,
-		"./components/cycle_option/cycle_option.template": 48,
-		"./components/cycle_option/cycle_option.template.js": 48,
-		"./components/cycle_option/cycle_option.view": 47,
-		"./components/cycle_option/cycle_option.view.js": 47,
-		"./components/tabs/tabs.controller": 32,
-		"./components/tabs/tabs.controller.js": 32,
-		"./components/tabs/tabs.css": 37,
-		"./components/tabs/tabs.model": 33,
-		"./components/tabs/tabs.model.js": 33,
-		"./components/tabs/tabs.template": 36,
-		"./components/tabs/tabs.template.js": 36,
-		"./components/tabs/tabs.view": 35,
-		"./components/tabs/tabs.view.js": 35,
-		"./components/task/task.controller": 59,
-		"./components/task/task.controller.js": 59,
-		"./components/task/task.css": 60,
-		"./components/task/task.model": 62,
-		"./components/task/task.model.js": 62,
-		"./components/task/task.template": 63,
-		"./components/task/task.template.js": 63,
-		"./components/task/task.view": 64,
-		"./components/task/task.view.js": 64,
-		"./components/task_list/task_list.controller": 65,
-		"./components/task_list/task_list.controller.js": 65,
-		"./components/task_list/task_list.css": 66,
-		"./components/task_list/task_list.model": 68,
-		"./components/task_list/task_list.model.js": 68,
-		"./components/task_list/task_list.template": 69,
-		"./components/task_list/task_list.template.js": 69,
-		"./components/task_list/task_list.view": 70,
-		"./components/task_list/task_list.view.js": 70,
-		"./pages/login/login.controller": 72,
-		"./pages/login/login.controller.js": 72,
-		"./pages/login/login.css": 78,
-		"./pages/login/login.template": 76,
-		"./pages/login/login.template.js": 76,
-		"./pages/login/login.view": 74,
-		"./pages/login/login.view.js": 74,
-		"./pages/pages.controller": 73,
-		"./pages/pages.controller.js": 73,
-		"./pages/pages.template": 77,
-		"./pages/pages.template.js": 77,
-		"./pages/pages.view": 75,
-		"./pages/pages.view.js": 75,
-		"./pages/reports/reports.config": 80,
-		"./pages/reports/reports.config.js": 80,
-		"./pages/reports/reports.controller": 81,
-		"./pages/reports/reports.controller.js": 81,
-		"./pages/reports/reports.css": 84,
-		"./pages/reports/reports.data": 86,
-		"./pages/reports/reports.data.js": 86,
-		"./pages/reports/reports.template": 83,
-		"./pages/reports/reports.template.js": 83,
-		"./pages/reports/reports.view": 82,
-		"./pages/reports/reports.view.js": 82,
-		"./pages/settings/settings.controller": 87,
-		"./pages/settings/settings.controller.js": 87,
-		"./pages/settings/settings.css": 90,
-		"./pages/settings/settings.data": 92,
-		"./pages/settings/settings.data.js": 92,
-		"./pages/settings/settings.template": 89,
-		"./pages/settings/settings.template.js": 89,
-		"./pages/settings/settings.view": 88,
-		"./pages/settings/settings.view.js": 88,
-		"./pages/settings/settings_cat.css": 93,
-		"./pages/settings/settings_pom.css": 95,
-		"./pages/task_list/task_list.controller": 97,
-		"./pages/task_list/task_list.controller.js": 97,
-		"./pages/task_list/task_list.css": 100,
-		"./pages/task_list/task_list.template": 99,
-		"./pages/task_list/task_list.template.js": 99,
-		"./pages/task_list/task_list.view": 98,
-		"./pages/task_list/task_list.view.js": 98,
-		"./pages/timer/timer.controller": 102,
-		"./pages/timer/timer.controller.js": 102,
-		"./pages/timer/timer.css": 105,
-		"./pages/timer/timer.template": 104,
-		"./pages/timer/timer.template.js": 104,
-		"./pages/timer/timer.view": 103,
-		"./pages/timer/timer.view.js": 103,
-		"./router": 1,
-		"./router.js": 1,
-		"./services/firebase.service": 107,
-		"./services/firebase.service.js": 107,
-		"./services/localstorage.service": 108,
-		"./services/localstorage.service.js": 108,
-		"./services/login.service": 109,
-		"./services/login.service.js": 109,
-		"./utils/eventbus": 2,
-		"./utils/eventbus.js": 2,
-		"./utils/utils": 3,
-		"./utils/utils.js": 3
+		"./assets/fonts/icomoon/fonts/icomoon.svg": 37,
+		"./assets/img/Logo.svg": 41,
+		"./assets/img/Logo_1.svg": 42,
+		"./assets/img/label_sprite.png": 43,
+		"./assets/img/login_bg.jpg": 44,
+		"./assets/img/tomato-failed.svg": 45,
+		"./assets/img/tomato.svg": 46,
+		"./assets/img/tomato_fill.svg": 47,
+		"./assets/less/app.less": 48,
+		"./assets/less/base.less": 52,
+		"./assets/less/common.less": 54,
+		"./assets/less/mixins.less": 56,
+		"./assets/less/reset.less": 58,
+		"./assets/less/variables.less": 60,
+		"./components/button/button.controller": 62,
+		"./components/button/button.controller.js": 62,
+		"./components/button/button.less": 69,
+		"./components/button/button.model": 64,
+		"./components/button/button.model.js": 64,
+		"./components/button/button.template": 68,
+		"./components/button/button.template.js": 68,
+		"./components/button/button.view": 66,
+		"./components/button/button.view.js": 66,
+		"./components/category_input/category_input.controller": 71,
+		"./components/category_input/category_input.controller.js": 71,
+		"./components/category_input/category_input.less": 72,
+		"./components/category_input/category_input.model": 74,
+		"./components/category_input/category_input.model.js": 74,
+		"./components/category_input/category_input.template": 75,
+		"./components/category_input/category_input.template.js": 75,
+		"./components/category_input/category_input.view": 76,
+		"./components/category_input/category_input.view.js": 76,
+		"./components/chart_viewport/chart_viewport.controller": 77,
+		"./components/chart_viewport/chart_viewport.controller.js": 77,
+		"./components/chart_viewport/chart_viewport.less": 86,
+		"./components/chart_viewport/chart_viewport.model": 85,
+		"./components/chart_viewport/chart_viewport.model.js": 85,
+		"./components/chart_viewport/chart_viewport.template": 79,
+		"./components/chart_viewport/chart_viewport.template.js": 79,
+		"./components/chart_viewport/chart_viewport.view": 78,
+		"./components/chart_viewport/chart_viewport.view.js": 78,
+		"./components/components.controller": 63,
+		"./components/components.controller.js": 63,
+		"./components/components.model": 65,
+		"./components/components.model.js": 65,
+		"./components/components.view": 67,
+		"./components/components.view.js": 67,
+		"./components/controls/controls.controller": 88,
+		"./components/controls/controls.controller.js": 88,
+		"./components/controls/controls.less": 92,
+		"./components/controls/controls.model": 89,
+		"./components/controls/controls.model.js": 89,
+		"./components/controls/controls.template": 91,
+		"./components/controls/controls.template.js": 91,
+		"./components/controls/controls.view": 90,
+		"./components/controls/controls.view.js": 90,
+		"./components/cycle/cycle.controller": 94,
+		"./components/cycle/cycle.controller.js": 94,
+		"./components/cycle/cycle.less": 106,
+		"./components/cycle/cycle.model": 105,
+		"./components/cycle/cycle.model.js": 105,
+		"./components/cycle/cycle.template": 96,
+		"./components/cycle/cycle.template.js": 96,
+		"./components/cycle/cycle.view": 95,
+		"./components/cycle/cycle.view.js": 95,
+		"./components/cycle_chart/cycle_chart.controller": 101,
+		"./components/cycle_chart/cycle_chart.controller.js": 101,
+		"./components/cycle_chart/cycle_chart.less": 108,
+		"./components/cycle_chart/cycle_chart.model": 104,
+		"./components/cycle_chart/cycle_chart.model.js": 104,
+		"./components/cycle_chart/cycle_chart.template": 103,
+		"./components/cycle_chart/cycle_chart.template.js": 103,
+		"./components/cycle_chart/cycle_chart.view": 102,
+		"./components/cycle_chart/cycle_chart.view.js": 102,
+		"./components/cycle_option/cycle_option.controller": 97,
+		"./components/cycle_option/cycle_option.controller.js": 97,
+		"./components/cycle_option/cycle_option.less": 110,
+		"./components/cycle_option/cycle_option.model": 100,
+		"./components/cycle_option/cycle_option.model.js": 100,
+		"./components/cycle_option/cycle_option.template": 99,
+		"./components/cycle_option/cycle_option.template.js": 99,
+		"./components/cycle_option/cycle_option.view": 98,
+		"./components/cycle_option/cycle_option.view.js": 98,
+		"./components/modal/modal.controller": 112,
+		"./components/modal/modal.controller.js": 112,
+		"./components/modal/modal.less": 113,
+		"./components/modal/modal.model": 115,
+		"./components/modal/modal.model.js": 115,
+		"./components/modal/modal.template": 116,
+		"./components/modal/modal.template.js": 116,
+		"./components/modal/modal.view": 117,
+		"./components/modal/modal.view.js": 117,
+		"./components/tabs/tabs.controller": 80,
+		"./components/tabs/tabs.controller.js": 80,
+		"./components/tabs/tabs.less": 118,
+		"./components/tabs/tabs.model": 81,
+		"./components/tabs/tabs.model.js": 81,
+		"./components/tabs/tabs.template": 83,
+		"./components/tabs/tabs.template.js": 83,
+		"./components/tabs/tabs.view": 82,
+		"./components/tabs/tabs.view.js": 82,
+		"./components/task/task.controller": 120,
+		"./components/task/task.controller.js": 120,
+		"./components/task/task.less": 121,
+		"./components/task/task.model": 123,
+		"./components/task/task.model.js": 123,
+		"./components/task/task.template": 124,
+		"./components/task/task.template.js": 124,
+		"./components/task/task.view": 125,
+		"./components/task/task.view.js": 125,
+		"./components/task_list/task_list.controller": 126,
+		"./components/task_list/task_list.controller.js": 126,
+		"./components/task_list/task_list.less": 127,
+		"./components/task_list/task_list.model": 129,
+		"./components/task_list/task_list.model.js": 129,
+		"./components/task_list/task_list.template": 130,
+		"./components/task_list/task_list.template.js": 130,
+		"./components/task_list/task_list.view": 131,
+		"./components/task_list/task_list.view.js": 131,
+		"./pages/login/login.controller": 133,
+		"./pages/login/login.controller.js": 133,
+		"./pages/login/login.less": 139,
+		"./pages/login/login.template": 137,
+		"./pages/login/login.template.js": 137,
+		"./pages/login/login.view": 135,
+		"./pages/login/login.view.js": 135,
+		"./pages/pages.controller": 134,
+		"./pages/pages.controller.js": 134,
+		"./pages/pages.template": 138,
+		"./pages/pages.template.js": 138,
+		"./pages/pages.view": 136,
+		"./pages/pages.view.js": 136,
+		"./pages/reports/reports.config": 141,
+		"./pages/reports/reports.config.js": 141,
+		"./pages/reports/reports.controller": 142,
+		"./pages/reports/reports.controller.js": 142,
+		"./pages/reports/reports.data": 145,
+		"./pages/reports/reports.data.js": 145,
+		"./pages/reports/reports.less": 146,
+		"./pages/reports/reports.template": 144,
+		"./pages/reports/reports.template.js": 144,
+		"./pages/reports/reports.view": 143,
+		"./pages/reports/reports.view.js": 143,
+		"./pages/settings/settings.controller": 148,
+		"./pages/settings/settings.controller.js": 148,
+		"./pages/settings/settings.data": 151,
+		"./pages/settings/settings.data.js": 151,
+		"./pages/settings/settings.less": 152,
+		"./pages/settings/settings.template": 150,
+		"./pages/settings/settings.template.js": 150,
+		"./pages/settings/settings.view": 149,
+		"./pages/settings/settings.view.js": 149,
+		"./pages/task_list/task_list.controller": 154,
+		"./pages/task_list/task_list.controller.js": 154,
+		"./pages/task_list/task_list.less": 157,
+		"./pages/task_list/task_list.template": 156,
+		"./pages/task_list/task_list.template.js": 156,
+		"./pages/task_list/task_list.view": 155,
+		"./pages/task_list/task_list.view.js": 155,
+		"./pages/timer/timer.controller": 159,
+		"./pages/timer/timer.controller.js": 159,
+		"./pages/timer/timer.less": 162,
+		"./pages/timer/timer.template": 161,
+		"./pages/timer/timer.template.js": 161,
+		"./pages/timer/timer.view": 160,
+		"./pages/timer/timer.view.js": 160,
+		"./router": 19,
+		"./router.js": 19,
+		"./services/data.service": 164,
+		"./services/data.service.js": 164,
+		"./services/firebase.service": 23,
+		"./services/firebase.service.js": 23,
+		"./services/localstorage.service": 30,
+		"./services/localstorage.service.js": 30,
+		"./services/login.service": 22,
+		"./services/login.service.js": 22,
+		"./services/ping.service": 31,
+		"./services/ping.service.js": 31,
+		"./utils/eventbus": 20,
+		"./utils/eventbus.js": 20,
+		"./utils/utils": 21,
+		"./utils/utils.js": 21
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -160,71 +197,221 @@ webpackJsonp([1],[
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 4;
+	webpackContext.id = 35;
 
 
 /***/ },
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */
+/* 36 */,
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "../img/icomoon.svg";
 
 /***/ },
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "../img/Logo.svg";
 
 /***/ },
-/* 19 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "../img/Logo_1.svg";
 
 /***/ },
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "../img/label_sprite.png";
-
-/***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "../img/login_bg.jpg";
-
-/***/ },
-/* 22 */
+/* 43 */,
+/* 44 */,
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "../img/tomato-failed.svg";
 
 /***/ },
-/* 23 */
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "../img/tomato.svg";
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./base.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(51)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./base.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./base.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
 
 /***/ },
-/* 24 */
+/* 53 */,
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "../img/tomato_fill.svg";
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./common.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(51)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./common.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./common.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
 
 /***/ },
-/* 25 */
+/* 55 */,
+/* 56 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(57);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(51)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./mixins.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./mixins.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 57 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(50)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 58 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(59);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(51)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./reset.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./reset.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 59 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(50)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml,\nbody,\ndiv,\nspan,\napplet,\nobject,\niframe,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np,\nblockquote,\npre,\na,\nabbr,\nacronym,\naddress,\nbig,\ncite,\ncode,\ndel,\ndfn,\nem,\nimg,\nins,\nkbd,\nq,\ns,\nsamp,\nsmall,\nstrike,\nstrong,\nsub,\nsup,\ntt,\nvar,\nb,\nu,\ni,\ncenter,\ndl,\ndt,\ndd,\nol,\nul,\nli,\nfieldset,\nform,\nlabel,\nlegend,\ntable,\ncaption,\ntbody,\ntfoot,\nthead,\ntr,\nth,\ntd,\narticle,\naside,\ncanvas,\ndetails,\nembed,\nfigure,\nfigcaption,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\noutput,\nruby,\nsection,\nsummary,\ntime,\nmark,\naudio,\nvideo {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\nsection {\n  display: block;\n}\nbody {\n  line-height: 1;\n}\nol,\nul {\n  list-style: none;\n}\nblockquote,\nq {\n  quotes: none;\n}\nblockquote:before,\nblockquote:after,\nq:before,\nq:after {\n  content: '';\n  content: none;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 60 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(61);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(51)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./variables.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./variables.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 61 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(50)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -233,17 +420,17 @@ webpackJsonp([1],[
 	  value: true
 	});
 	
-	var _components = __webpack_require__(26);
+	var _components = __webpack_require__(63);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _chart_viewport = __webpack_require__(27);
+	var _button = __webpack_require__(64);
 	
-	var _chart_viewport2 = _interopRequireDefault(_chart_viewport);
+	var _button2 = _interopRequireDefault(_button);
 	
-	var _chart_viewport3 = __webpack_require__(40);
+	var _button3 = __webpack_require__(66);
 	
-	var _chart_viewport4 = _interopRequireDefault(_chart_viewport3);
+	var _button4 = _interopRequireDefault(_button3);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -256,41 +443,40 @@ webpackJsonp([1],[
 	/**
 	 * Component controller
 	 */
-	var ChartViewport = function (_ComponentController) {
-	  _inherits(ChartViewport, _ComponentController);
+	var Button = function (_ComponentController) {
+	  _inherits(Button, _ComponentController);
 	
 	  /**
-	   * Create component
-	   * @param {HTMLElement} container - Append to element
-	   * @param {...Object} dataArray - Data array
+	   * Createa component
+	   * @param  {boolean} appendFlag - Flag for switching injection type
+	   * @param  {HTMLElement} container - Append to element
+	   * @param  {string} theme - Theme name
+	   * @param  {string} name - Button name/value
+	   * @param  {HTMLElement | String} insertBefore InsertBefoe element or empty string if appendFlag === true
 	   */
-	  function ChartViewport(container) {
-	    _classCallCheck(this, ChartViewport);
+	  function Button(appendFlag, container, theme, name, insertBefore) {
+	    _classCallCheck(this, Button);
 	
-	    var _this = _possibleConstructorReturn(this, (ChartViewport.__proto__ || Object.getPrototypeOf(ChartViewport)).call(this));
+	    var _this = _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this));
 	
-	    for (var _len = arguments.length, dataArray = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-	      dataArray[_key - 1] = arguments[_key];
-	    }
+	    _this.model = new _button2.default(name, theme);
+	    _this.view = new _button4.default(appendFlag, container, insertBefore);
 	
-	    _this.model = new _chart_viewport4.default(dataArray);
-	    _this.view = new _chart_viewport2.default(container);
+	    _this.render(_this.model.getData());
 	
-	    _this.render(_this.model.dataForTabs);
-	
-	    _this.view.events.on('view:updated', function (name) {
-	      this.view.update(this.model.getConf(name));
+	    _this.view.events.on('view:clicked', function () {
+	      this.events.trigger('button:clicked');
 	    }, _this);
 	    return _this;
 	  }
 	
-	  return ChartViewport;
+	  return Button;
 	}(_components2.default);
 	
-	exports.default = ChartViewport;
+	exports.default = Button;
 
 /***/ },
-/* 26 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -301,7 +487,7 @@ webpackJsonp([1],[
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _eventbus = __webpack_require__(2);
+	var _eventbus = __webpack_require__(20);
 	
 	var _eventbus2 = _interopRequireDefault(_eventbus);
 	
@@ -380,7 +566,164 @@ webpackJsonp([1],[
 	exports.default = ComponentController;
 
 /***/ },
-/* 27 */
+/* 64 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _components = __webpack_require__(65);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * Component model
+	 */
+	var Model = function (_ComponentModel) {
+	  _inherits(Model, _ComponentModel);
+	
+	  /**
+	   * Create component model
+	   * @param  {string} name - Button name
+	   * @param  {string} theme - Theme name
+	   */
+	  function Model(name, theme) {
+	    _classCallCheck(this, Model);
+	
+	    return _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this, {
+	      name: name,
+	      theme: theme
+	    }));
+	  }
+	
+	  /**
+	   * Return copy of data object
+	   * @return {object} Data object copy
+	   */
+	
+	
+	  _createClass(Model, [{
+	    key: 'getData',
+	    value: function getData() {
+	      return Object.assign({}, this.dataStatic);
+	    }
+	  }]);
+	
+	  return Model;
+	}(_components2.default);
+	
+	exports.default = Model;
+
+/***/ },
+/* 65 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _eventbus = __webpack_require__(20);
+	
+	var _eventbus2 = _interopRequireDefault(_eventbus);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	/**
+	 * Abstract class for component model
+	 */
+	var ComponentModel = function () {
+	
+	  /**
+	   * Create component model
+	   * @param {} data - Any data
+	   */
+	  function ComponentModel(data) {
+	    _classCallCheck(this, ComponentModel);
+	
+	    this.dataCollection = []; // For collection components
+	    this.dataStatic = data ? data : {}; // For common components (For cases when data is pure)
+	    this.events = new _eventbus2.default();
+	  }
+	
+	  _createClass(ComponentModel, [{
+	    key: 'destroy',
+	    value: function destroy() {
+	      delete this.events;
+	      delete this.dataStatic;
+	      delete this.dataCollection;
+	    }
+	
+	    /**
+	     * !!! Method for collection components
+	     * Add data to model and trigger event with added data
+	     * @param {...} data - Any data, any type
+	     */
+	
+	  }, {
+	    key: 'addData',
+	    value: function addData() {
+	      var _dataCollection, _events;
+	
+	      for (var _len = arguments.length, data = Array(_len), _key = 0; _key < _len; _key++) {
+	        data[_key] = arguments[_key];
+	      }
+	
+	      (_dataCollection = this.dataCollection).push.apply(_dataCollection, data);
+	      (_events = this.events).trigger.apply(_events, ['model:added'].concat(data));
+	    }
+	
+	    /**
+	     * !!! Method for common components
+	     * Rewrite data and trigger event with new data
+	     * @param {Object} data - Data object
+	     */
+	
+	  }, {
+	    key: 'update',
+	    value: function update(data) {
+	      this.updateWithoutEvent(data);
+	      this.events.trigger('model:updated', this.dataStatic);
+	    }
+	
+	    /**
+	     * !!! Method for common components
+	     * Rewrite data in model (without event for preventing infinite loop in some cases)
+	     * @param {Object} data - Data object
+	     */
+	
+	  }, {
+	    key: 'updateWithoutEvent',
+	    value: function updateWithoutEvent(data) {
+	      this.dataStatic = data;
+	    }
+	  }]);
+	
+	  return ComponentModel;
+	}();
+	
+	exports.default = ComponentModel;
+
+/***/ },
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -393,33 +736,23 @@ webpackJsonp([1],[
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _components = __webpack_require__(28);
+	var _components = __webpack_require__(67);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _chart_viewport = __webpack_require__(29);
+	var _button = __webpack_require__(68);
 	
-	var _chart_viewport2 = _interopRequireDefault(_chart_viewport);
-	
-	__webpack_require__(30);
-	
-	var _tabs = __webpack_require__(32);
-	
-	var _tabs2 = _interopRequireDefault(_tabs);
-	
-	var _highstock = __webpack_require__(39);
-	
-	var _highstock2 = _interopRequireDefault(_highstock);
+	var _button2 = _interopRequireDefault(_button);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	// import './button.less';
 	
 	/**
 	 * Component view
@@ -429,68 +762,64 @@ webpackJsonp([1],[
 	
 	  /**
 	   * Create component view
+	   * @param  {boolean} appendFlag - Flag for switching injection type
 	   * @param  {HTMLElement} container - Append to element
+	   * @param  {HTMLElement | String} insertBefore InsertBefoe element or empty string if appendFlag === true
 	   */
-	  function View(container) {
+	  function View(appendFlag, container, insertBefore) {
 	    _classCallCheck(this, View);
 	
-	    return _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this, container));
+	    if (!appendFlag && !(insertBefore instanceof HTMLElement)) {
+	      throw new TypeError('insertBefore argument is not instance of HTMLElement');
+	    }
+	
+	    var _this = _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this, container));
+	
+	    _this.appendFlag = appendFlag;
+	    _this.insertBefore = insertBefore;
+	    return _this;
 	  }
 	
 	  /**
 	   * Render component
-	   * @param  {Array} data - Data array
+	   * @param {objet} dataObject - Data object
 	   */
 	
 	
 	  _createClass(View, [{
 	    key: 'render',
-	    value: function render(dataArray) {
-	      this.template = new _chart_viewport2.default();
+	    value: function render(dataObject) {
+	      this.template = new _button2.default(dataObject);
+	      this.createDOMHandlers();
 	
-	      this.container.appendChild(this.markup);
-	      this.createComponents(dataArray);
+	      if (this.appendFlag) {
+	        this.container.appendChild(this.markup);
+	      } else {
+	        this.container.insertBefore(this.markup, this.insertBefore);
+	      }
+	
 	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'render', this).call(this);
 	    }
 	
 	    /**
-	     * Create inner components
-	     * @param  {Array} data - Data array
+	     * Create DOM handlers which will be attach when render will be fire
+	     * @return {[type]} [description]
 	     */
 	
 	  }, {
-	    key: 'createComponents',
-	    value: function createComponents(dataArray) {
-	      var tabs = new (Function.prototype.bind.apply(_tabs2.default, [null].concat([false, this.markup, this.markup.querySelector('#chart')], _toConsumableArray(dataArray))))();
+	    key: 'createDOMHandlers',
+	    value: function createDOMHandlers() {
+	      var _this2 = this;
 	
-	      tabs.events.on('tabs:changed', function (name) {
-	        this.sendUpdate(name);
-	      }, this);
+	      var btnClickHandler = function btnClickHandler() {
+	        _this2.events.trigger('view:clicked');
+	      };
 	
-	      this.componentsList.push(tabs);
-	    }
-	
-	    /**
-	     * !!! Method for common components
-	     * Update data in view
-	     * @param {...} data - Any data, any type
-	     */
-	
-	  }, {
-	    key: 'update',
-	    value: function update(config) {
-	      this.showChart(config);
-	    }
-	
-	    /**
-	     * Render chart by name
-	     * @param {String} name - Chart name
-	     */
-	
-	  }, {
-	    key: 'showChart',
-	    value: function showChart(config) {
-	      _highstock2.default.chart('chart', config);
+	      this.domEventsList.push({
+	        element: this.markup,
+	        eventName: 'click',
+	        callback: btnClickHandler
+	      });
 	    }
 	  }]);
 	
@@ -500,7 +829,7 @@ webpackJsonp([1],[
 	exports.default = View;
 
 /***/ },
-/* 28 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -511,7 +840,7 @@ webpackJsonp([1],[
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _eventbus = __webpack_require__(2);
+	var _eventbus = __webpack_require__(20);
 	
 	var _eventbus2 = _interopRequireDefault(_eventbus);
 	
@@ -697,7 +1026,196 @@ webpackJsonp([1],[
 	exports.default = ComponentView;
 
 /***/ },
-/* 29 */
+/* 68 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	/**
+	 * Component template
+	 */
+	var Template =
+	
+	/**
+	 * Create component template
+	 * @param  {object} dataObject - Data object
+	 */
+	function Template(dataObject) {
+	  _classCallCheck(this, Template);
+	
+	  this.markup = document.createElement('button');
+	  this.markup.classList.add('btn');
+	  this.markup.classList.add('btn-' + dataObject.theme);
+	  this.markup.innerHTML = dataObject.name;
+	};
+	
+	exports.default = Template;
+
+/***/ },
+/* 69 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./button.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(51)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./button.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./button.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 70 */,
+/* 71 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 72 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(73);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(51)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./category_input.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./category_input.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 73 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(50)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 74 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 75 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 76 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 77 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _components = __webpack_require__(63);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	var _chart_viewport = __webpack_require__(78);
+	
+	var _chart_viewport2 = _interopRequireDefault(_chart_viewport);
+	
+	var _chart_viewport3 = __webpack_require__(85);
+	
+	var _chart_viewport4 = _interopRequireDefault(_chart_viewport3);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * Component controller
+	 */
+	var ChartViewport = function (_ComponentController) {
+	  _inherits(ChartViewport, _ComponentController);
+	
+	  /**
+	   * Create component
+	   * @param {HTMLElement} container - Append to element
+	   * @param {...Object} dataArray - Data array
+	   */
+	  function ChartViewport(container) {
+	    _classCallCheck(this, ChartViewport);
+	
+	    var _this = _possibleConstructorReturn(this, (ChartViewport.__proto__ || Object.getPrototypeOf(ChartViewport)).call(this));
+	
+	    for (var _len = arguments.length, dataArray = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+	      dataArray[_key - 1] = arguments[_key];
+	    }
+	
+	    _this.model = new _chart_viewport4.default(dataArray);
+	    _this.view = new _chart_viewport2.default(container);
+	
+	    _this.render(_this.model.dataForTabs);
+	
+	    _this.view.events.on('view:updated', function (name) {
+	      this.view.update(this.model.getConf(name));
+	    }, _this);
+	    return _this;
+	  }
+	
+	  return ChartViewport;
+	}(_components2.default);
+	
+	exports.default = ChartViewport;
+
+/***/ },
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -708,7 +1226,126 @@ webpackJsonp([1],[
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _utils = __webpack_require__(3);
+	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+	
+	var _components = __webpack_require__(67);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	var _chart_viewport = __webpack_require__(79);
+	
+	var _chart_viewport2 = _interopRequireDefault(_chart_viewport);
+	
+	var _tabs = __webpack_require__(80);
+	
+	var _tabs2 = _interopRequireDefault(_tabs);
+	
+	var _highstock = __webpack_require__(84);
+	
+	var _highstock2 = _interopRequireDefault(_highstock);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// import './chart_viewport.less';
+	
+	/**
+	 * Component view
+	 */
+	var View = function (_ComponentView) {
+	  _inherits(View, _ComponentView);
+	
+	  /**
+	   * Create component view
+	   * @param  {HTMLElement} container - Append to element
+	   */
+	  function View(container) {
+	    _classCallCheck(this, View);
+	
+	    return _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this, container));
+	  }
+	
+	  /**
+	   * Render component
+	   * @param  {Array} data - Data array
+	   */
+	
+	
+	  _createClass(View, [{
+	    key: 'render',
+	    value: function render(dataArray) {
+	      this.template = new _chart_viewport2.default();
+	
+	      this.container.appendChild(this.markup);
+	      this.createComponents(dataArray);
+	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'render', this).call(this);
+	    }
+	
+	    /**
+	     * Create inner components
+	     * @param  {Array} data - Data array
+	     */
+	
+	  }, {
+	    key: 'createComponents',
+	    value: function createComponents(dataArray) {
+	      var tabs = new (Function.prototype.bind.apply(_tabs2.default, [null].concat([false, this.markup, this.markup.querySelector('#chart')], _toConsumableArray(dataArray))))();
+	
+	      tabs.events.on('tabs:changed', function (name) {
+	        this.sendUpdate(name);
+	      }, this);
+	
+	      this.componentsList.push(tabs);
+	    }
+	
+	    /**
+	     * !!! Method for common components
+	     * Update data in view
+	     * @param {...} data - Any data, any type
+	     */
+	
+	  }, {
+	    key: 'update',
+	    value: function update(config) {
+	      this.showChart(config);
+	    }
+	
+	    /**
+	     * Render chart by name
+	     * @param {String} name - Chart name
+	     */
+	
+	  }, {
+	    key: 'showChart',
+	    value: function showChart(config) {
+	      _highstock2.default.chart('chart', config);
+	    }
+	  }]);
+	
+	  return View;
+	}(_components2.default);
+	
+	exports.default = View;
+
+/***/ },
+/* 79 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _utils = __webpack_require__(21);
 	
 	var _utils2 = _interopRequireDefault(_utils);
 	
@@ -751,47 +1388,7 @@ webpackJsonp([1],[
 	exports.default = Template;
 
 /***/ },
-/* 30 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(31);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(8)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./chart_viewport.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./chart_viewport.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 31 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(7)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "#chart {\n  width: 53%;\n  height: 20rem;\n  margin: 0 auto;\n}\n\n.tabs-list {\n  font-size: .95rem;\n\n  display: inline-block;\n}\n\n.tabs-list__item {\n  position: relative;\n\n  float: left;\n}\n\n.tabs-list__item:first-child .tabs-list__item-btn {\n  padding-left: 0;\n}\n\n.tabs-list__item:last-child .tabs-list__item-btn {\n  padding-right: 0;\n}\n\n.tabs-list__item-btn {\n  font-family: 'PT Sans', sans-serif;\n\n  padding: 0 .5em;\n  transition: .1s ease-in-out;\n\n  color: #8da5b8;\n}\n\n.tabs-list__item-btn:after {\n  font-size: .9em;\n\n  position: absolute;\n  top: -.01rem;\n  right: -.21em;\n\n  content: '|';\n\n  color: #8da5b8 !important;\n}\n\n.tabs-list__item:last-child .tabs-list__item-btn:after {\n  display: none;\n}\n\n.tabs-list__item-btn.active,\n.tabs-list__item-btn:hover {\n  color: #fff;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 32 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -800,15 +1397,15 @@ webpackJsonp([1],[
 	  value: true
 	});
 	
-	var _components = __webpack_require__(26);
+	var _components = __webpack_require__(63);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _tabs = __webpack_require__(33);
+	var _tabs = __webpack_require__(81);
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
-	var _tabs3 = __webpack_require__(35);
+	var _tabs3 = __webpack_require__(82);
 	
 	var _tabs4 = _interopRequireDefault(_tabs3);
 	
@@ -828,10 +1425,10 @@ webpackJsonp([1],[
 	
 	  /**
 	   * Create component
-	   * @param  {Boolean} appendFlag - Flag for swtiching injection type
+	   * @param  {boolean} appendFlag - Flag for swtiching injection type
 	   * @param  {HTMLElement} container - Append to element
 	   * @param  {HTMLElement | String} insertBefore - InsertBefore element or empty string if appendFlag === true
-	   * @param  {...Object} dataArray - Data array
+	   * @param  {...object} dataArray - Data array
 	   */
 	  function Tabs(appendFlag, container, insertBefore) {
 	    _classCallCheck(this, Tabs);
@@ -845,7 +1442,7 @@ webpackJsonp([1],[
 	    _this.model = new _tabs2.default(dataArray);
 	    _this.view = new _tabs4.default(appendFlag, container, insertBefore);
 	
-	    _this.render(_this.model.data);
+	    _this.render(_this.model.getData());
 	
 	    _this.view.events.on('view:updated', function (name) {
 	      this.model.active = name;
@@ -863,7 +1460,7 @@ webpackJsonp([1],[
 	exports.default = Tabs;
 
 /***/ },
-/* 33 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -874,7 +1471,7 @@ webpackJsonp([1],[
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _components = __webpack_require__(34);
+	var _components = __webpack_require__(65);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -894,7 +1491,7 @@ webpackJsonp([1],[
 	
 	  /**
 	   * Create component model
-	   * @param {Array} data - Dirty data array
+	   * @param {array} data - Dirty data array
 	   */
 	  function Model(data) {
 	    _classCallCheck(this, Model);
@@ -904,19 +1501,19 @@ webpackJsonp([1],[
 	
 	  /**
 	   * Return copy of pure data array
-	   * @return {[type]} [description]
+	   * @return {array} Data array
 	   */
 	
 	
 	  _createClass(Model, [{
-	    key: 'data',
-	    get: function get() {
+	    key: 'getData',
+	    value: function getData() {
 	      return this.dataStatic.slice();
 	    }
 	
 	    /**
 	     * Set active tab
-	     * @param  {String} name - Tab name
+	     * @param  {string} name - Tab name
 	     */
 	
 	  }, {
@@ -934,7 +1531,7 @@ webpackJsonp([1],[
 	
 	    /**
 	     * Get name of active tab
-	     * @return {String} Active tab name
+	     * @return {string} Active tab name
 	     */
 	    ,
 	    get: function get() {
@@ -950,102 +1547,7 @@ webpackJsonp([1],[
 	exports.default = Model;
 
 /***/ },
-/* 34 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _eventbus = __webpack_require__(2);
-	
-	var _eventbus2 = _interopRequireDefault(_eventbus);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	/**
-	 * Abstract class for component model
-	 */
-	var ComponentModel = function () {
-	
-	  /**
-	   * Create component model
-	   * @param {} data - Any data
-	   */
-	  function ComponentModel(data) {
-	    _classCallCheck(this, ComponentModel);
-	
-	    this.dataCollection = []; // For collection components
-	    this.dataStatic = data ? data : {}; // For common components (For cases when data is pure)
-	    this.events = new _eventbus2.default();
-	  }
-	
-	  _createClass(ComponentModel, [{
-	    key: 'destroy',
-	    value: function destroy() {
-	      delete this.events;
-	      delete this.dataStatic;
-	      delete this.dataCollection;
-	    }
-	
-	    /**
-	     * !!! Method for collection components
-	     * Add data to model and trigger event with added data
-	     * @param {...} data - Any data, any type
-	     */
-	
-	  }, {
-	    key: 'addData',
-	    value: function addData() {
-	      var _dataCollection, _events;
-	
-	      for (var _len = arguments.length, data = Array(_len), _key = 0; _key < _len; _key++) {
-	        data[_key] = arguments[_key];
-	      }
-	
-	      (_dataCollection = this.dataCollection).push.apply(_dataCollection, data);
-	      (_events = this.events).trigger.apply(_events, ['model:added'].concat(data));
-	    }
-	
-	    /**
-	     * !!! Method for common components
-	     * Rewrite data and trigger event with new data
-	     * @param {Object} data - Data object
-	     */
-	
-	  }, {
-	    key: 'update',
-	    value: function update(data) {
-	      this.updateWithoutEvent(data);
-	      this.events.trigger('model:updated', this.dataStatic);
-	    }
-	
-	    /**
-	     * !!! Method for common components
-	     * Rewrite data in model (without event for preventing infinite loop in some cases)
-	     * @param {Object} data - Data object
-	     */
-	
-	  }, {
-	    key: 'updateWithoutEvent',
-	    value: function updateWithoutEvent(data) {
-	      this.dataStatic = data;
-	    }
-	  }]);
-	
-	  return ComponentModel;
-	}();
-	
-	exports.default = ComponentModel;
-
-/***/ },
-/* 35 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1058,15 +1560,13 @@ webpackJsonp([1],[
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _components = __webpack_require__(28);
+	var _components = __webpack_require__(67);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _tabs = __webpack_require__(36);
+	var _tabs = __webpack_require__(83);
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
-	
-	__webpack_require__(37);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -1076,6 +1576,8 @@ webpackJsonp([1],[
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	// import './tabs.less';
+	
 	/**
 	 * Component view
 	 */
@@ -1084,7 +1586,7 @@ webpackJsonp([1],[
 	
 	  /**
 	   * Create component view
-	   * @param  {Boolean} appendFlag - Flag for swtiching injection type
+	   * @param  {boolean} appendFlag - Flag for switching injection type
 	   * @param  {HTMLElement} container - Append to element
 	   * @param  {HTMLElement | String} insertBefore - InsertBefore element or empty string if appendFlag === true
 	   */
@@ -1104,7 +1606,7 @@ webpackJsonp([1],[
 	
 	  /**
 	   * Render component
-	   * @param {Array} dataArray - Data array
+	   * @param {array} dataArray - Data array
 	   */
 	
 	
@@ -1131,7 +1633,7 @@ webpackJsonp([1],[
 	    }
 	
 	    /**
-	     * Create DOM handlers which will be attached when render will be fire
+	     * Create DOM handlers which will be attach when render will be fire
 	     */
 	
 	  }, {
@@ -1142,7 +1644,7 @@ webpackJsonp([1],[
 	      var tabClickHandler = function tabClickHandler(event) {
 	        var name = event.target.getAttribute('data-tab-name');
 	
-	        if (name && name === _this3.activeName) return;
+	        if (!name || name === _this3.activeName) return;
 	
 	        _this3.active = name;
 	      };
@@ -1165,7 +1667,7 @@ webpackJsonp([1],[
 	
 	    /**
 	     * Get tab by name
-	     * @param  {String} name - Tab name
+	     * @param  {string} name - Tab name
 	     * @return {HTMLElement} Tab element
 	     */
 	    value: function getTabByName(name) {
@@ -1179,14 +1681,14 @@ webpackJsonp([1],[
 	
 	    /**
 	     * Get active tab name
-	     * @return {String} Active tab name
+	     * @return {string} Active tab name
 	     */
 	    ,
 	
 	
 	    /**
 	     * Set active tab by name, add .active class
-	     * @param {String} name - Tab's name which will be setted to active
+	     * @param {string} name - Tab's name which will be setted to active
 	     */
 	    set: function set(name) {
 	      this.active.classList.remove('active');
@@ -1207,7 +1709,7 @@ webpackJsonp([1],[
 	exports.default = View;
 
 /***/ },
-/* 36 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1218,7 +1720,7 @@ webpackJsonp([1],[
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _utils = __webpack_require__(3);
+	var _utils = __webpack_require__(21);
 	
 	var _utils2 = _interopRequireDefault(_utils);
 	
@@ -1233,28 +1735,28 @@ webpackJsonp([1],[
 	
 	  /**
 	   * Create component template
-	   * @param {Array} dataArray - Data array
+	   * @param {array} dataArray - Data array
 	   */
 	  function Template(dataArray) {
 	    _classCallCheck(this, Template);
 	
 	    this.markup = document.createElement('ul');
 	    this.markup.classList.add('tabs-list');
-	    this.markup.innerHTML = this.createListItems(dataArray);
+	    this.markup.innerHTML = this.createItemsList(dataArray);
 	  }
 	
 	  /**
-	   * Create list items depends on data array
-	   * @param  {Array} dataArray - Data array
-	   * @return {String} List items markup
+	   * Create items list depends on data array
+	   * @param  {array} dataArray - Data array
+	   * @return {string} Items list markup
 	   */
 	
 	
 	  _createClass(Template, [{
-	    key: 'createListItems',
-	    value: function createListItems(dataArray) {
+	    key: 'createItemsList',
+	    value: function createItemsList(dataArray) {
 	      return dataArray.reduce(function (acc, element) {
-	        return ['' + acc, '<li class="tabs-list__item">', '<button class="tabs-list__item-btn ' + (element.active ? 'active' : '') + '" type="button" data-tab-name="' + element.name + '">' + _utils2.default.capitalize(element.name) + '</button>', '</li>\n'].join('\n');
+	        return [acc + '<li class="tabs-list__item">', '<button class="tabs-list__item-btn ' + (element.active ? 'active' : '') + '" type="button" data-tab-name="' + element.name + '">' + _utils2.default.capitalize(element.name) + '</button>', '</li>\n'].join('\n');
 	      }, '');
 	    }
 	  }]);
@@ -1265,47 +1767,7 @@ webpackJsonp([1],[
 	exports.default = Template;
 
 /***/ },
-/* 37 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(38);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(8)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./tabs.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./tabs.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 38 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(7)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".tabs-list {\n  font-size: .95rem;\n\n  display: inline-block;\n}\n\n.tabs-list__item {\n  position: relative;\n\n  float: left;\n}\n\n.tabs-list__item:first-child .tabs-list__item-btn {\n  padding-left: 0;\n}\n\n.tabs-list__item:last-child .tabs-list__item-btn {\n  padding-right: 0;\n}\n\n.tabs-list__item-btn {\n  font-family: 'PT Sans', sans-serif;\n\n  padding: 0 .5em;\n  transition: .1s ease-in-out;\n\n  color: #8da5b8;\n}\n\n.tabs-list__item-btn:after {\n  font-size: .9em;\n\n  position: absolute;\n  top: -.01rem;\n  right: -.21em;\n\n  content: '|';\n\n  color: #8da5b8 !important;\n}\n\n.tabs-list__item:last-child .tabs-list__item-btn:after {\n  display: none;\n}\n\n.tabs-list__item-btn.active,\n.tabs-list__item-btn:hover {\n  color: #fff;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 39 */
+/* 84 */
 /***/ function(module, exports) {
 
 	/*
@@ -1807,7 +2269,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 40 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1818,7 +2280,7 @@ webpackJsonp([1],[
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _components = __webpack_require__(34);
+	var _components = __webpack_require__(65);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -1943,7 +2405,47 @@ webpackJsonp([1],[
 	exports.default = Model;
 
 /***/ },
-/* 41 */
+/* 86 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(87);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(51)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./chart_viewport.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./chart_viewport.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 87 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(50)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "#chart {\n  width: 53%;\n  height: 20rem;\n  margin: 0 auto;\n}\n.tabs-list {\n  font-size: .95rem;\n  display: inline-block;\n}\n.tabs-list__item {\n  position: relative;\n  float: left;\n}\n.tabs-list__item:first-child .tabs-list__item-btn {\n  padding-left: 0;\n}\n.tabs-list__item:last-child .tabs-list__item-btn {\n  padding-right: 0;\n}\n.tabs-list__item-btn {\n  font-family: 'PT Sans', sans-serif;\n  padding: 0 .5em;\n  transition: 0.1s ease-in-out;\n  color: #8da5b8;\n}\n.tabs-list__item-btn:after {\n  font-size: .9em;\n  position: absolute;\n  top: -0.01rem;\n  right: -0.21em;\n  content: '|';\n  color: #8da5b8 !important;\n}\n.tabs-list__item:last-child .tabs-list__item-btn:after {\n  display: none;\n}\n.tabs-list__item-btn.active,\n.tabs-list__item-btn:hover {\n  color: #fff;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1952,15 +2454,501 @@ webpackJsonp([1],[
 	  value: true
 	});
 	
-	var _components = __webpack_require__(26);
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _components = __webpack_require__(63);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _cycle = __webpack_require__(42);
+	var _controls = __webpack_require__(89);
+	
+	var _controls2 = _interopRequireDefault(_controls);
+	
+	var _controls3 = __webpack_require__(90);
+	
+	var _controls4 = _interopRequireDefault(_controls3);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * Component controller
+	 */
+	var Controls = function (_ComponentController) {
+	  _inherits(Controls, _ComponentController);
+	
+	  /**
+	   * Create component
+	   * @param  {HTMLElement} container - Append to element
+	   * @param  {...object} dataArray - Data array
+	   */
+	  function Controls(container) {
+	    _classCallCheck(this, Controls);
+	
+	    var _this = _possibleConstructorReturn(this, (Controls.__proto__ || Object.getPrototypeOf(Controls)).call(this));
+	
+	    for (var _len = arguments.length, dataArray = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+	      dataArray[_key - 1] = arguments[_key];
+	    }
+	
+	    _this.model = new _controls2.default(dataArray);
+	    _this.view = new _controls4.default(container);
+	
+	    _this.render(_this.model.getData());
+	
+	    _this.view.events.on('view:clicked', function (alias) {
+	      this.events.trigger('controls:clicked', alias);
+	    }, _this);
+	
+	    _this.model.events.on('model:counter_changed', function (alias, value) {
+	      this.view.update(alias, value);
+	    }, _this);
+	
+	    _this.model.events.on('model:visible_changed', function (data) {
+	      this.view.update(data);
+	    });
+	    return _this;
+	  }
+	
+	  /**
+	   * Set value for button with counter type
+	   * @param {string} alias - Button alias
+	   * @param {number} value - New button counter value
+	   */
+	
+	
+	  _createClass(Controls, [{
+	    key: 'setCounterBtnValue',
+	    value: function setCounterBtnValue(alias, value) {
+	      this.model.setCounterBtnValue(alias, value);
+	    }
+	
+	    /**
+	     * Hide button by alias
+	     * @param  {string} alias - Button alias
+	     */
+	
+	  }, {
+	    key: 'hideBtn',
+	    value: function hideBtn(alias) {
+	      this.model.hideBtn(alias);
+	    }
+	
+	    /**
+	     * Show button by alias
+	     * @param  {string} alias - Button alias
+	     */
+	
+	  }, {
+	    key: 'showBtn',
+	    value: function showBtn(alias) {
+	      this.model.showBtn(alias);
+	    }
+	  }]);
+	
+	  return Controls;
+	}(_components2.default);
+	
+	exports.default = Controls;
+
+/***/ },
+/* 89 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _components = __webpack_require__(65);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * Component model
+	 */
+	var Model = function (_ComponentModel) {
+	  _inherits(Model, _ComponentModel);
+	
+	  /**
+	   * Create component model
+	   * @param {array} data - Data array
+	   */
+	  function Model(data) {
+	    _classCallCheck(this, Model);
+	
+	    var _this = _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this, data));
+	
+	    _this.dataStatic = _this.dataStatic.map(function (element) {
+	      if (element.type === 'counter') {
+	        element.counter = 0;
+	      }
+	
+	      return element;
+	    });
+	    return _this;
+	  }
+	
+	  /**
+	   * Return data for view
+	   * @return {array} Data array
+	   */
+	
+	
+	  _createClass(Model, [{
+	    key: 'getData',
+	    value: function getData() {
+	      return this.dataStatic.filter(function (element) {
+	        return element.visible;
+	      }).map(function (element) {
+	        return {
+	          alias: element.alias,
+	          icon: element.icon,
+	          active: element.active
+	        };
+	      });
+	    }
+	
+	    /**
+	     * Get button object by aliasc
+	     * @param  {[type]} alias [description]
+	     * @return {[type]}       [description]
+	     */
+	
+	  }, {
+	    key: 'getButtonObject',
+	    value: function getButtonObject(alias) {}
+	
+	    /**
+	     * Set counter button value by alias
+	     * @param {string} alias - Button alias
+	     * @param {number} value - New button counter value
+	     */
+	
+	  }, {
+	    key: 'setCounterBtnValue',
+	    value: function setCounterBtnValue(alias, value) {
+	      this.dataStatic.forEach(function (element) {
+	        if (element.alias === alias) {
+	          element.counter = value;
+	        }
+	      });
+	
+	      this.events.trigger('model:counter_changed', alias, value);
+	    }
+	
+	    /**
+	     * Set visible param to true for button by alias
+	     * @param  {string} alias - Button alias
+	     */
+	
+	  }, {
+	    key: 'showBtn',
+	    value: function showBtn(alias) {
+	      this.setBtnVisibility(alias, true);
+	    }
+	
+	    /**
+	     * Set visible param to false for button by alias
+	     * @param  {string} alias - Button alias
+	     */
+	
+	  }, {
+	    key: 'hideBtn',
+	    value: function hideBtn(alias) {
+	      this.setBtnVisibility(alias, false);
+	    }
+	
+	    /**
+	     * Set button visibility
+	     * @param {string} alias - Button alias
+	     * @param {boolean} visibility - Visibility which will be set
+	     */
+	
+	  }, {
+	    key: 'setBtnVisibility',
+	    value: function setBtnVisibility(alias, visiblity) {
+	      this.dataStatic.forEach(function (element) {
+	        if (element.alias === alias) {
+	          element.visible = visibility;
+	        }
+	      });
+	
+	      this.events.trigger('model:visible_changed', this.getData());
+	    }
+	  }]);
+	
+	  return Model;
+	}(_components2.default);
+	
+	exports.default = Model;
+
+/***/ },
+/* 90 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+	
+	var _components = __webpack_require__(67);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	var _controls = __webpack_require__(91);
+	
+	var _controls2 = _interopRequireDefault(_controls);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	// import './controls.less';
+	
+	/**
+	 * Component view
+	 */
+	var View = function (_ComponentView) {
+	  _inherits(View, _ComponentView);
+	
+	  /**
+	   * Create component view
+	   * @param  {HTMLElement} container - Append to element
+	   */
+	  function View(container) {
+	    _classCallCheck(this, View);
+	
+	    return _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this, container));
+	  }
+	
+	  /**
+	   * Render component
+	   * @param  {array} dataArray - Data array
+	   */
+	
+	
+	  _createClass(View, [{
+	    key: 'render',
+	    value: function render(dataArray) {
+	      this.template = new _controls2.default(dataArray);
+	      this.createDOMHandlers();
+	
+	      this.container.appendChild(this.markup);
+	
+	      this.events.on('view:dataRecived', function () {
+	        if (arguments.length === 2) {
+	          this.setCounterBtnValue.apply(this, arguments);
+	        } else {
+	          var _template;
+	
+	          (_template = this.template).pasteItemsList.apply(_template, arguments);
+	        }
+	      });
+	
+	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'render', this).call(this);
+	    }
+	
+	    /**
+	     * Create DOM handlers which will be attach when render will be fire
+	     */
+	
+	  }, {
+	    key: 'createDOMHandlers',
+	    value: function createDOMHandlers() {
+	      var _this2 = this;
+	
+	      var controlsClickHandler = function controlsClickHandler(event) {
+	        var alias = event.target.getAttribute('data-btn-alias');
+	
+	        if (!alias) return;
+	
+	        _this2.events.trigger('view:clicked', alias);
+	      };
+	
+	      this.domEventsList.push({
+	        element: this.markup,
+	        eventName: 'click',
+	        callback: controlsClickHandler
+	      });
+	    }
+	
+	    /**
+	     * Set counter value for button by alias
+	     * @param {string} alias - Button alias
+	     * @param {number} value - New counter value
+	     */
+	
+	  }, {
+	    key: 'setCounterBtnValue',
+	    value: function setCounterBtnValue(alias, value) {}
+	
+	    /**
+	     * Get button by alias
+	     * @param  {string} alias - Button alias
+	     * @return {HTMLElement} Finded button
+	     */
+	
+	  }, {
+	    key: 'getButton',
+	    value: function getButton(alias) {
+	      return this.markup.querySelector('[data-btn-alias=${alias}]');
+	    }
+	  }]);
+	
+	  return View;
+	}(_components2.default);
+	
+	exports.default = View;
+
+/***/ },
+/* 91 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	/**
+	 * Component template
+	 */
+	var Template = function () {
+	
+	  /**
+	   * Create component template
+	   * @param  {array} dataArray - Data array
+	   */
+	  function Template(dataArray) {
+	    _classCallCheck(this, Template);
+	
+	    this.markup = document.createElement('ul');
+	    this.markup.classList.add('controls-list');
+	
+	    this.pasteItemsList(dataArray);
+	  }
+	
+	  /**
+	   * Paste items list in markup element
+	   * @param  {array} dataArrayc - Data array
+	   */
+	
+	
+	  _createClass(Template, [{
+	    key: 'pasteItemsList',
+	    value: function pasteItemsList(dataArray) {
+	      this.markup.innerHTML = this.createItemsList(dataArray);
+	    }
+	
+	    /**
+	     * Create items list depends on data array
+	     * @param {array} dataArray - Data array
+	     * @return {string} Items list markup
+	     */
+	
+	  }, {
+	    key: 'createItemsList',
+	    value: function createItemsList(dataArray) {
+	      return dataArray.reduce(function (acc, element) {
+	        return [acc + '<li class="controls-list__item">', '<button class="controls-list__item-btn ' + (element.active ? 'active' : '') + '" type="button" data-btn-alias="' + element.alias + '">' + element.icon + '</button>', '</li>\n'].join('\n');
+	      }, '');
+	    }
+	  }]);
+	
+	  return Template;
+	}();
+	
+	exports.default = Template;
+
+/***/ },
+/* 92 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(93);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(51)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./controls.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./controls.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 93 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(50)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".controls-list {\n  font-size: 1.25rem;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: start;\n      justify-content: flex-start;\n}\n.controls-list__item {\n  margin: 0 1.1rem;\n}\n.controls-list__item:first-child {\n  margin-left: 0;\n}\n.controls-list__item:last-child {\n  margin-right: 0;\n}\n.controls-list__item-btn {\n  font-family: 'icomoon';\n  transition: color 0.1s ease-in-out;\n  color: #8da5b8;\n}\n.controls-list__item-btn.active,\n.controls-list__item-btn:hover {\n  color: #fff;\n}\n.controls-list__item-btn:focus,\n.controls-list__item-btn:active {\n  color: #82c7e0;\n}\n#statistics-btn {\n  font-size: .8em;\n  line-height: 1.6em;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 94 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _components = __webpack_require__(63);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	var _cycle = __webpack_require__(95);
 	
 	var _cycle2 = _interopRequireDefault(_cycle);
 	
-	var _cycle3 = __webpack_require__(58);
+	var _cycle3 = __webpack_require__(105);
 	
 	var _cycle4 = _interopRequireDefault(_cycle3);
 	
@@ -2013,7 +3001,7 @@ webpackJsonp([1],[
 	exports.default = Cycle;
 
 /***/ },
-/* 42 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2026,21 +3014,19 @@ webpackJsonp([1],[
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _components = __webpack_require__(28);
+	var _components = __webpack_require__(67);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _cycle = __webpack_require__(43);
+	var _cycle = __webpack_require__(96);
 	
 	var _cycle2 = _interopRequireDefault(_cycle);
 	
-	__webpack_require__(44);
-	
-	var _cycle_option = __webpack_require__(46);
+	var _cycle_option = __webpack_require__(97);
 	
 	var _cycle_option2 = _interopRequireDefault(_cycle_option);
 	
-	var _cycle_chart = __webpack_require__(52);
+	var _cycle_chart = __webpack_require__(101);
 	
 	var _cycle_chart2 = _interopRequireDefault(_cycle_chart);
 	
@@ -2051,6 +3037,7 @@ webpackJsonp([1],[
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// import './cycle.less';
 	
 	/**
 	 * Component view
@@ -2122,7 +3109,7 @@ webpackJsonp([1],[
 	exports.default = View;
 
 /***/ },
-/* 43 */
+/* 96 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2169,47 +3156,7 @@ webpackJsonp([1],[
 	exports.default = Template;
 
 /***/ },
-/* 44 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(45);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(8)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./cycle.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./cycle.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 45 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(7)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 46 */
+/* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2218,15 +3165,15 @@ webpackJsonp([1],[
 	  value: true
 	});
 	
-	var _components = __webpack_require__(26);
+	var _components = __webpack_require__(63);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _cycle_option = __webpack_require__(47);
+	var _cycle_option = __webpack_require__(98);
 	
 	var _cycle_option2 = _interopRequireDefault(_cycle_option);
 	
-	var _cycle_option3 = __webpack_require__(51);
+	var _cycle_option3 = __webpack_require__(100);
 	
 	var _cycle_option4 = _interopRequireDefault(_cycle_option3);
 	
@@ -2276,7 +3223,7 @@ webpackJsonp([1],[
 	exports.default = CycleOption;
 
 /***/ },
-/* 47 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2289,15 +3236,13 @@ webpackJsonp([1],[
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _components = __webpack_require__(28);
+	var _components = __webpack_require__(67);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _cycle_option = __webpack_require__(48);
+	var _cycle_option = __webpack_require__(99);
 	
 	var _cycle_option2 = _interopRequireDefault(_cycle_option);
-	
-	__webpack_require__(49);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -2306,6 +3251,8 @@ webpackJsonp([1],[
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	// import './cycle_option.less';
 	
 	/**
 	 * Component view
@@ -2405,7 +3352,7 @@ webpackJsonp([1],[
 	exports.default = View;
 
 /***/ },
-/* 48 */
+/* 99 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2492,47 +3439,7 @@ webpackJsonp([1],[
 	exports.default = Template;
 
 /***/ },
-/* 49 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(50);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(8)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./cycle_option.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./cycle_option.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 50 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(7)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".cycle-option {\n  position: relative;\n  box-sizing: border-box;\n  padding: 0 0 0 5em;\n  text-align: left;\n}\n\n.cycle-option-heading,\n.cycle-option .action {\n  display: inline-block;\n}\n\n.changing-state .action-viewport {\n  color: #fff;\n}\n\n.cycle-option-heading {\n  text-transform: uppercase;\n\n  width: 10em;\n}\n\n.cycle-option-dot {\n  position: absolute;\n  top: .7em;\n  left: 2em;\n\n  width: 1.15em;\n  height: 1.15em;\n\n  content: '';\n\n  border-radius: 50%;\n}\n\n.cycle-option-text {\n  line-height: 1.2em;\n\n  color: #8da5b8;\n  margin: .7em 0 0 0;\n}\n\n.action {\n  font-size: 1rem;\n\n  position: relative;\n  box-sizing: border-box;\n  width: 9.0625em;\n}\n\n.action-btn {\n  font-family: 'icomoon';\n\n  color: #8da5b8;\n}\n\n.action-viewport {\n  display: block;\n\n  padding: .58em 1.1em;\n  transition: color .1s ease-in-out;\n  text-align: center;\n\n  color: #8da5b8;\n}\n\n.action-viewport:after {\n  position: absolute;\n  z-index: -1;\n  right: 0;\n  bottom: 2px;\n  left: 0;\n\n  display: block;\n\n  height: 1px;\n\n  content: '';\n  transition: background-color .1s ease-in-out;\n\n  background-color: #8da5b8;\n}\n\n.action-btn {\n  position: absolute;\n  top: 45%;\n\n  height: 100%;\n  padding: 0;\n  transition: color .1s ease-in-out;\n  transform: translate(0, -50%);\n}\n\n.action-add {\n  right: 0;\n}\n\n.action-minus {\n  left: 0;\n}\n\n.action--changed .action-viewport,\n.action-btn:hover,\n.action-btn:hover ~ .action-viewport {\n  color: #fff;\n}\n\n.action-btn:hover ~ .action-viewport:after {\n  background-color: #fff;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 51 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2543,7 +3450,7 @@ webpackJsonp([1],[
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _components = __webpack_require__(34);
+	var _components = __webpack_require__(65);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -2617,7 +3524,7 @@ webpackJsonp([1],[
 	exports.default = Model;
 
 /***/ },
-/* 52 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2628,15 +3535,15 @@ webpackJsonp([1],[
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _components = __webpack_require__(26);
+	var _components = __webpack_require__(63);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _cycle_chart = __webpack_require__(53);
+	var _cycle_chart = __webpack_require__(102);
 	
 	var _cycle_chart2 = _interopRequireDefault(_cycle_chart);
 	
-	var _cycle_chart3 = __webpack_require__(57);
+	var _cycle_chart3 = __webpack_require__(104);
 	
 	var _cycle_chart4 = _interopRequireDefault(_cycle_chart3);
 	
@@ -2693,7 +3600,7 @@ webpackJsonp([1],[
 	exports.default = CycleChart;
 
 /***/ },
-/* 53 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2706,15 +3613,13 @@ webpackJsonp([1],[
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _components = __webpack_require__(28);
+	var _components = __webpack_require__(67);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _cycle_chart = __webpack_require__(54);
+	var _cycle_chart = __webpack_require__(103);
 	
 	var _cycle_chart2 = _interopRequireDefault(_cycle_chart);
-	
-	__webpack_require__(55);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -2723,6 +3628,8 @@ webpackJsonp([1],[
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	// import './cycle_chart.less';
 	
 	/**
 	 * Component view
@@ -2773,7 +3680,7 @@ webpackJsonp([1],[
 	exports.default = View;
 
 /***/ },
-/* 54 */
+/* 103 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2915,47 +3822,7 @@ webpackJsonp([1],[
 	exports.default = Template;
 
 /***/ },
-/* 55 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(56);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(8)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./cycle_chart.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./cycle_chart.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 56 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(7)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".cycle-chart {\n  font-family: 'PT Sans', sans-serif;\n  font-size: 1rem;\n\n  margin: .38em 0 0 0;\n}\n\n.cycle-chart-heading {\n  font-size: 1.25em;\n  font-weight: 700;\n\n  margin: 0 0 1.5em 0;\n\n  text-align: center;\n}\n\n.cycle-chart__chart {\n  display: -ms-flexbox;\n  display: flex;\n\n  height: .75em;\n  margin: 2.9em 0 0 0;\n\n  -ms-flex-pack: start;\n\n      justify-content: flex-start;\n}\n\n.cycle-chart .long-break .long-break-span,\n.cycle-chart .cycle-chart__rule-text {\n  font-family: 'PT Sans';\n\n  position: absolute;\n  right: 0;\n\n  display: inline-block;\n\n  transform: translate(50%, 0);\n  text-align: center;\n\n  color: #8da5b8;\n}\n\n.long-break {\n  position: relative;\n}\n\n.long-break .long-break-span {\n  position: relative;\n  bottom: 1.7em;\n\n  width: 9.5rem;\n}\n\n.cycle-chart__rule-text {\n  font-size: .8em;\n\n  top: 1.3em;\n\n  width: 3.5rem;\n}\n\n.long-break .long-break-span:after,\n.cycle-chart__rule-dot {\n  position: absolute;\n  left: 50%;\n\n  width: .2rem;\n  height: .2rem;\n\n  content: '';\n  transform: translate(-50%, 0);\n\n  border-radius: 50%;\n  background-color: #00d4d9;\n}\n\n.cycle-chart__rule-dot {\n  top: -.5rem;\n}\n\n.long-break .long-break-span:after {\n  bottom: -.5em;\n}\n\n.cycle-chart__rule {\n  display: -ms-flexbox;\n  display: flex;\n\n  -ms-flex-pack: start;\n\n      justify-content: flex-start;\n}\n\n.cycle-chart__rule-point {\n  position: relative;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 57 */
+/* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2966,7 +3833,7 @@ webpackJsonp([1],[
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _components = __webpack_require__(34);
+	var _components = __webpack_require__(65);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -3108,7 +3975,7 @@ webpackJsonp([1],[
 	exports.default = Model;
 
 /***/ },
-/* 58 */
+/* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3119,7 +3986,7 @@ webpackJsonp([1],[
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _components = __webpack_require__(34);
+	var _components = __webpack_require__(65);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -3223,29 +4090,23 @@ webpackJsonp([1],[
 	exports.default = Model;
 
 /***/ },
-/* 59 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-/***/ },
-/* 60 */
+/* 106 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(61);
+	var content = __webpack_require__(107);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(8)(content, {});
+	var update = __webpack_require__(51)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./task.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./task.css");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./cycle.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./cycle.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -3255,10 +4116,10 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 61 */
+/* 107 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(7)();
+	exports = module.exports = __webpack_require__(50)();
 	// imports
 	
 	
@@ -3269,47 +4130,23 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 62 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-/***/ },
-/* 63 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-/***/ },
-/* 64 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-/***/ },
-/* 65 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-/***/ },
-/* 66 */
+/* 108 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(67);
+	var content = __webpack_require__(109);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(8)(content, {});
+	var update = __webpack_require__(51)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./task_list.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./task_list.css");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./cycle_chart.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./cycle_chart.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -3319,10 +4156,96 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 67 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(7)();
+	exports = module.exports = __webpack_require__(50)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".cycle-chart {\n  font-family: 'PT Sans', sans-serif;\n  font-size: 1rem;\n  margin: .38em 0 0 0;\n}\n.cycle-chart-heading {\n  font-size: 1.25em;\n  font-weight: 700;\n  margin: 0 0 1.5em 0;\n  text-align: center;\n}\n.cycle-chart__chart {\n  display: -ms-flexbox;\n  display: flex;\n  height: .75em;\n  margin: 2.9em 0 0 0;\n  -ms-flex-pack: start;\n      justify-content: flex-start;\n}\n.cycle-chart .long-break .long-break-span,\n.cycle-chart .cycle-chart__rule-text {\n  font-family: 'PT Sans';\n  position: absolute;\n  right: 0;\n  display: inline-block;\n  transform: translate(50%, 0);\n  text-align: center;\n  color: #8da5b8;\n}\n.long-break {\n  position: relative;\n}\n.long-break .long-break-span {\n  position: relative;\n  bottom: 1.7em;\n  width: 9.5rem;\n}\n.cycle-chart__rule-text {\n  font-size: .8em;\n  top: 1.3em;\n  width: 3.5rem;\n}\n.long-break .long-break-span:after,\n.cycle-chart__rule-dot {\n  position: absolute;\n  left: 50%;\n  width: .2rem;\n  height: .2rem;\n  content: '';\n  transform: translate(-50%, 0);\n  border-radius: 50%;\n  background-color: #00d4d9;\n}\n.cycle-chart__rule-dot {\n  top: -0.5rem;\n}\n.long-break .long-break-span:after {\n  bottom: -0.5em;\n}\n.cycle-chart__rule {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: start;\n      justify-content: flex-start;\n}\n.cycle-chart__rule-point {\n  position: relative;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 110 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(111);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(51)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./cycle_option.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./cycle_option.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 111 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(50)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".cycle-option {\n  position: relative;\n  box-sizing: border-box;\n  padding: 0 0 0 5em;\n  text-align: left;\n}\n.cycle-option-heading,\n.cycle-option .action {\n  display: inline-block;\n}\n.changing-state .action-viewport {\n  color: #fff;\n}\n.cycle-option-heading {\n  text-transform: uppercase;\n  width: 10em;\n}\n.cycle-option-dot {\n  position: absolute;\n  top: .7em;\n  left: 2em;\n  width: 1.15em;\n  height: 1.15em;\n  content: '';\n  border-radius: 50%;\n}\n.cycle-option-text {\n  line-height: 1.2em;\n  color: #8da5b8;\n  margin: .7em 0 0 0;\n}\n.action {\n  font-size: 1rem;\n  position: relative;\n  box-sizing: border-box;\n  width: 9.0625em;\n}\n.action-btn {\n  font-family: 'icomoon';\n  color: #8da5b8;\n}\n.action-viewport {\n  display: block;\n  padding: .58em 1.1em;\n  transition: color 0.1s ease-in-out;\n  text-align: center;\n  color: #8da5b8;\n}\n.action-viewport:after {\n  position: absolute;\n  z-index: -1;\n  right: 0;\n  bottom: 2px;\n  left: 0;\n  display: block;\n  height: 1px;\n  content: '';\n  transition: background-color 0.1s ease-in-out;\n  background-color: #8da5b8;\n}\n.action-btn {\n  position: absolute;\n  top: 45%;\n  height: 100%;\n  padding: 0;\n  transition: color 0.1s ease-in-out;\n  transform: translate(0, -50%);\n}\n.action-add {\n  right: 0;\n}\n.action-minus {\n  left: 0;\n}\n.action--changed .action-viewport,\n.action-btn:hover,\n.action-btn:hover ~ .action-viewport {\n  color: #fff;\n}\n.action-btn:hover ~ .action-viewport:after {\n  background-color: #fff;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 112 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 113 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(114);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(51)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./modal.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./modal.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 114 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(50)();
 	// imports
 	
 	
@@ -3333,26 +4256,181 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 68 */
+/* 115 */
 /***/ function(module, exports) {
 
 	"use strict";
 
 /***/ },
-/* 69 */
+/* 116 */
 /***/ function(module, exports) {
 
 	"use strict";
 
 /***/ },
-/* 70 */
+/* 117 */
 /***/ function(module, exports) {
 
 	"use strict";
 
 /***/ },
-/* 71 */,
-/* 72 */
+/* 118 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./tabs.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(51)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./tabs.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./tabs.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 119 */,
+/* 120 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 121 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(122);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(51)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./task.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./task.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 122 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(50)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 123 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 124 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 125 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 126 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 127 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(128);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(51)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./task_list.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./task_list.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 128 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(50)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 129 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 130 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 131 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 132 */,
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3361,13 +4439,17 @@ webpackJsonp([1],[
 	  value: true
 	});
 	
-	var _pages = __webpack_require__(73);
+	var _pages = __webpack_require__(134);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _login = __webpack_require__(74);
+	var _login = __webpack_require__(135);
 	
 	var _login2 = _interopRequireDefault(_login);
+	
+	var _login3 = __webpack_require__(22);
+	
+	var _login4 = _interopRequireDefault(_login3);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -3394,6 +4476,15 @@ webpackJsonp([1],[
 	
 	    _this.view = new _login2.default(viewport);
 	
+	    _this.view.events.on('view:submit', function (data) {
+	      _login4.default.signIn(data.username, data.password);
+	
+	      _login4.default.events.once('signIn', function () {
+	        history.pushState(null, null, '#!/');
+	        history.go(0);
+	      });
+	    });
+	
 	    _this.render();
 	    return _this;
 	  }
@@ -3404,7 +4495,7 @@ webpackJsonp([1],[
 	exports.default = Login;
 
 /***/ },
-/* 73 */
+/* 134 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -3459,7 +4550,7 @@ webpackJsonp([1],[
 	exports.default = PageController;
 
 /***/ },
-/* 74 */
+/* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3472,15 +4563,17 @@ webpackJsonp([1],[
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _pages = __webpack_require__(75);
+	var _pages = __webpack_require__(136);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _login = __webpack_require__(76);
+	var _login = __webpack_require__(137);
 	
 	var _login2 = _interopRequireDefault(_login);
 	
-	__webpack_require__(78);
+	var _button = __webpack_require__(62);
+	
+	var _button2 = _interopRequireDefault(_button);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -3489,6 +4582,7 @@ webpackJsonp([1],[
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// import './login.less';
 	
 	/**
 	 * Page view
@@ -3517,9 +4611,7 @@ webpackJsonp([1],[
 	  _createClass(View, [{
 	    key: 'render',
 	    value: function render() {
-	      // Dirty hack
-	      document.body.classList.add('login-page');
-	
+	      this.viewport.classList.add('login-page');
 	      this.viewport.appendChild(this.markup);
 	      this.createComponents();
 	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'render', this).call(this);
@@ -3532,9 +4624,7 @@ webpackJsonp([1],[
 	  }, {
 	    key: 'destroy',
 	    value: function destroy() {
-	      // Dirty hack
-	      document.body.classList.remove('login-page');
-	
+	      this.viewport.classList.remove('login-page');
 	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'destroy', this).call(this);
 	    }
 	
@@ -3544,7 +4634,34 @@ webpackJsonp([1],[
 	
 	  }, {
 	    key: 'createComponents',
-	    value: function createComponents() {}
+	    value: function createComponents() {
+	      var submitButton = new _button2.default(true, this.markup.querySelector('.login'), 'niagara', 'Log In', '');
+	
+	      submitButton.addClassToRoot('login-btn');
+	      submitButton.events.on('button:clicked', function () {
+	        var inputsObject = this.getInputsData();
+	
+	        if (inputsObject) {
+	          this.events.trigger('view:submit', inputsObject);
+	        }
+	      }, this);
+	
+	      this.componentsList.push(submitButton);
+	    }
+	
+	    /**
+	     * Return inputs data or null if one of inputs is empty
+	     * @return {object | null} Object with data from inputs (username, password)
+	     */
+	
+	  }, {
+	    key: 'getInputsData',
+	    value: function getInputsData() {
+	      var username = this.markup.querySelector('#username').value.trim();
+	      var password = this.markup.querySelector('#password').value.trim();
+	
+	      return username && password ? { username: username, password: password } : null;
+	    }
 	  }]);
 	
 	  return View;
@@ -3553,7 +4670,7 @@ webpackJsonp([1],[
 	exports.default = View;
 
 /***/ },
-/* 75 */
+/* 136 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3564,7 +4681,7 @@ webpackJsonp([1],[
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _eventbus = __webpack_require__(2);
+	var _eventbus = __webpack_require__(20);
 	
 	var _eventbus2 = _interopRequireDefault(_eventbus);
 	
@@ -3691,7 +4808,7 @@ webpackJsonp([1],[
 	exports.default = PageView;
 
 /***/ },
-/* 76 */
+/* 137 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3702,11 +4819,11 @@ webpackJsonp([1],[
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _pages = __webpack_require__(77);
+	var _pages = __webpack_require__(138);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	__webpack_require__(19);
+	__webpack_require__(42);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -3742,7 +4859,7 @@ webpackJsonp([1],[
 	  _createClass(Template, [{
 	    key: 'staticTemplate',
 	    value: function staticTemplate() {
-	      return '  <main class="main">\n    <figure class="logo">\n      <img class="logo-image" src="img/Logo_1.svg" alt="Logo image" title="Logo"/>\n    </figure>\n\n      <form class="login-form" action="/" method="POST">\n        <section class="login-form-sect">\n          <input class="login-form-inpt" id="username" type="text" placeholder="Username" pattern="[A-Za-z0-9]{4,}"/>\n          <i class="login-form-icon icon-login"></i>\n          <span class="login-form-hint">Lorem ipsum dolor sit amet.</span>\n        </section>\n\n        <section class="login-form-sect">\n          <input class="login-form-inpt" id="password" type="password" placeholder="Password" pattern="[A-Za-z0-9]{6,}"/>\n          <i class="login-form-icon icon-password"></i>\n          <span class="login-form-hint">Lorem ipsum dolor.</span>\n        </section>\n\n        <button class="login-form-btn btn btn-niagara" type="submit" onclick="history.pushState({}, \'\', \'#!/task_list\')">Log In</button>\n      </form>\n  </main>';
+	      return ['<main class="login">', '<figure class="login-logo">', '<img class="login-logo-image" src="img/Logo_1.svg" alt="Logo image" title="Logo"/>', '</figure>', '<div class="login-sect">', '<input class="login-sect-inpt" id="username" type="text" placeholder="Username" pattern=".{4,}"/>', '<i class="login-sect-icon icon-login"></i>', '<span class="login-sect-hint">Lorem ipsum dolor sit amet.</span>', '</div>', '<div class="login-sect">', '<input class="login-sect-inpt" id="password" type="password" placeholder="Password" pattern="[A-Za-z0-9]{6,}"/>', '<i class="login-sect-icon icon-password"></i>', '<span class="login-sect-hint">Lorem ipsum dolor.</span>', '</div>', '</main>\n'].join('\n');
 	    }
 	  }]);
 	
@@ -3752,7 +4869,7 @@ webpackJsonp([1],[
 	exports.default = Template;
 
 /***/ },
-/* 77 */
+/* 138 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3781,23 +4898,23 @@ webpackJsonp([1],[
 	exports.default = PageTemplate;
 
 /***/ },
-/* 78 */
+/* 139 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(79);
+	var content = __webpack_require__(140);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(8)(content, {});
+	var update = __webpack_require__(51)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./login.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./login.css");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./login.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./login.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -3807,21 +4924,21 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 79 */
+/* 140 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(7)();
+	exports = module.exports = __webpack_require__(50)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "body.login-page {\n  display: -ms-flexbox;\n  display:         flex;\n  background:         linear-gradient(rgba(42, 63, 80, .92), rgba(42, 63, 80, .92)),\n  url(" + __webpack_require__(21) + ") center no-repeat;\n  background-size: cover;\n  -ms-flex-pack: center;\n  justify-content: center;\n  -ms-flex-align: center;\n  align-items: center;\n  padding: 1px 0;\n  box-sizing: border-box;\n}\n\n.main {\n  font-size: 1rem;\n\n  width: 20.625em;\n  padding: 1px 0;\n}\n\n.logo {\n  width: 15.375em;\n  margin: 0 auto 2.5rem auto;\n}\n\n.logo-image {\n  display: block;\n\n  width: 100%;\n}\n\n.login-form {\n  padding: 1px 0;\n}\n\n.login-form-sect {\n  font-size: 1rem;\n\n  position: relative;\n\n  margin: 0 0 1.255em 0;\n\n  color: #8da5b8;\n}\n\n.login-form-icon {\n  font-size: .8em;\n}\n\n.login-form-inpt {\n  font-size: inherit;\n\n  display: block;\n  box-sizing: border-box;\n  width: 100%;\n  padding: .6em 1.8em;\n\n  color: #8da5b8;\n  border-bottom: 1px solid #425869;\n  background: none;\n}\n\n.login-form-hint {\n  font-size: .7em;\n\n  position: absolute;\n  bottom: -1.6em;\n  left: 0;\n\n  display: none;\n\n  color: #f75c4c;\n}\n\n.login-form-inpt:focus {\n  color: #fff;\n  border-bottom-color: #fff;\n}\n\n.login-form-inpt:focus + i {\n  color: #fff;\n}\n\n.login-form-inpt:invalid {\n  border-bottom-color: #f75c4c;\n  box-shadow: none;\n}\n\n.login-form-inpt:invalid ~ .login-form-hint {\n  display: block;\n}\n\n.login-form-icon:before {\n  position: absolute;\n  z-index: -1;\n  top: 48%;\n  left: 0;\n  transform: translate(0, -50%);\n}\n\n.login-form-btn.btn {\n  margin: 3.2rem auto 3.95rem auto;\n}\n", ""]);
+	exports.push([module.id, "body.login-page {\n  display: -ms-flexbox;\n  display: flex;\n  box-sizing: border-box;\n  padding: 1px 0;\n  background: linear-gradient(rgba(42, 63, 80, 0.92), rgba(42, 63, 80, 0.92)), url(" + __webpack_require__(44) + ") center no-repeat;\n  background-size: cover;\n  -ms-flex-pack: center;\n      justify-content: center;\n  -ms-flex-align: center;\n      align-items: center;\n}\n.login {\n  font-size: 1rem;\n  width: 20.625em;\n  padding: 1px 0;\n}\n.login-logo {\n  width: 15.375em;\n  margin: 0 auto 2.5rem auto;\n}\n.login-logo-image {\n  display: block;\n  width: 100%;\n}\n.login-sect {\n  font-size: 1rem;\n  position: relative;\n  margin: 0 0 1.255em 0;\n  color: #8da5b8;\n}\n.login-sect-icon {\n  font-size: .8em;\n}\n.login-sect-hint {\n  font-size: .7em;\n  position: absolute;\n  bottom: -1.6em;\n  left: 0;\n  display: none;\n  color: #f75c4c;\n}\n.login-sect-inpt {\n  font-size: inherit;\n  display: block;\n  box-sizing: border-box;\n  width: 100%;\n  padding: .6em 1.8em;\n  color: #8da5b8;\n  border-bottom: 1px solid #425869;\n  background: none;\n}\n.login-sect-inpt:focus {\n  color: #fff;\n  border-bottom-color: #fff;\n}\n.login-sect-inpt:focus + i {\n  color: #fff;\n}\n.login-sect-inpt:invalid {\n  border-bottom-color: #f75c4c;\n  box-shadow: none;\n}\n.login-sect-inpt:invalid ~ .login-form-hint {\n  display: block;\n}\n.login-sect-icon:before {\n  position: absolute;\n  z-index: -1;\n  top: 48%;\n  left: 0;\n  transform: translate(0, -50%);\n}\n.login-btn.btn {\n  margin: 3.2rem auto 0 auto;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 80 */
+/* 141 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -4094,7 +5211,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 81 */
+/* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4103,11 +5220,11 @@ webpackJsonp([1],[
 	  value: true
 	});
 	
-	var _pages = __webpack_require__(73);
+	var _pages = __webpack_require__(134);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _reports = __webpack_require__(82);
+	var _reports = __webpack_require__(143);
 	
 	var _reports2 = _interopRequireDefault(_reports);
 	
@@ -4146,7 +5263,7 @@ webpackJsonp([1],[
 	exports.default = Reports;
 
 /***/ },
-/* 82 */
+/* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4159,27 +5276,25 @@ webpackJsonp([1],[
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _pages = __webpack_require__(75);
+	var _pages = __webpack_require__(136);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _reports = __webpack_require__(83);
+	var _reports = __webpack_require__(144);
 	
 	var _reports2 = _interopRequireDefault(_reports);
 	
-	__webpack_require__(84);
-	
-	var _chart_viewport = __webpack_require__(25);
+	var _chart_viewport = __webpack_require__(77);
 	
 	var _chart_viewport2 = _interopRequireDefault(_chart_viewport);
 	
-	var _tabs = __webpack_require__(32);
+	var _tabs = __webpack_require__(80);
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
-	var _reports3 = __webpack_require__(80);
+	var _reports3 = __webpack_require__(141);
 	
-	var _reports4 = __webpack_require__(86);
+	var _reports4 = __webpack_require__(145);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -4190,6 +5305,7 @@ webpackJsonp([1],[
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// import './reports.less';
 	
 	/**
 	 * Page view
@@ -4220,7 +5336,7 @@ webpackJsonp([1],[
 	    value: function render() {
 	      this.viewport.appendChild(this.markup);
 	      this.createComponents();
-	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'render', this).call(this); // Attach page DOM events if exist
+	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'render', this).call(this);
 	    }
 	
 	    /**
@@ -4260,7 +5376,7 @@ webpackJsonp([1],[
 	exports.default = View;
 
 /***/ },
-/* 83 */
+/* 144 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4271,7 +5387,7 @@ webpackJsonp([1],[
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _pages = __webpack_require__(77);
+	var _pages = __webpack_require__(138);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
@@ -4319,47 +5435,7 @@ webpackJsonp([1],[
 	exports.default = Template;
 
 /***/ },
-/* 84 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(85);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(8)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./reports.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./reports.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 85 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(7)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "body {\n  color: #fff;\n  background-color: #2a3f50;\n}\n\n.main {\n  width: 86.8%;\n  margin: 0 auto;\n  padding: 6.1em 0 4.6875em 0;\n\n  text-align: center;\n}\n\n.aside {\n  position: absolute;\n  top: 3.5em;\n  right: 6.2%;\n}\n\n.main-heading {\n  font-size: 1.75rem;\n  font-weight: 700;\n\n  letter-spacing: .02em;\n  margin: 0 0 1.1em 0;\n}\n\n.tabs-list {\n  font-size: 1.05em;\n  margin: 0 0 7.5rem 0;\n}\n\n.tabs-list-bottom {\n  margin: 1.5rem 0 0 0;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 86 */
+/* 145 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -4457,7 +5533,47 @@ webpackJsonp([1],[
 	exports.tempTabsData = tempTabsData;
 
 /***/ },
-/* 87 */
+/* 146 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(147);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(51)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./reports.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./reports.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 147 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(50)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "body {\n  color: #fff;\n  background-color: #2a3f50;\n}\n.main {\n  width: 86.8%;\n  margin: 0 auto;\n  padding: 6.1em 0 4.6875em 0;\n  text-align: center;\n}\n.aside {\n  position: absolute;\n  top: 3.5em;\n  right: 6.2%;\n}\n.main-heading {\n  font-size: 1.75rem;\n  font-weight: 700;\n  letter-spacing: .02em;\n  margin: 0 0 1.1em 0;\n}\n.tabs-list {\n  font-size: 1.05em;\n  margin: 0 0 7.5rem 0;\n}\n.tabs-list-bottom {\n  margin: 1.5rem 0 0 0;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 148 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4466,11 +5582,11 @@ webpackJsonp([1],[
 	  value: true
 	});
 	
-	var _pages = __webpack_require__(73);
+	var _pages = __webpack_require__(134);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _settings = __webpack_require__(88);
+	var _settings = __webpack_require__(149);
 	
 	var _settings2 = _interopRequireDefault(_settings);
 	
@@ -4509,7 +5625,7 @@ webpackJsonp([1],[
 	exports.default = Settings;
 
 /***/ },
-/* 88 */
+/* 149 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4522,29 +5638,27 @@ webpackJsonp([1],[
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _pages = __webpack_require__(75);
+	var _pages = __webpack_require__(136);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _settings = __webpack_require__(89);
+	var _settings = __webpack_require__(150);
 	
 	var _settings2 = _interopRequireDefault(_settings);
 	
-	__webpack_require__(90);
-	
-	var _utils = __webpack_require__(3);
+	var _utils = __webpack_require__(21);
 	
 	var _utils2 = _interopRequireDefault(_utils);
 	
-	var _cycle = __webpack_require__(41);
+	var _cycle = __webpack_require__(94);
 	
 	var _cycle2 = _interopRequireDefault(_cycle);
 	
-	var _tabs = __webpack_require__(32);
+	var _tabs = __webpack_require__(80);
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
-	var _settings3 = __webpack_require__(92);
+	var _settings3 = __webpack_require__(151);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -4555,6 +5669,7 @@ webpackJsonp([1],[
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// import './settings.less';
 	
 	/**
 	 * Page view
@@ -4595,10 +5710,10 @@ webpackJsonp([1],[
 	  }, {
 	    key: 'createComponents',
 	    value: function createComponents() {
-	      var cycle = new (Function.prototype.bind.apply(_cycle2.default, [null].concat([this.markup.querySelector('.main')], _toConsumableArray(_settings3.settingsData))))();
+	      var cycle = new (Function.prototype.bind.apply(_cycle2.default, [null].concat([this.markup.querySelector('.main')], _toConsumableArray(initSettingsData))))();
 	      this.componentsList.push(cycle);
 	
-	      var topTabs = new (Function.prototype.bind.apply(_tabs2.default, [null].concat([true, this.markup.querySelector('.aside'), ''], _toConsumableArray(_settings3.tempTabsData))))();
+	      var topTabs = new (Function.prototype.bind.apply(_tabs2.default, [null].concat([true, this.markup.querySelector('.aside'), ''], _toConsumableArray(_settings3.tabsData))))();
 	
 	      topTabs.events.on('tabs:changed', function (name) {
 	        this.subHeader = name;
@@ -4626,7 +5741,7 @@ webpackJsonp([1],[
 	exports.default = View;
 
 /***/ },
-/* 89 */
+/* 150 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4637,7 +5752,7 @@ webpackJsonp([1],[
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _pages = __webpack_require__(77);
+	var _pages = __webpack_require__(138);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
@@ -4686,47 +5801,7 @@ webpackJsonp([1],[
 	exports.default = Template;
 
 /***/ },
-/* 90 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(91);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(8)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./settings.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./settings.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 91 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(7)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "body {\n  color: #fff;\n  background-color: #2a3f50;\n}\n\n.main {\n  width: 86.8%;\n  margin: 0 auto;\n  padding: 6.1em 0 4.6875em 0;\n}\n\n.aside {\n  position: absolute;\n  top: 3.5em;\n  right: 6.2%;\n}\n\n.common-state .aside {\n  position: absolute;\n  top: auto;\n  right: auto;\n  left: -9999px;\n\n  overflow: hidden;\n}\n\n.settings-tabs {\n  margin: 4.98em 0 0 0;\n}\n\n.header {\n  text-align: center;\n}\n\n.header-main {\n  font-size: 1.75rem;\n  font-weight: 700;\n\n  letter-spacing: .02em;\n}\n\n.header-sub {\n  font-size: 1.25rem;\n  font-weight: 300;\n\n  margin: 1.25em 0 0 0;\n\n  letter-spacing: .03em;\n\n  color: #8da5b8;\n}\n\n.cycle-option-list {\n  font-family: 'PT Sans', sans-serif;\n  font-size: .875em;\n  display: -ms-flexbox;\n  display:         flex;\n\n  width: 73.7%;\n  margin: 5.42em auto 0 auto;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n\n.cycle-option-list-item {\n  width: 50%;\n  margin: 0 0 3.9em 0;\n}\n\n.controls {\n  display: -ms-flexbox;\n  display:         flex;\n\n  width: 16em;\n  margin: 5.2em auto 0 auto;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n}\n\n.changing-state .controls .btn:first-child,\n.common-state .controls .btn {\n  position: absolute;\n  top: auto;\n  right: auto;\n  left: -9999px;\n\n  overflow: hidden;\n}\n\n.common-state .controls {\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n\n.common-state .controls .btn:first-child {\n  position: static;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 92 */
+/* 151 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -4734,7 +5809,7 @@ webpackJsonp([1],[
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var settingsData = [{
+	var initSettingsData = [{
 	  role: 'iteration/even',
 	  title: 'Work time',
 	  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing',
@@ -4780,7 +5855,7 @@ webpackJsonp([1],[
 	  step: 30
 	}];
 	
-	var tempTabsData = [{
+	var tabsData = [{
 	  name: 'pomodoros',
 	  active: true
 	}, {
@@ -4788,27 +5863,27 @@ webpackJsonp([1],[
 	  active: false
 	}];
 	
-	exports.settingsData = settingsData;
-	exports.tempTabsData = tempTabsData;
+	exports.initSettingsData = initSettingsData;
+	exports.tabsData = tabsData;
 
 /***/ },
-/* 93 */
+/* 152 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(94);
+	var content = __webpack_require__(153);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(8)(content, {});
+	var update = __webpack_require__(51)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./settings_cat.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./settings_cat.css");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./settings.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./settings.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -4818,61 +5893,21 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 94 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(7)();
+	exports = module.exports = __webpack_require__(50)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "body {\n  color: #fff;\n  background-color: #2a3f50;\n}\n\n.main {\n  width: 86.8%;\n  margin: 0 auto;\n  padding: 6.1em 0 4.6875em 0;\n}\n\n.aside {\n  position: absolute;\n  top: 3.5em;\n  right: 6.2%;\n}\n\n.common-state .aside {\n  position: absolute;\n  top: auto;\n  right: auto;\n  left: -9999px;\n\n  overflow: hidden;\n}\n\n.settings-tabs {\n  margin: 4.98em 0 0 0;\n}\n\n.header {\n  text-align: center;\n}\n\n.header-main {\n  font-size: 1.75rem;\n  font-weight: 700;\n\n  letter-spacing: .02em;\n}\n\n.header-sub {\n  font-size: 1.25rem;\n  font-weight: 300;\n\n  margin: 1.25em 0 0 0;\n\n  letter-spacing: .03em;\n\n  color: #8da5b8;\n}\n\n.radio-btn-list {\n  font-size: 1rem;\n\n  width: 18.11em;\n  margin: 4.79em auto 6.1em auto;\n}\n\n.radio-btn-list__item {\n  margin: 0 0 2.255em 0;\n}\n\n.radio-btn-list__item-radio {\n  display: none;\n}\n\n.radio-btn-list__item-lbl {\n  position: relative;\n\n  display: block;\n}\n\n.radio-btn-list__item-lbl:before {\n  position: absolute;\n  top: 28%;\n  left: 0;\n  width: 18px;\n  height: 18px;\n\n  content: '';\n  transform: translate(0, -50%);\n\n  background: url(" + __webpack_require__(20) + ") no-repeat;\n}\n\n.radio-btn-list__item-lbl-span {\n  display: block;\n  box-sizing: border-box;\n  width: 85%;\n  margin: 0 0 0 auto;\n  padding: 0 0 .55em 0;\n  transition: .1s ease-in-out;\n\n  color: #829aac;\n  border-bottom: 1px solid #3f5566;\n}\n\n.radio-btn-list__item-radio:checked + .radio-btn-list__item-lbl .radio-btn-list__item-lbl-span,\n.radio-btn-list__item:hover .radio-btn-list__item-radio + .radio-btn-list__item-lbl .radio-btn-list__item-lbl-span {\n  color: #fff;\n  border-bottom-color: #fff;\n}\n\n.radio-btn-list__item-lbl:hover {\n  cursor: pointer;\n}\n\n#work-radio + .radio-btn-list__item-lbl:before {\n  background-position: -1px -21px;\n}\n\n#work-radio:checked + .radio-btn-list__item-lbl:before {\n  background-position: -1px -2px;\n}\n\n#education-radio + .radio-btn-list__item-lbl:before {\n  background-position: -77px -21px;\n}\n\n#education-radio:checked + .radio-btn-list__item-lbl:before {\n  background-position: -77px -2px;\n}\n\n#hobby-radio + .radio-btn-list__item-lbl:before {\n  background-position: -58px -21px;\n}\n\n#hobby-radio:checked + .radio-btn-list__item-lbl:before {\n  background-position: -58px -2px;\n}\n\n#sport-radio + .radio-btn-list__item-lbl:before {\n  background-position: -39px -21px;\n}\n\n#sport-radio:checked + .radio-btn-list__item-lbl:before {\n  background-position: -39px -2px;\n}\n\n#other-radio + .radio-btn-list__item-lbl:before {\n  background-position: -20px -21px;\n}\n\n#other-radio:checked + .radio-btn-list__item-lbl:before {\n  background-position: -20px -2px;\n}\n\n.controls {\n  display: -ms-flexbox;\n  display:         flex;\n\n  width: 16em;\n  margin: 5.2em auto 0 auto;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n}\n\n.changing-state .controls .btn:first-child,\n.common-state .controls .btn {\n  position: absolute;\n  top: auto;\n  right: auto;\n  left: -9999px;\n\n  overflow: hidden;\n}\n\n.common-state .controls {\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n\n.common-state .controls .btn:first-child {\n  position: static;\n}\n", ""]);
+	exports.push([module.id, ".aside {\n  position: absolute;\n  top: 3.5em;\n  right: 6.2%;\n}\n.common-state .aside {\n  position: absolute;\n  top: auto;\n  right: auto;\n  left: -9999px;\n  overflow: hidden;\n}\n.settings-tabs {\n  margin: 4.98em 0 0 0;\n}\n.header {\n  text-align: center;\n}\n.header-main {\n  font-size: 1.75rem;\n  font-weight: 700;\n  letter-spacing: .02em;\n}\n.header-sub {\n  font-size: 1.25rem;\n  font-weight: 300;\n  margin: 1.25em 0 0 0;\n  letter-spacing: .03em;\n  color: #8da5b8;\n}\n.cycle-option-list {\n  font-family: 'PT Sans', sans-serif;\n  font-size: .875em;\n  display: -ms-flexbox;\n  display: flex;\n  width: 73.7%;\n  margin: 5.42em auto 0 auto;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n}\n.cycle-option-list-item {\n  width: 50%;\n  margin: 0 0 3.9em 0;\n}\n.controls {\n  display: -ms-flexbox;\n  display: flex;\n  width: 16em;\n  margin: 5.2em auto 0 auto;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n}\n.changing-state .controls .btn:first-child,\n.common-state .controls .btn {\n  position: absolute;\n  top: auto;\n  right: auto;\n  left: -9999px;\n  overflow: hidden;\n}\n.common-state .controls {\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n.common-state .controls .btn:first-child {\n  position: static;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 95 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(96);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(8)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./settings_pom.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./settings_pom.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 96 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(7)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "body {\n  color: #fff;\n  background-color: #2a3f50;\n}\n\n.main {\n  width: 86.8%;\n  margin: 0 auto;\n  padding: 6.1em 0 4.6875em 0;\n}\n\n.aside {\n  position: absolute;\n  top: 3.5em;\n  right: 6.2%;\n}\n\n.common-state .aside {\n  position: absolute;\n  top: auto;\n  right: auto;\n  left: -9999px;\n\n  overflow: hidden;\n}\n\n.settings-tabs {\n  margin: 4.98em 0 0 0;\n}\n\n.header {\n  text-align: center;\n}\n\n.header-main {\n  font-size: 1.75rem;\n  font-weight: 700;\n\n  letter-spacing: .02em;\n}\n\n.header-sub {\n  font-size: 1.25rem;\n  font-weight: 300;\n\n  margin: 1.25em 0 0 0;\n\n  letter-spacing: .03em;\n\n  color: #8da5b8;\n}\n\n.settings-list {\n  font-family: 'PT Sans', sans-serif;\n  font-size: .875em;\n  display: -ms-flexbox;\n  display:         flex;\n\n  width: 73.7%;\n  margin: 5.42em auto 0 auto;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n\n.settings-list-item {\n  width: 50%;\n  margin: 0 0 3.9em 0;\n}\n\n.controls {\n  display: -ms-flexbox;\n  display:         flex;\n\n  width: 16em;\n  margin: 5.2em auto 0 auto;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n}\n\n.changing-state .controls .btn:first-child,\n.common-state .controls .btn {\n  position: absolute;\n  top: auto;\n  right: auto;\n  left: -9999px;\n\n  overflow: hidden;\n}\n\n.common-state .controls {\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n\n.common-state .controls .btn:first-child {\n  position: static;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 97 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4881,11 +5916,11 @@ webpackJsonp([1],[
 	  value: true
 	});
 	
-	var _pages = __webpack_require__(73);
+	var _pages = __webpack_require__(134);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _task_list = __webpack_require__(98);
+	var _task_list = __webpack_require__(155);
 	
 	var _task_list2 = _interopRequireDefault(_task_list);
 	
@@ -4924,7 +5959,7 @@ webpackJsonp([1],[
 	exports.default = TaskList;
 
 /***/ },
-/* 98 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4937,15 +5972,21 @@ webpackJsonp([1],[
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _pages = __webpack_require__(75);
+	var _pages = __webpack_require__(136);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _task_list = __webpack_require__(99);
+	var _task_list = __webpack_require__(156);
 	
 	var _task_list2 = _interopRequireDefault(_task_list);
 	
-	__webpack_require__(100);
+	var _controls = __webpack_require__(88);
+	
+	var _controls2 = _interopRequireDefault(_controls);
+	
+	var _tabs = __webpack_require__(80);
+	
+	var _tabs2 = _interopRequireDefault(_tabs);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -4954,6 +5995,12 @@ webpackJsonp([1],[
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// import './task_list.less';
+	
+	// import Modal from '../../components/modal/modal.controller';
+	
+	
+	// import TaskList from '../../components/task_list/task_list.controller';
 	
 	/**
 	 * Page view
@@ -4982,27 +6029,9 @@ webpackJsonp([1],[
 	  _createClass(View, [{
 	    key: 'render',
 	    value: function render() {
-	      // Dirty hack (until spliting to components)
-	      document.body.classList.add('common-state');
-	      document.body.classList.add('notification-shown-success');
-	
 	      this.viewport.appendChild(this.markup);
 	      this.createComponents();
 	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'render', this).call(this);
-	    }
-	
-	    /**
-	     * Destroy page
-	     */
-	
-	  }, {
-	    key: 'destroy',
-	    value: function destroy() {
-	      // Dirty hack (until spliting to components)
-	      document.body.classList.remove('common-state');
-	      document.body.classList.remove('notification-shown-success');
-	
-	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'destroy', this).call(this);
 	    }
 	
 	    /**
@@ -5011,7 +6040,44 @@ webpackJsonp([1],[
 	
 	  }, {
 	    key: 'createComponents',
-	    value: function createComponents() {}
+	    value: function createComponents() {
+	      var headerControls = new _controls2.default(this.markup.querySelector('.header'), {
+	        alias: 'add',
+	        icon: '&#xe900;',
+	        type: 'common',
+	        active: false,
+	        visible: false
+	      }, {
+	        alias: 'remove',
+	        icon: '&#xe912;',
+	        type: 'counter',
+	        active: false,
+	        visible: false
+	      }, {
+	        alias: 'reports',
+	        icon: '&#xe90c;',
+	        type: 'common',
+	        active: false,
+	        visible: true
+	      }, {
+	        alias: 'settings',
+	        icon: '&#xe90b;',
+	        type: 'common',
+	        active: false,
+	        visible: true
+	      }, {
+	        alias: 'signOut',
+	        icon: '&#xe908;',
+	        type: 'common',
+	        visible: true
+	      });
+	
+	      headerControls.events.on('controls:clicked', function (alias) {
+	        console.log(alias);
+	      }, this);
+	
+	      this.componentsList.push(headerControls);
+	    }
 	  }]);
 	
 	  return View;
@@ -5020,7 +6086,7 @@ webpackJsonp([1],[
 	exports.default = View;
 
 /***/ },
-/* 99 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5031,7 +6097,7 @@ webpackJsonp([1],[
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _pages = __webpack_require__(77);
+	var _pages = __webpack_require__(138);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
@@ -5069,7 +6135,7 @@ webpackJsonp([1],[
 	  _createClass(Template, [{
 	    key: 'staticTemplate',
 	    value: function staticTemplate() {
-	      return '\n  <main class="main">\n    <button class="main-top-add-btn">Daily Task List</button>\n\n    <!-- DAILY TASKS -->\n\n    <div class="tasks-block daily-tasks">\n\n      <div class="tabs-block">\n        <ul class="tabs-list sellecting-tabs">\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn" id="sellect-all-tab-today" type="button">Sellect All</button>\n          </li>\n\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn" id="desellect-all-tab-today" type="button">Desellect all</button>\n          </li>\n        </ul>\n\n        <ul class="tabs-list to-do-tabs">\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn active" id="to-do-tab" type="button">To Do</button>\n          </li>\n\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn" id="done-tab" type="button">Done</button>\n          </li>\n        </ul>\n      </div>\n      <ul class="task-list">\n        <!-- CATEGORIES: .hobby-category .work-category .education-category .sport-category .other-category -->\n        <!-- IMPORTANCE: .urgent-imp .hight-imp .middle-imp .low-imp -->\n        <!-- .moved-to-trash -->\n        <li class="task-list-item hobby-category urgent-imp moved-to-trash">\n          <div class="task-hidden-btns">\n            <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>\n            <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>\n          </div>\n\n          <time class="task-date" datetime="">\n            <span class="task-date-number">23</span>\n            <span class="task-date-month">May</span>\n            <span class="task-date-today">Today</span>\n          </time>\n\n          <section class="task-content">\n            <h3 class="task-content-heading">Lorem ipsum sit amet</h3>\n            <p class="task-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nobis ipsam sint maxime consectetur.</p>\n          </section>\n\n          <div class="task-main-btns">\n            <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>\n            <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>\n          </div>\n\n          <div class="task-pomidoro-count">\n            <span class="task-pomidoro-count__num">3</span>\n          </div>\n        </li>\n\n      </ul>\n    </div>\n\n    <!-- GLOBAL TASKS -->\n    <!-- .closed -->\n\n    <div class="tasks-block global-tasks">\n\n      <div class="tabs-block">\n        <button class="tabs-block-global-btn" type="button" id="#show-global">Global list</button>\n\n        <!-- TOOLTIP -->\n        <div class="tooltip">Go to Global List</div>\n\n        <ul class="tabs-list to-do-tabs">\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn active" type="button">All</button>\n          </li>\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn" type="button">Urgent</button>\n          </li>\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn" type="button">Hight</button>\n          </li>\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn" type="button">Middle</button>\n          </li>\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn" type="button">Low</button>\n          </li>\n        </ul>\n\n        <ul class="tabs-list sellecting-tabs">\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn" id="sellect-all-tab" type="button">Sellect All</button>\n          </li>\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn" id="desellect-all-tab" type="button">Desellect all</button>\n          </li>\n        </ul>\n      </div>\n\n      <!-- WORK CATEGORY -->\n\n      <section class="tasks-grp-by-category work-category">\n        <h2 class="tasks-grp-by-category__heading">Work</h2>\n\n        <ul class="task-list">\n          <!-- IMPORTANCE: .urgent-imp .hight-imp .middle-imp .low-imp -->\n          <!-- .moved-to-trash -->\n          <li class="task-list-item hight-imp done">\n            <div class="task-hidden-btns">\n              <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>\n              <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>\n            </div>\n\n            <time class="task-date" datetime="">\n              <span class="task-date-number">23</span>\n              <span class="task-date-month">May</span>\n              <span class="task-date-today">Today</span>\n            </time>\n\n            <section class="task-content">\n              <h3 class="task-content-heading">Lorem ipsum sit amet</h3>\n              <p class="task-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nobis ipsam sint maxime consectetur.</p>\n            </section>\n\n            <div class="task-main-btns">\n              <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>\n              <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>\n            </div>\n\n            <div class="task-pomidoro-count">\n              <span class="task-pomidoro-count__num">3</span>\n            </div>\n          </li>\n\n          <li class="task-list-item middle-imp moved-to-trash">\n            <div class="task-hidden-btns">\n              <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>\n              <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>\n            </div>\n\n            <time class="task-date" datetime="">\n              <span class="task-date-number">23</span>\n              <span class="task-date-month">May</span>\n              <span class="task-date-today">Today</span>\n            </time>\n\n            <section class="task-content">\n              <h3 class="task-content-heading">Lorem ipsum sit amet</h3>\n              <p class="task-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nobis ipsam sint maxime consectetur.</p>\n            </section>\n\n            <div class="task-main-btns">\n              <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>\n              <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>\n            </div>\n\n            <div class="task-pomidoro-count">\n              <span class="task-pomidoro-count__num">3</span>\n            </div>\n          </li>\n        </ul>\n      </section>\n\n      <!-- EDUCATION CATEGORY -->\n\n      <section class="tasks-grp-by-category education-category">\n        <h2 class="tasks-grp-by-category__heading">Education</h2>\n\n        <ul class="task-list">\n          <!-- IMPORTANCE: .urgent-imp .hight-imp .middle-imp .low-imp -->\n          <!-- .moved-to-trash -->\n          <li class="task-list-item low-imp">\n            <div class="task-hidden-btns">\n              <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>\n              <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>\n            </div>\n\n            <time class="task-date" datetime="">\n              <span class="task-date-number">23</span>\n              <span class="task-date-month">May</span>\n              <span class="task-date-today">Today</span>\n            </time>\n\n            <section class="task-content">\n              <h3 class="task-content-heading">Lorem ipsum sit amet</h3>\n              <p class="task-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nobis ipsam sint maxime consectetur.</p>\n            </section>\n\n            <div class="task-main-btns">\n              <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>\n              <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>\n            </div>\n\n            <div class="task-pomidoro-count">\n              <span class="task-pomidoro-count__num">3</span>\n            </div>\n          </li>\n\n          <li class="task-list-item urgent-imp">\n            <div class="task-hidden-btns">\n              <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>\n              <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>\n            </div>\n\n            <time class="task-date" datetime="">\n              <span class="task-date-number">23</span>\n              <span class="task-date-month">May</span>\n              <span class="task-date-today">Today</span>\n            </time>\n\n            <section class="task-content">\n              <h3 class="task-content-heading">Lorem ipsum sit amet</h3>\n              <p class="task-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nobis ipsam sint maxime consectetur.</p>\n            </section>\n\n            <div class="task-main-btns">\n              <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>\n              <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>\n            </div>\n\n            <div class="task-pomidoro-count">\n              <span class="task-pomidoro-count__num">3</span>\n            </div>\n          </li>\n\n          <li class="task-list-item middle-imp done">\n            <div class="task-hidden-btns">\n              <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>\n              <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>\n            </div>\n\n            <time class="task-date" datetime="">\n              <span class="task-date-number">23</span>\n              <span class="task-date-month">May</span>\n              <span class="task-date-today">Today</span>\n            </time>\n\n            <section class="task-content">\n              <h3 class="task-content-heading">Lorem ipsum sit amet</h3>\n              <p class="task-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nobis ipsam sint maxime consectetur.</p>\n            </section>\n\n            <div class="task-main-btns">\n              <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>\n              <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>\n            </div>\n\n            <div class="task-pomidoro-count">\n              <span class="task-pomidoro-count__num">3</span>\n            </div>\n          </li>\n\n          <li class="task-list-item hight-imp">\n            <div class="task-hidden-btns">\n              <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>\n              <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>\n            </div>\n\n            <time class="task-date" datetime="">\n              <span class="task-date-number">23</span>\n              <span class="task-date-month">May</span>\n              <span class="task-date-today">Today</span>\n            </time>\n\n            <section class="task-content">\n              <h3 class="task-content-heading">Lorem ipsum sit amet</h3>\n              <p class="task-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nobis ipsam sint maxime consectetur.</p>\n            </section>\n\n            <div class="task-main-btns">\n              <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>\n              <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>\n            </div>\n\n            <div class="task-pomidoro-count">\n              <span class="task-pomidoro-count__num">3</span>\n            </div>\n          </li>\n        </ul>\n      </section>\n\n    </div>\n  </main>\n\n  <aside class="aside">\n    <ul class="main-btn-list">\n      <li class="main-btn-list__item">\n        <button class="main-btn-list__item-btn" id="add-btn" type="button">&#xe900;</button>\n      </li>\n\n      <!-- Add .active here when .deleting-state is enabled -->\n      <li class="main-btn-list__item">\n        <button class="main-btn-list__item-btn" id="trash-btn" type="button">&#xe912;</button>\n      </li>\n\n      <li class="main-btn-list__item">\n        <button class="main-btn-list__item-btn" id="statistics-btn" type="button">&#xe90c;</button>\n      </li>\n\n      <li class="main-btn-list__item">\n        <button class="main-btn-list__item-btn" id="settigns-btn" type="button">&#xe90b;</button>\n      </li>\n\n      <li class="main-btn-list__item">\n        <button class="main-btn-list__item-btn" id="logout-btn" type="button">&#xe908;</button>\n      </li>\n    </ul>\n  </aside>';
+	      return ['<main class="main">', '<header class="header">', '<figure class="header-logo">', '<img class="header-logo-image" src="img/Logo.svg" title="Logo" alt="Logo image">', '</figure>', '</header>', '<button class="main-top-add-btn" type="button">Daily Task List</button>', '</main>'].join('\n');
 	    }
 	  }]);
 	
@@ -5079,23 +6145,23 @@ webpackJsonp([1],[
 	exports.default = Template;
 
 /***/ },
-/* 100 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(101);
+	var content = __webpack_require__(158);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(8)(content, {});
+	var update = __webpack_require__(51)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./task_list.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./task_list.css");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./task_list.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./task_list.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -5105,21 +6171,21 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 101 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(7)();
+	exports = module.exports = __webpack_require__(50)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "body {\n  color: #fff;\n  background-color: #2a3f50;\n}\n\n.main {\n  width: 86.8%;\n  margin: 0 auto;\n  padding: 5.95em 0 4.6875em 0;\n  text-align: left;\n}\n\n.aside {\n  position: absolute;\n  top: 3.5em;\n  right: 6.2%;\n}\n\n// .logo,\n#add-btn,\n#trash-btn,\n.common-state .add-first-heading,\n.common-state .sellecting-tabs,\n.deleting-state .add-first-heading,\n.daily-tasks .btn-up,\n.daily-tasks .task-date-number,\n.daily-tasks .task-date-month,\n.task-date-today,\n.deleting-state .moved-to-trash .btn-trash,\n.deleting-state .btn-close,\n.common-state--nothing-in-daily .daily-tasks .task-list,\n.closed .tabs-list,\n.closed .tasks-grp-by-category,\n.common-state--all-done .daily-tasks .task-list,\n.main .drag-to-top-heading,\n.main .all-done-heading,\n.done .task-main-btns__btn,\n.modal-wrapper,\n.notification {\n  position: absolute;\n  top: auto;\n  right: auto;\n  left: -9999px;\n\n  overflow: hidden;\n}\n\n.common-state .sellecting-tabs {\n  display: none;\n}\n\n.sticky-header .logo {\n  font-size: 1rem;\n\n  position: fixed;\n  z-index: 9999;\n  top: 0;\n  right: 0;\n  left: 0;\n\n  overflow: visible;\n\n  height: 8.5em;\n\n  background-color: #2a3f50;\n  box-shadow: 2px 0 15px #000;\n}\n\n.sticky-header .aside {\n  position: fixed;\n  z-index: 99999;\n  top: 0;\n  right: 8%;\n\n  margin: 3.5em 0 0 0;\n}\n\n.sticky-header #add-btn {\n  font-size: .8em;\n\n  position: static;\n}\n\n.common-state #trash-btn,\n.deleting-state #trash-btn {\n  position: relative;\n  left: auto;\n}\n\n.deleting-state #trash-btn {\n  overflow: visible;\n}\n\n.deleting-state #trash-btn:after {\n  font-family: 'Roboto', sans-serif;\n  font-size: .68em;\n  font-weight: 700;\n  line-height: 1.55em;\n\n  position: absolute;\n  right: -.4em;\n  bottom: -.78em;\n\n  width: 1.55em;\n  height: 1.55em;\n\n  content: '2';\n\n  color: #fff;\n  border-radius: 50%;\n  background-color: #f75c4c;\n}\n\n.main-btn-list {\n  width: 10.8em;\n}\n\n.main-top-add-btn {\n  font-size: 1.7rem;\n  font-weight: 700;\n\n  position: relative;\n\n  display: block;\n\n  width: 9.64em;\n  margin: 0 auto;\n\n  letter-spacing: .02em;\n}\n\n.main-top-add-btn:after {\n  font-family: 'icomoon';\n  font-size: .5em;\n\n  position: absolute;\n  right: .18em;\n  bottom: .8em;\n\n  content: '\\E900';\n}\n\n.add-first-heading {\n  font-size: 2.26rem;\n  font-weight: 300;\n\n  position: relative;\n\n  margin: 4.9em 0 0 0;\n\n  text-align: center;\n  letter-spacing: .01em;\n\n  color: #8da5b8;\n}\n\n.add-first-heading:after {\n  font-family: 'icomoon';\n  font-size: 1.7em;\n\n  position: absolute;\n  top: -1.4em;\n  left: 50%;\n\n  content: '\\E901';\n  transform: translate(-50%, 0);\n}\n\n.tasks-block {\n  margin: 1.7em 0 2.1em 0;\n}\n\n.tabs-block {\n  position: relative;\n  display: -ms-flexbox;\n  display:         flex;\n\n  margin: 0;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n}\n\n.common-state .daily-tasks .tabs-block {\n  -ms-flex-pack: end;\n  justify-content: flex-end;\n}\n\n.daily-tasks .task-list {\n  margin-top: 1em;\n}\n\n.task-list {\n  position: relative;\n\n  margin: .8em 0 0 0;\n}\n\n.task-list-item {\n  font-size: 1rem;\n\n  position: relative;\n  display: -ms-flexbox;\n  display:         flex;\n  overflow: hidden;\n  box-sizing: border-box;\n  margin: 0 0 .5625em 0;\n\n  background-color: #fff;\n  box-shadow: 0 5px 17px rgba(0, 0, 0, .4);\n}\n\n.done.task-list-item {\n  background-color: #d4d9dc;\n}\n\n.done .task-content-heading {\n  text-decoration: line-through;\n}\n\n.task-hidden-btns {\n  position: absolute;\n  z-index: 9;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n  width: 5.48em;\n  height: 100%;\n  transition: .3s ease-in-out;\n  transform: translate(-89%, 0);\n}\n\n.deleting-state .task-hidden-btns {\n  transform: translate(0, 0);\n}\n\n\n.deleting-state .moved-to-trash .btn-close,\n.task-hidden-btns__btn {\n  font-size: 2.5em;\n\n  position: absolute;\n  top: 48%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n\n/* URGENT */\n\n.task-list-item.urgent-imp .task-pomidoro-count {\n  background-color: #f75c4c;\n}\n\n.task-list-item.urgent-imp .task-content-heading {\n  color: #f75c4c;\n}\n\n/* HIGHT */\n\n.task-list-item.hight-imp .task-pomidoro-count {\n  background-color: #ffa841;\n}\n\n.task-list-item.hight-imp .task-content-heading {\n  color: #ffa841;\n}\n\n/* MIDDLE */\n\n.task-list-item.middle-imp .task-pomidoro-count {\n  background-color: #fddc43;\n}\n\n.task-list-item.middle-imp .task-content-heading {\n  color: #fddc43;\n}\n\n/* LOW */\n\n.task-list-item.low-imp .task-pomidoro-count {\n  background-color: #1abc9c;\n}\n\n.task-list-item.low-imp .task-content-heading {\n  color: #1abc9c;\n}\n\n/* CATEGORIES */\n\n.work-category .task-hidden-btns {\n  background-color: #ffb200;\n}\n\n.education-category .task-hidden-btns {\n  background-color: #59abe3;\n}\n\n.hobby-category .task-hidden-btns {\n  background-color: #b470d0;\n}\n\n.sport-category .task-hidden-btns {\n  background-color: #00d4d9;\n}\n\n.other-category .task-hidden-btns {\n  background-color: #00cbd0;\n}\n\n.task-main-btns {\n  position: relative;\n}\n\n.task-hidden-btns__btn,\n.task-main-btns__btn {\n  font-family: 'icomoon';\n}\n\n.task-main-btns__btn:hover {\n  color: #88a3b5;\n}\n\n.task-main-btns__btn.btn-up {\n  margin: 0 0 .5em 0;\n}\n\n.task-content {\n  box-sizing: border-box;\n  padding: 1.3em .2rem 1em .2rem;\n  -ms-flex-preferred-size: 100%;\n  flex-basis: 100%;\n}\n\n.task-content-heading {\n  font-size: 1.1875em;\n  font-weight: 500;\n\n  margin: 0 0 .4em 0;\n\n  letter-spacing: .01em;\n}\n\n.task-content-text {\n  line-height: 1.5em;\n}\n\n.task-content-text,\n.task-main-btns,\n.task-date {\n  color: #a5a5a5;\n}\n\n.task-main-btns,\n.task-date {\n  display: -ms-flexbox;\n  display:         flex;\n          flex-direction: column;\n\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n\n.task-main-btns {\n  font-size: 1.15em;\n\n  width: 5.75em;\n}\n\n.task-date {\n  font-weight: 700;\n\n  width: 7.5em;\n  padding: 0 0 0 .625em;\n\n  text-align: center;\n  letter-spacing: .04em;\n  text-transform: uppercase;\n}\n\n.task-date-number {\n  font-family: 'PT Sans', sans-serif;\n  font-size: 1.6875em;\n}\n\n.task-date-month {\n  font-size: .6875em;\n}\n\n.task-date-today {\n  font-size: .7em;\n}\n\n.daily-tasks .task-date-today {\n  position: static;\n  left: auto;\n}\n\n.task-pomidoro-count {\n  font-family: 'PT Sans', sans-serif;\n  font-size: 1.54em;\n  font-weight: 700;\n\n  position: relative;\n\n  width: 4.6em;\n}\n\n.task-pomidoro-count:hover {\n  cursor: pointer;\n}\n\n.task-pomidoro-count:hover .task-pomidoro-count__num {\n  top: auto;\n  right: auto;\n  left: -9999px;\n\n  overflow: hidden;\n}\n\n.done .task-pomidoro-count:hover {\n  cursor: default;\n}\n\n.done .task-pomidoro-count:hover .task-pomidoro-count__num,\n.task-pomidoro-count__num {\n  position: absolute;\n  top: 51.5%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n\n.done .task-pomidoro-count:hover:after,\n.task-pomidoro-count:after {\n  font-family: 'icomoon';\n  font-size: 1.9em;\n  font-weight: 400;\n\n  position: absolute;\n  top: 50%;\n  left: 50%;\n\n  content: '\\E90E';\n  transform: translate(-50%, -50%);\n}\n\n.task-pomidoro-count:hover:after {\n  content: '\\E90D';\n}\n\n.global-tasks .tabs-block {\n  margin-bottom: 2em;\n}\n\n.global-tasks .to-do-tabs {\n  font-size: 1.03em;\n}\n\n.tabs-block-global-btn {\n  font-family: 'PT Sans', sans-serif;\n  font-size: 1.25em;\n  font-weight: 700;\n\n  position: relative;\n\n  padding: 0;\n  transition: color .1s ease-in-out;\n\n  color: #88a3b5;\n}\n\n.tabs-block-global-btn:after {\n  font-family: 'icomoon';\n  font-size: .55em;\n\n  position: absolute;\n  top: 50%;\n  right: -1.5em;\n\n  content: '\\E906';\n  transform: translate(0, -50%);\n}\n\n.tabs-block-global-btn:hover {\n  color: #fff;\n}\n\n.global-tasks .tabs-block {\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n\n.global-tasks .sellecting-tabs {\n  width: 100%;\n  margin: 1.5em 0 0 0;\n}\n\n.tasks-grp-by-category {\n  margin: 0 0 1.4375rem 0;\n}\n\n.tasks-grp-by-category__heading {\n  font-size: 1rem;\n  font-weight: 700;\n\n  position: relative;\n\n  padding: 0 0 0 1.5em;\n\n  text-transform: uppercase;\n}\n\n.tasks-grp-by-category__heading:before,\n.tasks-grp-by-category__heading:after {\n  position: absolute;\n  top: 30%;\n  left: -.26rem;\n\n  content: '';\n  transform: translate(0, -50%);\n\n  border-radius: 50%;\n}\n\n.tasks-grp-by-category__heading:before {\n  z-index: 100;\n\n  width: 1.0625em;\n  height: 1.0625em;\n}\n\n.tasks-grp-by-category__heading:after {\n  z-index: 150;\n  left: -.015rem;\n\n  width: .32em;\n  height: .32em;\n  transition: .1s ease-in-out;\n\n  border: 2px solid #2a3f50;\n  border-radius: 50%;\n}\n\n.tasks-grp-by-category .task-list:after {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n\n  width: .5625rem;\n  height:         calc(100% + 1.5625rem);\n\n  content: '';\n}\n\n/* CATEGORIES FOR GROUPS */\n\n/* WORK */\n\n.work-category .tasks-grp-by-category__heading {\n  color: #ffb200;\n}\n\n.work-category .task-list:after,\n.work-category .tasks-grp-by-category__heading:before {\n  background-color: #ffb200;\n}\n\n/* SPORT */\n\n.sport-category .tasks-grp-by-category__heading {\n  color: #00d4d9;\n}\n\n.sport-category .task-list:after,\n.sport-category .tasks-grp-by-category__heading:before {\n  background-color: #00d4d9;\n}\n\n/* HOBBY */\n\n.hobby-category .tasks-grp-by-category__heading {\n  color: #b470d0;\n}\n\n.hobby-category .task-list:after,\n.hobby-category .tasks-grp-by-category__heading:before {\n  background-color: #b470d0;\n}\n\n/* EDUCATION */\n\n.education-category .tasks-grp-by-category__heading {\n  color: #59abe3;\n}\n\n.education-category .task-list:after,\n.education-category .tasks-grp-by-category__heading:before {\n  background-color: #59abe3;\n}\n\n/* OTHER */\n\n.other-category .tasks-grp-by-category__heading {\n  color: #00cbd0;\n}\n\n.other-cateogry .task-list:after,\n.other-category .tasks-grp-by-category__heading:before {\n  background-color: #00cbd0;\n}\n\n.common-state--nothing-in-daily .drag-to-top-heading {\n  position: static;\n}\n\n.drag-to-top-heading {\n  margin: 1em 0 5em 0;\n}\n\n.common-state--all-done .all-done-heading {\n  position: static;\n}\n\n.all-done-heading {\n  margin: .95em 0 2.7em 0;\n}\n\n.drag-to-top-heading,\n.all-done-heading {\n  font-size: 2.26rem;\n  font-weight: 300;\n\n  position: relative;\n\n  text-align: center;\n  letter-spacing: .01em;\n\n  color: #8da5b8;\n}\n\n.drag-to-top-heading__row,\n.all-done-heading__row {\n  display: block;\n\n  margin: 0 0 .4em 0;\n}\n\n.drag-to-top-heading:after {\n  font-family: 'icomoon';\n  font-size: 1.7em;\n\n  position: absolute;\n  bottom: -1.5em;\n  left: 50%;\n\n  content: '\\E901';\n  transform: translate(-50%, 0);\n}\n\n.closed .tabs-block-global-btn:after {\n  top: 32%;\n  transform: rotate(-90deg);\n}\n\n/* MODALS */\n\n.modal-opened-add-edit .modal-add-task,\n.modal-opened-add-edit .modal-edit-task,\n.modal-opened-remove .modal-remove-task {\n  position: fixed;\n  z-index: 99999;\n  top: 0;\n  left: 0;\n  display: -ms-flexbox;\n  display:         flex;\n\n  width: 100%;\n  height: 100%;\n  -ms-flex-align: center;\n  align-items: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n\n.modal-add-task .modal-btn-delete {\n  display: none;\n}\n\n.modal-heading {\n  font-size: 1.75em;\n  font-weight: 700;\n\n  margin: .9em 0 .6em 0;\n\n  text-align: center;\n}\n\n.modal-lbl,\n.modal-inpt {\n  display: block;\n}\n\n.modal-lbl {\n  margin: 0 0 .3em 0;\n}\n\n.modal-inpt {\n  width: 100%;\n  margin: 0 0 2.2em 0;\n  padding: .6em 0 .4em 0;\n\n  border-bottom: 1px solid #3d5364;\n}\n\n.modal-btn-accept,\n.modal-btn-cancel,\n.modal-btn-delete {\n  font-family: 'icomoon';\n}\n\n.modal-lbl,\n.modal-estimation-heading,\n.modal-fset-heading {\n  font-size: .875em;\n\n  text-transform: uppercase;\n}\n\n.modal-fset-list {\n  display: -ms-flexbox;\n  display:         flex;\n}\n\n.modal-fset-list-item-radio {\n  display: none;\n}\n\n.modal-inpt::-webkit-input-placeholder {\n  color: #8da8b8;\n}\n\n.modal-inpt::-moz-placeholder {\n  color: #8da8b8;\n}\n\n.modal-inpt:-ms-input-placeholder {\n  color: #8da8b8;\n}\n\n.modal-inpt::placeholder {\n  color: #8da8b8;\n}\n\n.modal-fset-list-item-lbl {\n  color: #8da8b8;\n}\n\n.modal-btn-accept,\n.modal-btn-cancel,\n.modal-btn-delete {\n  font-size: 1.2em;\n\n  position: absolute;\n  top: .7em;\n  transition: color .1s ease-in-out;\n\n  color: #8da8b8;\n}\n\n.modal-btn-accept:hover,\n.modal-btn-cancel:hover,\n.modal-btn-delete:hover {\n  color: #fff;\n}\n\n.modal-btn-accept {\n  right: .5em;\n}\n\n.modal-btn-cancel {\n  right: 2.3em;\n}\n\n.modal-remove-task .modal-btn-cancel {\n  right: .5em;\n}\n\n.modal-btn-delete {\n  font-size: 1.3em;\n\n  top: .55em;\n  left: .45em;\n}\n\n.modal-fset {\n  margin: 0 0 2.1em 0;\n  padding: 0 0 .4em 0;\n\n  border-bottom: 1px solid #3d5364;\n}\n\n.modal-fset-heading {\n  margin: -.15em 0 1.1em 0;\n}\n\n.modal-fset-list-item-lbl {\n  position: relative;\n\n  display: block;\n\n  padding: 0 1em 0 1.3em;\n}\n\n.modal-fset-list-item-lbl:before {\n  position: absolute;\n  top: 48%;\n  left: -.15em;\n\n  width: 18px;\n  height: 18px;\n\n  content: '';\n  transform: translate(0, -50%);\n\n  background: url(" + __webpack_require__(20) + ") -172px -2px no-repeat;\n}\n\n.modal-fset-list-item-radio:checked + .modal-fset-list-item-lbl,\n.modal-fset-list-item-lbl:hover {\n  color: #fff;\n}\n\n.modal-fset-list-item-lbl:hover {\n  cursor: pointer;\n}\n\n/* CATEGORIES */\n\n#modal-add-edit-task__radio-work + .modal-fset-list-item-lbl:hover:before {\n  background-position: -1px -21px;\n}\n\n#modal-add-edit-task__radio-work:checked + .modal-fset-list-item-lbl:before {\n  background-position: -1px -2px;\n}\n\n#modal-add-edit-task__radio-edu + .modal-fset-list-item-lbl:hover:before {\n  background-position: -77px -21px;\n}\n\n#modal-add-edit-task__radio-edu:checked + .modal-fset-list-item-lbl:before {\n  background-position: -77px -2px;\n}\n\n#modal-add-edit-task__radio-hobby + .modal-fset-list-item-lbl:hover:before {\n  background-position: -58px -21px;\n}\n\n#modal-add-edit-task__radio-hobby:checked + .modal-fset-list-item-lbl:before {\n  background-position: -58px -2px;\n}\n\n#modal-add-edit-task__radio-sport + .modal-fset-list-item-lbl:hover:before {\n  background-position: -39px -21px;\n}\n\n#modal-add-edit-task__radio-sport:checked + .modal-fset-list-item-lbl:before {\n  background-position: -39px -2px;\n}\n\n#modal-add-edit-task__radio-other + .modal-fset-list-item-lbl:hover:before {\n  background-position: -20px -21px;\n}\n\n#modal-add-edit-task__radio-other:checked + .modal-fset-list-item-lbl:before {\n  background-position: -20px -2px;\n}\n\n/* PRIORITY */\n\n#modal-add-edit-task__urgent + .modal-fset-list-item-lbl:hover:before {\n  background-position: -96px -21px;\n}\n\n#modal-add-edit-task__urgent:checked + .modal-fset-list-item-lbl:before {\n  background-position: -96px -2px;\n}\n\n#modal-add-edit-task__high + .modal-fset-list-item-lbl:hover:before {\n  background-position: -115px -21px;\n}\n\n#modal-add-edit-task__high:checked + .modal-fset-list-item-lbl:before {\n  background-position: -115px -2px;\n}\n\n#modal-add-edit-task__middle + .modal-fset-list-item-lbl:hover:before {\n  background-position: -134px -21px;\n}\n\n#modal-add-edit-task__middle:checked + .modal-fset-list-item-lbl:before {\n  background-position: -134px -2px;\n}\n\n#modal-add-edit-task__low + .modal-fset-list-item-lbl:hover:before {\n  background-position: -153px -21px;\n}\n\n#modal-add-edit-task__low:checked + .modal-fset-list-item-lbl:before {\n  background-position: -153px -2px;\n}\n\n.modal-estimation {\n  margin: 0 0 2.4em 0;\n\n  text-align: left;\n\n  border-bottom: 1px solid #3d5364;\n}\n\n.modal-estimation-heading {\n  margin: 0 0 .5em 0;\n}\n\n.modal-estimation-radio-wrapper {\n  display: -ms-inline-flexbox;\n  display:         inline-flex;\n          flex-direction: row-reverse;\n\n  padding: 0 0 .6em 0;\n\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: reverse;\n  -webkit-flex-direction: row-reverse;\n      -ms-flex-direction: row-reverse;\n}\n\n.modal-estimation-list-item-radio {\n  display: none;\n}\n\n.modal-estimation-list-item-lbl {\n  display: block;\n\n  width: 1.26rem;\n  height: 1.23rem;\n  margin: 0 .6em 0 0;\n  transition: .1s ease-in-out;\n\n  background: url(" + __webpack_require__(23) + ") center no-repeat;\n}\n\n.modal-estimation-list-item-lbl:hover {\n  cursor: pointer;\n}\n\n.modal-estimation-list-item-lbl:hover,\n.modal-estimation-list-item-lbl:hover ~ .modal-estimation-list-item-lbl,\n.modal-estimation-list-item-radio:checked ~ .modal-estimation-list-item-lbl {\n  background-image: url(" + __webpack_require__(24) + ");\n}\n\n.modal-remove-task .modal-question {\n  font-size: 2.25rem;\n  font-weight: 300;\n  line-height: 1.3em;\n\n  width: 94%;\n  margin: 3.9em auto 5.2em auto;\n\n  text-align: center;\n\n  color: #8da8b8;\n}\n\n.modal-remove-task .buttons-wrapper {\n  display: -ms-flexbox;\n  display:         flex;\n\n  width: 65%;\n  margin: 0 auto;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n}\n\n.notification-shown-success .notification-success,\n.notification-shown-error .notification-error,\n.notification-shown-warning .notification-warning,\n.notification-shown-message-info .notification-message-info {\n  position: fixed;\n  right: 6.5%;\n  bottom: 5%;\n  left: auto;\n}\n\n.notification.notification--top {\n  top: 7%;\n  right: 6.5%;\n  bottom: auto;\n\n  width: 87.2%;\n}\n", ""]);
+	exports.push([module.id, ".aside {\n  position: absolute;\n  top: 3.5em;\n  right: 6.2%;\n}\n.sticky-header .header-logo {\n  font-size: 1rem;\n  position: fixed;\n  z-index: 9999;\n  top: 0;\n  right: 0;\n  left: 0;\n  overflow: visible;\n  height: 8.5em;\n  background-color: #2a3f50;\n  box-shadow: 2px 0 15px #000;\n}\n.header-logo {\n  display: none;\n}\n.sticky-header .aside {\n  position: fixed;\n  z-index: 99999;\n  top: 0;\n  right: 8%;\n  margin: 3.5em 0 0 0;\n}\n.sticky-header #add-btn {\n  font-size: .8em;\n  position: static;\n}\n.common-state #trash-btn,\n.deleting-state #trash-btn {\n  position: relative;\n  left: auto;\n}\n.deleting-state #trash-btn {\n  overflow: visible;\n}\n.deleting-state #trash-btn:after {\n  font-family: 'Roboto', sans-serif;\n  font-size: .68em;\n  font-weight: 700;\n  line-height: 1.55em;\n  position: absolute;\n  right: -0.4em;\n  bottom: -0.78em;\n  width: 1.55em;\n  height: 1.55em;\n  content: '2';\n  color: #fff;\n  border-radius: 50%;\n  background-color: #f75c4c;\n}\n.main-btn-list {\n  width: 10.8em;\n}\n.main-top-add-btn {\n  font-size: 1.7rem;\n  font-weight: 700;\n  position: relative;\n  display: block;\n  width: 9.64em;\n  margin: 0 auto;\n  letter-spacing: .02em;\n}\n.main-top-add-btn:after {\n  font-family: 'icomoon';\n  font-size: .5em;\n  position: absolute;\n  right: .18em;\n  bottom: .8em;\n  content: '\\E900';\n}\n.add-first-heading {\n  font-size: 2.26rem;\n  font-weight: 300;\n  position: relative;\n  margin: 4.9em 0 0 0;\n  text-align: center;\n  letter-spacing: .01em;\n  color: #8da5b8;\n}\n.add-first-heading:after {\n  font-family: 'icomoon';\n  font-size: 1.7em;\n  position: absolute;\n  top: -1.4em;\n  left: 50%;\n  content: '\\E901';\n  transform: translate(-50%, 0);\n}\n.tasks-block {\n  margin: 1.7em 0 2.1em 0;\n}\n.tabs-block {\n  position: relative;\n  display: -ms-flexbox;\n  display: flex;\n  margin: 0;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n}\n.common-state .daily-tasks .tabs-block {\n  -ms-flex-pack: end;\n  justify-content: flex-end;\n}\n.daily-tasks .task-list {\n  margin-top: 1em;\n}\n.task-list {\n  position: relative;\n  margin: .8em 0 0 0;\n}\n.task-list-item {\n  font-size: 1rem;\n  position: relative;\n  display: -ms-flexbox;\n  display: flex;\n  overflow: hidden;\n  box-sizing: border-box;\n  margin: 0 0 .5625em 0;\n  background-color: #fff;\n  box-shadow: 0 5px 17px rgba(0, 0, 0, 0.4);\n}\n.done.task-list-item {\n  background-color: #d4d9dc;\n}\n.done .task-content-heading {\n  text-decoration: line-through;\n}\n.task-hidden-btns {\n  position: absolute;\n  z-index: 9;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n  width: 5.48em;\n  height: 100%;\n  transition: 0.3s ease-in-out;\n  transform: translate(-89%, 0);\n}\n.deleting-state .task-hidden-btns {\n  transform: translate(0, 0);\n}\n.deleting-state .moved-to-trash .btn-close,\n.task-hidden-btns__btn {\n  font-size: 2.5em;\n  position: absolute;\n  top: 48%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n/* URGENT */\n.task-list-item.urgent-imp .task-pomidoro-count {\n  background-color: #f75c4c;\n}\n.task-list-item.urgent-imp .task-content-heading {\n  color: #f75c4c;\n}\n/* HIGHT */\n.task-list-item.hight-imp .task-pomidoro-count {\n  background-color: #ffa841;\n}\n.task-list-item.hight-imp .task-content-heading {\n  color: #ffa841;\n}\n/* MIDDLE */\n.task-list-item.middle-imp .task-pomidoro-count {\n  background-color: #fddc43;\n}\n.task-list-item.middle-imp .task-content-heading {\n  color: #fddc43;\n}\n/* LOW */\n.task-list-item.low-imp .task-pomidoro-count {\n  background-color: #1abc9c;\n}\n.task-list-item.low-imp .task-content-heading {\n  color: #1abc9c;\n}\n/* CATEGORIES */\n.work-category .task-hidden-btns {\n  background-color: #ffb200;\n}\n.education-category .task-hidden-btns {\n  background-color: #59abe3;\n}\n.hobby-category .task-hidden-btns {\n  background-color: #b470d0;\n}\n.sport-category .task-hidden-btns {\n  background-color: #00d4d9;\n}\n.other-category .task-hidden-btns {\n  background-color: #00cbd0;\n}\n.task-main-btns {\n  position: relative;\n}\n.task-hidden-btns__btn,\n.task-main-btns__btn {\n  font-family: 'icomoon';\n}\n.task-main-btns__btn:hover {\n  color: #88a3b5;\n}\n.task-main-btns__btn.btn-up {\n  margin: 0 0 .5em 0;\n}\n.task-content {\n  box-sizing: border-box;\n  padding: 1.3em .2rem 1em .2rem;\n  -ms-flex-preferred-size: 100%;\n  flex-basis: 100%;\n}\n.task-content-heading {\n  font-size: 1.1875em;\n  font-weight: 500;\n  margin: 0 0 .4em 0;\n  letter-spacing: .01em;\n}\n.task-content-text {\n  line-height: 1.5em;\n}\n.task-content-text,\n.task-main-btns,\n.task-date {\n  color: #a5a5a5;\n}\n.task-main-btns,\n.task-date {\n  display: -ms-flexbox;\n  display: flex;\n  flex-direction: column;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n  -ms-flex-direction: column;\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n.task-main-btns {\n  font-size: 1.15em;\n  width: 5.75em;\n}\n.task-date {\n  font-weight: 700;\n  width: 7.5em;\n  padding: 0 0 0 .625em;\n  text-align: center;\n  letter-spacing: .04em;\n  text-transform: uppercase;\n}\n.task-date-number {\n  font-family: 'PT Sans', sans-serif;\n  font-size: 1.6875em;\n}\n.task-date-month {\n  font-size: .6875em;\n}\n.task-date-today {\n  font-size: .7em;\n}\n.daily-tasks .task-date-today {\n  position: static;\n  left: auto;\n}\n.task-pomidoro-count {\n  font-family: 'PT Sans', sans-serif;\n  font-size: 1.54em;\n  font-weight: 700;\n  position: relative;\n  width: 4.6em;\n}\n.task-pomidoro-count:hover {\n  cursor: pointer;\n}\n.task-pomidoro-count:hover .task-pomidoro-count__num {\n  top: auto;\n  right: auto;\n  left: -9999px;\n  overflow: hidden;\n}\n.done .task-pomidoro-count:hover {\n  cursor: default;\n}\n.done .task-pomidoro-count:hover .task-pomidoro-count__num,\n.task-pomidoro-count__num {\n  position: absolute;\n  top: 51.5%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.done .task-pomidoro-count:hover:after,\n.task-pomidoro-count:after {\n  font-family: 'icomoon';\n  font-size: 1.9em;\n  font-weight: 400;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  content: '\\E90E';\n  transform: translate(-50%, -50%);\n}\n.task-pomidoro-count:hover:after {\n  content: '\\E90D';\n}\n.global-tasks .tabs-block {\n  margin-bottom: 2em;\n}\n.global-tasks .to-do-tabs {\n  font-size: 1.03em;\n}\n.tabs-block-global-btn {\n  font-family: 'PT Sans', sans-serif;\n  font-size: 1.25em;\n  font-weight: 700;\n  position: relative;\n  padding: 0;\n  transition: color 0.1s ease-in-out;\n  color: #88a3b5;\n}\n.tabs-block-global-btn:after {\n  font-family: 'icomoon';\n  font-size: .55em;\n  position: absolute;\n  top: 50%;\n  right: -1.5em;\n  content: '\\E906';\n  transform: translate(0, -50%);\n}\n.tabs-block-global-btn:hover {\n  color: #fff;\n}\n.global-tasks .tabs-block {\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n}\n.global-tasks .sellecting-tabs {\n  width: 100%;\n  margin: 1.5em 0 0 0;\n}\n.tasks-grp-by-category {\n  margin: 0 0 1.4375rem 0;\n}\n.tasks-grp-by-category__heading {\n  font-size: 1rem;\n  font-weight: 700;\n  position: relative;\n  padding: 0 0 0 1.5em;\n  text-transform: uppercase;\n}\n.tasks-grp-by-category__heading:before,\n.tasks-grp-by-category__heading:after {\n  position: absolute;\n  top: 30%;\n  left: -0.26rem;\n  content: '';\n  transform: translate(0, -50%);\n  border-radius: 50%;\n}\n.tasks-grp-by-category__heading:before {\n  z-index: 100;\n  width: 1.0625em;\n  height: 1.0625em;\n}\n.tasks-grp-by-category__heading:after {\n  z-index: 150;\n  left: -0.015rem;\n  width: .32em;\n  height: .32em;\n  transition: 0.1s ease-in-out;\n  border: 2px solid #2a3f50;\n  border-radius: 50%;\n}\n.tasks-grp-by-category .task-list:after {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: .5625rem;\n  height: calc(101.5625%);\n  content: '';\n}\n/* CATEGORIES FOR GROUPS */\n/* WORK */\n.work-category .tasks-grp-by-category__heading {\n  color: #ffb200;\n}\n.work-category .task-list:after,\n.work-category .tasks-grp-by-category__heading:before {\n  background-color: #ffb200;\n}\n/* SPORT */\n.sport-category .tasks-grp-by-category__heading {\n  color: #00d4d9;\n}\n.sport-category .task-list:after,\n.sport-category .tasks-grp-by-category__heading:before {\n  background-color: #00d4d9;\n}\n/* HOBBY */\n.hobby-category .tasks-grp-by-category__heading {\n  color: #b470d0;\n}\n.hobby-category .task-list:after,\n.hobby-category .tasks-grp-by-category__heading:before {\n  background-color: #b470d0;\n}\n/* EDUCATION */\n.education-category .tasks-grp-by-category__heading {\n  color: #59abe3;\n}\n.education-category .task-list:after,\n.education-category .tasks-grp-by-category__heading:before {\n  background-color: #59abe3;\n}\n/* OTHER */\n.other-category .tasks-grp-by-category__heading {\n  color: #00cbd0;\n}\n.other-cateogry .task-list:after,\n.other-category .tasks-grp-by-category__heading:before {\n  background-color: #00cbd0;\n}\n.common-state--nothing-in-daily .drag-to-top-heading {\n  position: static;\n}\n.drag-to-top-heading {\n  margin: 1em 0 5em 0;\n}\n.common-state--all-done .all-done-heading {\n  position: static;\n}\n.all-done-heading {\n  margin: .95em 0 2.7em 0;\n}\n.drag-to-top-heading,\n.all-done-heading {\n  font-size: 2.26rem;\n  font-weight: 300;\n  position: relative;\n  text-align: center;\n  letter-spacing: .01em;\n  color: #8da5b8;\n}\n.drag-to-top-heading__row,\n.all-done-heading__row {\n  display: block;\n  margin: 0 0 .4em 0;\n}\n.drag-to-top-heading:after {\n  font-family: 'icomoon';\n  font-size: 1.7em;\n  position: absolute;\n  bottom: -1.5em;\n  left: 50%;\n  content: '\\E901';\n  transform: translate(-50%, 0);\n}\n.closed .tabs-block-global-btn:after {\n  top: 32%;\n  transform: rotate(-90deg);\n}\n/* MODALS */\n.modal-opened-add-edit .modal-add-task,\n.modal-opened-add-edit .modal-edit-task,\n.modal-opened-remove .modal-remove-task {\n  position: fixed;\n  z-index: 99999;\n  top: 0;\n  left: 0;\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n  height: 100%;\n  -ms-flex-align: center;\n  align-items: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n.modal-add-task .modal-btn-delete {\n  display: none;\n}\n.modal-heading {\n  font-size: 1.75em;\n  font-weight: 700;\n  margin: .9em 0 .6em 0;\n  text-align: center;\n}\n.modal-lbl,\n.modal-inpt {\n  display: block;\n}\n.modal-lbl {\n  margin: 0 0 .3em 0;\n}\n.modal-inpt {\n  width: 100%;\n  margin: 0 0 2.2em 0;\n  padding: .6em 0 .4em 0;\n  border-bottom: 1px solid #3d5364;\n}\n.modal-btn-accept,\n.modal-btn-cancel,\n.modal-btn-delete {\n  font-family: 'icomoon';\n}\n.modal-lbl,\n.modal-estimation-heading,\n.modal-fset-heading {\n  font-size: .875em;\n  text-transform: uppercase;\n}\n.modal-fset-list {\n  display: -ms-flexbox;\n  display: flex;\n}\n.modal-fset-list-item-radio {\n  display: none;\n}\n.modal-inpt::-webkit-input-placeholder {\n  color: #8da8b8;\n}\n.modal-inpt::-moz-placeholder {\n  color: #8da8b8;\n}\n.modal-inpt:-ms-input-placeholder {\n  color: #8da8b8;\n}\n.modal-inpt::placeholder {\n  color: #8da8b8;\n}\n.modal-fset-list-item-lbl {\n  color: #8da8b8;\n}\n.modal-btn-accept,\n.modal-btn-cancel,\n.modal-btn-delete {\n  font-size: 1.2em;\n  position: absolute;\n  top: .7em;\n  transition: color 0.1s ease-in-out;\n  color: #8da8b8;\n}\n.modal-btn-accept:hover,\n.modal-btn-cancel:hover,\n.modal-btn-delete:hover {\n  color: #fff;\n}\n.modal-btn-accept {\n  right: .5em;\n}\n.modal-btn-cancel {\n  right: 2.3em;\n}\n.modal-remove-task .modal-btn-cancel {\n  right: .5em;\n}\n.modal-btn-delete {\n  font-size: 1.3em;\n  top: .55em;\n  left: .45em;\n}\n.modal-fset {\n  margin: 0 0 2.1em 0;\n  padding: 0 0 .4em 0;\n  border-bottom: 1px solid #3d5364;\n}\n.modal-fset-heading {\n  margin: -0.15em 0 1.1em 0;\n}\n.modal-fset-list-item-lbl {\n  position: relative;\n  display: block;\n  padding: 0 1em 0 1.3em;\n}\n.modal-fset-list-item-lbl:before {\n  position: absolute;\n  top: 48%;\n  left: -0.15em;\n  width: 18px;\n  height: 18px;\n  content: '';\n  transform: translate(0, -50%);\n  background: url(" + __webpack_require__(43) + ") -172px -2px no-repeat;\n}\n.modal-fset-list-item-radio:checked + .modal-fset-list-item-lbl,\n.modal-fset-list-item-lbl:hover {\n  color: #fff;\n}\n.modal-fset-list-item-lbl:hover {\n  cursor: pointer;\n}\n/* CATEGORIES */\n#modal-add-edit-task__radio-work + .modal-fset-list-item-lbl:hover:before {\n  background-position: -1px -21px;\n}\n#modal-add-edit-task__radio-work:checked + .modal-fset-list-item-lbl:before {\n  background-position: -1px -2px;\n}\n#modal-add-edit-task__radio-edu + .modal-fset-list-item-lbl:hover:before {\n  background-position: -77px -21px;\n}\n#modal-add-edit-task__radio-edu:checked + .modal-fset-list-item-lbl:before {\n  background-position: -77px -2px;\n}\n#modal-add-edit-task__radio-hobby + .modal-fset-list-item-lbl:hover:before {\n  background-position: -58px -21px;\n}\n#modal-add-edit-task__radio-hobby:checked + .modal-fset-list-item-lbl:before {\n  background-position: -58px -2px;\n}\n#modal-add-edit-task__radio-sport + .modal-fset-list-item-lbl:hover:before {\n  background-position: -39px -21px;\n}\n#modal-add-edit-task__radio-sport:checked + .modal-fset-list-item-lbl:before {\n  background-position: -39px -2px;\n}\n#modal-add-edit-task__radio-other + .modal-fset-list-item-lbl:hover:before {\n  background-position: -20px -21px;\n}\n#modal-add-edit-task__radio-other:checked + .modal-fset-list-item-lbl:before {\n  background-position: -20px -2px;\n}\n/* PRIORITY */\n#modal-add-edit-task__urgent + .modal-fset-list-item-lbl:hover:before {\n  background-position: -96px -21px;\n}\n#modal-add-edit-task__urgent:checked + .modal-fset-list-item-lbl:before {\n  background-position: -96px -2px;\n}\n#modal-add-edit-task__high + .modal-fset-list-item-lbl:hover:before {\n  background-position: -115px -21px;\n}\n#modal-add-edit-task__high:checked + .modal-fset-list-item-lbl:before {\n  background-position: -115px -2px;\n}\n#modal-add-edit-task__middle + .modal-fset-list-item-lbl:hover:before {\n  background-position: -134px -21px;\n}\n#modal-add-edit-task__middle:checked + .modal-fset-list-item-lbl:before {\n  background-position: -134px -2px;\n}\n#modal-add-edit-task__low + .modal-fset-list-item-lbl:hover:before {\n  background-position: -153px -21px;\n}\n#modal-add-edit-task__low:checked + .modal-fset-list-item-lbl:before {\n  background-position: -153px -2px;\n}\n.modal-estimation {\n  margin: 0 0 2.4em 0;\n  text-align: left;\n  border-bottom: 1px solid #3d5364;\n}\n.modal-estimation-heading {\n  margin: 0 0 .5em 0;\n}\n.modal-estimation-radio-wrapper {\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  flex-direction: row-reverse;\n  padding: 0 0 .6em 0;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: reverse;\n  -webkit-flex-direction: row-reverse;\n  -ms-flex-direction: row-reverse;\n}\n.modal-estimation-list-item-radio {\n  display: none;\n}\n.modal-estimation-list-item-lbl {\n  display: block;\n  width: 1.26rem;\n  height: 1.23rem;\n  margin: 0 .6em 0 0;\n  transition: 0.1s ease-in-out;\n  background: url(" + __webpack_require__(46) + ") center no-repeat;\n}\n.modal-estimation-list-item-lbl:hover {\n  cursor: pointer;\n}\n.modal-estimation-list-item-lbl:hover,\n.modal-estimation-list-item-lbl:hover ~ .modal-estimation-list-item-lbl,\n.modal-estimation-list-item-radio:checked ~ .modal-estimation-list-item-lbl {\n  background-image: url(" + __webpack_require__(47) + ");\n}\n.modal-remove-task .modal-question {\n  font-size: 2.25rem;\n  font-weight: 300;\n  line-height: 1.3em;\n  width: 94%;\n  margin: 3.9em auto 5.2em auto;\n  text-align: center;\n  color: #8da8b8;\n}\n.modal-remove-task .buttons-wrapper {\n  display: -ms-flexbox;\n  display: flex;\n  width: 65%;\n  margin: 0 auto;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n}\n.notification-shown-success .notification-success,\n.notification-shown-error .notification-error,\n.notification-shown-warning .notification-warning,\n.notification-shown-message-info .notification-message-info {\n  position: fixed;\n  right: 6.5%;\n  bottom: 5%;\n  left: auto;\n}\n.notification.notification--top {\n  top: 7%;\n  right: 6.5%;\n  bottom: auto;\n  width: 87.2%;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 102 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5128,11 +6194,11 @@ webpackJsonp([1],[
 	  value: true
 	});
 	
-	var _pages = __webpack_require__(73);
+	var _pages = __webpack_require__(134);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _timer = __webpack_require__(103);
+	var _timer = __webpack_require__(160);
 	
 	var _timer2 = _interopRequireDefault(_timer);
 	
@@ -5171,7 +6237,7 @@ webpackJsonp([1],[
 	exports.default = Timer;
 
 /***/ },
-/* 103 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5184,15 +6250,13 @@ webpackJsonp([1],[
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _pages = __webpack_require__(75);
+	var _pages = __webpack_require__(136);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _timer = __webpack_require__(104);
+	var _timer = __webpack_require__(161);
 	
 	var _timer2 = _interopRequireDefault(_timer);
-	
-	__webpack_require__(105);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -5201,6 +6265,8 @@ webpackJsonp([1],[
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	// import './timer.less';
 	
 	/**
 	 * Page view
@@ -5249,7 +6315,7 @@ webpackJsonp([1],[
 	exports.default = View;
 
 /***/ },
-/* 104 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5260,11 +6326,11 @@ webpackJsonp([1],[
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _pages = __webpack_require__(77);
+	var _pages = __webpack_require__(138);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	__webpack_require__(22);
+	__webpack_require__(45);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -5310,23 +6376,23 @@ webpackJsonp([1],[
 	exports.default = Template;
 
 /***/ },
-/* 105 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(106);
+	var content = __webpack_require__(163);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(8)(content, {});
+	var update = __webpack_require__(51)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./timer.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./timer.css");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./timer.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./timer.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -5336,37 +6402,43 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 106 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(7)();
+	exports = module.exports = __webpack_require__(50)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "body {\n  color: #fff;\n  background-color: #2a3f50;\n}\n\n.main {\n  width: 86.8%;\n  margin: 0 auto;\n  padding: 6.1em 0 4.6875em 0;\n\n  text-align: center;\n}\n\n.aside {\n  position: absolute;\n  top: 3.5em;\n  right: 6.2%;\n}\n\n.header-main {\n  font-size: 1.75rem;\n  font-weight: 700;\n\n  letter-spacing: .02em;\n}\n\n.header-sub {\n  font-size: 1rem;\n\n  margin: 1.8em 0 0 0;\n\n  letter-spacing: .03em;\n\n  color: #fff;\n}\n\n.btn-fail-pom,\n.btn-finish-pom,\n.btn-start-pom,\n.btn-finish-task,\n.timer .in-pomodoro,\n.timer .break-over,\n.timer .in-break,\n.timer .completed-all,\n.timer-wrapper .btn-arrow-right,\n.pomodoro-list-item-btn,\n.in-pomodoro .start-text,\n.in-pomodoro .btn-start,\n.in-pomodoro .btn-arrow-left,\n.in-break .start-text,\n.in-break .btn-start,\n.in-break .btn-arrow-left,\n.break-over .start-text,\n.break-over .btn-start,\n.break-over .btn-arrow-left,\n.completed-all .btn-start,\n.completed-all .start-text {\n  position: absolute;\n  top: auto;\n  right: auto;\n  left: -9999px;\n\n  overflow: hidden;\n}\n\n.pomodoro-list {\n  position: relative;\n  display: -ms-inline-flexbox;\n  display:         inline-flex;\n\n  margin: 2.25em 0;\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n\n.pomodoro-list-item {\n  width: 1.6rem;\n  padding: 0 .3em;\n}\n\n.pomodoro-list-item-img {\n  width: 100%;\n}\n\n.in-pomodoro .pomodoro-list-item-btn {\n  position: absolute;\n  top: 45%;\n  right: -2em;\n  left: auto;\n  transform: translate(0, -50%);\n}\n\n.btn-add-pomodoro {\n  font-family: 'icomoon';\n  font-size: 1em;\n\n  width: 2em;\n  transition: .1s ease-in-out;\n\n  color: #8da8b8;\n}\n\n.in-pomodoro .btn-add-pomodoro:hover {\n  color: #fff;\n}\n\n.completed-all .btn-arrow-right {\n  position: absolute;\n  top: 50%;\n  right: 0;\n  left: auto;\n}\n\n.timer {\n  font-family: 'PT Sans', sans-serif;\n  font-size: 1.625rem;\n\n  position: relative;\n\n  width: 15.8rem;\n  height: 15.8rem;\n  margin: 1em auto 4.4em auto;\n  animation: .3s linear scale ;\n\n  border: 5px solid #ff8d22;\n  border-radius: 50%;\n  background-color: #2a3f50;\n  box-shadow: 0 0 60px rgba(0,0,0,.4);\n}\n\n.timer-pie {\n  position: absolute;\n  box-sizing: border-box;\n  width: 50%;\n  height: 100%;\n  transform-origin: 100% 50%;\n\n  border: .8rem solid #2a3f50;\n  background-color: #8da5b8;\n}\n\n.timer-spinner {\n  z-index: 200;\n  animation: rota linear infinite;\n\n  border-right: none;\n  border-radius: 100% 0 0 100% / 50% 0 0 50%;\n}\n\n.timer-filter {\n  z-index: 100;\n  left: 50%;\n  animation: fill steps(1, end) infinite;\n\n  opacity: 0;\n  border-left: none;\n  border-radius: 0 100% 100% 0 / 0 50% 50% 0;\n}\n\n.timer-mask {\n  position: absolute;\n  z-index: 300;\n\n  width: 50%;\n  height: 100%;\n  animation: mask steps(1, end) infinite;\n\n  opacity: 1;\n  border-radius: 100% 0 0 100% / 50% 0 0 50%;\n  background: inherit;\n}\n\n.in-break .timer,\n.break-over .timer {\n  border-color: #5aace3;\n}\n\n.in-pomodoro .timer-text.in-pomodoro,\n.in-break .timer-text.in-break,\n.break-over .timer-text.break-over,\n.completed-all .timer-text.completed-all,\n.timer-text {\n  font-family: 'Roboto', sans-serif;\n\n  position: absolute;\n  z-index: 400;\n  top: 50%;\n  left: 50%;\n  display: -ms-flexbox;\n  display:         flex;\n          flex-direction: column;\n\n  width: 55%;\n  height: 55%;\n  transform: translate(-50%, -50%);\n\n  border-radius: 50%;\n  background-color: inherit;\n\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n      -ms-flex-direction: column;\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n\n.timer-text-row {\n  display: block;\n}\n\n.break-over .timer-text-row,\n.completed-all .timer-text-row {\n  margin: 0 0 .4em 0;\n}\n\n.timer-text-min {\n  font-size: 6.25rem;\n  line-height: .85em;\n}\n\n.timer-text-low {\n  font-size: .6em;\n  line-height: 2em;\n}\n\n.in-pomodoro .timer-text,\n.in-break .timer-text,\n.break-over .timer-text,\n.completed-all .timer-text {\n  width: 63%;\n  height: 63%;\n\n  border-radius: 50%;\n}\n\n.in-pomodoro .btn-fail-pom,\n.in-pomodoro .btn-finish-pom,\n.in-break .btn-start-pom,\n.break-over .btn-start-pom,\n.break-over .btn-finish-task {\n  position: static;\n}\n\n.buttons-wrapper {\n  display: -ms-flexbox;\n  display:         flex;\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n\n.btn-fail-pom,\n.btn-finish-pom,\n.btn-start-pom,\n.btn-finish-task {\n  width: 10.6rem;\n  margin: 0 .5em;\n}\n\n@keyframes rota {\n  0% {\n    transform: rotate(0);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes fill {\n  0% {\n    opacity: 0;\n  }\n  50%,\n  100% {\n    opacity: 1;\n  }\n}\n\n@keyframes mask {\n  0% {\n    opacity: 1;\n  }\n  50%,\n  100% {\n    opacity: 0;\n  }\n}\n\n@keyframes scale {\n  0% {\n    transform: scale(0);\n  }\n  100% {\n    transform: scale(1);\n  }\n}\n", ""]);
+	exports.push([module.id, "body {\n  color: #fff;\n  background-color: #2a3f50;\n}\n.main {\n  width: 86.8%;\n  margin: 0 auto;\n  padding: 6.1em 0 4.6875em 0;\n  text-align: center;\n}\n.aside {\n  position: absolute;\n  top: 3.5em;\n  right: 6.2%;\n}\n.header-main {\n  font-size: 1.75rem;\n  font-weight: 700;\n  letter-spacing: .02em;\n}\n.header-sub {\n  font-size: 1rem;\n  margin: 1.8em 0 0 0;\n  letter-spacing: .03em;\n  color: #fff;\n}\n.btn-fail-pom,\n.btn-finish-pom,\n.btn-start-pom,\n.btn-finish-task,\n.timer .in-pomodoro,\n.timer .break-over,\n.timer .in-break,\n.timer .completed-all,\n.timer-wrapper .btn-arrow-right,\n.pomodoro-list-item-btn,\n.in-pomodoro .start-text,\n.in-pomodoro .btn-start,\n.in-pomodoro .btn-arrow-left,\n.in-break .start-text,\n.in-break .btn-start,\n.in-break .btn-arrow-left,\n.break-over .start-text,\n.break-over .btn-start,\n.break-over .btn-arrow-left,\n.completed-all .btn-start,\n.completed-all .start-text {\n  position: absolute;\n  top: auto;\n  right: auto;\n  left: -9999px;\n  overflow: hidden;\n}\n.pomodoro-list {\n  position: relative;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  margin: 2.25em 0;\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n.pomodoro-list-item {\n  width: 1.6rem;\n  padding: 0 .3em;\n}\n.pomodoro-list-item-img {\n  width: 100%;\n}\n.in-pomodoro .pomodoro-list-item-btn {\n  position: absolute;\n  top: 45%;\n  right: -2em;\n  left: auto;\n  transform: translate(0, -50%);\n}\n.btn-add-pomodoro {\n  font-family: 'icomoon';\n  font-size: 1em;\n  width: 2em;\n  transition: 0.1s ease-in-out;\n  color: #8da8b8;\n}\n.in-pomodoro .btn-add-pomodoro:hover {\n  color: #fff;\n}\n.completed-all .btn-arrow-right {\n  position: absolute;\n  top: 50%;\n  right: 0;\n  left: auto;\n}\n.timer {\n  font-family: 'PT Sans', sans-serif;\n  font-size: 1.625rem;\n  position: relative;\n  width: 15.8rem;\n  height: 15.8rem;\n  margin: 1em auto 4.4em auto;\n  animation: .3s linear scale ;\n  border: 5px solid #ff8d22;\n  border-radius: 50%;\n  background-color: #2a3f50;\n  box-shadow: 0 0 60px rgba(0, 0, 0, 0.4);\n}\n.timer-pie {\n  position: absolute;\n  box-sizing: border-box;\n  width: 50%;\n  height: 100%;\n  transform-origin: 100% 50%;\n  border: .8rem solid #2a3f50;\n  background-color: #8da5b8;\n}\n.timer-spinner {\n  z-index: 200;\n  animation: rota linear infinite;\n  border-right: none;\n  border-radius: 100% 0 0 2% 0 0 50%;\n}\n.timer-filter {\n  z-index: 100;\n  left: 50%;\n  animation: fill steps(1, end) infinite;\n  opacity: 0;\n  border-left: none;\n  border-radius: 0 100% 100% NaN 50% 50% 0;\n}\n.timer-mask {\n  position: absolute;\n  z-index: 300;\n  width: 50%;\n  height: 100%;\n  animation: mask steps(1, end) infinite;\n  opacity: 1;\n  border-radius: 100% 0 0 2% 0 0 50%;\n  background: inherit;\n}\n.in-break .timer,\n.break-over .timer {\n  border-color: #5aace3;\n}\n.in-pomodoro .timer-text.in-pomodoro,\n.in-break .timer-text.in-break,\n.break-over .timer-text.break-over,\n.completed-all .timer-text.completed-all,\n.timer-text {\n  font-family: 'Roboto', sans-serif;\n  position: absolute;\n  z-index: 400;\n  top: 50%;\n  left: 50%;\n  display: -ms-flexbox;\n  display: flex;\n  flex-direction: column;\n  width: 55%;\n  height: 55%;\n  transform: translate(-50%, -50%);\n  border-radius: 50%;\n  background-color: inherit;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n  -ms-flex-direction: column;\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n.timer-text-row {\n  display: block;\n}\n.break-over .timer-text-row,\n.completed-all .timer-text-row {\n  margin: 0 0 .4em 0;\n}\n.timer-text-min {\n  font-size: 6.25rem;\n  line-height: .85em;\n}\n.timer-text-low {\n  font-size: .6em;\n  line-height: 2em;\n}\n.in-pomodoro .timer-text,\n.in-break .timer-text,\n.break-over .timer-text,\n.completed-all .timer-text {\n  width: 63%;\n  height: 63%;\n  border-radius: 50%;\n}\n.in-pomodoro .btn-fail-pom,\n.in-pomodoro .btn-finish-pom,\n.in-break .btn-start-pom,\n.break-over .btn-start-pom,\n.break-over .btn-finish-task {\n  position: static;\n}\n.buttons-wrapper {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n.btn-fail-pom,\n.btn-finish-pom,\n.btn-start-pom,\n.btn-finish-task {\n  width: 10.6rem;\n  margin: 0 .5em;\n}\n@keyframes rota {\n  0% {\n    transform: rotate(0);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n@keyframes fill {\n  0% {\n    opacity: 0;\n  }\n  50%,\n  100% {\n    opacity: 1;\n  }\n}\n@keyframes mask {\n  0% {\n    opacity: 1;\n  }\n  50%,\n  100% {\n    opacity: 0;\n  }\n}\n@keyframes scale {\n  0% {\n    transform: scale(0);\n  }\n  100% {\n    transform: scale(1);\n  }\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 107 */
-/***/ function(module, exports) {
+/* 164 */
+/***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
-
-/***/ },
-/* 108 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-/***/ },
-/* 109 */
-/***/ function(module, exports) {
-
-	"use strict";
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _localstorageService = __webpack_require__(30);
+	
+	var _localstorageService2 = _interopRequireDefault(_localstorageService);
+	
+	var _firebaseService = __webpack_require__(23);
+	
+	var _firebaseService2 = _interopRequireDefault(_firebaseService);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var dataService = {};
+	
+	exports.default = dataService;
 
 /***/ }
-]);
+]));
 //# sourceMappingURL=1.1.bundle.js.map

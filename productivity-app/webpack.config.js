@@ -12,6 +12,7 @@ module.exports = {
   },
 
   watch: true,
+  cache: false,
   devtool: 'source-map',
 
   entry: {
@@ -37,15 +38,6 @@ module.exports = {
       {
         test: /\.(png|jpg|svg)$/,
         loader: 'file-loader?name=../img/[name].[ext]'
-      },
-      {
-        test: /\.css$/,
-        exclude: /fonts/,
-        loaders: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader'
-        ]
       },
       {
         test: /\.less$/,

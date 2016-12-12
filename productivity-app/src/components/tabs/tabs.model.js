@@ -7,7 +7,7 @@ export default class Model extends ComponentModel {
 
   /**
    * Create component model
-   * @param {Array} data - Dirty data array
+   * @param {array} data - Dirty data array
    */
   constructor(data) {
     super(data);
@@ -15,15 +15,15 @@ export default class Model extends ComponentModel {
 
   /**
    * Return copy of pure data array
-   * @return {[type]} [description]
+   * @return {array} Data array
    */
-  get data() {
+  getData() {
     return this.dataStatic.slice();
   }
 
   /**
    * Set active tab
-   * @param  {String} name - Tab name
+   * @param  {string} name - Tab name
    */
   set active(name) {
     this.dataStatic = this.dataStatic.map((el) => {
@@ -38,7 +38,7 @@ export default class Model extends ComponentModel {
 
   /**
    * Get name of active tab
-   * @return {String} Active tab name
+   * @return {string} Active tab name
    */
   get active() {
     return this.dataStatic.filter(el => el.active)[0].name;

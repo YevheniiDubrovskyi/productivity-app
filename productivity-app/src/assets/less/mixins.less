@@ -1,0 +1,25 @@
+.addNotificationType(@type, @bgColor, @icon, @iconBgColor) {
+  &-@{type} {
+    background-color: @bgColor;
+
+    &::after {
+      content: @icon;
+      background-color: @iconBgColor;
+    }
+  }
+}
+
+.addButtonType(@type, @commonColor, @hoverColor, @activeColor) {
+  &-@{type} {
+    background-color: @commonColor;
+
+    &:hover,
+    &:focus {
+      background-color: @hoverColor;
+    }
+
+    &:active {
+      background-color: @activeColor;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.tabs-list {
+  &:extend(.clearfix);
+  font-size: .95rem;
+  display: inline-block;
+
+  &__item {
+    position: relative;
+    float: left;
+
+    &:first-child &-btn {
+      padding-left: 0;
+    }
+
+    &:last-child &-btn {
+      padding-right: 0;
+    }
+
+    &:last-child &-btn:after {
+      display: none;
+    }
+
+    &-btn {
+      font-family: @font__secondary;
+      padding: 0 .5em;
+      transition: .1s ease-in-out;
+      color: @fontColor__secondary;
+
+      &.active,
+      &:hover {
+        color: @fontColor__primary;
+      }
+
+      &:after {
+        font-size: .9em;
+        position: absolute;
+        top: -.01rem;
+        right: -.21em;
+        content: '|';
+        color: @fontColor__secondary !important;
+      }
+    }
+  }
+}
+
+
+

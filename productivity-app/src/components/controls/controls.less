@@ -1,0 +1,38 @@
+.controls-list {
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: flex-start;
+
+  &__item {
+    margin: 0 1.1rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &-btn {
+      font-family: 'icomoon';
+      transition: color .1s ease-in-out;
+      color: #8da5b8;
+
+      &.active,
+      &:hover {
+        color: #fff;
+      }
+
+      &:focus,
+      &:active {
+        color: #82c7e0;
+      }
+    }
+  }
+}
+
+#statistics-btn {
+  font-size: .8em;
+  line-height: 1.6em;
+}

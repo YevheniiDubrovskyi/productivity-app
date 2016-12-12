@@ -1,6 +1,8 @@
 import PageView from '../pages.view';
 import Template from './login.template';
-import './login.css';
+// import './login.less';
+
+import Button from '../../components/button/button.controller';
 
 /**
  * Page view
@@ -20,9 +22,7 @@ export default class View extends PageView {
    * Render page template and components
    */
   render() {
-    // Dirty hack
-    document.body.classList.add('login-page');
-
+    this.viewport.classList.add('login-page');
     this.viewport.appendChild(this.markup);
     this.createComponents();
     super.render();
@@ -32,15 +32,43 @@ export default class View extends PageView {
    * Destroy page
    */
   destroy() {
-    // Dirty hack
-    document.body.classList.remove('login-page');
-
+    this.viewport.classList.remove('login-page');
     super.destroy();
   }
 
   /**
    * Create page components
    */
-  createComponents() {}
+  createComponents() {
+    const submitButton = new Button(true,
+                                    this.markup.querySelector('.login'),
+                                    'niagara',
+                                    'Log In',
+                                    '');
+
+    submitButton.addClassToRoot('login-btn');
+    submitButton.events.on('button:clicked', function() {
+      const inputsObject = this.getInputsData();
+
+      if (inputsObject) {
+        this.events.trigger('view:submit', inputsObject);
+      }
+    }, this);
+
+    this.componentsList.push(submitButton);
+  }
+
+  /**
+   * Return inputs data or null if one of inputs is empty
+   * @return {object | null} Object with data from inputs (username, password)
+   */
+  getInputsData() {
+    const username = this.markup.querySelector('#username').value.trim();
+    const password = this.markup.querySelector('#password').value.trim();
+
+    return username && password ?
+      {username, password} :
+      null;
+  }
 
 }

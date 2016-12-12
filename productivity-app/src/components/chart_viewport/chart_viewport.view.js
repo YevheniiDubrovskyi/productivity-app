@@ -1,6 +1,6 @@
 import ComponentView from '../components.view';
 import Template from './chart_viewport.template';
-import './chart_viewport.css';
+// import './chart_viewport.less';
 
 import Tabs from '../tabs/tabs.controller';
 import Highcharts from 'highcharts/highstock';

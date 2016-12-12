@@ -1,8 +1,6 @@
 import Router from './router.js';
 
-import './assets/css/reset.css';
-import './assets/css/base.css';
-import './assets/css/common.css';
+import './assets/less/app.less';
 
 const viewport = document.body;
 
@@ -21,7 +19,7 @@ const router = new Router(viewport,
   },
   {
     page: 'task_list',
-    pattern: '#!/',
+    pattern: '#!',
     default: true
   },
   {

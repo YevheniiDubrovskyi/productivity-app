@@ -1,6 +1,6 @@
 import PageView from '../pages.view';
 import Template from './timer.template';
-import './timer.css';
+// import './timer.less';
 
 /**
  * Page view
