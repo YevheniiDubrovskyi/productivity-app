@@ -21,15 +21,14 @@ export default class Router {
     this.pushRoutes(...routes);
     this.page = document.location.hash;
 
-    window.addEventListener('popstate', (event) => {
-      console.log('popstate');
+    window.addEventListener('popstate', () => {
       this.page = document.location.hash;
     });
   }
 
   /**
    * Push routes
-   * @param {Object} routObject - Object with page module name and pattern
+   * @param {...object} routes - Object with page module name and pattern
    */
   pushRoutes(...routes) {
     routes.forEach((rout) => {
@@ -38,7 +37,7 @@ export default class Router {
         path: `./pages/${rout.page}/${rout.page}.controller`,
         regExp: utils.fromPatternToRegular(rout.pattern),
         pattern: rout.pattern,
-        default: rout.default ? true : false
+        default: !!rout.default
       });
     });
   }

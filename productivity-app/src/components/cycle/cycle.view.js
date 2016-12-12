@@ -10,6 +10,10 @@ import CycleChart from '../cycle_chart/cycle_chart.controller';
  */
 export default class View extends ComponentView {
 
+  /**
+   * Create component view
+   * @param {HTMLElement} container - Append to element
+   */
   constructor(container) {
     super(container);
   }

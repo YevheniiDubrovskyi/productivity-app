@@ -923,7 +923,7 @@ webpackJsonp([1],Array(35).concat([
 	
 	    /**
 	     * Add class to component root element
-	     * @param {String} class - Class to add
+	     * @param {String} className - Class to add
 	     */
 	
 	  }, {
@@ -968,10 +968,11 @@ webpackJsonp([1],Array(35).concat([
 	
 	    /**
 	     * Attach or dettach event to HTMLElement
+	     * @param  {boolean} attachFlag - Determine action type attaching/detaching
 	     * @param  {HTMLElement} element
-	     * @param  {String} eventName - DOM event name
-	     * @param  {Function} callback - Callback that will be attached/dettached to HTMLElement
-	     * @param  {Boolean} useCapture - Indicates type of dispatching
+	     * @param  {string} eventName - DOM event name
+	     * @param  {function} callback - Callback that will be attached/dettached to HTMLElement
+	     * @param  {boolean} useCapture - Indicates type of dispatching
 	     */
 	
 	  }, {
@@ -989,6 +990,7 @@ webpackJsonp([1],Array(35).concat([
 	    /**
 	     * Attachs or detachs all events from array
 	     * @param  {Array} eventsArray - Object array that contain params for attaching/detaching
+	     * @param  {boolean} attachFlag - Determine action type attaching/detaching
 	     */
 	
 	  }, {
@@ -3045,6 +3047,10 @@ webpackJsonp([1],Array(35).concat([
 	var View = function (_ComponentView) {
 	  _inherits(View, _ComponentView);
 	
+	  /**
+	   * Create component view
+	   * @param {HTMLElement} container - Append to element
+	   */
 	  function View(container) {
 	    _classCallCheck(this, View);
 	
@@ -4302,9 +4308,61 @@ webpackJsonp([1],Array(35).concat([
 /***/ },
 /* 119 */,
 /* 120 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _components = __webpack_require__(63);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	var _task = __webpack_require__(125);
+	
+	var _task2 = _interopRequireDefault(_task);
+	
+	var _task3 = __webpack_require__(123);
+	
+	var _task4 = _interopRequireDefault(_task3);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * Component controller
+	 */
+	var Task = function (_ComponentController) {
+	  _inherits(Task, _ComponentController);
+	
+	  /**
+	   * Create component controller
+	   * @param {HTMLElement} container - Append to element
+	   * @param {object} dataObject - Data object
+	   */
+	  function Task(container, dataObject) {
+	    _classCallCheck(this, Task);
+	
+	    var _this = _possibleConstructorReturn(this, (Task.__proto__ || Object.getPrototypeOf(Task)).call(this));
+	
+	    _this.model = new _task4.default(dataObject);
+	    _this.view = new _task2.default(container);
+	
+	    _this.render(_this.model.getData());
+	    return _this;
+	  }
+	
+	  return Task;
+	}(_components2.default);
+	
+	exports.default = Task;
 
 /***/ },
 /* 121 */
@@ -4348,27 +4406,201 @@ webpackJsonp([1],Array(35).concat([
 
 /***/ },
 /* 123 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _components = __webpack_require__(65);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * Component model
+	 */
+	var Model = function (_ComponentModel) {
+	  _inherits(Model, _ComponentModel);
+	
+	  /**
+	   * Create component model
+	   * @param {object} data - Data object
+	   */
+	  function Model(data) {
+	    _classCallCheck(this, Model);
+	
+	    return _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this, data));
+	  }
+	
+	  return Model;
+	}(_components2.default);
+	
+	exports.default = Model;
 
 /***/ },
 /* 124 */
 /***/ function(module, exports) {
 
 	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	/**
+	 * Component template
+	 */
+	var Template =
+	
+	/**
+	 * Create component template
+	 * @param {obejct} dataObject - Data object
+	 */
+	function Template(dataObject) {
+	  _classCallCheck(this, Template);
+	
+	  this.markup = document.c;
+	};
+	
+	exports.default = Template;
 
 /***/ },
 /* 125 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+	
+	var _components = __webpack_require__(67);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	var _task = __webpack_require__(124);
+	
+	var _task2 = _interopRequireDefault(_task);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	// import './task.less';
+	
+	/**
+	 * Component view
+	 */
+	var View = function (_ComponentView) {
+	  _inherits(View, _ComponentView);
+	
+	  /**
+	   * Create component view
+	   * @param {HTMLElement} container - Append to element
+	   */
+	  function View(container) {
+	    _classCallCheck(this, View);
+	
+	    return _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this, container));
+	  }
+	
+	  /**
+	   * Render component
+	   * @param {object} dataObject - Data object
+	   */
+	
+	
+	  _createClass(View, [{
+	    key: 'render',
+	    value: function render(dataObject) {
+	      this.template = new _task2.default(dataObject);
+	
+	      this.container.appendChild(this.markup);
+	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'render', this).call(this);
+	    }
+	  }]);
+	
+	  return View;
+	}(_components2.default);
+	
+	exports.default = View;
 
 /***/ },
 /* 126 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _components = __webpack_require__(63);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	var _task_list = __webpack_require__(131);
+	
+	var _task_list2 = _interopRequireDefault(_task_list);
+	
+	var _task_list3 = __webpack_require__(129);
+	
+	var _task_list4 = _interopRequireDefault(_task_list3);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * Component controller
+	 */
+	var TaskList = function (_ComponentController) {
+	  _inherits(TaskList, _ComponentController);
+	
+	  /**
+	   * Create component controller
+	   * @param {HTMLElement} container - Appent to element
+	   */
+	  function TaskList(container) {
+	    _classCallCheck(this, TaskList);
+	
+	    var _this = _possibleConstructorReturn(this, (TaskList.__proto__ || Object.getPrototypeOf(TaskList)).call(this));
+	
+	    _this.model = new _task_list4.default();
+	    _this.view = new _task_list2.default(container);
+	
+	    _this.render();
+	    return _this;
+	  }
+	
+	  return TaskList;
+	}(_components2.default);
+	
+	exports.default = TaskList;
 
 /***/ },
 /* 127 */
@@ -4412,21 +4644,175 @@ webpackJsonp([1],Array(35).concat([
 
 /***/ },
 /* 129 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _components = __webpack_require__(65);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * Component model
+	 */
+	var Model = function (_ComponentModel) {
+	  _inherits(Model, _ComponentModel);
+	
+	  /**
+	   * Create component model
+	   */
+	  function Model() {
+	    _classCallCheck(this, Model);
+	
+	    return _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this));
+	  }
+	
+	  return Model;
+	}(_components2.default);
+	
+	exports.default = Model;
 
 /***/ },
 /* 130 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	/**
+	 * Component template
+	 */
+	var Template = function () {
+	
+	  /**
+	   * Create component template
+	   */
+	  function Template() {
+	    _classCallCheck(this, Template);
+	
+	    this.markup = document.createElement('div');
+	    this.markup.classList.add('task-list');
+	    this.markup.innerHTML = this.createMarkupSkeleton();
+	  }
+	
+	  /**
+	   * Create markup skeleton
+	   * @return {string} Component markup skeleton
+	   */
+	
+	
+	  _createClass(Template, [{
+	    key: 'createMarkupSkeleton',
+	    value: function createMarkupSkeleton() {}
+	  }]);
+	
+	  return Template;
+	}();
+	
+	exports.default = Template;
 
 /***/ },
 /* 131 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+	
+	var _components = __webpack_require__(67);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	var _task_list = __webpack_require__(130);
+	
+	var _task_list2 = _interopRequireDefault(_task_list);
+	
+	var _task = __webpack_require__(120);
+	
+	var _task2 = _interopRequireDefault(_task);
+	
+	var _tabs = __webpack_require__(80);
+	
+	var _tabs2 = _interopRequireDefault(_tabs);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// import './task_list.less';
+	
+	/**
+	 * Component view
+	 */
+	var View = function (_ComponentView) {
+	  _inherits(View, _ComponentView);
+	
+	  /**
+	   * Create component view
+	   * @param {HTMLElement} container - Append to element
+	   */
+	  function View(container) {
+	    _classCallCheck(this, View);
+	
+	    return _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this, container));
+	  }
+	
+	  /**
+	   * Render component
+	   */
+	
+	
+	  _createClass(View, [{
+	    key: 'render',
+	    value: function render() {
+	      this.template = new _task_list2.default();
+	
+	      this.container.appendChild(this.markup);
+	      this.createComponents();
+	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'render', this).call(this);
+	    }
+	
+	    /**
+	     * Create inner components
+	     */
+	
+	  }, {
+	    key: 'createComponents',
+	    value: function createComponents() {}
+	  }]);
+	
+	  return View;
+	}(_components2.default);
+	
+	exports.default = View;
 
 /***/ },
 /* 132 */,
@@ -5984,9 +6370,9 @@ webpackJsonp([1],Array(35).concat([
 	
 	var _controls2 = _interopRequireDefault(_controls);
 	
-	var _tabs = __webpack_require__(80);
+	var _task_list3 = __webpack_require__(126);
 	
-	var _tabs2 = _interopRequireDefault(_tabs);
+	var _task_list4 = _interopRequireDefault(_task_list3);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -5996,11 +6382,6 @@ webpackJsonp([1],Array(35).concat([
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	// import './task_list.less';
-	
-	// import Modal from '../../components/modal/modal.controller';
-	
-	
-	// import TaskList from '../../components/task_list/task_list.controller';
 	
 	/**
 	 * Page view
@@ -6179,7 +6560,7 @@ webpackJsonp([1],Array(35).concat([
 	
 	
 	// module
-	exports.push([module.id, ".aside {\n  position: absolute;\n  top: 3.5em;\n  right: 6.2%;\n}\n.sticky-header .header-logo {\n  font-size: 1rem;\n  position: fixed;\n  z-index: 9999;\n  top: 0;\n  right: 0;\n  left: 0;\n  overflow: visible;\n  height: 8.5em;\n  background-color: #2a3f50;\n  box-shadow: 2px 0 15px #000;\n}\n.header-logo {\n  display: none;\n}\n.sticky-header .aside {\n  position: fixed;\n  z-index: 99999;\n  top: 0;\n  right: 8%;\n  margin: 3.5em 0 0 0;\n}\n.sticky-header #add-btn {\n  font-size: .8em;\n  position: static;\n}\n.common-state #trash-btn,\n.deleting-state #trash-btn {\n  position: relative;\n  left: auto;\n}\n.deleting-state #trash-btn {\n  overflow: visible;\n}\n.deleting-state #trash-btn:after {\n  font-family: 'Roboto', sans-serif;\n  font-size: .68em;\n  font-weight: 700;\n  line-height: 1.55em;\n  position: absolute;\n  right: -0.4em;\n  bottom: -0.78em;\n  width: 1.55em;\n  height: 1.55em;\n  content: '2';\n  color: #fff;\n  border-radius: 50%;\n  background-color: #f75c4c;\n}\n.main-btn-list {\n  width: 10.8em;\n}\n.main-top-add-btn {\n  font-size: 1.7rem;\n  font-weight: 700;\n  position: relative;\n  display: block;\n  width: 9.64em;\n  margin: 0 auto;\n  letter-spacing: .02em;\n}\n.main-top-add-btn:after {\n  font-family: 'icomoon';\n  font-size: .5em;\n  position: absolute;\n  right: .18em;\n  bottom: .8em;\n  content: '\\E900';\n}\n.add-first-heading {\n  font-size: 2.26rem;\n  font-weight: 300;\n  position: relative;\n  margin: 4.9em 0 0 0;\n  text-align: center;\n  letter-spacing: .01em;\n  color: #8da5b8;\n}\n.add-first-heading:after {\n  font-family: 'icomoon';\n  font-size: 1.7em;\n  position: absolute;\n  top: -1.4em;\n  left: 50%;\n  content: '\\E901';\n  transform: translate(-50%, 0);\n}\n.tasks-block {\n  margin: 1.7em 0 2.1em 0;\n}\n.tabs-block {\n  position: relative;\n  display: -ms-flexbox;\n  display: flex;\n  margin: 0;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n}\n.common-state .daily-tasks .tabs-block {\n  -ms-flex-pack: end;\n  justify-content: flex-end;\n}\n.daily-tasks .task-list {\n  margin-top: 1em;\n}\n.task-list {\n  position: relative;\n  margin: .8em 0 0 0;\n}\n.task-list-item {\n  font-size: 1rem;\n  position: relative;\n  display: -ms-flexbox;\n  display: flex;\n  overflow: hidden;\n  box-sizing: border-box;\n  margin: 0 0 .5625em 0;\n  background-color: #fff;\n  box-shadow: 0 5px 17px rgba(0, 0, 0, 0.4);\n}\n.done.task-list-item {\n  background-color: #d4d9dc;\n}\n.done .task-content-heading {\n  text-decoration: line-through;\n}\n.task-hidden-btns {\n  position: absolute;\n  z-index: 9;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n  width: 5.48em;\n  height: 100%;\n  transition: 0.3s ease-in-out;\n  transform: translate(-89%, 0);\n}\n.deleting-state .task-hidden-btns {\n  transform: translate(0, 0);\n}\n.deleting-state .moved-to-trash .btn-close,\n.task-hidden-btns__btn {\n  font-size: 2.5em;\n  position: absolute;\n  top: 48%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n/* URGENT */\n.task-list-item.urgent-imp .task-pomidoro-count {\n  background-color: #f75c4c;\n}\n.task-list-item.urgent-imp .task-content-heading {\n  color: #f75c4c;\n}\n/* HIGHT */\n.task-list-item.hight-imp .task-pomidoro-count {\n  background-color: #ffa841;\n}\n.task-list-item.hight-imp .task-content-heading {\n  color: #ffa841;\n}\n/* MIDDLE */\n.task-list-item.middle-imp .task-pomidoro-count {\n  background-color: #fddc43;\n}\n.task-list-item.middle-imp .task-content-heading {\n  color: #fddc43;\n}\n/* LOW */\n.task-list-item.low-imp .task-pomidoro-count {\n  background-color: #1abc9c;\n}\n.task-list-item.low-imp .task-content-heading {\n  color: #1abc9c;\n}\n/* CATEGORIES */\n.work-category .task-hidden-btns {\n  background-color: #ffb200;\n}\n.education-category .task-hidden-btns {\n  background-color: #59abe3;\n}\n.hobby-category .task-hidden-btns {\n  background-color: #b470d0;\n}\n.sport-category .task-hidden-btns {\n  background-color: #00d4d9;\n}\n.other-category .task-hidden-btns {\n  background-color: #00cbd0;\n}\n.task-main-btns {\n  position: relative;\n}\n.task-hidden-btns__btn,\n.task-main-btns__btn {\n  font-family: 'icomoon';\n}\n.task-main-btns__btn:hover {\n  color: #88a3b5;\n}\n.task-main-btns__btn.btn-up {\n  margin: 0 0 .5em 0;\n}\n.task-content {\n  box-sizing: border-box;\n  padding: 1.3em .2rem 1em .2rem;\n  -ms-flex-preferred-size: 100%;\n  flex-basis: 100%;\n}\n.task-content-heading {\n  font-size: 1.1875em;\n  font-weight: 500;\n  margin: 0 0 .4em 0;\n  letter-spacing: .01em;\n}\n.task-content-text {\n  line-height: 1.5em;\n}\n.task-content-text,\n.task-main-btns,\n.task-date {\n  color: #a5a5a5;\n}\n.task-main-btns,\n.task-date {\n  display: -ms-flexbox;\n  display: flex;\n  flex-direction: column;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n  -ms-flex-direction: column;\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n.task-main-btns {\n  font-size: 1.15em;\n  width: 5.75em;\n}\n.task-date {\n  font-weight: 700;\n  width: 7.5em;\n  padding: 0 0 0 .625em;\n  text-align: center;\n  letter-spacing: .04em;\n  text-transform: uppercase;\n}\n.task-date-number {\n  font-family: 'PT Sans', sans-serif;\n  font-size: 1.6875em;\n}\n.task-date-month {\n  font-size: .6875em;\n}\n.task-date-today {\n  font-size: .7em;\n}\n.daily-tasks .task-date-today {\n  position: static;\n  left: auto;\n}\n.task-pomidoro-count {\n  font-family: 'PT Sans', sans-serif;\n  font-size: 1.54em;\n  font-weight: 700;\n  position: relative;\n  width: 4.6em;\n}\n.task-pomidoro-count:hover {\n  cursor: pointer;\n}\n.task-pomidoro-count:hover .task-pomidoro-count__num {\n  top: auto;\n  right: auto;\n  left: -9999px;\n  overflow: hidden;\n}\n.done .task-pomidoro-count:hover {\n  cursor: default;\n}\n.done .task-pomidoro-count:hover .task-pomidoro-count__num,\n.task-pomidoro-count__num {\n  position: absolute;\n  top: 51.5%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.done .task-pomidoro-count:hover:after,\n.task-pomidoro-count:after {\n  font-family: 'icomoon';\n  font-size: 1.9em;\n  font-weight: 400;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  content: '\\E90E';\n  transform: translate(-50%, -50%);\n}\n.task-pomidoro-count:hover:after {\n  content: '\\E90D';\n}\n.global-tasks .tabs-block {\n  margin-bottom: 2em;\n}\n.global-tasks .to-do-tabs {\n  font-size: 1.03em;\n}\n.tabs-block-global-btn {\n  font-family: 'PT Sans', sans-serif;\n  font-size: 1.25em;\n  font-weight: 700;\n  position: relative;\n  padding: 0;\n  transition: color 0.1s ease-in-out;\n  color: #88a3b5;\n}\n.tabs-block-global-btn:after {\n  font-family: 'icomoon';\n  font-size: .55em;\n  position: absolute;\n  top: 50%;\n  right: -1.5em;\n  content: '\\E906';\n  transform: translate(0, -50%);\n}\n.tabs-block-global-btn:hover {\n  color: #fff;\n}\n.global-tasks .tabs-block {\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n}\n.global-tasks .sellecting-tabs {\n  width: 100%;\n  margin: 1.5em 0 0 0;\n}\n.tasks-grp-by-category {\n  margin: 0 0 1.4375rem 0;\n}\n.tasks-grp-by-category__heading {\n  font-size: 1rem;\n  font-weight: 700;\n  position: relative;\n  padding: 0 0 0 1.5em;\n  text-transform: uppercase;\n}\n.tasks-grp-by-category__heading:before,\n.tasks-grp-by-category__heading:after {\n  position: absolute;\n  top: 30%;\n  left: -0.26rem;\n  content: '';\n  transform: translate(0, -50%);\n  border-radius: 50%;\n}\n.tasks-grp-by-category__heading:before {\n  z-index: 100;\n  width: 1.0625em;\n  height: 1.0625em;\n}\n.tasks-grp-by-category__heading:after {\n  z-index: 150;\n  left: -0.015rem;\n  width: .32em;\n  height: .32em;\n  transition: 0.1s ease-in-out;\n  border: 2px solid #2a3f50;\n  border-radius: 50%;\n}\n.tasks-grp-by-category .task-list:after {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: .5625rem;\n  height: calc(101.5625%);\n  content: '';\n}\n/* CATEGORIES FOR GROUPS */\n/* WORK */\n.work-category .tasks-grp-by-category__heading {\n  color: #ffb200;\n}\n.work-category .task-list:after,\n.work-category .tasks-grp-by-category__heading:before {\n  background-color: #ffb200;\n}\n/* SPORT */\n.sport-category .tasks-grp-by-category__heading {\n  color: #00d4d9;\n}\n.sport-category .task-list:after,\n.sport-category .tasks-grp-by-category__heading:before {\n  background-color: #00d4d9;\n}\n/* HOBBY */\n.hobby-category .tasks-grp-by-category__heading {\n  color: #b470d0;\n}\n.hobby-category .task-list:after,\n.hobby-category .tasks-grp-by-category__heading:before {\n  background-color: #b470d0;\n}\n/* EDUCATION */\n.education-category .tasks-grp-by-category__heading {\n  color: #59abe3;\n}\n.education-category .task-list:after,\n.education-category .tasks-grp-by-category__heading:before {\n  background-color: #59abe3;\n}\n/* OTHER */\n.other-category .tasks-grp-by-category__heading {\n  color: #00cbd0;\n}\n.other-cateogry .task-list:after,\n.other-category .tasks-grp-by-category__heading:before {\n  background-color: #00cbd0;\n}\n.common-state--nothing-in-daily .drag-to-top-heading {\n  position: static;\n}\n.drag-to-top-heading {\n  margin: 1em 0 5em 0;\n}\n.common-state--all-done .all-done-heading {\n  position: static;\n}\n.all-done-heading {\n  margin: .95em 0 2.7em 0;\n}\n.drag-to-top-heading,\n.all-done-heading {\n  font-size: 2.26rem;\n  font-weight: 300;\n  position: relative;\n  text-align: center;\n  letter-spacing: .01em;\n  color: #8da5b8;\n}\n.drag-to-top-heading__row,\n.all-done-heading__row {\n  display: block;\n  margin: 0 0 .4em 0;\n}\n.drag-to-top-heading:after {\n  font-family: 'icomoon';\n  font-size: 1.7em;\n  position: absolute;\n  bottom: -1.5em;\n  left: 50%;\n  content: '\\E901';\n  transform: translate(-50%, 0);\n}\n.closed .tabs-block-global-btn:after {\n  top: 32%;\n  transform: rotate(-90deg);\n}\n/* MODALS */\n.modal-opened-add-edit .modal-add-task,\n.modal-opened-add-edit .modal-edit-task,\n.modal-opened-remove .modal-remove-task {\n  position: fixed;\n  z-index: 99999;\n  top: 0;\n  left: 0;\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n  height: 100%;\n  -ms-flex-align: center;\n  align-items: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n.modal-add-task .modal-btn-delete {\n  display: none;\n}\n.modal-heading {\n  font-size: 1.75em;\n  font-weight: 700;\n  margin: .9em 0 .6em 0;\n  text-align: center;\n}\n.modal-lbl,\n.modal-inpt {\n  display: block;\n}\n.modal-lbl {\n  margin: 0 0 .3em 0;\n}\n.modal-inpt {\n  width: 100%;\n  margin: 0 0 2.2em 0;\n  padding: .6em 0 .4em 0;\n  border-bottom: 1px solid #3d5364;\n}\n.modal-btn-accept,\n.modal-btn-cancel,\n.modal-btn-delete {\n  font-family: 'icomoon';\n}\n.modal-lbl,\n.modal-estimation-heading,\n.modal-fset-heading {\n  font-size: .875em;\n  text-transform: uppercase;\n}\n.modal-fset-list {\n  display: -ms-flexbox;\n  display: flex;\n}\n.modal-fset-list-item-radio {\n  display: none;\n}\n.modal-inpt::-webkit-input-placeholder {\n  color: #8da8b8;\n}\n.modal-inpt::-moz-placeholder {\n  color: #8da8b8;\n}\n.modal-inpt:-ms-input-placeholder {\n  color: #8da8b8;\n}\n.modal-inpt::placeholder {\n  color: #8da8b8;\n}\n.modal-fset-list-item-lbl {\n  color: #8da8b8;\n}\n.modal-btn-accept,\n.modal-btn-cancel,\n.modal-btn-delete {\n  font-size: 1.2em;\n  position: absolute;\n  top: .7em;\n  transition: color 0.1s ease-in-out;\n  color: #8da8b8;\n}\n.modal-btn-accept:hover,\n.modal-btn-cancel:hover,\n.modal-btn-delete:hover {\n  color: #fff;\n}\n.modal-btn-accept {\n  right: .5em;\n}\n.modal-btn-cancel {\n  right: 2.3em;\n}\n.modal-remove-task .modal-btn-cancel {\n  right: .5em;\n}\n.modal-btn-delete {\n  font-size: 1.3em;\n  top: .55em;\n  left: .45em;\n}\n.modal-fset {\n  margin: 0 0 2.1em 0;\n  padding: 0 0 .4em 0;\n  border-bottom: 1px solid #3d5364;\n}\n.modal-fset-heading {\n  margin: -0.15em 0 1.1em 0;\n}\n.modal-fset-list-item-lbl {\n  position: relative;\n  display: block;\n  padding: 0 1em 0 1.3em;\n}\n.modal-fset-list-item-lbl:before {\n  position: absolute;\n  top: 48%;\n  left: -0.15em;\n  width: 18px;\n  height: 18px;\n  content: '';\n  transform: translate(0, -50%);\n  background: url(" + __webpack_require__(43) + ") -172px -2px no-repeat;\n}\n.modal-fset-list-item-radio:checked + .modal-fset-list-item-lbl,\n.modal-fset-list-item-lbl:hover {\n  color: #fff;\n}\n.modal-fset-list-item-lbl:hover {\n  cursor: pointer;\n}\n/* CATEGORIES */\n#modal-add-edit-task__radio-work + .modal-fset-list-item-lbl:hover:before {\n  background-position: -1px -21px;\n}\n#modal-add-edit-task__radio-work:checked + .modal-fset-list-item-lbl:before {\n  background-position: -1px -2px;\n}\n#modal-add-edit-task__radio-edu + .modal-fset-list-item-lbl:hover:before {\n  background-position: -77px -21px;\n}\n#modal-add-edit-task__radio-edu:checked + .modal-fset-list-item-lbl:before {\n  background-position: -77px -2px;\n}\n#modal-add-edit-task__radio-hobby + .modal-fset-list-item-lbl:hover:before {\n  background-position: -58px -21px;\n}\n#modal-add-edit-task__radio-hobby:checked + .modal-fset-list-item-lbl:before {\n  background-position: -58px -2px;\n}\n#modal-add-edit-task__radio-sport + .modal-fset-list-item-lbl:hover:before {\n  background-position: -39px -21px;\n}\n#modal-add-edit-task__radio-sport:checked + .modal-fset-list-item-lbl:before {\n  background-position: -39px -2px;\n}\n#modal-add-edit-task__radio-other + .modal-fset-list-item-lbl:hover:before {\n  background-position: -20px -21px;\n}\n#modal-add-edit-task__radio-other:checked + .modal-fset-list-item-lbl:before {\n  background-position: -20px -2px;\n}\n/* PRIORITY */\n#modal-add-edit-task__urgent + .modal-fset-list-item-lbl:hover:before {\n  background-position: -96px -21px;\n}\n#modal-add-edit-task__urgent:checked + .modal-fset-list-item-lbl:before {\n  background-position: -96px -2px;\n}\n#modal-add-edit-task__high + .modal-fset-list-item-lbl:hover:before {\n  background-position: -115px -21px;\n}\n#modal-add-edit-task__high:checked + .modal-fset-list-item-lbl:before {\n  background-position: -115px -2px;\n}\n#modal-add-edit-task__middle + .modal-fset-list-item-lbl:hover:before {\n  background-position: -134px -21px;\n}\n#modal-add-edit-task__middle:checked + .modal-fset-list-item-lbl:before {\n  background-position: -134px -2px;\n}\n#modal-add-edit-task__low + .modal-fset-list-item-lbl:hover:before {\n  background-position: -153px -21px;\n}\n#modal-add-edit-task__low:checked + .modal-fset-list-item-lbl:before {\n  background-position: -153px -2px;\n}\n.modal-estimation {\n  margin: 0 0 2.4em 0;\n  text-align: left;\n  border-bottom: 1px solid #3d5364;\n}\n.modal-estimation-heading {\n  margin: 0 0 .5em 0;\n}\n.modal-estimation-radio-wrapper {\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  flex-direction: row-reverse;\n  padding: 0 0 .6em 0;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: reverse;\n  -webkit-flex-direction: row-reverse;\n  -ms-flex-direction: row-reverse;\n}\n.modal-estimation-list-item-radio {\n  display: none;\n}\n.modal-estimation-list-item-lbl {\n  display: block;\n  width: 1.26rem;\n  height: 1.23rem;\n  margin: 0 .6em 0 0;\n  transition: 0.1s ease-in-out;\n  background: url(" + __webpack_require__(46) + ") center no-repeat;\n}\n.modal-estimation-list-item-lbl:hover {\n  cursor: pointer;\n}\n.modal-estimation-list-item-lbl:hover,\n.modal-estimation-list-item-lbl:hover ~ .modal-estimation-list-item-lbl,\n.modal-estimation-list-item-radio:checked ~ .modal-estimation-list-item-lbl {\n  background-image: url(" + __webpack_require__(47) + ");\n}\n.modal-remove-task .modal-question {\n  font-size: 2.25rem;\n  font-weight: 300;\n  line-height: 1.3em;\n  width: 94%;\n  margin: 3.9em auto 5.2em auto;\n  text-align: center;\n  color: #8da8b8;\n}\n.modal-remove-task .buttons-wrapper {\n  display: -ms-flexbox;\n  display: flex;\n  width: 65%;\n  margin: 0 auto;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n}\n.notification-shown-success .notification-success,\n.notification-shown-error .notification-error,\n.notification-shown-warning .notification-warning,\n.notification-shown-message-info .notification-message-info {\n  position: fixed;\n  right: 6.5%;\n  bottom: 5%;\n  left: auto;\n}\n.notification.notification--top {\n  top: 7%;\n  right: 6.5%;\n  bottom: auto;\n  width: 87.2%;\n}\n", ""]);
+	exports.push([module.id, ".aside {\n  position: absolute;\n  top: 3.5em;\n  right: 6.2%;\n}\n.sticky-header .header-logo {\n  font-size: 1rem;\n  position: fixed;\n  z-index: 9999;\n  top: 0;\n  right: 0;\n  left: 0;\n  overflow: visible;\n  height: 8.5em;\n  background-color: #2a3f50;\n  box-shadow: 2px 0 15px #000;\n}\n.header {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: end;\n      justify-content: flex-end;\n}\n.header-logo {\n  display: none;\n}\n.sticky-header .aside {\n  position: fixed;\n  z-index: 99999;\n  top: 0;\n  right: 8%;\n  margin: 3.5em 0 0 0;\n}\n.sticky-header #add-btn {\n  font-size: .8em;\n  position: static;\n}\n.common-state #trash-btn,\n.deleting-state #trash-btn {\n  position: relative;\n  left: auto;\n}\n.deleting-state #trash-btn {\n  overflow: visible;\n}\n.deleting-state #trash-btn:after {\n  font-family: 'Roboto', sans-serif;\n  font-size: .68em;\n  font-weight: 700;\n  line-height: 1.55em;\n  position: absolute;\n  right: -0.4em;\n  bottom: -0.78em;\n  width: 1.55em;\n  height: 1.55em;\n  content: '2';\n  color: #fff;\n  border-radius: 50%;\n  background-color: #f75c4c;\n}\n.main-btn-list {\n  width: 10.8em;\n}\n.main-top-add-btn {\n  font-size: 1.7rem;\n  font-weight: 700;\n  position: relative;\n  display: block;\n  width: 9.64em;\n  margin: 0 auto;\n  letter-spacing: .02em;\n}\n.main-top-add-btn:after {\n  font-family: 'icomoon';\n  font-size: .5em;\n  position: absolute;\n  right: .18em;\n  bottom: .8em;\n  content: '\\E900';\n}\n.add-first-heading {\n  font-size: 2.26rem;\n  font-weight: 300;\n  position: relative;\n  margin: 4.9em 0 0 0;\n  text-align: center;\n  letter-spacing: .01em;\n  color: #8da5b8;\n}\n.add-first-heading:after {\n  font-family: 'icomoon';\n  font-size: 1.7em;\n  position: absolute;\n  top: -1.4em;\n  left: 50%;\n  content: '\\E901';\n  transform: translate(-50%, 0);\n}\n.tasks-block {\n  margin: 1.7em 0 2.1em 0;\n}\n.tabs-block {\n  position: relative;\n  display: -ms-flexbox;\n  display: flex;\n  margin: 0;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n}\n.common-state .daily-tasks .tabs-block {\n  -ms-flex-pack: end;\n  justify-content: flex-end;\n}\n.daily-tasks .task-list {\n  margin-top: 1em;\n}\n.task-list {\n  position: relative;\n  margin: .8em 0 0 0;\n}\n.task-list-item {\n  font-size: 1rem;\n  position: relative;\n  display: -ms-flexbox;\n  display: flex;\n  overflow: hidden;\n  box-sizing: border-box;\n  margin: 0 0 .5625em 0;\n  background-color: #fff;\n  box-shadow: 0 5px 17px rgba(0, 0, 0, 0.4);\n}\n.done.task-list-item {\n  background-color: #d4d9dc;\n}\n.done .task-content-heading {\n  text-decoration: line-through;\n}\n.task-hidden-btns {\n  position: absolute;\n  z-index: 9;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n  width: 5.48em;\n  height: 100%;\n  transition: 0.3s ease-in-out;\n  transform: translate(-89%, 0);\n}\n.deleting-state .task-hidden-btns {\n  transform: translate(0, 0);\n}\n.deleting-state .moved-to-trash .btn-close,\n.task-hidden-btns__btn {\n  font-size: 2.5em;\n  position: absolute;\n  top: 48%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n/* URGENT */\n.task-list-item.urgent-imp .task-pomidoro-count {\n  background-color: #f75c4c;\n}\n.task-list-item.urgent-imp .task-content-heading {\n  color: #f75c4c;\n}\n/* HIGHT */\n.task-list-item.hight-imp .task-pomidoro-count {\n  background-color: #ffa841;\n}\n.task-list-item.hight-imp .task-content-heading {\n  color: #ffa841;\n}\n/* MIDDLE */\n.task-list-item.middle-imp .task-pomidoro-count {\n  background-color: #fddc43;\n}\n.task-list-item.middle-imp .task-content-heading {\n  color: #fddc43;\n}\n/* LOW */\n.task-list-item.low-imp .task-pomidoro-count {\n  background-color: #1abc9c;\n}\n.task-list-item.low-imp .task-content-heading {\n  color: #1abc9c;\n}\n/* CATEGORIES */\n.work-category .task-hidden-btns {\n  background-color: #ffb200;\n}\n.education-category .task-hidden-btns {\n  background-color: #59abe3;\n}\n.hobby-category .task-hidden-btns {\n  background-color: #b470d0;\n}\n.sport-category .task-hidden-btns {\n  background-color: #00d4d9;\n}\n.other-category .task-hidden-btns {\n  background-color: #00cbd0;\n}\n.task-main-btns {\n  position: relative;\n}\n.task-hidden-btns__btn,\n.task-main-btns__btn {\n  font-family: 'icomoon';\n}\n.task-main-btns__btn:hover {\n  color: #88a3b5;\n}\n.task-main-btns__btn.btn-up {\n  margin: 0 0 .5em 0;\n}\n.task-content {\n  box-sizing: border-box;\n  padding: 1.3em .2rem 1em .2rem;\n  -ms-flex-preferred-size: 100%;\n  flex-basis: 100%;\n}\n.task-content-heading {\n  font-size: 1.1875em;\n  font-weight: 500;\n  margin: 0 0 .4em 0;\n  letter-spacing: .01em;\n}\n.task-content-text {\n  line-height: 1.5em;\n}\n.task-content-text,\n.task-main-btns,\n.task-date {\n  color: #a5a5a5;\n}\n.task-main-btns,\n.task-date {\n  display: -ms-flexbox;\n  display: flex;\n  flex-direction: column;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n  -ms-flex-direction: column;\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n.task-main-btns {\n  font-size: 1.15em;\n  width: 5.75em;\n}\n.task-date {\n  font-weight: 700;\n  width: 7.5em;\n  padding: 0 0 0 .625em;\n  text-align: center;\n  letter-spacing: .04em;\n  text-transform: uppercase;\n}\n.task-date-number {\n  font-family: 'PT Sans', sans-serif;\n  font-size: 1.6875em;\n}\n.task-date-month {\n  font-size: .6875em;\n}\n.task-date-today {\n  font-size: .7em;\n}\n.daily-tasks .task-date-today {\n  position: static;\n  left: auto;\n}\n.task-pomidoro-count {\n  font-family: 'PT Sans', sans-serif;\n  font-size: 1.54em;\n  font-weight: 700;\n  position: relative;\n  width: 4.6em;\n}\n.task-pomidoro-count:hover {\n  cursor: pointer;\n}\n.task-pomidoro-count:hover .task-pomidoro-count__num {\n  top: auto;\n  right: auto;\n  left: -9999px;\n  overflow: hidden;\n}\n.done .task-pomidoro-count:hover {\n  cursor: default;\n}\n.done .task-pomidoro-count:hover .task-pomidoro-count__num,\n.task-pomidoro-count__num {\n  position: absolute;\n  top: 51.5%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.done .task-pomidoro-count:hover:after,\n.task-pomidoro-count:after {\n  font-family: 'icomoon';\n  font-size: 1.9em;\n  font-weight: 400;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  content: '\\E90E';\n  transform: translate(-50%, -50%);\n}\n.task-pomidoro-count:hover:after {\n  content: '\\E90D';\n}\n.global-tasks .tabs-block {\n  margin-bottom: 2em;\n}\n.global-tasks .to-do-tabs {\n  font-size: 1.03em;\n}\n.tabs-block-global-btn {\n  font-family: 'PT Sans', sans-serif;\n  font-size: 1.25em;\n  font-weight: 700;\n  position: relative;\n  padding: 0;\n  transition: color 0.1s ease-in-out;\n  color: #88a3b5;\n}\n.tabs-block-global-btn:after {\n  font-family: 'icomoon';\n  font-size: .55em;\n  position: absolute;\n  top: 50%;\n  right: -1.5em;\n  content: '\\E906';\n  transform: translate(0, -50%);\n}\n.tabs-block-global-btn:hover {\n  color: #fff;\n}\n.global-tasks .tabs-block {\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n}\n.global-tasks .sellecting-tabs {\n  width: 100%;\n  margin: 1.5em 0 0 0;\n}\n.tasks-grp-by-category {\n  margin: 0 0 1.4375rem 0;\n}\n.tasks-grp-by-category__heading {\n  font-size: 1rem;\n  font-weight: 700;\n  position: relative;\n  padding: 0 0 0 1.5em;\n  text-transform: uppercase;\n}\n.tasks-grp-by-category__heading:before,\n.tasks-grp-by-category__heading:after {\n  position: absolute;\n  top: 30%;\n  left: -0.26rem;\n  content: '';\n  transform: translate(0, -50%);\n  border-radius: 50%;\n}\n.tasks-grp-by-category__heading:before {\n  z-index: 100;\n  width: 1.0625em;\n  height: 1.0625em;\n}\n.tasks-grp-by-category__heading:after {\n  z-index: 150;\n  left: -0.015rem;\n  width: .32em;\n  height: .32em;\n  transition: 0.1s ease-in-out;\n  border: 2px solid #2a3f50;\n  border-radius: 50%;\n}\n.tasks-grp-by-category .task-list:after {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: .5625rem;\n  height: calc(101.5625%);\n  content: '';\n}\n/* CATEGORIES FOR GROUPS */\n/* WORK */\n.work-category .tasks-grp-by-category__heading {\n  color: #ffb200;\n}\n.work-category .task-list:after,\n.work-category .tasks-grp-by-category__heading:before {\n  background-color: #ffb200;\n}\n/* SPORT */\n.sport-category .tasks-grp-by-category__heading {\n  color: #00d4d9;\n}\n.sport-category .task-list:after,\n.sport-category .tasks-grp-by-category__heading:before {\n  background-color: #00d4d9;\n}\n/* HOBBY */\n.hobby-category .tasks-grp-by-category__heading {\n  color: #b470d0;\n}\n.hobby-category .task-list:after,\n.hobby-category .tasks-grp-by-category__heading:before {\n  background-color: #b470d0;\n}\n/* EDUCATION */\n.education-category .tasks-grp-by-category__heading {\n  color: #59abe3;\n}\n.education-category .task-list:after,\n.education-category .tasks-grp-by-category__heading:before {\n  background-color: #59abe3;\n}\n/* OTHER */\n.other-category .tasks-grp-by-category__heading {\n  color: #00cbd0;\n}\n.other-cateogry .task-list:after,\n.other-category .tasks-grp-by-category__heading:before {\n  background-color: #00cbd0;\n}\n.common-state--nothing-in-daily .drag-to-top-heading {\n  position: static;\n}\n.drag-to-top-heading {\n  margin: 1em 0 5em 0;\n}\n.common-state--all-done .all-done-heading {\n  position: static;\n}\n.all-done-heading {\n  margin: .95em 0 2.7em 0;\n}\n.drag-to-top-heading,\n.all-done-heading {\n  font-size: 2.26rem;\n  font-weight: 300;\n  position: relative;\n  text-align: center;\n  letter-spacing: .01em;\n  color: #8da5b8;\n}\n.drag-to-top-heading__row,\n.all-done-heading__row {\n  display: block;\n  margin: 0 0 .4em 0;\n}\n.drag-to-top-heading:after {\n  font-family: 'icomoon';\n  font-size: 1.7em;\n  position: absolute;\n  bottom: -1.5em;\n  left: 50%;\n  content: '\\E901';\n  transform: translate(-50%, 0);\n}\n.closed .tabs-block-global-btn:after {\n  top: 32%;\n  transform: rotate(-90deg);\n}\n/* MODALS */\n.modal-opened-add-edit .modal-add-task,\n.modal-opened-add-edit .modal-edit-task,\n.modal-opened-remove .modal-remove-task {\n  position: fixed;\n  z-index: 99999;\n  top: 0;\n  left: 0;\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n  height: 100%;\n  -ms-flex-align: center;\n  align-items: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n.modal-add-task .modal-btn-delete {\n  display: none;\n}\n.modal-heading {\n  font-size: 1.75em;\n  font-weight: 700;\n  margin: .9em 0 .6em 0;\n  text-align: center;\n}\n.modal-lbl,\n.modal-inpt {\n  display: block;\n}\n.modal-lbl {\n  margin: 0 0 .3em 0;\n}\n.modal-inpt {\n  width: 100%;\n  margin: 0 0 2.2em 0;\n  padding: .6em 0 .4em 0;\n  border-bottom: 1px solid #3d5364;\n}\n.modal-btn-accept,\n.modal-btn-cancel,\n.modal-btn-delete {\n  font-family: 'icomoon';\n}\n.modal-lbl,\n.modal-estimation-heading,\n.modal-fset-heading {\n  font-size: .875em;\n  text-transform: uppercase;\n}\n.modal-fset-list {\n  display: -ms-flexbox;\n  display: flex;\n}\n.modal-fset-list-item-radio {\n  display: none;\n}\n.modal-inpt::-webkit-input-placeholder {\n  color: #8da8b8;\n}\n.modal-inpt::-moz-placeholder {\n  color: #8da8b8;\n}\n.modal-inpt:-ms-input-placeholder {\n  color: #8da8b8;\n}\n.modal-inpt::placeholder {\n  color: #8da8b8;\n}\n.modal-fset-list-item-lbl {\n  color: #8da8b8;\n}\n.modal-btn-accept,\n.modal-btn-cancel,\n.modal-btn-delete {\n  font-size: 1.2em;\n  position: absolute;\n  top: .7em;\n  transition: color 0.1s ease-in-out;\n  color: #8da8b8;\n}\n.modal-btn-accept:hover,\n.modal-btn-cancel:hover,\n.modal-btn-delete:hover {\n  color: #fff;\n}\n.modal-btn-accept {\n  right: .5em;\n}\n.modal-btn-cancel {\n  right: 2.3em;\n}\n.modal-remove-task .modal-btn-cancel {\n  right: .5em;\n}\n.modal-btn-delete {\n  font-size: 1.3em;\n  top: .55em;\n  left: .45em;\n}\n.modal-fset {\n  margin: 0 0 2.1em 0;\n  padding: 0 0 .4em 0;\n  border-bottom: 1px solid #3d5364;\n}\n.modal-fset-heading {\n  margin: -0.15em 0 1.1em 0;\n}\n.modal-fset-list-item-lbl {\n  position: relative;\n  display: block;\n  padding: 0 1em 0 1.3em;\n}\n.modal-fset-list-item-lbl:before {\n  position: absolute;\n  top: 48%;\n  left: -0.15em;\n  width: 18px;\n  height: 18px;\n  content: '';\n  transform: translate(0, -50%);\n  background: url(" + __webpack_require__(43) + ") -172px -2px no-repeat;\n}\n.modal-fset-list-item-radio:checked + .modal-fset-list-item-lbl,\n.modal-fset-list-item-lbl:hover {\n  color: #fff;\n}\n.modal-fset-list-item-lbl:hover {\n  cursor: pointer;\n}\n/* CATEGORIES */\n#modal-add-edit-task__radio-work + .modal-fset-list-item-lbl:hover:before {\n  background-position: -1px -21px;\n}\n#modal-add-edit-task__radio-work:checked + .modal-fset-list-item-lbl:before {\n  background-position: -1px -2px;\n}\n#modal-add-edit-task__radio-edu + .modal-fset-list-item-lbl:hover:before {\n  background-position: -77px -21px;\n}\n#modal-add-edit-task__radio-edu:checked + .modal-fset-list-item-lbl:before {\n  background-position: -77px -2px;\n}\n#modal-add-edit-task__radio-hobby + .modal-fset-list-item-lbl:hover:before {\n  background-position: -58px -21px;\n}\n#modal-add-edit-task__radio-hobby:checked + .modal-fset-list-item-lbl:before {\n  background-position: -58px -2px;\n}\n#modal-add-edit-task__radio-sport + .modal-fset-list-item-lbl:hover:before {\n  background-position: -39px -21px;\n}\n#modal-add-edit-task__radio-sport:checked + .modal-fset-list-item-lbl:before {\n  background-position: -39px -2px;\n}\n#modal-add-edit-task__radio-other + .modal-fset-list-item-lbl:hover:before {\n  background-position: -20px -21px;\n}\n#modal-add-edit-task__radio-other:checked + .modal-fset-list-item-lbl:before {\n  background-position: -20px -2px;\n}\n/* PRIORITY */\n#modal-add-edit-task__urgent + .modal-fset-list-item-lbl:hover:before {\n  background-position: -96px -21px;\n}\n#modal-add-edit-task__urgent:checked + .modal-fset-list-item-lbl:before {\n  background-position: -96px -2px;\n}\n#modal-add-edit-task__high + .modal-fset-list-item-lbl:hover:before {\n  background-position: -115px -21px;\n}\n#modal-add-edit-task__high:checked + .modal-fset-list-item-lbl:before {\n  background-position: -115px -2px;\n}\n#modal-add-edit-task__middle + .modal-fset-list-item-lbl:hover:before {\n  background-position: -134px -21px;\n}\n#modal-add-edit-task__middle:checked + .modal-fset-list-item-lbl:before {\n  background-position: -134px -2px;\n}\n#modal-add-edit-task__low + .modal-fset-list-item-lbl:hover:before {\n  background-position: -153px -21px;\n}\n#modal-add-edit-task__low:checked + .modal-fset-list-item-lbl:before {\n  background-position: -153px -2px;\n}\n.modal-estimation {\n  margin: 0 0 2.4em 0;\n  text-align: left;\n  border-bottom: 1px solid #3d5364;\n}\n.modal-estimation-heading {\n  margin: 0 0 .5em 0;\n}\n.modal-estimation-radio-wrapper {\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  flex-direction: row-reverse;\n  padding: 0 0 .6em 0;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: reverse;\n  -webkit-flex-direction: row-reverse;\n  -ms-flex-direction: row-reverse;\n}\n.modal-estimation-list-item-radio {\n  display: none;\n}\n.modal-estimation-list-item-lbl {\n  display: block;\n  width: 1.26rem;\n  height: 1.23rem;\n  margin: 0 .6em 0 0;\n  transition: 0.1s ease-in-out;\n  background: url(" + __webpack_require__(46) + ") center no-repeat;\n}\n.modal-estimation-list-item-lbl:hover {\n  cursor: pointer;\n}\n.modal-estimation-list-item-lbl:hover,\n.modal-estimation-list-item-lbl:hover ~ .modal-estimation-list-item-lbl,\n.modal-estimation-list-item-radio:checked ~ .modal-estimation-list-item-lbl {\n  background-image: url(" + __webpack_require__(47) + ");\n}\n.modal-remove-task .modal-question {\n  font-size: 2.25rem;\n  font-weight: 300;\n  line-height: 1.3em;\n  width: 94%;\n  margin: 3.9em auto 5.2em auto;\n  text-align: center;\n  color: #8da8b8;\n}\n.modal-remove-task .buttons-wrapper {\n  display: -ms-flexbox;\n  display: flex;\n  width: 65%;\n  margin: 0 auto;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n}\n.notification-shown-success .notification-success,\n.notification-shown-error .notification-error,\n.notification-shown-warning .notification-warning,\n.notification-shown-message-info .notification-message-info {\n  position: fixed;\n  right: 6.5%;\n  bottom: 5%;\n  left: auto;\n}\n.notification.notification--top {\n  top: 7%;\n  right: 6.5%;\n  bottom: auto;\n  width: 87.2%;\n}\n", ""]);
 	
 	// exports
 

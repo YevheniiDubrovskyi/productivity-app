@@ -3,9 +3,7 @@ import Template from './task_list.template';
 // import './task_list.less';
 
 import Controls from '../../components/controls/controls.controller';
-// import Modal from '../../components/modal/modal.controller';
-import Tabs from '../../components/tabs/tabs.controller';
-// import TaskList from '../../components/task_list/task_list.controller';
+import TaskList from '../../components/task_list/task_list.controller';
 
 /**
  * Page view

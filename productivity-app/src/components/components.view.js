@@ -48,7 +48,7 @@ export default class ComponentView {
 
   /**
    * Add class to component root element
-   * @param {String} class - Class to add
+   * @param {String} className - Class to add
    */
   addClassToRoot(className) {
     this.markup.classList.add(className);
@@ -94,10 +94,11 @@ export default class ComponentView {
 
   /**
    * Attach or dettach event to HTMLElement
+   * @param  {boolean} attachFlag - Determine action type attaching/detaching
    * @param  {HTMLElement} element
-   * @param  {String} eventName - DOM event name
-   * @param  {Function} callback - Callback that will be attached/dettached to HTMLElement
-   * @param  {Boolean} useCapture - Indicates type of dispatching
+   * @param  {string} eventName - DOM event name
+   * @param  {function} callback - Callback that will be attached/dettached to HTMLElement
+   * @param  {boolean} useCapture - Indicates type of dispatching
    */
   attachDettachDomEvent(attachFlag, element, eventName, callback, useCapture = false) {
     if (attachFlag) {
@@ -110,6 +111,7 @@ export default class ComponentView {
   /**
    * Attachs or detachs all events from array
    * @param  {Array} eventsArray - Object array that contain params for attaching/detaching
+   * @param  {boolean} attachFlag - Determine action type attaching/detaching
    */
   attachDettachAllDomEvents(eventsArray, attachFlag = true) {
     eventsArray.forEach((eventObject) => {

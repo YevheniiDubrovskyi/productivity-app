@@ -86,16 +86,14 @@ export default class EventBus {
    */
   once(eventPath, callback, context) {
     const parsedPath = this.parseEventPath(eventPath);
-    const events = this.events;
     const namespace = parsedPath.namespace;
-    const key = parsedPath.key;
 
     if (!namespace) throw new Error('Event path don\'t have namespace part');
 
     function carryingCallback(...data) {
       setTimeout(callback.bind(context, ...data), 0);
       this.off(eventPath, carryingCallback);
-    };
+    }
 
     this.on(eventPath, carryingCallback, this);
 
