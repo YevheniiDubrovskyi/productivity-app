@@ -25,6 +25,10 @@ const router = new Router(viewport,
   {
     page: 'timer',
     pattern: '#!/timer/:id'
+  },
+  {
+    page: 'signout',
+    pattern: '#!/signout'
   }
 );
 

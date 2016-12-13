@@ -16,9 +16,6 @@ export default class View extends ComponentView {
     this.step = null;
   }
 
-  //TODO: Make method which catch view:dataRecived (...data) event
-  // and udpate value
-
   /**
    * Render component
    * @param {Object} dataObject - Data object
@@ -39,7 +36,7 @@ export default class View extends ComponentView {
   }
 
   /**
-   * Create DOM handler which will be attached when render will be fire
+   * Create DOM handlers which will be attach when render will be fire
    */
   createDOMHandlers() {
     const rootClickHandler = (event) => {

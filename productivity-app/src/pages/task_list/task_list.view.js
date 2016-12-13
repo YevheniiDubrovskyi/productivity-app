@@ -4,6 +4,7 @@ import Template from './task_list.template';
 
 import Controls from '../../components/controls/controls.controller';
 import TaskList from '../../components/task_list/task_list.controller';
+import Modal from '../../components/modal/modal.controller';
 
 /**
  * Page view
@@ -63,18 +64,43 @@ export default class View extends PageView {
         visible: true
       },
       {
-        alias: 'signOut',
+        alias: 'signout',
         icon: '&#xe908;',
         type: 'common',
         visible: true
       });
 
     headerControls.events.on('controls:clicked', function(alias) {
-      console.log(alias);
+      this.events.trigger('view:controls_clicked', alias);
     }, this);
-
     this.componentsList.push(headerControls);
 
+    const taskList = new TaskList(this.markup.querySelector('.main'));
+
+    taskList.events.on('taskList:edit_clicked', function(id, dataObject) {
+      const modal = new Modal(this.viewport, dataObject);
+
+      modal.events.on('modal:submit', function(updatedDataObject) {
+        taskList.updateTask(id, updatedDataObject);
+        modal.close();
+      });
+
+      modal.events.on('modal:remove', function() {
+        taskList.removeTask(id);
+        modal.close();
+      });
+    }, this);
+    taskList.events.on('taskList:timer_clicked', function(id) {
+      this.goToPage(`timer/${id}`);
+    }, this);
+
+    headerControls.events.on('controls:clicked', function(alias) {
+      if (alias !== 'remove') return;
+
+      taskList.toggleRemovingMode();
+    });
+
+    this.componentsList.push(taskList);
   }
 
 }

@@ -10,7 +10,7 @@ export default class Cycle extends ComponentController {
   /**
    * Create component controller
    * @param  {HTMLElement} container - Append to element
-   * @param  {...Object} dataArray - Data array
+   * @param  {...object} dataArray - Data array
    */
   constructor(container, ...dataArray) {
     super();

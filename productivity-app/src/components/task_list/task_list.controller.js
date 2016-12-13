@@ -20,4 +20,44 @@ export default class TaskList extends ComponentController {
     this.render();
   }
 
+  /**
+   * Get global tasks count
+   * @return {number} Global tasks count
+   */
+  getGlobalTasksCount() {}
+
+  /**
+   * Shows tasks buttons for removing
+   */
+  switchOnRemovingMode() {}
+
+  /**
+   * Remove marked tasks
+   */
+  switchOffRemovingMode() {}
+
+  /**
+   * Switch on/off removing mode depends on current state
+   */
+  toggleRemovingMode() {}
+
+  /**
+   * Add task to collection
+   * @param {object} dataObject - Data object for task
+   */
+  addTask(dataObject) {}
+
+  /**
+   * Update task by id
+   * @param {string} id
+   * @param {object} dataObject
+   */
+  updateTask(id, dataObject) {}
+
+  /**
+   * Remove task by id
+   * @param {string} id
+   */
+  removeTask(id) {}
+
 }

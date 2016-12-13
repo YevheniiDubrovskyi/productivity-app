@@ -11,9 +11,7 @@ const loginService = {
    * @return {boolean} Return session flag existence
    */
   hasSession() {
-    const session = localStorageService.getItem('session');
-
-    return session ? true : false;
+    return !!localStorageService.getItem('session');n;
   },
 
   /**

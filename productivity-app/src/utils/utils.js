@@ -17,6 +17,24 @@ const utils = {
   fromPatternToRegular: function(pattern) {
     return new RegExp('^'+pattern.replace(/:\w+/, '(\\w+)')+
       '/?$');
+  },
+
+  /**
+   * Return unique id
+   * @return {string} - id
+   */
+  getID() {
+    return `${this.getIDpart()}${this.getIDpart()}-${this.getIDpart()}-${this.getIDpart()}-${this.getIDpart()}-${this.getIDpart()}${this.getIDpart()}${this.getIDpart()}`;
+  },
+
+  /**
+   * Return id part
+   * @returns {string} - id part
+   */
+  getIDpart() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
   }
 
 };

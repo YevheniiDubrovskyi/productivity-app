@@ -88,13 +88,13 @@ webpackJsonp([1],Array(35).concat([
 		"./components/cycle_option/cycle_option.view.js": 98,
 		"./components/modal/modal.controller": 112,
 		"./components/modal/modal.controller.js": 112,
-		"./components/modal/modal.less": 113,
+		"./components/modal/modal.less": 116,
 		"./components/modal/modal.model": 115,
 		"./components/modal/modal.model.js": 115,
-		"./components/modal/modal.template": 116,
-		"./components/modal/modal.template.js": 116,
-		"./components/modal/modal.view": 117,
-		"./components/modal/modal.view.js": 117,
+		"./components/modal/modal.template": 114,
+		"./components/modal/modal.template.js": 114,
+		"./components/modal/modal.view": 113,
+		"./components/modal/modal.view.js": 113,
 		"./components/tabs/tabs.controller": 80,
 		"./components/tabs/tabs.controller.js": 80,
 		"./components/tabs/tabs.less": 118,
@@ -106,22 +106,22 @@ webpackJsonp([1],Array(35).concat([
 		"./components/tabs/tabs.view.js": 82,
 		"./components/task/task.controller": 120,
 		"./components/task/task.controller.js": 120,
-		"./components/task/task.less": 121,
+		"./components/task/task.less": 124,
 		"./components/task/task.model": 123,
 		"./components/task/task.model.js": 123,
-		"./components/task/task.template": 124,
-		"./components/task/task.template.js": 124,
-		"./components/task/task.view": 125,
-		"./components/task/task.view.js": 125,
+		"./components/task/task.template": 122,
+		"./components/task/task.template.js": 122,
+		"./components/task/task.view": 121,
+		"./components/task/task.view.js": 121,
 		"./components/task_list/task_list.controller": 126,
 		"./components/task_list/task_list.controller.js": 126,
-		"./components/task_list/task_list.less": 127,
+		"./components/task_list/task_list.less": 130,
 		"./components/task_list/task_list.model": 129,
 		"./components/task_list/task_list.model.js": 129,
-		"./components/task_list/task_list.template": 130,
-		"./components/task_list/task_list.template.js": 130,
-		"./components/task_list/task_list.view": 131,
-		"./components/task_list/task_list.view.js": 131,
+		"./components/task_list/task_list.template": 128,
+		"./components/task_list/task_list.template.js": 128,
+		"./components/task_list/task_list.view": 127,
+		"./components/task_list/task_list.view.js": 127,
 		"./pages/login/login.controller": 133,
 		"./pages/login/login.controller.js": 133,
 		"./pages/login/login.less": 139,
@@ -155,24 +155,26 @@ webpackJsonp([1],Array(35).concat([
 		"./pages/settings/settings.template.js": 150,
 		"./pages/settings/settings.view": 149,
 		"./pages/settings/settings.view.js": 149,
-		"./pages/task_list/task_list.controller": 154,
-		"./pages/task_list/task_list.controller.js": 154,
-		"./pages/task_list/task_list.less": 157,
-		"./pages/task_list/task_list.template": 156,
-		"./pages/task_list/task_list.template.js": 156,
-		"./pages/task_list/task_list.view": 155,
-		"./pages/task_list/task_list.view.js": 155,
-		"./pages/timer/timer.controller": 159,
-		"./pages/timer/timer.controller.js": 159,
-		"./pages/timer/timer.less": 162,
-		"./pages/timer/timer.template": 161,
-		"./pages/timer/timer.template.js": 161,
-		"./pages/timer/timer.view": 160,
-		"./pages/timer/timer.view.js": 160,
+		"./pages/signout/signout.controller": 154,
+		"./pages/signout/signout.controller.js": 154,
+		"./pages/task_list/task_list.controller": 155,
+		"./pages/task_list/task_list.controller.js": 155,
+		"./pages/task_list/task_list.less": 158,
+		"./pages/task_list/task_list.template": 157,
+		"./pages/task_list/task_list.template.js": 157,
+		"./pages/task_list/task_list.view": 156,
+		"./pages/task_list/task_list.view.js": 156,
+		"./pages/timer/timer.controller": 160,
+		"./pages/timer/timer.controller.js": 160,
+		"./pages/timer/timer.less": 163,
+		"./pages/timer/timer.template": 162,
+		"./pages/timer/timer.template.js": 162,
+		"./pages/timer/timer.view": 161,
+		"./pages/timer/timer.view.js": 161,
 		"./router": 19,
 		"./router.js": 19,
-		"./services/data.service": 164,
-		"./services/data.service.js": 164,
+		"./services/data.service": 165,
+		"./services/data.service.js": 165,
 		"./services/firebase.service": 23,
 		"./services/firebase.service.js": 23,
 		"./services/localstorage.service": 30,
@@ -2971,7 +2973,7 @@ webpackJsonp([1],Array(35).concat([
 	  /**
 	   * Create component controller
 	   * @param  {HTMLElement} container - Append to element
-	   * @param  {...Object} dataArray - Data array
+	   * @param  {...object} dataArray - Data array
 	   */
 	  function Cycle(container) {
 	    _classCallCheck(this, Cycle);
@@ -3278,9 +3280,6 @@ webpackJsonp([1],Array(35).concat([
 	    return _this;
 	  }
 	
-	  //TODO: Make method which catch view:dataRecived (...data) event
-	  // and udpate value
-	
 	  /**
 	   * Render component
 	   * @param {Object} dataObject - Data object
@@ -3305,7 +3304,7 @@ webpackJsonp([1],Array(35).concat([
 	    }
 	
 	    /**
-	     * Create DOM handler which will be attached when render will be fire
+	     * Create DOM handlers which will be attach when render will be fire
 	     */
 	
 	  }, {
@@ -4217,18 +4216,355 @@ webpackJsonp([1],Array(35).concat([
 
 /***/ },
 /* 112 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _components = __webpack_require__(63);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	var _modal = __webpack_require__(113);
+	
+	var _modal2 = _interopRequireDefault(_modal);
+	
+	var _modal3 = __webpack_require__(115);
+	
+	var _modal4 = _interopRequireDefault(_modal3);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * Component controller
+	 */
+	var Modal = function (_ComponentController) {
+	  _inherits(Modal, _ComponentController);
+	
+	  /**
+	   * Create component controller
+	   * @param {HTMLElement} container - Append to element
+	   * @param {object} [dataObject] - Data object
+	   */
+	  function Modal(container, dataObject) {
+	    _classCallCheck(this, Modal);
+	
+	    var _this = _possibleConstructorReturn(this, (Modal.__proto__ || Object.getPrototypeOf(Modal)).call(this));
+	
+	    _this.model = new _modal4.default(dataObject);
+	    _this.view = new _modal2.default(container);
+	
+	    _this.render.apply(_this, _toConsumableArray(_this.model.getData())); // [dataFlag, dataObject]
+	
+	    _this.view.events.on('view:submit', function (dataObject) {
+	      this.model.update(dataObject);
+	    });
+	
+	    _this.view.events.on('view:remove', function () {
+	      this.events.trigger('modal:remove');
+	    }, _this);
+	
+	    _this.view.events.on('view:cancel', function () {
+	      this.close();
+	    }, _this);
+	
+	    _this.model.events.on('model:updated', function (dataObject) {
+	      this.events.trigger('modal:submit', dataObject);
+	    }, _this);
+	    return _this;
+	  }
+	
+	  /**
+	   * Close and destroy modal
+	   */
+	
+	
+	  _createClass(Modal, [{
+	    key: 'close',
+	    value: function close() {
+	      this.view.close();
+	      this.destroy();
+	    }
+	  }]);
+	
+	  return Modal;
+	}(_components2.default);
+	
+	exports.default = Modal;
 
 /***/ },
 /* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+	
+	var _components = __webpack_require__(67);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	var _modal = __webpack_require__(114);
+	
+	var _modal2 = _interopRequireDefault(_modal);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	// import './modal.less';
+	
+	/**
+	 * Component view
+	 */
+	var View = function (_ComponentView) {
+	  _inherits(View, _ComponentView);
+	
+	  /**
+	   * Create component view
+	   * @param {HTMLElement} container - Append to element
+	   */
+	  function View(container) {
+	    _classCallCheck(this, View);
+	
+	    return _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this, container));
+	  }
+	
+	  /**
+	   * Render component
+	   * @param {object} [dataObject] - Data object
+	   */
+	
+	
+	  _createClass(View, [{
+	    key: 'render',
+	    value: function render(dataFlag, dataObject) {
+	      this.template = new _modal2.default(dataFlag, dataObject);
+	
+	      this.container.appendChild(this.markup);
+	      this.container.classList.add('modal-opened');
+	      this.createDOMHandlers();
+	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'render', this).call(this);
+	    }
+	
+	    /**
+	     * Destroy component
+	     */
+	
+	  }, {
+	    key: 'destroy',
+	    value: function destroy() {
+	      this.container.classList.remove('modal-opened');
+	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'destroy', this).call(this);
+	    }
+	
+	    /**
+	     * Create DOM handlers which will be attach when render will be fire
+	     */
+	
+	  }, {
+	    key: 'createDOMHandlers',
+	    value: function createDOMHandlers() {
+	      var _this2 = this;
+	
+	      var rootClickHandler = function rootClickHandler(event) {
+	        event.stopPropagation();
+	
+	        var target = event.target;
+	        // TODO: написать обработчик нажатия на кнопки и на фон, и пожымать события :remove, :submit, :cancel
+	        if (target.classList.contains('modal-wrapper')) {
+	          _this2.events.trigger('view:cancel');
+	        }
+	
+	        if (target.tagName !== 'BUTTON') {
+	          return;
+	        }
+	
+	        var className = target.className.match(/.*modal-btn-(.+)\s?/);
+	        // TODO: дописать выборку части имени класса и выкидывать ивент view:${className}
+	        console.log('Classname ', className);
+	      };
+	
+	      this.domEventsList.push({
+	        element: this.markup,
+	        eventName: 'click',
+	        callback: rootClickHandler
+	      });
+	    }
+	
+	    /**
+	     * Hide modal with animation
+	     */
+	
+	  }, {
+	    key: 'close',
+	    value: function close() {}
+	  }]);
+	
+	  return View;
+	}(_components2.default);
+	
+	exports.default = View;
+
+/***/ },
+/* 114 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _utils = __webpack_require__(21);
+	
+	var _utils2 = _interopRequireDefault(_utils);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	/**
+	 * Component template
+	 */
+	var Template = function () {
+	
+	  /**
+	   * Create component template
+	   * @param {boolean} dataFlag - Data existence flag
+	   * @param {object} dataObject - Data object
+	   */
+	  function Template(dataFlag, dataObject) {
+	    _classCallCheck(this, Template);
+	
+	    this.markup = document.createElement('div');
+	    this.markup.classList.add('modal-wrapper');
+	    this.markup.innerHTML = '\n<aside class="modal">\n' + this.createHeading(dataFlag) + this.createInputWithLabel(dataObject.title) + this.createInputWithLabel(dataObject.description) + this.createRadioGroup(dataObject.categories) + this.createInputWithLabel(dataObject.deadline) + this.createEstimationRadioGroup(5) + this.createRadioGroup(dataObject.priority) + '</aside>\n';
+	  }
+	
+	  // TODO: сделать возможным вызов модалки подтверждения (если сначала была отрисована обычная учитывать это display: none)
+	
+	  _createClass(Template, [{
+	    key: 'createAddEditMarkup',
+	    value: function createAddEditMarkup(dataFlag, dataObject) {
+	      return;
+	    }
+	
+	    /**
+	     * Create heading
+	     * @param {object} dataFlag - Data object
+	     * @return {string} Heading markup
+	     */
+	
+	  }, {
+	    key: 'createHeading',
+	    value: function createHeading(dataFlag) {
+	      return '<h2 class="modal-heading">' + (dataFlag ? 'Edit' : 'Add') + ' Task</h2>\n';
+	    }
+	
+	    /**
+	     * Create input with label
+	     * @param {object} dataProperty - Data object
+	     */
+	
+	  }, {
+	    key: 'createInputWithLabel',
+	    value: function createInputWithLabel(dataProperty) {
+	      var name = dataProperty.name;
+	
+	      return ['<label for="modal-add-edit-task__' + name + '" class="modal-lbl">' + _utils2.default.capitalize(name) + '</label>', '<input type="' + dataProperty.type + '" class="modal-inpt" id="modal-add-edit-task__' + name + ' placeholder="Add ' + name + ' here">\n'].join('\n');
+	    }
+	
+	    /**
+	     * Create fieldset with radio group
+	     * @param {object} dataProperty - Data object
+	     */
+	
+	  }, {
+	    key: 'createRadioGroup',
+	    value: function createRadioGroup(dataProperty) {
+	      return ['<fieldset class="modal-fset">', '<h4 class="modal-fset-heading">' + _utils2.default.capitalize(dataProperty.name) + '</h4>', '<ul class="modal-fset-list">', this.createRadioGroupList(dataProperty.name, dataProperty.value), '</ul>', '</fieldset>'].join('\n');
+	    }
+	
+	    /**
+	     * Create radio group list
+	     * @param {string} groupName - Group name
+	     * @param {array} dataArray - Data array
+	     */
+	
+	  }, {
+	    key: 'createRadionGroupList',
+	    value: function createRadionGroupList(groupName, dataArray) {
+	      return dataArray.reduce(function (acc, el) {
+	        var name = el.name;
+	
+	        return [acc, '<li class="modal-fset-list-item">', '<input type="radio" class="modal-fset-list-item-radio" name="' + groupName + '" id="modal-add-edit-task__radio-' + name + '">', '<label for="modal-add-edit-task__radio-' + name + '" class="modal-fset-list-item-lbl">' + _utils2.default.capitalize(el.title) + '</label>', '</li>'].join('\n');
+	      }, '');
+	    }
+	
+	    /**
+	     * Create fieldset with estimation radio group
+	     * @param {number} count - Estimation range
+	     */
+	
+	  }, {
+	    key: 'createEstimationRadioGroup',
+	    value: function createEstimationRadioGroup(count) {
+	      var estimationGroup = '\n';
+	      var i = count + 1;
+	
+	      while (--i) {
+	        estimationGroup += ['<input type="radio" name="estimation" id="estimation-' + i + '" class="modal-estimation-list-item-radio">', '<label class="modal-estimation-list-item-lbl" for="estimation-' + i + '"></label>\n'].join('\n');
+	      }
+	
+	      return ['<fieldset class="modal-estimation">', '<h4 class="modal-estimation-heading>Estimation</h4>', '<div class="modal-estimation-radio-wrapper">' + estimationGroup + '</div>', '</fieldset>'].join('\n');
+	    }
+	  }]);
+	
+	  return Template;
+	}();
+	
+	exports.default = Template;
+
+/***/ },
+/* 115 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 116 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(114);
+	var content = __webpack_require__(117);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(51)(content, {});
@@ -4248,7 +4584,7 @@ webpackJsonp([1],Array(35).concat([
 	}
 
 /***/ },
-/* 114 */
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(50)();
@@ -4256,28 +4592,10 @@ webpackJsonp([1],Array(35).concat([
 	
 	
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, ".modal {\n  font-size: 1rem;\n  position: relative;\n  overflow-y: auto;\n  box-sizing: border-box;\n  width: 31.25em;\n  max-width: 100%;\n  max-height: 100%;\n  padding: 1.2em 2.81rem;\n  background-color: #2a3f50;\n}\n.modal-wrapper {\n  position: fixed;\n  z-index: 99999;\n  top: 0;\n  left: 0;\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n  height: 100%;\n  -ms-flex-align: center;\n      align-items: center;\n  -ms-flex-pack: center;\n      justify-content: center;\n  background-color: rgba(0, 0, 0, 0.7);\n}\n.modal-opened {\n  overflow-y: hidden;\n}\n.modal-opened-add-edit .modal-add-task,\n.modal-opened-add-edit .modal-edit-task,\n.modal-opened-remove .modal-remove-task {\n  position: fixed;\n  z-index: 99999;\n  top: 0;\n  left: 0;\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n  height: 100%;\n  -ms-flex-align: center;\n  align-items: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n.modal-add-task .modal-btn-remove {\n  display: none;\n}\n.modal-heading {\n  font-size: 1.75em;\n  font-weight: 700;\n  margin: .9em 0 .6em 0;\n  text-align: center;\n}\n.modal-lbl,\n.modal-inpt {\n  display: block;\n}\n.modal-lbl {\n  margin: 0 0 .3em 0;\n}\n.modal-inpt {\n  width: 100%;\n  margin: 0 0 2.2em 0;\n  padding: .6em 0 .4em 0;\n  border-bottom: 1px solid #3d5364;\n}\n.modal-btn-submit,\n.modal-btn-cancel,\n.modal-btn-remove {\n  font-family: 'icomoon';\n}\n.modal-lbl,\n.modal-estimation-heading,\n.modal-fset-heading {\n  font-size: .875em;\n  text-transform: uppercase;\n}\n.modal-fset-list {\n  display: -ms-flexbox;\n  display: flex;\n}\n.modal-fset-list-item-radio {\n  display: none;\n}\n.modal-inpt::-webkit-input-placeholder {\n  color: #8da8b8;\n}\n.modal-inpt::-moz-placeholder {\n  color: #8da8b8;\n}\n.modal-inpt:-ms-input-placeholder {\n  color: #8da8b8;\n}\n.modal-inpt::placeholder {\n  color: #8da8b8;\n}\n.modal-fset-list-item-lbl {\n  color: #8da8b8;\n}\n.modal-btn-submit,\n.modal-btn-cancel,\n.modal-btn-remove {\n  font-size: 1.2em;\n  position: absolute;\n  top: .7em;\n  transition: color 0.1s ease-in-out;\n  color: #8da8b8;\n}\n.modal-btn-submit:hover,\n.modal-btn-cancel:hover,\n.modal-btn-remove:hover {\n  color: #fff;\n}\n.modal-btn-submit {\n  right: .5em;\n}\n.modal-btn-cancel {\n  right: 2.3em;\n}\n.modal-remove-task .modal-btn-cancel {\n  right: .5em;\n}\n.modal-btn-remove {\n  font-size: 1.3em;\n  top: .55em;\n  left: .45em;\n}\n.modal-fset {\n  margin: 0 0 2.1em 0;\n  padding: 0 0 .4em 0;\n  border-bottom: 1px solid #3d5364;\n}\n.modal-fset-heading {\n  margin: -0.15em 0 1.1em 0;\n}\n.modal-fset-list-item-lbl {\n  position: relative;\n  display: block;\n  padding: 0 1em 0 1.3em;\n}\n.modal-fset-list-item-lbl:before {\n  position: absolute;\n  top: 48%;\n  left: -0.15em;\n  width: 18px;\n  height: 18px;\n  content: '';\n  transform: translate(0, -50%);\n  background: url(" + __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../img/label_sprite.png\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())) + ") -172px -2px no-repeat;\n}\n.modal-fset-list-item-radio:checked + .modal-fset-list-item-lbl,\n.modal-fset-list-item-lbl:hover {\n  color: #fff;\n}\n.modal-fset-list-item-lbl:hover {\n  cursor: pointer;\n}\n/* CATEGORIES */\n#modal-add-edit-task__radio-work + .modal-fset-list-item-lbl:hover:before {\n  background-position: -1px -21px;\n}\n#modal-add-edit-task__radio-work:checked + .modal-fset-list-item-lbl:before {\n  background-position: -1px -2px;\n}\n#modal-add-edit-task__radio-edu + .modal-fset-list-item-lbl:hover:before {\n  background-position: -77px -21px;\n}\n#modal-add-edit-task__radio-edu:checked + .modal-fset-list-item-lbl:before {\n  background-position: -77px -2px;\n}\n#modal-add-edit-task__radio-hobby + .modal-fset-list-item-lbl:hover:before {\n  background-position: -58px -21px;\n}\n#modal-add-edit-task__radio-hobby:checked + .modal-fset-list-item-lbl:before {\n  background-position: -58px -2px;\n}\n#modal-add-edit-task__radio-sport + .modal-fset-list-item-lbl:hover:before {\n  background-position: -39px -21px;\n}\n#modal-add-edit-task__radio-sport:checked + .modal-fset-list-item-lbl:before {\n  background-position: -39px -2px;\n}\n#modal-add-edit-task__radio-other + .modal-fset-list-item-lbl:hover:before {\n  background-position: -20px -21px;\n}\n#modal-add-edit-task__radio-other:checked + .modal-fset-list-item-lbl:before {\n  background-position: -20px -2px;\n}\n/* PRIORITY */\n#modal-add-edit-task__urgent + .modal-fset-list-item-lbl:hover:before {\n  background-position: -96px -21px;\n}\n#modal-add-edit-task__urgent:checked + .modal-fset-list-item-lbl:before {\n  background-position: -96px -2px;\n}\n#modal-add-edit-task__high + .modal-fset-list-item-lbl:hover:before {\n  background-position: -115px -21px;\n}\n#modal-add-edit-task__high:checked + .modal-fset-list-item-lbl:before {\n  background-position: -115px -2px;\n}\n#modal-add-edit-task__middle + .modal-fset-list-item-lbl:hover:before {\n  background-position: -134px -21px;\n}\n#modal-add-edit-task__middle:checked + .modal-fset-list-item-lbl:before {\n  background-position: -134px -2px;\n}\n#modal-add-edit-task__low + .modal-fset-list-item-lbl:hover:before {\n  background-position: -153px -21px;\n}\n#modal-add-edit-task__low:checked + .modal-fset-list-item-lbl:before {\n  background-position: -153px -2px;\n}\n.modal-estimation {\n  margin: 0 0 2.4em 0;\n  text-align: left;\n  border-bottom: 1px solid #3d5364;\n}\n.modal-estimation-heading {\n  margin: 0 0 .5em 0;\n}\n.modal-estimation-radio-wrapper {\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  flex-direction: row-reverse;\n  padding: 0 0 .6em 0;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: reverse;\n  -webkit-flex-direction: row-reverse;\n  -ms-flex-direction: row-reverse;\n}\n.modal-estimation-list-item-radio {\n  display: none;\n}\n.modal-estimation-list-item-lbl {\n  display: block;\n  width: 1.26rem;\n  height: 1.23rem;\n  margin: 0 .6em 0 0;\n  transition: 0.1s ease-in-out;\n  background: url(" + __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../img/tomato.svg\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())) + ") center no-repeat;\n}\n.modal-estimation-list-item-lbl:hover {\n  cursor: pointer;\n}\n.modal-estimation-list-item-lbl:hover,\n.modal-estimation-list-item-lbl:hover ~ .modal-estimation-list-item-lbl,\n.modal-estimation-list-item-radio:checked ~ .modal-estimation-list-item-lbl {\n  background-image: url(" + __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../img/tomato_fill.svg\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())) + ");\n}\n.modal-remove-task .modal-question {\n  font-size: 2.25rem;\n  font-weight: 300;\n  line-height: 1.3em;\n  width: 94%;\n  margin: 3.9em auto 5.2em auto;\n  text-align: center;\n  color: #8da8b8;\n}\n.modal-remove-task .buttons-wrapper {\n  display: -ms-flexbox;\n  display: flex;\n  width: 65%;\n  margin: 0 auto;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n}\n", ""]);
 	
 	// exports
 
-
-/***/ },
-/* 115 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-/***/ },
-/* 116 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-/***/ },
-/* 117 */
-/***/ function(module, exports) {
-
-	"use strict";
 
 /***/ },
 /* 118 */
@@ -4320,7 +4638,7 @@ webpackJsonp([1],Array(35).concat([
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _task = __webpack_require__(125);
+	var _task = __webpack_require__(121);
 	
 	var _task2 = _interopRequireDefault(_task);
 	
@@ -4368,118 +4686,6 @@ webpackJsonp([1],Array(35).concat([
 /* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(122);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(51)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./task.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./task.less");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 122 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(50)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 123 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _components = __webpack_require__(65);
-	
-	var _components2 = _interopRequireDefault(_components);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	/**
-	 * Component model
-	 */
-	var Model = function (_ComponentModel) {
-	  _inherits(Model, _ComponentModel);
-	
-	  /**
-	   * Create component model
-	   * @param {object} data - Data object
-	   */
-	  function Model(data) {
-	    _classCallCheck(this, Model);
-	
-	    return _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this, data));
-	  }
-	
-	  return Model;
-	}(_components2.default);
-	
-	exports.default = Model;
-
-/***/ },
-/* 124 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	/**
-	 * Component template
-	 */
-	var Template =
-	
-	/**
-	 * Create component template
-	 * @param {obejct} dataObject - Data object
-	 */
-	function Template(dataObject) {
-	  _classCallCheck(this, Template);
-	
-	  this.markup = document.c;
-	};
-	
-	exports.default = Template;
-
-/***/ },
-/* 125 */
-/***/ function(module, exports, __webpack_require__) {
-
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
@@ -4494,7 +4700,7 @@ webpackJsonp([1],Array(35).concat([
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _task = __webpack_require__(124);
+	var _task = __webpack_require__(122);
 	
 	var _task2 = _interopRequireDefault(_task);
 	
@@ -4546,6 +4752,120 @@ webpackJsonp([1],Array(35).concat([
 	exports.default = View;
 
 /***/ },
+/* 122 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	/**
+	 * Component template
+	 */
+	var Template =
+	
+	/**
+	 * Create component template
+	 * @param {obejct} dataObject - Data object
+	 */
+	function Template(dataObject) {
+	  _classCallCheck(this, Template);
+	
+	  this.markup = document.createElement('div');
+	  this.markup.classList.add('task');
+	  // this.markup.innerHTML =
+	};
+	
+	exports.default = Template;
+
+/***/ },
+/* 123 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _components = __webpack_require__(65);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * Component model
+	 */
+	var Model = function (_ComponentModel) {
+	  _inherits(Model, _ComponentModel);
+	
+	  /**
+	   * Create component model
+	   * @param {object} data - Data object
+	   */
+	  function Model(data) {
+	    _classCallCheck(this, Model);
+	
+	    return _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this, data));
+	  }
+	
+	  return Model;
+	}(_components2.default);
+	
+	exports.default = Model;
+
+/***/ },
+/* 124 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(125);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(51)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./task.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./task.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 125 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(50)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
+
+/***/ },
 /* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -4555,11 +4875,13 @@ webpackJsonp([1],Array(35).concat([
 	  value: true
 	});
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _components = __webpack_require__(63);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _task_list = __webpack_require__(131);
+	var _task_list = __webpack_require__(127);
 	
 	var _task_list2 = _interopRequireDefault(_task_list);
 	
@@ -4597,6 +4919,69 @@ webpackJsonp([1],Array(35).concat([
 	    return _this;
 	  }
 	
+	  /**
+	   * Get global tasks count
+	   * @return {number} Global tasks count
+	   */
+	
+	
+	  _createClass(TaskList, [{
+	    key: 'getGlobalTasksCount',
+	    value: function getGlobalTasksCount() {}
+	
+	    /**
+	     * Shows tasks buttons for removing
+	     */
+	
+	  }, {
+	    key: 'switchOnRemovingMode',
+	    value: function switchOnRemovingMode() {}
+	
+	    /**
+	     * Remove marked tasks
+	     */
+	
+	  }, {
+	    key: 'switchOffRemovingMode',
+	    value: function switchOffRemovingMode() {}
+	
+	    /**
+	     * Switch on/off removing mode depends on current state
+	     */
+	
+	  }, {
+	    key: 'toggleRemovingMode',
+	    value: function toggleRemovingMode() {}
+	
+	    /**
+	     * Add task to collection
+	     * @param {object} dataObject - Data object for task
+	     */
+	
+	  }, {
+	    key: 'addTask',
+	    value: function addTask(dataObject) {}
+	
+	    /**
+	     * Update task by id
+	     * @param {string} id
+	     * @param {object} dataObject
+	     */
+	
+	  }, {
+	    key: 'updateTask',
+	    value: function updateTask(id, dataObject) {}
+	
+	    /**
+	     * Remove task by id
+	     * @param {string} id
+	     */
+	
+	  }, {
+	    key: 'removeTask',
+	    value: function removeTask(id) {}
+	  }]);
+	
 	  return TaskList;
 	}(_components2.default);
 	
@@ -4604,134 +4989,6 @@ webpackJsonp([1],Array(35).concat([
 
 /***/ },
 /* 127 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(128);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(51)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./task_list.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./task_list.less");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 128 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(50)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 129 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _components = __webpack_require__(65);
-	
-	var _components2 = _interopRequireDefault(_components);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	/**
-	 * Component model
-	 */
-	var Model = function (_ComponentModel) {
-	  _inherits(Model, _ComponentModel);
-	
-	  /**
-	   * Create component model
-	   */
-	  function Model() {
-	    _classCallCheck(this, Model);
-	
-	    return _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this));
-	  }
-	
-	  return Model;
-	}(_components2.default);
-	
-	exports.default = Model;
-
-/***/ },
-/* 130 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	/**
-	 * Component template
-	 */
-	var Template = function () {
-	
-	  /**
-	   * Create component template
-	   */
-	  function Template() {
-	    _classCallCheck(this, Template);
-	
-	    this.markup = document.createElement('div');
-	    this.markup.classList.add('task-list');
-	    this.markup.innerHTML = this.createMarkupSkeleton();
-	  }
-	
-	  /**
-	   * Create markup skeleton
-	   * @return {string} Component markup skeleton
-	   */
-	
-	
-	  _createClass(Template, [{
-	    key: 'createMarkupSkeleton',
-	    value: function createMarkupSkeleton() {}
-	  }]);
-	
-	  return Template;
-	}();
-	
-	exports.default = Template;
-
-/***/ },
-/* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4748,7 +5005,7 @@ webpackJsonp([1],Array(35).concat([
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _task_list = __webpack_require__(130);
+	var _task_list = __webpack_require__(128);
 	
 	var _task_list2 = _interopRequireDefault(_task_list);
 	
@@ -4815,6 +5072,134 @@ webpackJsonp([1],Array(35).concat([
 	exports.default = View;
 
 /***/ },
+/* 128 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	/**
+	 * Component template
+	 */
+	var Template = function () {
+	
+	  /**
+	   * Create component template
+	   */
+	  function Template() {
+	    _classCallCheck(this, Template);
+	
+	    this.markup = document.createElement('div');
+	    this.markup.classList.add('task-list');
+	    this.markup.innerHTML = this.createMarkupSkeleton();
+	  }
+	
+	  /**
+	   * Create markup skeleton
+	   * @return {string} Component markup skeleton
+	   */
+	
+	
+	  _createClass(Template, [{
+	    key: 'createMarkupSkeleton',
+	    value: function createMarkupSkeleton() {}
+	  }]);
+	
+	  return Template;
+	}();
+	
+	exports.default = Template;
+
+/***/ },
+/* 129 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _components = __webpack_require__(65);
+	
+	var _components2 = _interopRequireDefault(_components);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * Component model
+	 */
+	var Model = function (_ComponentModel) {
+	  _inherits(Model, _ComponentModel);
+	
+	  /**
+	   * Create component model
+	   */
+	  function Model() {
+	    _classCallCheck(this, Model);
+	
+	    return _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this));
+	  }
+	
+	  return Model;
+	}(_components2.default);
+	
+	exports.default = Model;
+
+/***/ },
+/* 130 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(131);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(51)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./task_list.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./task_list.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 131 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(50)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
+
+/***/ },
 /* 132 */,
 /* 133 */
 /***/ function(module, exports, __webpack_require__) {
@@ -4866,10 +5251,9 @@ webpackJsonp([1],Array(35).concat([
 	      _login4.default.signIn(data.username, data.password);
 	
 	      _login4.default.events.once('signIn', function () {
-	        history.pushState(null, null, '#!/');
-	        history.go(0);
-	      });
-	    });
+	        this.goToPage('');
+	      }, this);
+	    }, _this);
 	
 	    _this.render();
 	    return _this;
@@ -4927,6 +5311,18 @@ webpackJsonp([1],Array(35).concat([
 	    key: "destroy",
 	    value: function destroy() {
 	      this.view.destroy();
+	    }
+	
+	    /**
+	     * Make push state and rise popstate event
+	     * @param {string} name - Page name
+	     */
+	
+	  }, {
+	    key: "goToPage",
+	    value: function goToPage(name) {
+	      history.pushState(null, null, "#!/" + name);
+	      history.go(0);
 	    }
 	  }]);
 	
@@ -6096,7 +6492,7 @@ webpackJsonp([1],Array(35).concat([
 	  }, {
 	    key: 'createComponents',
 	    value: function createComponents() {
-	      var cycle = new (Function.prototype.bind.apply(_cycle2.default, [null].concat([this.markup.querySelector('.main')], _toConsumableArray(initSettingsData))))();
+	      var cycle = new (Function.prototype.bind.apply(_cycle2.default, [null].concat([this.markup.querySelector('.main')], _toConsumableArray(_settings3.initSettingsData))))();
 	      this.componentsList.push(cycle);
 	
 	      var topTabs = new (Function.prototype.bind.apply(_tabs2.default, [null].concat([true, this.markup.querySelector('.aside'), ''], _toConsumableArray(_settings3.tabsData))))();
@@ -6302,11 +6698,76 @@ webpackJsonp([1],Array(35).concat([
 	  value: true
 	});
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _pages = __webpack_require__(134);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _task_list = __webpack_require__(155);
+	var _login = __webpack_require__(22);
+	
+	var _login2 = _interopRequireDefault(_login);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * Page controller
+	 */
+	var Signout = function (_PageController) {
+	  _inherits(Signout, _PageController);
+	
+	  /**
+	   * Create page controller
+	   */
+	  function Signout() {
+	    _classCallCheck(this, Signout);
+	
+	    var _this = _possibleConstructorReturn(this, (Signout.__proto__ || Object.getPrototypeOf(Signout)).call(this));
+	
+	    _login2.default.signOut();
+	    _this.goToPage('');
+	    return _this;
+	  }
+	
+	  /**
+	   * Rewrite default method to avoid errors
+	   */
+	
+	
+	  _createClass(Signout, [{
+	    key: 'render',
+	    value: function render() {}
+	  }, {
+	    key: 'destroy',
+	    value: function destroy() {}
+	  }]);
+	
+	  return Signout;
+	}(_pages2.default);
+	
+	exports.default = Signout;
+
+/***/ },
+/* 155 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _pages = __webpack_require__(134);
+	
+	var _pages2 = _interopRequireDefault(_pages);
+	
+	var _task_list = __webpack_require__(156);
 	
 	var _task_list2 = _interopRequireDefault(_task_list);
 	
@@ -6336,6 +6797,13 @@ webpackJsonp([1],Array(35).concat([
 	    _this.view = new _task_list2.default(viewport);
 	
 	    _this.render();
+	
+	    var pages = ['signout', 'reports', 'settings'];
+	    _this.view.events.on('view:controls_clicked', function (alias) {
+	      if (pages.includes(alias)) {
+	        this.goToPage(alias);
+	      }
+	    }, _this);
 	    return _this;
 	  }
 	
@@ -6345,7 +6813,7 @@ webpackJsonp([1],Array(35).concat([
 	exports.default = TaskList;
 
 /***/ },
-/* 155 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6362,7 +6830,7 @@ webpackJsonp([1],Array(35).concat([
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _task_list = __webpack_require__(156);
+	var _task_list = __webpack_require__(157);
 	
 	var _task_list2 = _interopRequireDefault(_task_list);
 	
@@ -6373,6 +6841,10 @@ webpackJsonp([1],Array(35).concat([
 	var _task_list3 = __webpack_require__(126);
 	
 	var _task_list4 = _interopRequireDefault(_task_list3);
+	
+	var _modal = __webpack_require__(112);
+	
+	var _modal2 = _interopRequireDefault(_modal);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -6447,17 +6919,43 @@ webpackJsonp([1],Array(35).concat([
 	        active: false,
 	        visible: true
 	      }, {
-	        alias: 'signOut',
+	        alias: 'signout',
 	        icon: '&#xe908;',
 	        type: 'common',
 	        visible: true
 	      });
 	
 	      headerControls.events.on('controls:clicked', function (alias) {
-	        console.log(alias);
+	        this.events.trigger('view:controls_clicked', alias);
+	      }, this);
+	      this.componentsList.push(headerControls);
+	
+	      var taskList = new _task_list4.default(this.markup.querySelector('.main'));
+	
+	      taskList.events.on('taskList:edit_clicked', function (id, dataObject) {
+	        var modal = new _modal2.default(this.viewport, dataObject);
+	
+	        modal.events.on('modal:submit', function (updatedDataObject) {
+	          taskList.updateTask(id, updatedDataObject);
+	          modal.close();
+	        });
+	
+	        modal.events.on('modal:remove', function () {
+	          taskList.removeTask(id);
+	          modal.close();
+	        });
+	      }, this);
+	      taskList.events.on('taskList:timer_clicked', function (id) {
+	        this.goToPage('timer/' + id);
 	      }, this);
 	
-	      this.componentsList.push(headerControls);
+	      headerControls.events.on('controls:clicked', function (alias) {
+	        if (alias !== 'remove') return;
+	
+	        taskList.toggleRemovingMode();
+	      });
+	
+	      this.componentsList.push(taskList);
 	    }
 	  }]);
 	
@@ -6467,7 +6965,7 @@ webpackJsonp([1],Array(35).concat([
 	exports.default = View;
 
 /***/ },
-/* 156 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6526,13 +7024,13 @@ webpackJsonp([1],Array(35).concat([
 	exports.default = Template;
 
 /***/ },
-/* 157 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(158);
+	var content = __webpack_require__(159);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(51)(content, {});
@@ -6552,7 +7050,7 @@ webpackJsonp([1],Array(35).concat([
 	}
 
 /***/ },
-/* 158 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(50)();
@@ -6566,7 +7064,7 @@ webpackJsonp([1],Array(35).concat([
 
 
 /***/ },
-/* 159 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6579,7 +7077,7 @@ webpackJsonp([1],Array(35).concat([
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _timer = __webpack_require__(160);
+	var _timer = __webpack_require__(161);
 	
 	var _timer2 = _interopRequireDefault(_timer);
 	
@@ -6618,7 +7116,7 @@ webpackJsonp([1],Array(35).concat([
 	exports.default = Timer;
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6635,7 +7133,7 @@ webpackJsonp([1],Array(35).concat([
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _timer = __webpack_require__(161);
+	var _timer = __webpack_require__(162);
 	
 	var _timer2 = _interopRequireDefault(_timer);
 	
@@ -6696,7 +7194,7 @@ webpackJsonp([1],Array(35).concat([
 	exports.default = View;
 
 /***/ },
-/* 161 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6757,13 +7255,13 @@ webpackJsonp([1],Array(35).concat([
 	exports.default = Template;
 
 /***/ },
-/* 162 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(163);
+	var content = __webpack_require__(164);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(51)(content, {});
@@ -6783,7 +7281,7 @@ webpackJsonp([1],Array(35).concat([
 	}
 
 /***/ },
-/* 163 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(50)();
@@ -6797,7 +7295,7 @@ webpackJsonp([1],Array(35).concat([
 
 
 /***/ },
-/* 164 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

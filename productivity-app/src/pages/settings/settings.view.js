@@ -7,7 +7,7 @@ import utils from '../../utils/utils';
 import Cycle from '../../components/cycle/cycle.controller';
 import Tabs from '../../components/tabs/tabs.controller';
 
-import {initinitSettingsData, tabsData} from './settings.data';
+import {initSettingsData, tabsData} from './settings.data';
 
 /**
  * Page view

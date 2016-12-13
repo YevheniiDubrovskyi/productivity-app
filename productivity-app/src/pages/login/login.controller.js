@@ -20,10 +20,9 @@ export default class Login extends PageController {
       loginService.signIn(data.username, data.password);
 
       loginService.events.once('signIn', function() {
-        history.pushState(null, null, '#!/');
-        history.go(0);
-      });
-    });
+        this.goToPage('');
+      }, this);
+    }, this);
 
     this.render();
   }

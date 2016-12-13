@@ -15,6 +15,13 @@ export default class TaskList extends PageController {
     this.view = new View(viewport);
 
     this.render();
+
+    const pages = ['signout', 'reports', 'settings'];
+    this.view.events.on('view:controls_clicked', function(alias) {
+      if (pages.includes(alias)) {
+        this.goToPage(alias);
+      }
+    }, this);
   }
 
 }
