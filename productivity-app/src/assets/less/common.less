@@ -47,10 +47,18 @@
   }
 }
 
-.clearfix {
+.clearfix { // extends (tabs)
   &::after {
     display: table;
     clear: both;
     content: '';
   }
 }
+
+@media all and (max-width: @breakpoint__mobile) {
+  .main {
+    padding-top: 3.2em;
+  }
+}
+
+
