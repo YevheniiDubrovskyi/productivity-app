@@ -1,0 +1,26 @@
+.tooltip {
+  font-size: .75rem;
+  font-weight: 700;
+  position: absolute;
+  z-index: 999;
+  top: 2.8em;
+  left: 3em;
+  padding: .916em 1.583em;
+  white-space: nowrap;
+  color: #3c5162;
+  border: 1px solid #cddbe3;
+  border-radius: .2em;
+  background-color: rgba(229, 233, 235, .9);
+
+  &::after {
+    position: absolute;
+    top: -.45em;
+    left: 1em;
+    width: 0;
+    height: 0;
+    content: '';
+    border-width: 0 4.5px 5px 4.5px;
+    border-style: solid;
+    border-color: transparent transparent rgba(229, 233, 235, .9) transparent;
+  }
+}

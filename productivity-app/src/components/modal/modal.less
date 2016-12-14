@@ -27,32 +27,6 @@
   }
 }
 
-.modal-opened-add-edit .modal-add-task,
-.modal-opened-add-edit .modal-edit-task,
-.modal-opened-remove .modal-remove-task {
-  position: fixed;
-  z-index: 99999;
-  top: 0;
-  left: 0;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
-
-  width: 100%;
-  height: 100%;
-
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .modal-add-task .modal-btn-remove {
   display: none;
 }
@@ -60,9 +34,7 @@
 .modal-heading {
   font-size: 1.75em;
   font-weight: 700;
-
   margin: .9em 0 .6em 0;
-
   text-align: center;
 }
 
@@ -79,66 +51,45 @@
   width: 100%;
   margin: 0 0 2.2em 0;
   padding: .6em 0 .4em 0;
-
   border-bottom: 1px solid #3d5364;
 }
 
 .modal-btn-submit,
 .modal-btn-cancel,
 .modal-btn-remove {
-  font-family: 'icomoon';
+  font-family: @font__icon;
 }
 
 .modal-lbl,
 .modal-estimation-heading,
 .modal-fset-heading {
   font-size: .875em;
-
   text-transform: uppercase;
 }
 
 .modal-fset-list {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
+  display: flex;
 }
 
 .modal-fset-list-item-radio {
   display: none;
 }
 
-.modal-inpt::-webkit-input-placeholder {
-  color: #8da8b8;
-}
-
-.modal-inpt::-moz-placeholder {
-  color: #8da8b8;
-}
-
-.modal-inpt:-ms-input-placeholder {
-  color: #8da8b8;
-}
-
-.modal-inpt::placeholder {
-  color: #8da8b8;
-}
-
+.modal-inpt::-webkit-input-placeholder,
+.modal-inpt::-moz-placeholder,
+.modal-inpt:-ms-input-placeholder,
+.modal-inpt::placeholder,
 .modal-fset-list-item-lbl {
-  color: #8da8b8;
+  color: @fontColor__secondary;
 }
 
 .modal-btn-submit,
 .modal-btn-cancel,
 .modal-btn-remove {
   font-size: 1.2em;
-
   position: absolute;
   top: .7em;
-
-  -webkit-transition: color .1s ease-in-out;
-          transition: color .1s ease-in-out;
-
+  transition: color .1s ease-in-out;
   color: #8da8b8;
 }
 
@@ -162,7 +113,6 @@
 
 .modal-btn-remove {
   font-size: 1.3em;
-
   top: .55em;
   left: .45em;
 }
@@ -170,7 +120,6 @@
 .modal-fset {
   margin: 0 0 2.1em 0;
   padding: 0 0 .4em 0;
-
   border-bottom: 1px solid #3d5364;
 }
 
@@ -180,9 +129,7 @@
 
 .modal-fset-list-item-lbl {
   position: relative;
-
   display: block;
-
   padding: 0 1em 0 1.3em;
 }
 
@@ -190,16 +137,11 @@
   position: absolute;
   top: 48%;
   left: -.15em;
-
   width: 18px;
   height: 18px;
-
   content: '';
-  -webkit-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-
-  background: url(../img/label_sprite.png) -172px -2px no-repeat;
+  transform: translate(0, -50%);
+  background: url(../../assets/img/label_sprite.png) -172px -2px no-repeat;
 }
 
 .modal-fset-list-item-radio:checked + .modal-fset-list-item-lbl,
@@ -289,9 +231,7 @@
 
 .modal-estimation {
   margin: 0 0 2.4em 0;
-
   text-align: left;
-
   border-bottom: 1px solid #3d5364;
 }
 
@@ -300,18 +240,9 @@
 }
 
 .modal-estimation-radio-wrapper {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display:         inline-flex;
-          flex-direction: row-reverse;
-
+  display: inline-flex;
+  flex-direction: row-reverse;
   padding: 0 0 .6em 0;
-
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-  -webkit-flex-direction: row-reverse;
-      -ms-flex-direction: row-reverse;
 }
 
 .modal-estimation-list-item-radio {
@@ -320,15 +251,11 @@
 
 .modal-estimation-list-item-lbl {
   display: block;
-
   width: 1.26rem;
   height: 1.23rem;
   margin: 0 .6em 0 0;
-
-  -webkit-transition: .1s ease-in-out;
-          transition: .1s ease-in-out;
-
-  background: url(../img/tomato.svg) center no-repeat;
+  transition: .1s ease-in-out;
+  background: url(../../assets/img/tomato.svg) center no-repeat;
 }
 
 .modal-estimation-list-item-lbl:hover {
@@ -338,33 +265,22 @@
 .modal-estimation-list-item-lbl:hover,
 .modal-estimation-list-item-lbl:hover ~ .modal-estimation-list-item-lbl,
 .modal-estimation-list-item-radio:checked ~ .modal-estimation-list-item-lbl {
-  background-image: url(../img/tomato_fill.svg);
+  background-image: url(../../assets/img/tomato_fill.svg);
 }
 
 .modal-remove-task .modal-question {
   font-size: 2.25rem;
   font-weight: 300;
   line-height: 1.3em;
-
   width: 94%;
   margin: 3.9em auto 5.2em auto;
-
   text-align: center;
-
   color: #8da8b8;
 }
 
 .modal-remove-task .buttons-wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
-
+  display: flex;
   width: 65%;
   margin: 0 auto;
-
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }

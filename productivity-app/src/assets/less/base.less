@@ -1,33 +1,19 @@
 html,
 body {
   font-family: @font__primary;
-
   position: relative;
-
   height: 1px;
   min-height: 100%;
 }
 
 body {
-  color: #fff;
+  color: @fontColor__primary;
   background-color: #2a3f50;
-}
-
-main,
-header,
-footer,
-aside,
-section,
-article,
-nav,
-figure {
-  display: block;
 }
 
 button,
 input {
   font-size: inherit;
-
   color: inherit;
   border: none;
   background: none;
@@ -41,6 +27,5 @@ button:active,
 button:focus,
 input:focus {
   outline: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }

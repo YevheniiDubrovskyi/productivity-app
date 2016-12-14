@@ -39,7 +39,7 @@ export default class View extends ComponentView {
                           this.markup,
                           this.markup.querySelector('#chart'),
                           ...dataArray);
-
+    tabs.addClassToRoot('tabs-list-top');
     tabs.events.on('tabs:changed', function(name) {
       this.sendUpdate(name);
     }, this);

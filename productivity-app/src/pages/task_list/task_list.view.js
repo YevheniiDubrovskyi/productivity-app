@@ -2,9 +2,9 @@ import PageView from '../pages.view';
 import Template from './task_list.template';
 // import './task_list.less';
 
-import Controls from '../../components/controls/controls.controller';
-import TaskList from '../../components/task_list/task_list.controller';
-import Modal from '../../components/modal/modal.controller';
+// import Controls from '../../components/controls/controls.controller';
+// import TaskList from '../../components/task_list/task_list.controller';
+// import Modal from '../../components/modal/modal.controller';
 
 /**
  * Page view
@@ -25,7 +25,7 @@ export default class View extends PageView {
    */
   render() {
     this.viewport.appendChild(this.markup);
-    this.createComponents();
+    // this.createComponents();
     super.render();
   }
 
@@ -78,6 +78,7 @@ export default class View extends PageView {
     const taskList = new TaskList(this.markup.querySelector('.main'));
 
     taskList.events.on('taskList:edit_clicked', function(id, dataObject) {
+      // TODO: change events for MODAL
       const modal = new Modal(this.viewport, dataObject);
 
       modal.events.on('modal:submit', function(updatedDataObject) {

@@ -1,8 +1,50 @@
 .main {
   width: 86.8%;
   margin: 0 auto;
-  padding: 5.95em 0 4.6875em 0;
-  text-align: left;
+  padding: 5.95em 0 4.7em 0;
+}
+
+.aside {
+  position: absolute;
+  top: 3.5em;
+  right: 6.2%;
+}
+
+.header {
+  text-align: center;
+
+  &-main {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: .02em;
+    margin: 0 0 1.2em 0;
+  }
+
+  &-sub {
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: .03em;
+    color: @fontColor__secondary;
+  }
+
+  &-flex {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+
+    &-logo {
+      display: none;
+    }
+
+    .controls-list {
+      position: absolute;
+      top: 3rem;
+      right: 6.2%;
+    }
+  }
 }
 
 .clearfix {
@@ -10,138 +52,5 @@
     display: table;
     clear: both;
     content: '';
-  }
-}
-
-/* MAIN CONTROL BUTTONS */
-
-.main-btn-list {
-  font-size: 1.25rem;
-  display: flex;
-  width: 7em;
-  margin: 0 0 0 auto;
-  justify-content: space-between;
-
-  &__item-btn {
-    font-family: @font__icon;
-    transition: color .1s ease-in-out;
-    color: @fontColor__secondary;
-
-    &.active,
-    &:hover {
-      color: @fontColor__primary;
-    }
-
-    &:focus,
-    &:active {
-      color: #82c7e0;
-    }
-  }
-}
-
-#statistics-btn {
-  font-size: .8em;
-  line-height: 1.6em;
-}
-
-/* NOTIFICATIONS */
-
-.notification {
-  font-size: .9375rem;
-  line-height: 3.4em;
-  position: relative;
-  z-index: 999;
-  display: flex;
-  box-sizing: border-box;
-  width: 30em;
-  height: 3.4em;
-  padding: 0 0 0 5.3em;
-  color: #fff;
-  border: 1px solid #fff;
-  border-radius: .3em;
-
-  &::after {
-    font-family: 'icomoon';
-    font-size: 2.3em;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    padding: 0 .45em;
-  }
-
-  &-text {
-    font-size: 1.05em;
-    font-weight: 700;
-    height: 100%;
-  }
-
-  &-btn-close {
-    font-family: 'icomoon';
-    font-size: 1.6em;
-    position: absolute;
-    right: 0;
-    height: 100%;
-    margin: 0;
-    padding: 0 .65em;
-  }
-
-  .addNotificationType(success, #1ca991, '\e913', #49baa7);
-  .addNotificationType(error, #d8584d, '\e914', #e07971);
-  .addNotificationType(warning, #df9843, '\e915', #e5ad69);
-  .addNotificationType(message-info, #529bcd, '\e916', #75afd7);
-}
-
-/* TOOLTIP */
-
-.tooltip {
-  font-size: .75rem;
-  font-weight: 700;
-  position: absolute;
-  z-index: 999;
-  top: 2.8em;
-  left: 3em;
-  padding: .916em 1.583em;
-  white-space: nowrap;
-  color: #3c5162;
-  border: 1px solid #cddbe3;
-  border-radius: .2em;
-  background-color: rgba(229, 233, 235, .9);
-
-  &::after {
-    position: absolute;
-    top: -.45em;
-    left: 1em;
-    width: 0;
-    height: 0;
-    content: '';
-    border-width: 0 4.5px 5px 4.5px;
-    border-style: solid;
-    border-color: transparent transparent rgba(229, 233, 235, .9) transparent;
-  }
-}
-
-/* ARROW BUTTONS */
-
-.btn-arrow {
-  font-family: 'icomoon';
-  font-size: 2.55em;
-  position: absolute;
-  top: 50%;
-  transition: .1s ease-in-out;
-  transform: translate(0, -50%);
-  text-decoration: none;
-  color: #8da5b8;
-
-  &:hover {
-    color: #fff;
-  }
-
-  &-left {
-    left: 2rem;
-  }
-
-  &-right {
-    right: 2rem;
   }
 }

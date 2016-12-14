@@ -25,17 +25,17 @@ export default class Template extends PageTemplate {
 
   createAside() {
     return `  <aside class="aside">
-    <ul class="main-btn-list">
-      <li class="main-btn-list__item">
-        <button class="main-btn-list__item-btn" id="statistics-btn" type="button">&#xe90c;</button>
+    <ul class="controls-list">
+      <li class="controls-list__item">
+        <button class="controls-list__item-btn" id="statistics-btn" type="button">&#xe90c;</button>
       </li>
 
-      <li class="main-btn-list__item">
-        <button class="main-btn-list__item-btn" id="settigns-btn active" type="button">&#xe90b;</button>
+      <li class="controls-list__item">
+        <button class="controls-list__item-btn" id="settigns-btn active" type="button">&#xe90b;</button>
       </li>
 
-      <li class="main-btn-list__item">
-        <button class="main-btn-list__item-btn" id="logout-btn" type="button">&#xe908;</button>
+      <li class="controls-list__item">
+        <button class="controls-list__item-btn" id="logout-btn" type="button">&#xe908;</button>
       </li>
     </ul>
   </aside>`;

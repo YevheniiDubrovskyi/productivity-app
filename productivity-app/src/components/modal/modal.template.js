@@ -7,36 +7,63 @@ export default class Template {
 
   /**
    * Create component template
-   * @param {boolean} dataFlag - Data existence flag
    * @param {object} dataObject - Data object
    */
-  constructor(dataFlag, dataObject) {
+  constructor(dataObject) {
     this.markup = document.createElement('div');
     this.markup.classList.add('modal-wrapper');
-    this.markup.innerHTML = '\n<aside class="modal">\n' +
-                            this.createHeading(dataFlag) +
-                            this.createInputWithLabel(dataObject.title) +
-                            this.createInputWithLabel(dataObject.description) +
-                            this.createRadioGroup(dataObject.categories) +
-                            this.createInputWithLabel(dataObject.deadline) +
-                            this.createEstimationRadioGroup(5) +
-                            this.createRadioGroup(dataObject.priority) +
-                            '</aside>\n';
+    this.markup.innerHTML = this.createModalMarkup(dataObject);
+    // this.markup.innerHTML = '\n<aside class="modal">\n' +
+    //                         this.createHeading(dataFlag) +
+    //                         this.createInputWithLabel(dataObject.title) +
+    //                         this.createInputWithLabel(dataObject.description) +
+    //                         this.createRadioGroup(dataObject.categories) +
+    //                         this.createInputWithLabel(dataObject.deadline) +
+    //                         this.createEstimationRadioGroup(5) +
+    //                         this.createRadioGroup(dataObject.priority) +
+    //                         '</aside>\n';
   }
 
   // TODO: сделать возможным вызов модалки подтверждения (если сначала была отрисована обычная учитывать это display: none)
 
-  createAddEditMarkup(dataFlag, dataObject) {
-    return
+  /**
+   * Return modal markup depends on modal type
+   * @param {object} dataObject - Data object
+   */
+  createModalMarkup(dataObject) {
+    const types = {
+      add(data) {
+        return [`<aside class="modal modal-add-edit">`,
+                this.createHeading('Add'),
+                // this.
+                `</aside>`].join('\n');
+      },
+
+      edit(data) {
+        return
+      },
+
+      remove(data) {
+        return
+      }
+    };
+
+    return types[dataObject.type](dataObject.data);
   }
 
   /**
+   * Hide current inner markup and show confirmation markup
+   * @param text
+   */
+  switchToRemove(text) {}
+
+  /**
    * Create heading
-   * @param {object} dataFlag - Data object
+   * @param {string} heading - Data object
    * @return {string} Heading markup
    */
-  createHeading(dataFlag) {
-    return `<h2 class="modal-heading">${dataFlag ? 'Edit' : 'Add'} Task</h2>\n`;
+  createHeading(heading) {
+    return `<h2 class="modal-heading">${heading} Task</h2>\n`;
   }
 
   /**
@@ -47,7 +74,7 @@ export default class Template {
     const name = dataProperty.name;
 
     return [`<label for="modal-add-edit-task__${name}" class="modal-lbl">${utils.capitalize(name)}</label>`,
-            `<input type="${dataProperty.type}" class="modal-inpt" id="modal-add-edit-task__${name} placeholder="Add ${name} here">\n`].join('\n');
+            `<input type="${dataProperty.type}" class="modal-inpt" id="modal-add-edit-task__${name} placeholder="Add ${name} here" value="${dataProperty.value}">\n`].join('\n');
   }
 
   /**

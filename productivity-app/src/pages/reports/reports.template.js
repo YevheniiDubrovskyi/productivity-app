@@ -14,25 +14,27 @@ export default class Template extends PageTemplate {
   }
 
   createMain() {
-    return [`<main class="main">`,
-            `<h1 class="main-heading">Report</h1>`,
+    return [`<main class="main main-reports">`,
+            `<header class="header">`,
+            `<h1 class="header-main">Report</h1>`,
+            `</header>`,
             `<a class="btn-arrow btn-arrow-left" href="#" title="Go somewhere">&#xe902;</a>`,
             `</main>\n`].join('\n');
   }
 
   createAside() {
     return `  <aside class="aside">
-    <ul class="main-btn-list">
-      <li class="main-btn-list__item">
-        <button class="main-btn-list__item-btn" id="statistics-btn" type="button">&#xe90c;</button>
+    <ul class="controls-list">
+      <li class="controls-list__item">
+        <button class="controls-list__item-btn" id="statistics-btn" type="button">&#xe90c;</button>
       </li>
 
-      <li class="main-btn-list__item">
-        <button class="main-btn-list__item-btn" id="settigns-btn" type="button">&#xe90b;</button>
+      <li class="controls-list__item">
+        <button class="controls-list__item-btn" id="settigns-btn" type="button">&#xe90b;</button>
       </li>
 
-      <li class="main-btn-list__item">
-        <button class="main-btn-list__item-btn" id="logout-btn" type="button">&#xe908;</button>
+      <li class="controls-list__item">
+        <button class="controls-list__item-btn" id="logout-btn" type="button">&#xe908;</button>
       </li>
     </ul>
   </aside>`;

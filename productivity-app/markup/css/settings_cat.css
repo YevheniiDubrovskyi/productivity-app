@@ -16,12 +16,7 @@ body {
 }
 
 .common-state .aside {
-  position: absolute;
-  top: auto;
-  right: auto;
-  left: -9999px;
-
-  overflow: hidden;
+  display: none;
 }
 
 .settings-tabs {
@@ -35,24 +30,19 @@ body {
 .header-main {
   font-size: 1.75rem;
   font-weight: 700;
-
   letter-spacing: .02em;
 }
 
 .header-sub {
   font-size: 1.25rem;
   font-weight: 300;
-
   margin: 1.25em 0 0 0;
-
   letter-spacing: .03em;
-
   color: #8da5b8;
 }
 
 .radio-btn-list {
   font-size: 1rem;
-
   width: 18.11em;
   margin: 4.79em auto 6.1em auto;
 }
@@ -67,7 +57,6 @@ body {
 
 .radio-btn-list__item-lbl {
   position: relative;
-
   display: block;
 }
 
@@ -77,27 +66,18 @@ body {
   left: 0;
   width: 18px;
   height: 18px;
-
   content: '';
-  -webkit-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-
-  background: url(../img/label_sprite.png) no-repeat;
+  transform: translate(0, -50%);
+  background: url(../../assets/img/label_sprite.png) no-repeat;
 }
 
 .radio-btn-list__item-lbl-span {
   display: block;
-
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 85%;
   margin: 0 0 0 auto;
   padding: 0 0 .55em 0;
-
-  -webkit-transition: .1s ease-in-out;
-          transition: .1s ease-in-out;
-
+  transition: .1s ease-in-out;
   color: #829aac;
   border-bottom: 1px solid #3f5566;
 }

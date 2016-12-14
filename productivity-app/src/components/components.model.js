@@ -7,7 +7,7 @@ export default class ComponentModel {
 
   /**
    * Create component model
-   * @param {} data - Any data
+   * @param {*} data - Any data
    */
   constructor(data) {
     this.dataCollection = []; // For collection components

@@ -2,6 +2,8 @@ import ComponentView from '../components.view';
 import Template from './modal.template';
 // import './modal.less';
 
+import Button from '../../components/button/button.controller';
+
 /**
  * Component view
  */
@@ -19,8 +21,9 @@ export default class View extends ComponentView {
    * Render component
    * @param {object} [dataObject] - Data object
    */
-  render(dataFlag, dataObject) {
-    this.template = new Template(dataFlag, dataObject);
+  render(dataObject) {
+    this.type = dataObject.type;
+    this.template = new Template(dataObject);
 
     this.container.appendChild(this.markup);
     this.container.classList.add('modal-opened');
@@ -37,12 +40,15 @@ export default class View extends ComponentView {
   }
 
   /**
+   * Hide current inner markup and show confirmation markup
+   */
+  switchToRemove() {}
+
+  /**
    * Create DOM handlers which will be attach when render will be fire
    */
   createDOMHandlers() {
     const rootClickHandler = (event) => {
-      event.stopPropagation();
-
       const target = event.target;
       // TODO: написать обработчик нажатия на кнопки и на фон, и пожымать события :remove, :submit, :cancel
       if (target.classList.contains('modal-wrapper')) {
@@ -52,6 +58,7 @@ export default class View extends ComponentView {
       if (target.tagName !== 'BUTTON') {
         return;
       }
+      event.stopPropagation();
 
       const className = target.className.match(/.*modal-btn-(.+)\s?/);
       // TODO: дописать выборку части имени класса и выкидывать ивент view:${className}

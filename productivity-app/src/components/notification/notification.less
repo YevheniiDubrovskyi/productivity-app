@@ -1,0 +1,45 @@
+.notification {
+  font-size: .9375rem;
+  line-height: 3.4em;
+  position: relative;
+  z-index: 999;
+  display: flex;
+  box-sizing: border-box;
+  width: 30em;
+  height: 3.4em;
+  padding: 0 0 0 5.3em;
+  color: @fontColor__primary;
+  border: 1px solid #fff;
+  border-radius: .3em;
+
+  &::after {
+    font-family: 'icomoon';
+    font-size: 2.3em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 0 .45em;
+  }
+
+  &-text {
+    font-size: 1.05em;
+    font-weight: 700;
+    height: 100%;
+  }
+
+  &-btn-close {
+    font-family: 'icomoon';
+    font-size: 1.6em;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0 .65em;
+  }
+
+  .addNotificationType(success, #1ca991, '\e913', #49baa7); // TODO: rewrite mixin with lighten()
+  .addNotificationType(error, #d8584d, '\e914', #e07971);
+  .addNotificationType(warning, #df9843, '\e915', #e5ad69);
+  .addNotificationType(message-info, #529bcd, '\e916', #75afd7);
+}
