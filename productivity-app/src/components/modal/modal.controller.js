@@ -25,7 +25,7 @@ export default class Modal extends ComponentController {
     });
 
     this.view.events.on('view:remove_submit', function() {
-      this.events.trigger('modal:remove_submit');
+      this.events.trigger('modal:remove');
     }, this);
 
     this.view.events.on('view:cancel', function() {

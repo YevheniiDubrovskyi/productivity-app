@@ -1,4 +1,5 @@
 import EventBus from '../utils/eventbus';
+import utils from '../utils/utils';
 
 const localStorageService = {
   events: new EventBus(),
@@ -51,8 +52,8 @@ const localStorageService = {
    * @param  {string} email
    * @param  {string} password
    */
-  signIn(email, password) {
-    this.setItem('session', {email, password});
+  signIn(email, password, uid = utils.getID()) {
+    this.setItem('session', {email, password, uid});
   },
 
   /**

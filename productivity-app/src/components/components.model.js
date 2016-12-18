@@ -1,4 +1,5 @@
 import EventBus from '../utils/eventbus';
+import dataService from '../services/data.service';
 
 /**
  * Abstract class for component model

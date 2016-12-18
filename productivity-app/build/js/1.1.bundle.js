@@ -1,65 +1,67 @@
-webpackJsonp([1],Array(40).concat([
-/* 40 */
+webpackJsonp([1],Array(38).concat([
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./assets/fonts/icomoon/fonts/icomoon.svg": 42,
-		"./assets/img/Logo.svg": 46,
-		"./assets/img/Logo_1.svg": 47,
-		"./assets/img/label_sprite.png": 48,
-		"./assets/img/login_bg.jpg": 49,
-		"./assets/img/tomato-failed.svg": 50,
-		"./assets/img/tomato.svg": 51,
-		"./assets/img/tomato_fill.svg": 52,
-		"./assets/less/app.less": 53,
-		"./assets/less/base.less": 57,
-		"./assets/less/common.less": 59,
-		"./assets/less/mixins.less": 61,
-		"./assets/less/reset.less": 63,
-		"./assets/less/variables.less": 65,
-		"./components/button/button.controller": 67,
-		"./components/button/button.controller.js": 67,
-		"./components/button/button.less": 74,
-		"./components/button/button.model": 69,
-		"./components/button/button.model.js": 69,
-		"./components/button/button.template": 73,
-		"./components/button/button.template.js": 73,
-		"./components/button/button.view": 71,
-		"./components/button/button.view.js": 71,
-		"./components/button_arrow/button_arrow.less": 76,
-		"./components/category_input/category_input.controller": 78,
-		"./components/category_input/category_input.controller.js": 78,
-		"./components/category_input/category_input.less": 79,
-		"./components/category_input/category_input.model": 81,
-		"./components/category_input/category_input.model.js": 81,
-		"./components/category_input/category_input.template": 82,
-		"./components/category_input/category_input.template.js": 82,
-		"./components/category_input/category_input.view": 83,
-		"./components/category_input/category_input.view.js": 83,
-		"./components/chart_viewport/chart_viewport.controller": 84,
-		"./components/chart_viewport/chart_viewport.controller.js": 84,
-		"./components/chart_viewport/chart_viewport.less": 93,
-		"./components/chart_viewport/chart_viewport.model": 92,
-		"./components/chart_viewport/chart_viewport.model.js": 92,
-		"./components/chart_viewport/chart_viewport.template": 86,
-		"./components/chart_viewport/chart_viewport.template.js": 86,
-		"./components/chart_viewport/chart_viewport.view": 85,
-		"./components/chart_viewport/chart_viewport.view.js": 85,
-		"./components/components.controller": 68,
-		"./components/components.controller.js": 68,
-		"./components/components.model": 70,
-		"./components/components.model.js": 70,
-		"./components/components.view": 72,
-		"./components/components.view.js": 72,
-		"./components/controls/controls.controller": 95,
-		"./components/controls/controls.controller.js": 95,
+		"./assets/fonts/icomoon/fonts/icomoon.svg": 40,
+		"./assets/img/Logo.svg": 44,
+		"./assets/img/Logo_1.svg": 45,
+		"./assets/img/label_sprite.png": 46,
+		"./assets/img/login_bg.jpg": 47,
+		"./assets/img/tomato-failed.svg": 48,
+		"./assets/img/tomato.svg": 49,
+		"./assets/img/tomato_fill.svg": 50,
+		"./assets/less/app.less": 51,
+		"./assets/less/base.less": 55,
+		"./assets/less/common.less": 57,
+		"./assets/less/mixins.less": 59,
+		"./assets/less/reset.less": 61,
+		"./assets/less/variables.less": 63,
+		"./components/button/button.controller": 65,
+		"./components/button/button.controller.js": 65,
+		"./components/button/button.less": 73,
+		"./components/button/button.model": 67,
+		"./components/button/button.model.js": 67,
+		"./components/button/button.template": 72,
+		"./components/button/button.template.js": 72,
+		"./components/button/button.view": 70,
+		"./components/button/button.view.js": 70,
+		"./components/button_arrow/button_arrow.less": 75,
+		"./components/category_input/category_input.controller": 77,
+		"./components/category_input/category_input.controller.js": 77,
+		"./components/category_input/category_input.less": 78,
+		"./components/category_input/category_input.model": 80,
+		"./components/category_input/category_input.model.js": 80,
+		"./components/category_input/category_input.template": 81,
+		"./components/category_input/category_input.template.js": 81,
+		"./components/category_input/category_input.view": 82,
+		"./components/category_input/category_input.view.js": 82,
+		"./components/chart_viewport/chart_viewport.controller": 83,
+		"./components/chart_viewport/chart_viewport.controller.js": 83,
+		"./components/chart_viewport/chart_viewport.less": 92,
+		"./components/chart_viewport/chart_viewport.model": 91,
+		"./components/chart_viewport/chart_viewport.model.js": 91,
+		"./components/chart_viewport/chart_viewport.template": 85,
+		"./components/chart_viewport/chart_viewport.template.js": 85,
+		"./components/chart_viewport/chart_viewport.view": 84,
+		"./components/chart_viewport/chart_viewport.view.js": 84,
+		"./components/components.controller": 66,
+		"./components/components.controller.js": 66,
+		"./components/components.model": 68,
+		"./components/components.model.js": 68,
+		"./components/components.view": 71,
+		"./components/components.view.js": 71,
+		"./components/controls/controls.controller": 94,
+		"./components/controls/controls.controller.js": 94,
+		"./components/controls/controls.data": 98,
+		"./components/controls/controls.data.js": 98,
 		"./components/controls/controls.less": 99,
-		"./components/controls/controls.model": 96,
-		"./components/controls/controls.model.js": 96,
-		"./components/controls/controls.template": 98,
-		"./components/controls/controls.template.js": 98,
-		"./components/controls/controls.view": 97,
-		"./components/controls/controls.view.js": 97,
+		"./components/controls/controls.model": 95,
+		"./components/controls/controls.model.js": 95,
+		"./components/controls/controls.template": 97,
+		"./components/controls/controls.template.js": 97,
+		"./components/controls/controls.view": 96,
+		"./components/controls/controls.view.js": 96,
 		"./components/cycle/cycle.controller": 101,
 		"./components/cycle/cycle.controller.js": 101,
 		"./components/cycle/cycle.less": 113,
@@ -99,15 +101,15 @@ webpackJsonp([1],Array(40).concat([
 		"./components/modal/modal.view": 120,
 		"./components/modal/modal.view.js": 120,
 		"./components/notification/notification.less": 126,
-		"./components/tabs/tabs.controller": 87,
-		"./components/tabs/tabs.controller.js": 87,
+		"./components/tabs/tabs.controller": 86,
+		"./components/tabs/tabs.controller.js": 86,
 		"./components/tabs/tabs.less": 128,
-		"./components/tabs/tabs.model": 88,
-		"./components/tabs/tabs.model.js": 88,
-		"./components/tabs/tabs.template": 90,
-		"./components/tabs/tabs.template.js": 90,
-		"./components/tabs/tabs.view": 89,
-		"./components/tabs/tabs.view.js": 89,
+		"./components/tabs/tabs.model": 87,
+		"./components/tabs/tabs.model.js": 87,
+		"./components/tabs/tabs.template": 89,
+		"./components/tabs/tabs.template.js": 89,
+		"./components/tabs/tabs.view": 88,
+		"./components/tabs/tabs.view.js": 88,
 		"./components/task/task.controller": 130,
 		"./components/task/task.controller.js": 130,
 		"./components/task/task.less": 134,
@@ -178,14 +180,16 @@ webpackJsonp([1],Array(40).concat([
 		"./pages/timer/timer.view.js": 173,
 		"./router": 24,
 		"./router.js": 24,
-		"./services/data.service": 177,
-		"./services/data.service.js": 177,
+		"./services/data.service": 69,
+		"./services/data.service.js": 69,
 		"./services/firebase.service": 28,
 		"./services/firebase.service.js": 28,
 		"./services/localstorage.service": 35,
 		"./services/localstorage.service.js": 35,
 		"./services/login.service": 27,
 		"./services/login.service.js": 27,
+		"./services/notification.service": 37,
+		"./services/notification.service.js": 37,
 		"./services/ping.service": 36,
 		"./services/ping.service.js": 36,
 		"./utils/eventbus": 25,
@@ -204,47 +208,47 @@ webpackJsonp([1],Array(40).concat([
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 40;
+	webpackContext.id = 38;
 
 
 /***/ },
-/* 41 */,
-/* 42 */
+/* 39 */,
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "../img/icomoon.svg";
 
 /***/ },
+/* 41 */,
+/* 42 */,
 /* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "../img/Logo.svg";
 
 /***/ },
-/* 47 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "../img/Logo_1.svg";
 
 /***/ },
-/* 48 */,
-/* 49 */,
-/* 50 */
+/* 46 */,
+/* 47 */,
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "../img/tomato-failed.svg";
 
 /***/ },
+/* 49 */,
+/* 50 */,
 /* 51 */,
 /* 52 */,
 /* 53 */,
 /* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
@@ -253,7 +257,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./base.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -270,8 +274,8 @@ webpackJsonp([1],Array(40).concat([
 	}
 
 /***/ },
-/* 58 */,
-/* 59 */
+/* 56 */,
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
@@ -280,7 +284,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./common.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -297,17 +301,17 @@ webpackJsonp([1],Array(40).concat([
 	}
 
 /***/ },
-/* 60 */,
-/* 61 */
+/* 58 */,
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(62);
+	var content = __webpack_require__(60);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -324,10 +328,10 @@ webpackJsonp([1],Array(40).concat([
 	}
 
 /***/ },
-/* 62 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(55)();
+	exports = module.exports = __webpack_require__(53)();
 	// imports
 	
 	
@@ -338,16 +342,16 @@ webpackJsonp([1],Array(40).concat([
 
 
 /***/ },
-/* 63 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(64);
+	var content = __webpack_require__(62);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -364,10 +368,10 @@ webpackJsonp([1],Array(40).concat([
 	}
 
 /***/ },
-/* 64 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(55)();
+	exports = module.exports = __webpack_require__(53)();
 	// imports
 	
 	
@@ -378,16 +382,16 @@ webpackJsonp([1],Array(40).concat([
 
 
 /***/ },
-/* 65 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(66);
+	var content = __webpack_require__(64);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -404,10 +408,10 @@ webpackJsonp([1],Array(40).concat([
 	}
 
 /***/ },
-/* 66 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(55)();
+	exports = module.exports = __webpack_require__(53)();
 	// imports
 	
 	
@@ -418,7 +422,7 @@ webpackJsonp([1],Array(40).concat([
 
 
 /***/ },
-/* 67 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -427,15 +431,15 @@ webpackJsonp([1],Array(40).concat([
 	  value: true
 	});
 	
-	var _components = __webpack_require__(68);
+	var _components = __webpack_require__(66);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _button = __webpack_require__(69);
+	var _button = __webpack_require__(67);
 	
 	var _button2 = _interopRequireDefault(_button);
 	
-	var _button3 = __webpack_require__(71);
+	var _button3 = __webpack_require__(70);
 	
 	var _button4 = _interopRequireDefault(_button3);
 	
@@ -483,7 +487,7 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = Button;
 
 /***/ },
-/* 68 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -573,7 +577,7 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = ComponentController;
 
 /***/ },
-/* 69 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -584,7 +588,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _components = __webpack_require__(70);
+	var _components = __webpack_require__(68);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -635,7 +639,7 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = Model;
 
 /***/ },
-/* 70 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -649,6 +653,10 @@ webpackJsonp([1],Array(40).concat([
 	var _eventbus = __webpack_require__(25);
 	
 	var _eventbus2 = _interopRequireDefault(_eventbus);
+	
+	var _data = __webpack_require__(69);
+	
+	var _data2 = _interopRequireDefault(_data);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -730,7 +738,103 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = ComponentModel;
 
 /***/ },
-/* 71 */
+/* 69 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _eventbus = __webpack_require__(25);
+	
+	var _eventbus2 = _interopRequireDefault(_eventbus);
+	
+	var _firebaseService = __webpack_require__(28);
+	
+	var _firebaseService2 = _interopRequireDefault(_firebaseService);
+	
+	var _localstorageService = __webpack_require__(35);
+	
+	var _localstorageService2 = _interopRequireDefault(_localstorageService);
+	
+	var _ping = __webpack_require__(36);
+	
+	var _ping2 = _interopRequireDefault(_ping);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// TODO: Переделать так чтобы при выходе из офлайна данные синхронились с firebase
+	
+	var dataService = {
+	  events: new _eventbus2.default(),
+	
+	  /**
+	   * Get data from firebase and copy to localStorage
+	   * then fire event. If offline mode on, data copies only from storage.
+	   * @param {string} modelName
+	   * @return {EventBus} dataService event bus
+	   */
+	  getData: function getData(modelName) {
+	    var _this = this;
+	
+	    var UID = _localstorageService2.default.getItem('session').uid;
+	
+	    if (_ping2.default.hasConnection()) {
+	      _firebaseService2.default.getItem(modelName + '/' + UID).then(function (data) {
+	        _localstorageService2.default.events.once(modelName + ':changed', function (data) {
+	          this.events.trigger(modelName + ':changed', data);
+	        }, _this);
+	        _localstorageService2.default.setItem(modelName, data);
+	      });
+	    } else {
+	      this.events.trigger(modelName + ':changed', _localstorageService2.default.getItem(modelName));
+	    }
+	
+	    return this.events;
+	  },
+	
+	
+	  /**
+	   * Set data to firebase and localstorage
+	   * @param {string} modelName
+	   * @param {object} data
+	   */
+	  setData: function setData(modelName, data) {
+	    var UID = _localstorageService2.default.getItem('session').uid;
+	
+	    if (_ping2.default.hasConnection()) {
+	      _firebaseService2.default.setItem(modelName + '/' + UID, data).then(function () {
+	        _localstorageService2.default.setItem(modelName, data);
+	      });
+	    } else {
+	      _localstorageService2.default.setItem(modelName, data);
+	    }
+	  },
+	
+	
+	  /**
+	   * Subscribe on firebase data change
+	   * @param {string} modelName
+	   * @return {EventBus} dataService event bus
+	   */
+	  subscribe: function subscribe(modelName) {
+	    var UID = _localstorageService2.default.getItem('session').uid;
+	
+	    _firebaseService2.default.subscribe(modelName + '/' + UID).on(modelName + '/' + UID + ':dataReceived', function (data) {
+	      _localstorageService2.default.setItem(modelName, data);
+	      this.events.trigger(modelName + ':dataReceived', data);
+	    }, this);
+	
+	    return this.events;
+	  }
+	};
+	
+	exports.default = dataService;
+
+/***/ },
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -743,11 +847,11 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _components = __webpack_require__(72);
+	var _components = __webpack_require__(71);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _button = __webpack_require__(73);
+	var _button = __webpack_require__(72);
 	
 	var _button2 = _interopRequireDefault(_button);
 	
@@ -836,7 +940,7 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = View;
 
 /***/ },
-/* 72 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1035,7 +1139,7 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = ComponentView;
 
 /***/ },
-/* 73 */
+/* 72 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1067,7 +1171,7 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = Template;
 
 /***/ },
-/* 74 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
@@ -1076,7 +1180,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./button.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1093,8 +1197,8 @@ webpackJsonp([1],Array(40).concat([
 	}
 
 /***/ },
-/* 75 */,
-/* 76 */
+/* 74 */,
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
@@ -1103,7 +1207,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./button_arrow.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1120,23 +1224,23 @@ webpackJsonp([1],Array(40).concat([
 	}
 
 /***/ },
-/* 77 */,
-/* 78 */
+/* 76 */,
+/* 77 */
 /***/ function(module, exports) {
 
 	"use strict";
 
 /***/ },
-/* 79 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(80);
+	var content = __webpack_require__(79);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1153,10 +1257,10 @@ webpackJsonp([1],Array(40).concat([
 	}
 
 /***/ },
-/* 80 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(55)();
+	exports = module.exports = __webpack_require__(53)();
 	// imports
 	
 	
@@ -1165,6 +1269,12 @@ webpackJsonp([1],Array(40).concat([
 	
 	// exports
 
+
+/***/ },
+/* 80 */
+/***/ function(module, exports) {
+
+	"use strict";
 
 /***/ },
 /* 81 */
@@ -1180,12 +1290,6 @@ webpackJsonp([1],Array(40).concat([
 
 /***/ },
 /* 83 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-/***/ },
-/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1194,15 +1298,15 @@ webpackJsonp([1],Array(40).concat([
 	  value: true
 	});
 	
-	var _components = __webpack_require__(68);
+	var _components = __webpack_require__(66);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _chart_viewport = __webpack_require__(85);
+	var _chart_viewport = __webpack_require__(84);
 	
 	var _chart_viewport2 = _interopRequireDefault(_chart_viewport);
 	
-	var _chart_viewport3 = __webpack_require__(92);
+	var _chart_viewport3 = __webpack_require__(91);
 	
 	var _chart_viewport4 = _interopRequireDefault(_chart_viewport3);
 	
@@ -1251,7 +1355,7 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = ChartViewport;
 
 /***/ },
-/* 85 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1264,19 +1368,19 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _components = __webpack_require__(72);
+	var _components = __webpack_require__(71);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _chart_viewport = __webpack_require__(86);
+	var _chart_viewport = __webpack_require__(85);
 	
 	var _chart_viewport2 = _interopRequireDefault(_chart_viewport);
 	
-	var _tabs = __webpack_require__(87);
+	var _tabs = __webpack_require__(86);
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
-	var _highstock = __webpack_require__(91);
+	var _highstock = __webpack_require__(90);
 	
 	var _highstock2 = _interopRequireDefault(_highstock);
 	
@@ -1370,7 +1474,7 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = View;
 
 /***/ },
-/* 86 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1424,7 +1528,7 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = Template;
 
 /***/ },
-/* 87 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1433,15 +1537,15 @@ webpackJsonp([1],Array(40).concat([
 	  value: true
 	});
 	
-	var _components = __webpack_require__(68);
+	var _components = __webpack_require__(66);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _tabs = __webpack_require__(88);
+	var _tabs = __webpack_require__(87);
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
-	var _tabs3 = __webpack_require__(89);
+	var _tabs3 = __webpack_require__(88);
 	
 	var _tabs4 = _interopRequireDefault(_tabs3);
 	
@@ -1496,7 +1600,7 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = Tabs;
 
 /***/ },
-/* 88 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1507,7 +1611,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _components = __webpack_require__(70);
+	var _components = __webpack_require__(68);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -1583,7 +1687,7 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = Model;
 
 /***/ },
-/* 89 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1596,11 +1700,11 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _components = __webpack_require__(72);
+	var _components = __webpack_require__(71);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _tabs = __webpack_require__(90);
+	var _tabs = __webpack_require__(89);
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
@@ -1745,7 +1849,7 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = View;
 
 /***/ },
-/* 90 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1803,7 +1907,7 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = Template;
 
 /***/ },
-/* 91 */
+/* 90 */
 /***/ function(module, exports) {
 
 	/*
@@ -2305,7 +2409,7 @@ webpackJsonp([1],Array(40).concat([
 
 
 /***/ },
-/* 92 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2316,7 +2420,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _components = __webpack_require__(70);
+	var _components = __webpack_require__(68);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -2441,16 +2545,16 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = Model;
 
 /***/ },
-/* 93 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(94);
+	var content = __webpack_require__(93);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -2467,10 +2571,10 @@ webpackJsonp([1],Array(40).concat([
 	}
 
 /***/ },
-/* 94 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(55)();
+	exports = module.exports = __webpack_require__(53)();
 	// imports
 	
 	
@@ -2481,7 +2585,7 @@ webpackJsonp([1],Array(40).concat([
 
 
 /***/ },
-/* 95 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2492,15 +2596,15 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _components = __webpack_require__(68);
+	var _components = __webpack_require__(66);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _controls = __webpack_require__(96);
+	var _controls = __webpack_require__(95);
 	
 	var _controls2 = _interopRequireDefault(_controls);
 	
-	var _controls3 = __webpack_require__(97);
+	var _controls3 = __webpack_require__(96);
 	
 	var _controls4 = _interopRequireDefault(_controls3);
 	
@@ -2547,7 +2651,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	    _this.model.events.on('model:visible_changed', function (data) {
 	      this.view.update(data);
-	    });
+	    }, _this);
 	    return _this;
 	  }
 	
@@ -2593,7 +2697,7 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = Controls;
 
 /***/ },
-/* 96 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2604,7 +2708,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _components = __webpack_require__(70);
+	var _components = __webpack_require__(68);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -2651,12 +2755,12 @@ webpackJsonp([1],Array(40).concat([
 	    key: 'getData',
 	    value: function getData() {
 	      return this.dataStatic.filter(function (element) {
-	        return element.visible;
+	        return element.visible !== false;
 	      }).map(function (element) {
 	        return {
 	          alias: element.alias,
 	          icon: element.icon,
-	          active: element.active
+	          active: !!element.active
 	        };
 	      });
 	    }
@@ -2736,7 +2840,7 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = Model;
 
 /***/ },
-/* 97 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2749,11 +2853,11 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _components = __webpack_require__(72);
+	var _components = __webpack_require__(71);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _controls = __webpack_require__(98);
+	var _controls = __webpack_require__(97);
 	
 	var _controls2 = _interopRequireDefault(_controls);
 	
@@ -2863,7 +2967,7 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = View;
 
 /***/ },
-/* 98 */
+/* 97 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2927,6 +3031,31 @@ webpackJsonp([1],Array(40).concat([
 	exports.default = Template;
 
 /***/ },
+/* 98 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var defaultControlsData = [{
+	  alias: 'reports',
+	  icon: '&#xe90c;',
+	  type: 'common'
+	}, {
+	  alias: 'settings',
+	  icon: '&#xe90b;',
+	  type: 'common'
+	}, {
+	  alias: 'signout',
+	  icon: '&#xe908;',
+	  type: 'common'
+	}];
+	
+	exports.defaultControlsData = defaultControlsData;
+
+/***/ },
 /* 99 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -2936,7 +3065,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./controls.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -2963,7 +3092,7 @@ webpackJsonp([1],Array(40).concat([
 	  value: true
 	});
 	
-	var _components = __webpack_require__(68);
+	var _components = __webpack_require__(66);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -3037,7 +3166,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _components = __webpack_require__(72);
+	var _components = __webpack_require__(71);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -3192,7 +3321,7 @@ webpackJsonp([1],Array(40).concat([
 	  value: true
 	});
 	
-	var _components = __webpack_require__(68);
+	var _components = __webpack_require__(66);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -3263,7 +3392,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _components = __webpack_require__(72);
+	var _components = __webpack_require__(71);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -3474,7 +3603,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _components = __webpack_require__(70);
+	var _components = __webpack_require__(68);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -3559,7 +3688,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _components = __webpack_require__(68);
+	var _components = __webpack_require__(66);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -3637,7 +3766,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _components = __webpack_require__(72);
+	var _components = __webpack_require__(71);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -3857,7 +3986,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _components = __webpack_require__(70);
+	var _components = __webpack_require__(68);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -4010,7 +4139,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _components = __webpack_require__(70);
+	var _components = __webpack_require__(68);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -4123,7 +4252,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./cycle.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -4150,7 +4279,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(116);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -4170,7 +4299,7 @@ webpackJsonp([1],Array(40).concat([
 /* 116 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(55)();
+	exports = module.exports = __webpack_require__(53)();
 	// imports
 	
 	
@@ -4190,7 +4319,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(118);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -4210,7 +4339,7 @@ webpackJsonp([1],Array(40).concat([
 /* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(55)();
+	exports = module.exports = __webpack_require__(53)();
 	// imports
 	
 	
@@ -4232,7 +4361,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _components = __webpack_require__(68);
+	var _components = __webpack_require__(66);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -4280,7 +4409,7 @@ webpackJsonp([1],Array(40).concat([
 	    });
 	
 	    _this.view.events.on('view:remove_submit', function () {
-	      this.events.trigger('modal:remove_submit');
+	      this.events.trigger('modal:remove');
 	    }, _this);
 	
 	    _this.view.events.on('view:cancel', function () {
@@ -4325,7 +4454,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _components = __webpack_require__(72);
+	var _components = __webpack_require__(71);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -4333,7 +4462,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _modal2 = _interopRequireDefault(_modal);
 	
-	var _button = __webpack_require__(67);
+	var _button = __webpack_require__(65);
 	
 	var _button2 = _interopRequireDefault(_button);
 	
@@ -4410,6 +4539,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	      var rootClickHandler = function rootClickHandler(event) {
 	        var target = event.target;
+	        // TODO: разделить обработчики нажатия на фон и на кнопки
 	        // TODO: написать обработчик нажатия на кнопки и на фон, и пожымать события :remove, :submit, :cancel
 	        if (target.classList.contains('modal-wrapper')) {
 	          _this2.events.trigger('view:cancel');
@@ -4617,9 +4747,13 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _components = __webpack_require__(70);
+	var _components = __webpack_require__(68);
 	
 	var _components2 = _interopRequireDefault(_components);
+	
+	var _data = __webpack_require__(69);
+	
+	var _data2 = _interopRequireDefault(_data);
 	
 	var _modal = __webpack_require__(123);
 	
@@ -4651,7 +4785,7 @@ webpackJsonp([1],Array(40).concat([
 	        description: _modal.initInputsData.description,
 	        categories: {
 	          name: 'category',
-	          value: _modal.initCaregoriesData
+	          value: _modal.initCategoriesData
 	        },
 	        deadline: _modal.initInputsData.deadline,
 	        estimation: 5,
@@ -4754,7 +4888,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./modal.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -4781,7 +4915,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./notification.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -4808,7 +4942,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./tabs.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -4835,7 +4969,7 @@ webpackJsonp([1],Array(40).concat([
 	  value: true
 	});
 	
-	var _components = __webpack_require__(68);
+	var _components = __webpack_require__(66);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -4897,7 +5031,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _components = __webpack_require__(72);
+	var _components = __webpack_require__(71);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -4993,7 +5127,7 @@ webpackJsonp([1],Array(40).concat([
 	  value: true
 	});
 	
-	var _components = __webpack_require__(70);
+	var _components = __webpack_require__(68);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -5036,7 +5170,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(135);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -5056,7 +5190,7 @@ webpackJsonp([1],Array(40).concat([
 /* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(55)();
+	exports = module.exports = __webpack_require__(53)();
 	// imports
 	
 	
@@ -5078,7 +5212,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _components = __webpack_require__(68);
+	var _components = __webpack_require__(66);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -5202,7 +5336,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _components = __webpack_require__(72);
+	var _components = __webpack_require__(71);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -5214,7 +5348,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _task2 = _interopRequireDefault(_task);
 	
-	var _tabs = __webpack_require__(87);
+	var _tabs = __webpack_require__(86);
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
@@ -5310,7 +5444,9 @@ webpackJsonp([1],Array(40).concat([
 	
 	  _createClass(Template, [{
 	    key: 'createMarkupSkeleton',
-	    value: function createMarkupSkeleton() {}
+	    value: function createMarkupSkeleton() {
+	      return 'Place for task list markup';
+	    }
 	  }]);
 	
 	  return Template;
@@ -5328,7 +5464,7 @@ webpackJsonp([1],Array(40).concat([
 	  value: true
 	});
 	
-	var _components = __webpack_require__(70);
+	var _components = __webpack_require__(68);
 	
 	var _components2 = _interopRequireDefault(_components);
 	
@@ -5370,7 +5506,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./task_list.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -5397,7 +5533,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(143);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -5417,7 +5553,7 @@ webpackJsonp([1],Array(40).concat([
 /* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(55)();
+	exports = module.exports = __webpack_require__(53)();
 	// imports
 	
 	
@@ -5581,7 +5717,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _login2 = _interopRequireDefault(_login);
 	
-	var _button = __webpack_require__(67);
+	var _button = __webpack_require__(65);
 	
 	var _button2 = _interopRequireDefault(_button);
 	
@@ -5833,7 +5969,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	__webpack_require__(47);
+	__webpack_require__(45);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -5917,7 +6053,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./login.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -6281,11 +6417,11 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _reports2 = _interopRequireDefault(_reports);
 	
-	var _chart_viewport = __webpack_require__(84);
+	var _chart_viewport = __webpack_require__(83);
 	
 	var _chart_viewport2 = _interopRequireDefault(_chart_viewport);
 	
-	var _tabs = __webpack_require__(87);
+	var _tabs = __webpack_require__(86);
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
@@ -6539,7 +6675,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(159);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -6559,7 +6695,7 @@ webpackJsonp([1],Array(40).concat([
 /* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(55)();
+	exports = module.exports = __webpack_require__(53)();
 	// imports
 	
 	
@@ -6651,7 +6787,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _cycle2 = _interopRequireDefault(_cycle);
 	
-	var _tabs = __webpack_require__(87);
+	var _tabs = __webpack_require__(86);
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
@@ -6873,7 +7009,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(165);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -6893,7 +7029,7 @@ webpackJsonp([1],Array(40).concat([
 /* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(55)();
+	exports = module.exports = __webpack_require__(53)();
 	// imports
 	
 	
@@ -6945,8 +7081,10 @@ webpackJsonp([1],Array(40).concat([
 	
 	    var _this = _possibleConstructorReturn(this, (Signout.__proto__ || Object.getPrototypeOf(Signout)).call(this));
 	
+	    _login2.default.events.once('signOut', function () {
+	      this.goToPage('');
+	    }, _this);
 	    _login2.default.signOut();
-	    _this.goToPage('');
 	    return _this;
 	  }
 	
@@ -7049,19 +7187,34 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _task_list2 = _interopRequireDefault(_task_list);
 	
+	var _utils = __webpack_require__(26);
+	
+	var _utils2 = _interopRequireDefault(_utils);
+	
+	var _controls = __webpack_require__(94);
+	
+	var _controls2 = _interopRequireDefault(_controls);
+	
+	var _controls3 = __webpack_require__(98);
+	
+	var _task_list3 = __webpack_require__(136);
+	
+	var _task_list4 = _interopRequireDefault(_task_list3);
+	
+	var _modal = __webpack_require__(119);
+	
+	var _modal2 = _interopRequireDefault(_modal);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
 	// import './task_list.less';
-	
-	// import Controls from '../../components/controls/controls.controller';
-	// import TaskList from '../../components/task_list/task_list.controller';
-	// import Modal from '../../components/modal/modal.controller';
 	
 	/**
 	 * Page view
@@ -7071,7 +7224,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	  /**
 	   * Create page view
-	   * @param {HTMLELement} viewport - Append to element
+	   * @param {HTMLElement} viewport - Append to element
 	   */
 	  function View(viewport) {
 	    _classCallCheck(this, View);
@@ -7091,7 +7244,7 @@ webpackJsonp([1],Array(40).concat([
 	    key: 'render',
 	    value: function render() {
 	      this.viewport.appendChild(this.markup);
-	      // this.createComponents();
+	      this.createComponents();
 	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'render', this).call(this);
 	    }
 	
@@ -7102,53 +7255,31 @@ webpackJsonp([1],Array(40).concat([
 	  }, {
 	    key: 'createComponents',
 	    value: function createComponents() {
-	      var headerControls = new Controls(this.markup.querySelector('.header'), {
+	      var headerControls = new (Function.prototype.bind.apply(_controls2.default, [null].concat([this.markup.querySelector('.header'), {
 	        alias: 'add',
 	        icon: '&#xe900;',
 	        type: 'common',
-	        active: false,
 	        visible: false
 	      }, {
 	        alias: 'remove',
 	        icon: '&#xe912;',
 	        type: 'counter',
-	        active: false,
 	        visible: false
-	      }, {
-	        alias: 'reports',
-	        icon: '&#xe90c;',
-	        type: 'common',
-	        active: false,
-	        visible: true
-	      }, {
-	        alias: 'settings',
-	        icon: '&#xe90b;',
-	        type: 'common',
-	        active: false,
-	        visible: true
-	      }, {
-	        alias: 'signout',
-	        icon: '&#xe908;',
-	        type: 'common',
-	        visible: true
-	      });
-	
+	      }], _toConsumableArray(_controls3.defaultControlsData))))();
 	      headerControls.events.on('controls:clicked', function (alias) {
 	        this.events.trigger('view:controls_clicked', alias);
 	      }, this);
 	      this.componentsList.push(headerControls);
 	
-	      var taskList = new TaskList(this.markup.querySelector('.main'));
-	
+	      var taskList = new _task_list4.default(this.markup.querySelector('.main'));
 	      taskList.events.on('taskList:edit_clicked', function (id, dataObject) {
 	        // TODO: change events for MODAL
-	        var modal = new Modal(this.viewport, dataObject);
+	        var modal = new _modal2.default(this.viewport, { type: 'edit', data: dataObject });
 	
 	        modal.events.on('modal:submit', function (updatedDataObject) {
 	          taskList.updateTask(id, updatedDataObject);
 	          modal.close();
 	        });
-	
 	        modal.events.on('modal:remove', function () {
 	          taskList.removeTask(id);
 	          modal.close();
@@ -7157,14 +7288,51 @@ webpackJsonp([1],Array(40).concat([
 	      taskList.events.on('taskList:timer_clicked', function (id) {
 	        this.goToPage('timer/' + id);
 	      }, this);
+	      this.componentsList.push(taskList);
 	
 	      headerControls.events.on('controls:clicked', function (alias) {
-	        if (alias !== 'remove') return;
+	        var _this2 = this;
 	
-	        taskList.toggleRemovingMode();
+	        if (alias === 'remove') taskList.toggleRemovingMode();
+	        if (alias === 'add') {
+	          (function () {
+	            var modal = new _modal2.default(_this2.viewport);
+	
+	            modal.events.on('modal:submit', function (dataObject) {
+	              taskList.addTask(dataObject);
+	              modal.close();
+	            });
+	          })();
+	        }
+	      }, this);
+	
+	      this.createDOMHandlers(taskList);
+	    }
+	
+	    /**
+	     * Create DOM handlers which will be attach when render will be fire
+	     * @param {ComponentController} taskList - taskList component
+	     */
+	
+	  }, {
+	    key: 'createDOMHandlers',
+	    value: function createDOMHandlers(taskList) {
+	      var _this3 = this;
+	
+	      var addButtonHandler = function addButtonHandler(event) {
+	        var modal = new _modal2.default(_this3.viewport);
+	
+	        modal.events.on('modal:submit', function (dataObject) {
+	          taskList.addTask(dataObject);
+	          modal.close();
+	        });
+	      };
+	
+	      this.domEventsList.push({
+	        element: this.markup.querySelector('.main-top-add-btn'),
+	        eventName: 'click',
+	        callback: addButtonHandler
 	      });
-	
-	      this.componentsList.push(taskList);
 	    }
 	  }]);
 	
@@ -7223,15 +7391,7 @@ webpackJsonp([1],Array(40).concat([
 	  _createClass(Template, [{
 	    key: 'staticTemplate',
 	    value: function staticTemplate() {
-	      // return [`<main class="main">`,
-	      //           `<header class="header">`,
-	      //             `<figure class="header-logo">`,
-	      //               `<img class="header-logo-image" src="img/Logo.svg" title="Logo" alt="Logo image">`,
-	      //             `</figure>`,
-	      //           `</header>`,
-	      //           `<button class="main-top-add-btn" type="button">Daily Task List</button>`,
-	      //         `</main>`].join('\n');
-	      return '  <main class="main">\n    <header class="header header-flex">\n      <figure class="header-logo">\n        <img class="header-logo-image" src="img/Logo.svg" title="Logo" alt="Logo image">\n      </figure>\n      <ul class="controls-list">\n        <li class="controls-list__item">\n          <button class="controls-list__item-btn" id="add-btn" type="button">&#xe900;</button>\n        </li>\n\n        <!-- Add .active here when .deleting-state is enabled -->\n        <li class="controls-list__item">\n          <button class="controls-list__item-btn" id="trash-btn" type="button">&#xe912;</button>\n        </li>\n\n        <li class="controls-list__item">\n          <button class="controls-list__item-btn" id="statistics-btn" type="button">&#xe90c;</button>\n        </li>\n\n        <li class="controls-list__item">\n          <button class="controls-list__item-btn" id="settigns-btn" type="button">&#xe90b;</button>\n        </li>\n\n        <li class="controls-list__item">\n          <button class="controls-list__item-btn" id="logout-btn" type="button">&#xe908;</button>\n        </li>\n      </ul>\n    </header>\n    <button class="main-top-add-btn">Daily Task List</button>\n\n    <!-- DAILY TASKS -->\n\n    <div class="tasks-block daily-tasks">\n\n      <div class="tabs-block">\n        <ul class="tabs-list sellecting-tabs">\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn" id="sellect-all-tab-today" type="button">Sellect All</button>\n          </li>\n\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn" id="desellect-all-tab-today" type="button">Desellect all</button>\n          </li>\n        </ul>\n\n        <ul class="tabs-list to-do-tabs">\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn active" id="to-do-tab" type="button">To Do</button>\n          </li>\n\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn" id="done-tab" type="button">Done</button>\n          </li>\n        </ul>\n      </div>\n\n      <ul class="task-list">\n        <!-- CATEGORIES: .hobby-category .work-category .education-category .sport-category .other-category -->\n        <!-- IMPORTANCE: .urgent-imp .hight-imp .middle-imp .low-imp -->\n        <!-- .moved-to-trash -->\n        <li class="task-list-item hobby-category urgent-imp moved-to-trash">\n          <div class="task-hidden-btns">\n            <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>\n            <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>\n          </div>\n\n          <time class="task-date" datetime="">\n            <span class="task-date-today">Today</span>\n          </time>\n\n          <section class="task-content">\n            <h3 class="task-content-heading">Lorem ipsum sit amet</h3>\n            <p class="task-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nobis ipsam sint maxime consectetur.</p>\n          </section>\n\n          <div class="task-main-btns">\n            <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>\n          </div>\n\n          <div class="task-pomidoro-count">\n            <span class="task-pomidoro-count__num">3</span>\n          </div>\n        </li>\n\n      </ul>\n    </div>\n\n    <!-- GLOBAL TASKS -->\n    <!-- .closed -->\n\n    <div class="tasks-block global-tasks">\n\n      <div class="tabs-block">\n        <button class="tabs-block-global-btn" type="button" id="#show-global">Global list</button>\n\n        <ul class="tabs-list to-do-tabs">\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn active" type="button">All</button>\n          </li>\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn" type="button">Urgent</button>\n          </li>\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn" type="button">Hight</button>\n          </li>\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn" type="button">Middle</button>\n          </li>\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn" type="button">Low</button>\n          </li>\n        </ul>\n\n        <ul class="tabs-list sellecting-tabs">\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn" id="sellect-all-tab" type="button">Sellect All</button>\n          </li>\n          <li class="tabs-list__item">\n            <button class="tabs-list__item-btn" id="desellect-all-tab" type="button">Desellect all</button>\n          </li>\n        </ul>\n      </div>\n\n      <!-- WORK CATEGORY -->\n\n      <section class="tasks-grp-by-category work-category">\n        <h2 class="tasks-grp-by-category__heading">Work</h2>\n\n        <ul class="task-list">\n          <!-- IMPORTANCE: .urgent-imp .hight-imp .middle-imp .low-imp -->\n          <!-- .moved-to-trash -->\n          <li class="task-list-item hight-imp done">\n            <div class="task-hidden-btns">\n              <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>\n              <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>\n            </div>\n\n            <time class="task-date" datetime="">\n              <span class="task-date-number">23</span>\n              <span class="task-date-month">May</span>\n            </time>\n\n            <section class="task-content">\n              <h3 class="task-content-heading">Lorem ipsum sit amet</h3>\n              <p class="task-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nobis ipsam sint maxime consectetur.</p>\n            </section>\n\n            <div class="task-main-btns">\n              <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>\n              <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>\n            </div>\n\n            <div class="task-pomidoro-count">\n              <span class="task-pomidoro-count__num">3</span>\n            </div>\n          </li>\n\n          <li class="task-list-item middle-imp moved-to-trash">\n            <div class="task-hidden-btns">\n              <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>\n              <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>\n            </div>\n\n            <time class="task-date" datetime="">\n              <span class="task-date-number">23</span>\n              <span class="task-date-month">May</span>\n            </time>\n\n            <section class="task-content">\n              <h3 class="task-content-heading">Lorem ipsum sit amet</h3>\n              <p class="task-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nobis ipsam sint maxime consectetur.</p>\n            </section>\n\n            <div class="task-main-btns">\n              <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>\n              <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>\n            </div>\n\n            <div class="task-pomidoro-count">\n              <span class="task-pomidoro-count__num">3</span>\n            </div>\n          </li>\n        </ul>\n      </section>\n\n      <!-- EDUCATION CATEGORY -->\n\n      <section class="tasks-grp-by-category education-category">\n        <h2 class="tasks-grp-by-category__heading">Education</h2>\n\n        <ul class="task-list">\n          <!-- IMPORTANCE: .urgent-imp .hight-imp .middle-imp .low-imp -->\n          <!-- .moved-to-trash -->\n          <li class="task-list-item low-imp">\n            <div class="task-hidden-btns">\n              <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>\n              <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>\n            </div>\n\n            <time class="task-date" datetime="">\n              <span class="task-date-number">23</span>\n              <span class="task-date-month">May</span>\n            </time>\n\n            <section class="task-content">\n              <h3 class="task-content-heading">Lorem ipsum sit amet</h3>\n              <p class="task-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nobis ipsam sint maxime consectetur.</p>\n            </section>\n\n            <div class="task-main-btns">\n              <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>\n              <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>\n            </div>\n\n            <div class="task-pomidoro-count">\n              <span class="task-pomidoro-count__num">3</span>\n            </div>\n          </li>\n\n          <li class="task-list-item urgent-imp">\n            <div class="task-hidden-btns">\n              <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>\n              <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>\n            </div>\n\n            <time class="task-date" datetime="">\n              <span class="task-date-number">23</span>\n              <span class="task-date-month">May</span>\n            </time>\n\n            <section class="task-content">\n              <h3 class="task-content-heading">Lorem ipsum sit amet</h3>\n              <p class="task-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nobis ipsam sint maxime consectetur.</p>\n            </section>\n\n            <div class="task-main-btns">\n              <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>\n              <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>\n            </div>\n\n            <div class="task-pomidoro-count">\n              <span class="task-pomidoro-count__num">3</span>\n            </div>\n          </li>\n\n          <li class="task-list-item middle-imp done">\n            <div class="task-hidden-btns">\n              <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>\n              <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>\n            </div>\n\n            <time class="task-date" datetime="">\n              <span class="task-date-number">23</span>\n              <span class="task-date-month">May</span>\n            </time>\n\n            <section class="task-content">\n              <h3 class="task-content-heading">Lorem ipsum sit amet</h3>\n              <p class="task-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nobis ipsam sint maxime consectetur.</p>\n            </section>\n\n            <div class="task-main-btns">\n              <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>\n              <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>\n            </div>\n\n            <div class="task-pomidoro-count">\n              <span class="task-pomidoro-count__num">3</span>\n            </div>\n          </li>\n\n          <li class="task-list-item hight-imp">\n            <div class="task-hidden-btns">\n              <button class="task-hidden-btns__btn btn-trash" type="button">&#xe912;</button>\n              <button class="task-hidden-btns__btn btn-close" type="button">&#xe910;</button>\n            </div>\n\n            <time class="task-date" datetime="">\n              <span class="task-date-number">23</span>\n              <span class="task-date-month">May</span>\n            </time>\n\n            <section class="task-content">\n              <h3 class="task-content-heading">Lorem ipsum sit amet</h3>\n              <p class="task-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nobis ipsam sint maxime consectetur.</p>\n            </section>\n\n            <div class="task-main-btns">\n              <button class="task-main-btns__btn btn-up" type="button">&#xe904;</button>\n              <button class="task-main-btns__btn btn-edit" type="button">&#xe905;</button>\n            </div>\n\n            <div class="task-pomidoro-count">\n              <span class="task-pomidoro-count__num">3</span>\n            </div>\n          </li>\n        </ul>\n      </section>\n\n    </div>\n  </main>';
+	      return ['<main class="main">', '<header class="header header-flex">', '<figure class="header-logo">', '<img class="header-logo-image" src="img/Logo.svg" title="Logo" alt="Logo image">', '</figure>', '</header>', '<button class="main-top-add-btn" type="button">Daily Task List</button>', '</main>'].join('\n');
 	    }
 	  }]);
 	
@@ -7250,7 +7410,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./task_list.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -7413,7 +7573,7 @@ webpackJsonp([1],Array(40).concat([
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	__webpack_require__(50);
+	__webpack_require__(48);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -7468,7 +7628,7 @@ webpackJsonp([1],Array(40).concat([
 	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/less-loader/index.js!./timer.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(56)(content, {});
+	var update = __webpack_require__(54)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -7483,31 +7643,6 @@ webpackJsonp([1],Array(40).concat([
 		// When the module is disposed, remove the <style> tags
 		module.hot.dispose(function() { update(); });
 	}
-
-/***/ },
-/* 176 */,
-/* 177 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _localstorageService = __webpack_require__(35);
-	
-	var _localstorageService2 = _interopRequireDefault(_localstorageService);
-	
-	var _firebaseService = __webpack_require__(28);
-	
-	var _firebaseService2 = _interopRequireDefault(_firebaseService);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var dataService = {};
-	
-	exports.default = dataService;
 
 /***/ }
 ]));

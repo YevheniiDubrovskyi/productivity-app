@@ -50,6 +50,7 @@ export default class View extends ComponentView {
   createDOMHandlers() {
     const rootClickHandler = (event) => {
       const target = event.target;
+      // TODO: разделить обработчики нажатия на фон и на кнопки
       // TODO: написать обработчик нажатия на кнопки и на фон, и пожымать события :remove, :submit, :cancel
       if (target.classList.contains('modal-wrapper')) {
         this.events.trigger('view:cancel');

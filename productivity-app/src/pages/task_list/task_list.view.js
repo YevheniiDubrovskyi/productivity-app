@@ -2,9 +2,12 @@ import PageView from '../pages.view';
 import Template from './task_list.template';
 // import './task_list.less';
 
-// import Controls from '../../components/controls/controls.controller';
-// import TaskList from '../../components/task_list/task_list.controller';
-// import Modal from '../../components/modal/modal.controller';
+import utils from '../../utils/utils';
+
+import Controls from '../../components/controls/controls.controller';
+import {defaultControlsData} from '../../components/controls/controls.data';
+import TaskList from '../../components/task_list/task_list.controller';
+import Modal from '../../components/modal/modal.controller';
 
 /**
  * Page view
@@ -13,7 +16,7 @@ export default class View extends PageView {
 
   /**
    * Create page view
-   * @param {HTMLELement} viewport - Append to element
+   * @param {HTMLElement} viewport - Append to element
    */
   constructor(viewport) {
     super(viewport);
@@ -25,7 +28,7 @@ export default class View extends PageView {
    */
   render() {
     this.viewport.appendChild(this.markup);
-    // this.createComponents();
+    this.createComponents();
     super.render();
   }
 
@@ -39,53 +42,29 @@ export default class View extends PageView {
         alias: 'add',
         icon: '&#xe900;',
         type: 'common',
-        active: false,
         visible: false
       },
       {
         alias: 'remove',
         icon: '&#xe912;',
         type: 'counter',
-        active: false,
         visible: false
       },
-      {
-        alias: 'reports',
-        icon: '&#xe90c;',
-        type: 'common',
-        active: false,
-        visible: true
-      },
-      {
-        alias: 'settings',
-        icon: '&#xe90b;',
-        type: 'common',
-        active: false,
-        visible: true
-      },
-      {
-        alias: 'signout',
-        icon: '&#xe908;',
-        type: 'common',
-        visible: true
-      });
-
+      ...defaultControlsData);
     headerControls.events.on('controls:clicked', function(alias) {
       this.events.trigger('view:controls_clicked', alias);
     }, this);
     this.componentsList.push(headerControls);
 
     const taskList = new TaskList(this.markup.querySelector('.main'));
-
     taskList.events.on('taskList:edit_clicked', function(id, dataObject) {
       // TODO: change events for MODAL
-      const modal = new Modal(this.viewport, dataObject);
+      const modal = new Modal(this.viewport, { type: 'edit', data: dataObject });
 
       modal.events.on('modal:submit', function(updatedDataObject) {
         taskList.updateTask(id, updatedDataObject);
         modal.close();
       });
-
       modal.events.on('modal:remove', function() {
         taskList.removeTask(id);
         modal.close();
@@ -94,14 +73,42 @@ export default class View extends PageView {
     taskList.events.on('taskList:timer_clicked', function(id) {
       this.goToPage(`timer/${id}`);
     }, this);
+    this.componentsList.push(taskList);
 
     headerControls.events.on('controls:clicked', function(alias) {
-      if (alias !== 'remove') return;
+      if (alias === 'remove') taskList.toggleRemovingMode();
+      if (alias === 'add') {
+        const modal = new Modal(this.viewport);
 
-      taskList.toggleRemovingMode();
+        modal.events.on('modal:submit', function(dataObject) {
+          taskList.addTask(dataObject);
+          modal.close();
+        });
+      }
+    }, this);
+
+    this.createDOMHandlers(taskList);
+  }
+
+  /**
+   * Create DOM handlers which will be attach when render will be fire
+   * @param {ComponentController} taskList - taskList component
+   */
+  createDOMHandlers(taskList) {
+    const addButtonHandler = (event) => {
+      const modal = new Modal(this.viewport);
+
+      modal.events.on('modal:submit', function(dataObject) {
+        taskList.addTask(dataObject);
+        modal.close();
+      });
+    };
+
+    this.domEventsList.push({
+      element: this.markup.querySelector('.main-top-add-btn'),
+      eventName: 'click',
+      callback: addButtonHandler
     });
-
-    this.componentsList.push(taskList);
   }
 
 }

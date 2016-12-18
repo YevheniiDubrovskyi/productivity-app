@@ -30,7 +30,7 @@ export default class Controls extends ComponentController {
 
     this.model.events.on('model:visible_changed', function(data) {
       this.view.update(data);
-    });
+    }, this);
   }
 
   /**

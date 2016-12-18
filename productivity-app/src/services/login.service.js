@@ -2,6 +2,7 @@ import EventBus from '../utils/eventbus';
 import firebaseService from './firebase.service';
 import localStorageService from './localstorage.service';
 import pingService from './ping.service';
+import notificationService from './notification.service';
 
 const loginService = {
   events: new EventBus(),
@@ -11,7 +12,7 @@ const loginService = {
    * @return {boolean} Return session flag existence
    */
   hasSession() {
-    return !!localStorageService.getItem('session');n;
+    return !!localStorageService.getItem('session');
   },
 
   /**
@@ -20,46 +21,62 @@ const loginService = {
    * @param  {string} password
    */
   signIn(email, password) {
-    pingService.hasConnection()
-      .then(() => {
-        localStorageService.setItem('online', true);
-
-        return firebaseService.signIn(email, password);
-      }, (err) => {
-        localStorageService.setItem('online', false);
-      })
-      .then(() => {
-        localStorageService.signIn(email, password);
-        this.events.trigger('signIn');
-      }, (err) => {
-        console.log(err);
-      });
+    if (pingService.hasConnection()) {
+      firebaseService.signIn(email, password)
+        .then(() => {
+          return firebaseService.getUID(email);
+        }, (err) => {
+          console.log(`Sign in failed: ${err}`);
+        })
+        .then((UID) => {
+          localStorageService.signIn(email, password, UID);
+          this.events.trigger('signIn:online');
+        });
+    } else {
+      localStorageService.signIn(email, password);
+      this.events.trigger('signIn:offline');
+    }
   },
 
   /**
    * Sign out from system
    */
   signOut() {
-    if (localStorageService.getItem('online')) {
-      firebaseService.signOut()
-        .then(() => {
-          localStorageService.signOut();
-          localStorageService.events.on('session:removed', function() {
-            this.events.trigger('signOut');
-          }, this);
-        })
-        .catch((err) => {
-          throw err;
-        });
-
-    } else {
-      localStorageService.signOut();
-      localStorageService.events.on('session:removed', function() {
-        this.events.trigger('signOut');
-      }, this);
-    }
+    localStorageService.signOut();
+    this.events.trigger('signOut');
   }
 
 };
+
+loginService.events.on('signOut', function() {
+  this.showMessage('Sign out');
+}, notificationService);
+
+loginService.events.on('signIn', function(eventPath) {
+  notificationService.showMessage(`Sign in, ${eventPath.split(':')[1]} mode`);
+
+  if (!eventPath.includes('offline')) return;
+
+  localStorageService.events.once('singOut', function() {
+    this.signOut();
+  }, firebaseService);
+
+  pingService.events.once('online', function() {
+    const session = localStorageService.getItem('session'),
+          email = session.email,
+          password = session.password;
+
+    this.signIn(email, password)
+      .then(() => {
+        return this.getUID(email);
+      }, (err) => {
+        console.log(`Sign in failed: ${err}`);
+      })
+      .then((UID) => {
+        localStorageService.signIn(email, password, UID);
+        this.events.trigger('signIn:online');
+      });
+  }, firebaseService);
+});
 
 export default loginService;

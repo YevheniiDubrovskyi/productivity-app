@@ -1,6 +1,7 @@
 import ComponentModel from '../components.model';
 
-import {initCaregoriesData, initPriorityData, initInputsData} from './modal.data';
+import dataService from '../../services/data.service';
+import {initCategoriesData, initPriorityData, initInputsData} from './modal.data';
 
 /**
  * Component model
@@ -19,7 +20,7 @@ export default class Model extends ComponentModel {
         description: initInputsData.description,
         categories: {
           name: 'category',
-          value: initCaregoriesData
+          value: initCategoriesData
         },
         deadline: initInputsData.deadline,
         estimation: 5,

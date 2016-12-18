@@ -27,12 +27,12 @@ export default class Model extends ComponentModel {
    */
   getData() {
     return this.dataStatic.filter((element) => {
-      return element.visible;
+      return element.visible !== false;
     }).map((element) => {
       return {
         alias: element.alias,
         icon: element.icon,
-        active: element.active
+        active: !!element.active
       };
     });
   }

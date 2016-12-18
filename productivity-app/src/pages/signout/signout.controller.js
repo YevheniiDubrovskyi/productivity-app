@@ -12,8 +12,10 @@ export default class Signout extends PageController {
    */
   constructor() {
     super();
+    loginService.events.once('signOut', function() {
+      this.goToPage('');
+    }, this);
     loginService.signOut();
-    this.goToPage('');
   }
 
   /**

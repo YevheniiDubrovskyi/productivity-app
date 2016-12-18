@@ -19,9 +19,39 @@ const auth = firebase.auth();
 const firebaseService = {
   events: new EventBus(),
 
-  setItem(name, value) {},
+  /**
+   * Set item by path
+   * @param {string} path
+   * @param {object} value
+   */
+  setItem(path, value) {
+    fb.child(path).set(value);
+  },
 
-  getItem(name, value) {},
+  /**
+   * Subscribe on data change
+   * @param {string} path
+   * @return {EventBus} firebaseService event bus
+   */
+  subscribe(path) {
+    fb.child(path).on('value', (snapshot) => {
+      this.events.trigger(`${path}:dataReceived`, snapshot.val());
+    });
+
+    return this.events;
+  },
+
+  /**
+   * Get item by path
+   * @param {string} path
+   * @return {Promise} Promise which returns any value
+   */
+  getItem(path) {
+    return fb.child(path).once('value')
+      .then((snapshot) => {
+        return snapshot.val();
+      });
+  },
 
   /**
    * Start sign in proccess
@@ -31,6 +61,23 @@ const firebaseService = {
    */
   signIn(email, password) {
     return auth.signInWithEmailAndPassword(email, password);
+  },
+
+  /**
+   * Get user UID by email
+   * @param {string} email
+   * @return {Promise} Promise which will return UID
+   */
+  getUID(email) {
+    return this.getItem('users').then((val) => {
+      const UID = Object.entries(val).filter((el) => {
+        return el[1] === email;
+      })[0][0];
+
+      if (!UID) throw new Error('getUID error: no id for such email');
+
+      return UID;
+    });
   },
 
   /**

@@ -15,8 +15,7 @@ const utils = {
    * @return {RegExp} Regular expression for string
    */
   fromPatternToRegular: function(pattern) {
-    return new RegExp('^'+pattern.replace(/:\w+/, '(\\w+)')+
-      '/?$');
+    return new RegExp(`^${pattern.replace(/:\w+/g, '([A-z0-9-]+)')}/?$`);
   },
 
   /**

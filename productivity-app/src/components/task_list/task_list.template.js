@@ -16,6 +16,8 @@ export default class Template {
    * Create markup skeleton
    * @return {string} Component markup skeleton
    */
-  createMarkupSkeleton() {}
+  createMarkupSkeleton() {
+    return `Place for task list markup`;
+  }
 
 }
