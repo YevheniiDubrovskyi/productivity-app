@@ -8,7 +8,7 @@ export default class TaskList extends PageController {
 
   /**
    * Create page controller
-   * @param {HTMLElment} viewport - Append to element
+   * @param {HTMLElement} viewport - Append to element
    */
   constructor(viewport) {
     super();

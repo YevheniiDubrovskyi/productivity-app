@@ -30,7 +30,6 @@ export default class View extends ComponentView {
     this.events.on('view:dataRecived', function(value) {
       this.actionViewportValue = value;
     }, this);
-
     this.createDOMHandlers();
     super.render();
   }
@@ -41,7 +40,6 @@ export default class View extends ComponentView {
   createDOMHandlers() {
     const rootClickHandler = (event) => {
       const classList = event.target.classList;
-      let actionViewportValue;
 
       if (classList.contains('action-add')) {
         this.sendUpdate(this.actionViewportValue + this.step);
@@ -49,7 +47,7 @@ export default class View extends ComponentView {
       } else if (classList.contains('action-minus')) {
         this.sendUpdate(this.actionViewportValue - this.step)
       }
-    }
+    };
 
     this.domEventsList.push({
       element: this.markup,

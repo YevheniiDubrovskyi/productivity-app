@@ -38,7 +38,7 @@ export default class Model extends ComponentModel {
   }
 
   /**
-   * Get button object by aliasc
+   * Get button object by alias
    * @param  {[type]} alias [description]
    * @return {[type]}       [description]
    */
@@ -59,6 +59,18 @@ export default class Model extends ComponentModel {
     });
 
     this.events.trigger('model:counter_changed', alias, value);
+  }
+
+  /**
+   * Set active button by alias
+   * @param {string} alias
+   */
+  setActive(alias) {
+    this.dataStatic.forEach((element) => {
+      element.active = element.alias === alias;
+    });
+
+    this.events.trigger('model:active_changed', this.getData());
   }
 
   /**

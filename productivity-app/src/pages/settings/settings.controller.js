@@ -15,6 +15,14 @@ export default class Settings extends PageController {
     this.view = new View(viewport);
 
     this.render();
+
+    this.view.events.on('view:controls_clicked', function(alias) {
+      this.goToPage(alias);
+    }, this);
+
+    this.view.events.on('view:backButton_clicked', function() {
+      this.goToPage('');
+    }, this);
   }
 
 }

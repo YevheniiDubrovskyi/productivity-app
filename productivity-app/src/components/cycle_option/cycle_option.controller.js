@@ -30,4 +30,20 @@ export default class CycleOption extends ComponentController {
     }, this);
   }
 
+  /**
+   * Update value
+   * @param {number} value
+   */
+  updateValue(value) {
+    this.model.changeValue(value);
+  }
+
+  /**
+   * Return role data property
+   * @returns {string} Role data property
+   */
+  getRole() {
+    return this.model.getRole();
+  }
+
 }

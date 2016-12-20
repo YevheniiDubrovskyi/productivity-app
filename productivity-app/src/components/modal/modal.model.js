@@ -1,7 +1,7 @@
 import ComponentModel from '../components.model';
 
 import dataService from '../../services/data.service';
-import {initCategoriesData, initPriorityData, initInputsData} from './modal.data';
+import {initInputsData} from './modal.data';
 
 /**
  * Component model

@@ -47,4 +47,13 @@ export default class ComponentController {
     this.view.inlineStyles = inlineStyles;
   }
 
+  /**
+   * Set data attr with value
+   * @param {string} name - Data attribute name
+   * @param {string} value - Data attribute value
+   */
+  setDataAttr(name, value) {
+    this.view.setDataAttr(name, value);
+  }
+
 }

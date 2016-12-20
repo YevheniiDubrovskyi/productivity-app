@@ -13,13 +13,40 @@ export default class ComponentModel {
   constructor(data) {
     this.dataCollection = []; // For collection components
     this.dataStatic = data ? data : {}; // For common components (For cases when data is pure)
+    this.modelAlias = null; // For data saving in storage
     this.events = new EventBus();
   }
 
+  /**
+   * Remove links to heavy objects
+   */
   destroy() {
     delete this.events;
     delete this.dataStatic;
     delete this.dataCollection;
+  }
+
+  /**
+   * Get data from storage
+   * @param {function} callback
+   */
+  getDataFromStorage(callback) {
+    dataService.getData(this.modelAlias).once(`${this.modelAlias}:getData`, callback, this);
+  }
+
+  /**
+   * Set data to storage
+   * @param {*} data
+   */
+  setDataToStorage(data) {
+    dataService.setData(this.modelAlias, data);
+  }
+
+  /**
+   * Save current model data to storage
+   */
+  save() {
+    dataService.setData(this.modelAlias, this.dataStatic);
   }
 
   /**
@@ -39,7 +66,11 @@ export default class ComponentModel {
    */
   update(data) {
     this.updateWithoutEvent(data);
-    this.events.trigger('model:updated', this.dataStatic);
+    const dataToSend = this.dataStatic instanceof Array ?
+      this.dataStatic.slice() :
+      Object.assign({}, this.dataStatic);
+
+    this.events.trigger('model:updated', dataToSend);
   }
 
   /**

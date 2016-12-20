@@ -1,4 +1,5 @@
 import ComponentModel from '../components.model';
+import {defaultCycleData} from './cycle.data';
 
 /**
  * Component model
@@ -7,10 +8,19 @@ export default class Model extends ComponentModel {
 
   /**
    * Create component model
-   * @param  {Array} data - Data array
    */
-  constructor(data) {
-    super(data);
+  constructor() {
+    super(defaultCycleData);
+    this.modelAlias = 'pomodoros';
+
+    this.getDataFromStorage((data) => {
+      if (!data) {
+        this.setDataToStorage(defaultCycleData);
+        return;
+      }
+
+      this.update(data);
+    });
   }
 
   /**
@@ -32,14 +42,14 @@ export default class Model extends ComponentModel {
   changeValueByRole(role, value) {
     this.getDataArrayByRole(role)[0].value = value;
 
-    this.events.trigger('model:updated', this.chartData);
+    this.events.trigger('model:changed', this.getChartData());
   }
 
   /**
    * Return data array for options
    * @return {Array} Data array for options
    */
-  get optionsData() {
+  getOptionsData() {
     return this.getDataArrayByRole('iteration/');
   }
 
@@ -47,7 +57,7 @@ export default class Model extends ComponentModel {
    * Return data for chart
    * @return {Object} Data object with rule parameters
    */
-  get chartData() {
+  getChartData() {
     const ruleObject = this.getDataArrayByRole('rule')[0];
 
     const rule = {
@@ -57,7 +67,7 @@ export default class Model extends ComponentModel {
       }
     };
 
-    const options = this.optionsData.reduce((acc, data) => {
+    const options = this.getOptionsData().reduce((acc, data) => {
       acc[data.role] = {
         value: data.value,
         color: data.color

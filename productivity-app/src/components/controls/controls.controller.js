@@ -31,6 +31,10 @@ export default class Controls extends ComponentController {
     this.model.events.on('model:visible_changed', function(data) {
       this.view.update(data);
     }, this);
+
+    this.model.events.on('model:active_changed', function(data) {
+      this.view.update(data);
+    }, this);
   }
 
   /**
@@ -40,6 +44,14 @@ export default class Controls extends ComponentController {
    */
   setCounterBtnValue(alias, value) {
     this.model.setCounterBtnValue(alias, value);
+  }
+
+  /**
+   * Set active button by alias
+   * @param {string} alias - Button alias
+   */
+  setActive(alias) {
+    this.model.setActive(alias);
   }
 
   /**

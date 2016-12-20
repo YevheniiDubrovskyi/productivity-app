@@ -31,7 +31,7 @@ export default class View extends ComponentView {
       } else {
         this.template.pasteItemsList(...data);
       }
-    });
+    }, this);
 
     super.render();
   }

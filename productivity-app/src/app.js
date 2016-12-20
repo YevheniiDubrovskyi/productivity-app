@@ -15,7 +15,7 @@ const router = new Router(viewport,
   },
   {
     page: 'settings',
-    pattern: '#!/settings'
+    pattern: '#!/settings' // TODO: сделать необязательный параметр :tab?
   },
   {
     page: 'task_list',

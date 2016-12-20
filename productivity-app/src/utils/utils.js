@@ -1,3 +1,5 @@
+import Promise from 'bluebird';
+
 const utils = {
 
   /**
@@ -34,7 +36,36 @@ const utils = {
     return Math.floor((1 + Math.random()) * 0x10000)
       .toString(16)
       .substring(1);
-  }
+  },
+
+  /**
+   * Slides component
+   * @param {ComponentController} component - Component to slide
+   * @param {boolean} animationFlag - If true animation will be apply
+   * @param {string} horizontal - Horizontal shift
+   * @param {string} vertical - Vertical shift
+   */
+  slide(component, animationFlag, horizontal = '0%', vertical = '0%') {
+    const animation = animationFlag ? 'transition: .3s ease-in-out;' : '';
+    const transform = `transform: translate(${horizontal}, ${vertical});`;
+
+    component.inlineStyles = `${transform} ${animation}`;
+    this.timeout(300)
+      .then(() => {
+        component.inlineStyles = transform;
+      });
+  },
+
+  /**
+   * Promisification for setTimeout
+   * @param {number} milliseconds - Time to wait till call resolve callback
+   * @return {Promise} Promise which will be resolve in milliseconds variable
+   */
+  timeout(milliseconds = 0) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, milliseconds);
+    }, );
+  },
 
 };
 

@@ -15,7 +15,7 @@ export default class Model extends ComponentModel {
 
   /**
    * Change value
-   * @param {Number} value - Number getted from view
+   * @param {number} value - Number getted from view
    */
   changeValue(value) {
     if (this.validate(value)) {
@@ -23,6 +23,14 @@ export default class Model extends ComponentModel {
 
       this.events.trigger('model:updated', this.dataStatic.role, value);
     }
+  }
+
+  /**
+   * Return component role property
+   * @return {string} Role property
+   */
+  getRole() {
+    return this.dataStatic.role;
   }
 
   /**

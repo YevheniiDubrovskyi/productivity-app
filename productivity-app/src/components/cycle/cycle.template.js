@@ -14,9 +14,21 @@ export default class Template {
 
   /**
    * Create empty list markup
+   * @return {string} Empty list markup
    */
   createEmptyList() {
     return '\n<ul class="cycle-option-list"></li>';
+  }
+
+  /**
+   * Create buttons wrapper
+   * @return {HTMLElement} Buttons wrapper
+   */
+  createButtonsWrapper() {
+    const div = document.createElement('div');
+
+    div.classList.add('buttons-wrapper');
+    return div;
   }
 
 }

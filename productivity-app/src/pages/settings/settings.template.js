@@ -10,35 +10,29 @@ export default class Template extends PageTemplate {
    */
   constructor() {
     super();
-    // this.markup.classList.add('changing-state');
     this.markup.innerHTML = this.createMain() + this.createAside();
   }
 
+  /**
+   * Create main page markup
+   * @return {string} Main page markup
+   */
   createMain() {
-    return [`<main class="main">`,
+    return [`<main class="main main-settings">`,
             `<header class="header">`,
-            `<h1 class="header-main">Settings</h1>`,
-            `<h2 class="header-sub"></h2>`,
+              `<h1 class="header-main">Settings</h1>`,
+              `<h2 class="header-sub"></h2>`,
             `</header>`,
+            `<div class="viewport"></div>`,
             `</main>\n`].join('\n');
   }
 
+  /**
+   * Create aside markup
+   * @return {string} Aside markup
+   */
   createAside() {
-    return `  <aside class="aside">
-    <ul class="controls-list">
-      <li class="controls-list__item">
-        <button class="controls-list__item-btn" id="statistics-btn" type="button">&#xe90c;</button>
-      </li>
-
-      <li class="controls-list__item">
-        <button class="controls-list__item-btn" id="settigns-btn active" type="button">&#xe90b;</button>
-      </li>
-
-      <li class="controls-list__item">
-        <button class="controls-list__item-btn" id="logout-btn" type="button">&#xe908;</button>
-      </li>
-    </ul>
-  </aside>`;
+    return '<aside class="aside"></aside>';
   }
 
 }

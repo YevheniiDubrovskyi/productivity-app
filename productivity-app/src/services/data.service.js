@@ -20,13 +20,20 @@ const dataService = {
     if (pingService.hasConnection()) {
       firebaseService.getItem(`${modelName}/${UID}`)
         .then((data) => {
-          localStorageService.events.once(`${modelName}:changed`, function(data) {
-            this.events.trigger(`${modelName}:changed`, data);
-          }, this);
-          localStorageService.setItem(modelName, data);
+          if (data) {
+            localStorageService.events.once(`${modelName}:changed`, function(data) {
+              this.events.trigger(`${modelName}:getData`, data);
+            }, this);
+            localStorageService.setItem(modelName, data);
+          } else {
+            this.events.trigger(`${modelName}:getData`, localStorageService.getItem(modelName));
+          }
+        })
+        .catch((err) => {
+          this.events.trigger(`${modelName}:getData`, localStorageService.getItem(modelName) || err);
         });
     } else {
-      this.events.trigger(`${modelName}:changed`, localStorageService.getItem(modelName));
+      this.events.trigger(`${modelName}:getData`, localStorageService.getItem(modelName));
     }
 
     return this.events;
@@ -41,10 +48,13 @@ const dataService = {
     const UID = localStorageService.getItem('session').uid;
 
     if (pingService.hasConnection()) {
-      firebaseService.setItem(`${modelName}/${UID}`, data)
+      firebaseService.setItem(modelName, { [UID]: data })
         .then(() => {
           localStorageService.setItem(modelName, data);
         })
+        .catch((err) => {
+          console.log('Set data error ', err);
+        });
     } else {
       localStorageService.setItem(modelName, data);
     }

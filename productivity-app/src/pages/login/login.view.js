@@ -45,16 +45,14 @@ export default class View extends PageView {
                                     'niagara',
                                     'Log In',
                                     '');
-
     submitButton.addClassToRoot('login-btn');
+
     submitButton.events.on('button:clicked', function() {
       const inputsObject = this.getInputsData();
 
-      if (inputsObject) {
-        this.events.trigger('view:submit', inputsObject);
-      }
+      if (!inputsObject) return;
+      this.events.trigger('view:submit', inputsObject);
     }, this);
-
     this.componentsList.push(submitButton);
   }
 

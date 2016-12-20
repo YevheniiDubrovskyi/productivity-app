@@ -16,7 +16,7 @@ export default class View extends ComponentView {
 
   /**
    * Render component
-   * @param  {Obejct} data - Object with percents for template
+   * @param  {obejct} data - Object with percents for template
    */
   render(data) {
     this.template = new Template();

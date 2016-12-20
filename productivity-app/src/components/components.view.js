@@ -55,6 +55,15 @@ export default class ComponentView {
   }
 
   /**
+   * Set data attr with value
+   * @param {string} name - Data attribute name
+   * @param {string} value - Data attribute value
+   */
+  setDataAttr(name, value) {
+    this.markup.setAttribute(`data-${name}`, value);
+  }
+
+  /**
    * Set inline styles to root element
    * @param {String} inlineStyles - Styles which will be applied to root element
    */

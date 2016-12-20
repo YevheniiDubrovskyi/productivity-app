@@ -1,6 +1,8 @@
 import EventBus from '../utils/eventbus';
 import * as firebase from 'firebase';
 
+import utils from '../utils/utils';
+
 const config = {
   apiKey: "AIzaSyBEVkdXAnPdAhzt1kuTPmnzInEPJNVKQUI",
   authDomain: "productivity-app-77742.firebaseapp.com",
@@ -23,9 +25,10 @@ const firebaseService = {
    * Set item by path
    * @param {string} path
    * @param {object} value
+   * @return {promise} Return promise which will be resolve when update will done
    */
   setItem(path, value) {
-    fb.child(path).set(value);
+    return fb.child(path).update(value);
   },
 
   /**
@@ -70,9 +73,11 @@ const firebaseService = {
    */
   getUID(email) {
     return this.getItem('users').then((val) => {
-      const UID = Object.entries(val).filter((el) => {
-        return el[1] === email;
-      })[0][0];
+      let UID;
+
+      for (let prop in val) {
+        UID = val[prop] === email ? prop : UID;
+      }
 
       if (!UID) throw new Error('getUID error: no id for such email');
 

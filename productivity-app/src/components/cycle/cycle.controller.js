@@ -10,22 +10,31 @@ export default class Cycle extends ComponentController {
   /**
    * Create component controller
    * @param  {HTMLElement} container - Append to element
-   * @param  {...object} dataArray - Data array
    */
-  constructor(container, ...dataArray) {
+  constructor(container) {
     super();
 
-    this.model = new Model(dataArray);
+    this.model = new Model();
     this.view = new View(container);
 
-    this.render(this.model.optionsData, this.model.chartData);
+    this.render(this.model.getOptionsData(), this.model.getChartData());
 
     this.view.events.on('view:updated', function(role, value) {
       this.model.changeValueByRole(role, value);
     }, this);
 
-    this.model.events.on('model:updated', function(chartData) {
+    this.view.events.on('view:backButton_clicked', function() {
+      this.events.trigger('cycle:backButton_clicked');
+    }, this);
+    this.view.events.on('view:saveButton_clicked', function() {
+      this.model.save();
+    }, this);
+
+    this.model.events.on('model:changed', function(chartData) {
       this.view.update(chartData);
+    }, this);
+    this.model.events.on('model:updated', function() {
+      this.view.updateOptions(this.model.getOptionsData());
     }, this);
   }
 

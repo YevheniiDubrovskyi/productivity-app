@@ -23,3 +23,13 @@
     }
   }
 }
+
+.addCategoriesInputType(@type, @posX, @posY) {
+  &--@{type} + &__label::before {
+    background-position: @posX @posY;
+  }
+
+  &--@{type}:focus + &__label::before {
+    background-position: @posX @posY + 19px;
+  }
+}

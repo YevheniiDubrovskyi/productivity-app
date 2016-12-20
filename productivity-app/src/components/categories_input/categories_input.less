@@ -1,0 +1,50 @@
+.categories-input {
+  position: relative;
+  text-align: right;
+
+  &__input {
+    width: 85%;
+    position: relative;
+    z-index: 9;
+    text-align: left;
+    display: inline-block;
+    padding: .55rem 0;
+    color: @fontColor__secondary;
+    border-bottom: 1px solid @fontColor__secondary;
+    transition: .3s ease-in-out;
+  }
+
+  &:hover &__input,
+  &__input:focus {
+    color: @fontColor__primary;
+    border-bottom-color: @fontColor__primary;
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &::before {
+      position: absolute;
+      top: .55rem;
+      left: 0;
+      content: '';
+      height: 1.125rem;
+      width: 1.125rem;
+      background: url(../../assets/img/label_sprite.png) -172px -2px no-repeat;
+    }
+  }
+
+  .addCategoriesInputType(work, -1px, -21px);
+  .addCategoriesInputType(education, -77px, -21px);
+  .addCategoriesInputType(hobby, -58px, -21px);
+  .addCategoriesInputType(sport, -39px, -21px);
+  .addCategoriesInputType(other, -20px, -21px);
+}

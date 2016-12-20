@@ -1,45 +1,3 @@
-const initCategoriesData = [
-  {
-    name: 'work',
-    title: 'work'
-  },
-  {
-    name: 'education',
-    title: 'education'
-  },
-  {
-    name: 'hobby',
-    title: 'hobby'
-  },
-  {
-    name: 'sport',
-    title: 'sport'
-  },
-  {
-    name: 'other',
-    title: 'other'
-  }
-];
-
-const initPriorityData = [
-  {
-    name: 'urgent',
-    title: 'urgent'
-  },
-  {
-    name: 'high',
-    title: 'high'
-  },
-  {
-    name: 'middle',
-    title: 'middle'
-  },
-  {
-    name: 'low',
-    title: 'low'
-  }
-];
-
 const initInputsData = {
   title: {
     name: 'title',
@@ -58,4 +16,4 @@ const initInputsData = {
   }
 };
 
-export {initCategoriesData, initPriorityData, initInputsData};
+export {initInputsData};

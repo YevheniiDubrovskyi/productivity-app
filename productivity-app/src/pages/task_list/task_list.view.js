@@ -36,21 +36,20 @@ export default class View extends PageView {
    * Create page components
    */
   createComponents() {
-    const headerControls = new Controls(
-      this.markup.querySelector('.header'),
-      {
-        alias: 'add',
-        icon: '&#xe900;',
-        type: 'common',
-        visible: false
-      },
-      {
-        alias: 'remove',
-        icon: '&#xe912;',
-        type: 'counter',
-        visible: false
-      },
-      ...defaultControlsData);
+    const headerControls = new Controls(this.markup.querySelector('.header'),
+                                        {
+                                          alias: 'add',
+                                          icon: '&#xe900;',
+                                          type: 'common',
+                                          visible: false
+                                        },
+                                        {
+                                          alias: 'remove',
+                                          icon: '&#xe912;',
+                                          type: 'counter',
+                                          visible: false
+                                        },
+                                        ...defaultControlsData);
     headerControls.events.on('controls:clicked', function(alias) {
       this.events.trigger('view:controls_clicked', alias);
     }, this);
