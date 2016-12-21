@@ -29,6 +29,7 @@ export default class View extends PageView {
   render() {
     this.viewport.appendChild(this.markup);
     this.createComponents();
+    this.createDOMHandlers();
     super.render();
   }
 
@@ -57,7 +58,6 @@ export default class View extends PageView {
 
     const taskList = new TaskList(this.markup.querySelector('.main'));
     taskList.events.on('taskList:edit_clicked', function(id, dataObject) {
-      // TODO: change events for MODAL
       const modal = new Modal(this.viewport, { type: 'edit', data: dataObject });
 
       modal.events.on('modal:submit', function(updatedDataObject) {
@@ -85,20 +85,19 @@ export default class View extends PageView {
         });
       }
     }, this);
-
-    this.createDOMHandlers(taskList);
   }
 
   /**
    * Create DOM handlers which will be attach when render will be fire
-   * @param {ComponentController} taskList - taskList component
    */
-  createDOMHandlers(taskList) {
+  createDOMHandlers() {
+    const taskList = this.componentsList.filter(component => component instanceof TaskList)[0];
     const addButtonHandler = (event) => {
       const modal = new Modal(this.viewport);
 
       modal.events.on('modal:submit', function(dataObject) {
-        taskList.addTask(dataObject);
+        console.log(dataObject);
+        // taskList.addTask(dataObject);
         modal.close();
       });
     };

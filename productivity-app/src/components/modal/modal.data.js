@@ -1,4 +1,4 @@
-const initInputsData = {
+const defaultInputsData = {
   title: {
     name: 'title',
     type: 'text',
@@ -16,4 +16,23 @@ const initInputsData = {
   }
 };
 
-export {initInputsData};
+const defaultPriorityData = [
+  {
+    alias: 'urgent',
+    title: 'urgent'
+  },
+  {
+    alias: 'high',
+    title: 'high'
+  },
+  {
+    alias: 'middle',
+    title: 'middle',
+  },
+  {
+    alias: 'low',
+    title: 'low'
+  }
+];
+
+export {defaultInputsData, defaultPriorityData};

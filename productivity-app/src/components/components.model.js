@@ -28,7 +28,7 @@ export default class ComponentModel {
 
   /**
    * Get data from storage
-   * @param {function} callback
+   * @param {function} Callback which get data
    */
   getDataFromStorage(callback) {
     dataService.getData(this.modelAlias).once(`${this.modelAlias}:getData`, callback, this);

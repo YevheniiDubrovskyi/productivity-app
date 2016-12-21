@@ -18,11 +18,14 @@ export default class Modal extends ComponentController {
     this.model = new Model(dataObject);
     this.view = new View(container);
 
-    this.render(this.model.getData()); // {type, data}
+    this.model.events.on('model:dataReceived', function(data) {
+      console.log('Received data ', data);
+      this.render(data);
+    }, this);
 
     this.view.events.on('view:add_edit_submit', function(dataObject) {
-      this.model.update(dataObject);
-    });
+      this.model.validate(dataObject);
+    }, this);
 
     this.view.events.on('view:remove_submit', function() {
       this.events.trigger('modal:remove');
@@ -32,8 +35,8 @@ export default class Modal extends ComponentController {
       this.close();
     }, this);
 
-    this.model.events.on('model:updated', function(dataObject) {
-      this.events.trigger('modal:add_edit_submit', dataObject);
+    this.model.events.on('model:dataIsValid', function(dataObject) {
+      this.events.trigger('modal:submit', dataObject);
     }, this);
   }
 
@@ -42,7 +45,9 @@ export default class Modal extends ComponentController {
    */
   close() {
     this.view.close();
-    this.destroy();
+    setTimeout(() => {
+      this.destroy();
+    }, 300);
   }
 
 }

@@ -720,7 +720,7 @@ webpackJsonp([1],Array(43).concat([
 	
 	    /**
 	     * Get data from storage
-	     * @param {function} callback
+	     * @param {function} Callback which get data
 	     */
 	
 	  }, {
@@ -5406,11 +5406,14 @@ webpackJsonp([1],Array(43).concat([
 	    _this.model = new _modal4.default(dataObject);
 	    _this.view = new _modal2.default(container);
 	
-	    _this.render(_this.model.getData()); // {type, data}
+	    _this.model.events.on('model:dataReceived', function (data) {
+	      console.log('Received data ', data);
+	      this.render(data);
+	    }, _this);
 	
 	    _this.view.events.on('view:add_edit_submit', function (dataObject) {
-	      this.model.update(dataObject);
-	    });
+	      this.model.validate(dataObject);
+	    }, _this);
 	
 	    _this.view.events.on('view:remove_submit', function () {
 	      this.events.trigger('modal:remove');
@@ -5420,8 +5423,8 @@ webpackJsonp([1],Array(43).concat([
 	      this.close();
 	    }, _this);
 	
-	    _this.model.events.on('model:updated', function (dataObject) {
-	      this.events.trigger('modal:add_edit_submit', dataObject);
+	    _this.model.events.on('model:dataIsValid', function (dataObject) {
+	      this.events.trigger('modal:submit', dataObject);
 	    }, _this);
 	    return _this;
 	  }
@@ -5434,8 +5437,12 @@ webpackJsonp([1],Array(43).concat([
 	  _createClass(Modal, [{
 	    key: 'close',
 	    value: function close() {
+	      var _this2 = this;
+	
 	      this.view.close();
-	      this.destroy();
+	      setTimeout(function () {
+	        _this2.destroy();
+	      }, 300);
 	    }
 	  }]);
 	
@@ -5497,7 +5504,7 @@ webpackJsonp([1],Array(43).concat([
 	
 	  /**
 	   * Render component
-	   * @param {object} [dataObject] - Data object
+	   * @param {object} dataObject - Data object
 	   */
 	
 	
@@ -5507,10 +5514,50 @@ webpackJsonp([1],Array(43).concat([
 	      this.type = dataObject.type;
 	      this.template = new _modal2.default(dataObject);
 	
+	      this.show();
+	
 	      this.container.appendChild(this.markup);
 	      this.container.classList.add('modal-opened');
+	
+	      this.events.on('view:acceptButton_clicked', function () {
+	        this.events.trigger('view:add_edit_submit', this.getInputsData());
+	      }, this);
+	      this.events.on('view:cancelButton_clicked', function () {
+	        this.events.trigger('view:cancel');
+	      }, this);
+	
 	      this.createDOMHandlers();
 	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'render', this).call(this);
+	    }
+	
+	    /**
+	     * Return inputs data object
+	     * @return {object} Inputs data object
+	     */
+	
+	  }, {
+	    key: 'getInputsData',
+	    value: function getInputsData() {
+	      var inputsData = Array.from(this.markup.querySelectorAll('input')).reduce(function (obj, input) {
+	        var name = input.name;
+	        obj[name] = obj[name] ? obj[name] : [];
+	
+	        obj[name].push(input);
+	
+	        return obj;
+	      }, {});
+	
+	      for (var prop in inputsData) {
+	        var array = inputsData[prop];
+	
+	        inputsData[prop] = array.length === 1 ? array[0].value.trim() : array.filter(function (radio) {
+	          return radio.checked;
+	        }).map(function (radio) {
+	          return radio.id.match(/.*-(.*)$/)[1];
+	        })[0];
+	      }
+	
+	      return inputsData;
 	    }
 	
 	    /**
@@ -5541,28 +5588,26 @@ webpackJsonp([1],Array(43).concat([
 	    value: function createDOMHandlers() {
 	      var _this2 = this;
 	
-	      var rootClickHandler = function rootClickHandler(event) {
+	      var backgroundClickHandler = function backgroundClickHandler(event) {
+	        if (event.target !== event.currentTarget) return;
+	        _this2.events.trigger('view:cancel');
+	      };
+	      var buttonsClickHanlder = function buttonsClickHanlder(event) {
 	        var target = event.target;
-	        // TODO: разделить обработчики нажатия на фон и на кнопки
-	        // TODO: написать обработчик нажатия на кнопки и на фон, и пожымать события :remove, :submit, :cancel
-	        if (target.classList.contains('modal-wrapper')) {
-	          _this2.events.trigger('view:cancel');
-	        }
 	
-	        if (target.tagName !== 'BUTTON') {
-	          return;
-	        }
-	        event.stopPropagation();
-	
+	        if (target.tagName !== 'BUTTON') return;
 	        var className = target.className.match(/.*modal-btn-(.+)\s?/);
-	        // TODO: дописать выборку части имени класса и выкидывать ивент view:${className}
-	        console.log('Classname ', className);
+	        _this2.events.trigger('view:' + className[1] + 'Button_clicked');
 	      };
 	
 	      this.domEventsList.push({
 	        element: this.markup,
 	        eventName: 'click',
-	        callback: rootClickHandler
+	        callback: backgroundClickHandler
+	      }, {
+	        element: this.markup,
+	        eventName: 'click',
+	        callback: buttonsClickHanlder
 	      });
 	    }
 	
@@ -5572,7 +5617,30 @@ webpackJsonp([1],Array(43).concat([
 	
 	  }, {
 	    key: 'close',
-	    value: function close() {}
+	    value: function close() {
+	      var aside = this.markup.querySelector('aside');
+	      this.markup.style = 'transition: .3s ease-in-out; background-color: rgba(0,0,0,0);';
+	      aside.style = 'transition: .3s ease-in-out; transform: translate(0%, -150%);';
+	    }
+	
+	    /**
+	     * Show modal with animation
+	     */
+	
+	  }, {
+	    key: 'show',
+	    value: function show() {
+	      var _this3 = this;
+	
+	      var aside = this.markup.querySelector('aside');
+	
+	      this.markup.style = 'background-color: rgba(0,0,0,0);';
+	      aside.style = 'transform: translate(0%, -150%);';
+	      setTimeout(function () {
+	        aside.style = 'transition: .3s ease-in-out; transform: translate(0%, 0%);';
+	        _this3.markup.style = 'transition: .3s ease-in-out';
+	      }, 10);
+	    }
 	  }]);
 	
 	  return View;
@@ -5614,19 +5682,8 @@ webpackJsonp([1],Array(43).concat([
 	
 	    this.markup = document.createElement('div');
 	    this.markup.classList.add('modal-wrapper');
-	    this.markup.innerHTML = this.createModalMarkup(dataObject);
-	    // this.markup.innerHTML = '\n<aside class="modal">\n' +
-	    //                         this.createHeading(dataFlag) +
-	    //                         this.createInputWithLabel(dataObject.title) +
-	    //                         this.createInputWithLabel(dataObject.description) +
-	    //                         this.createRadioGroup(dataObject.categories) +
-	    //                         this.createInputWithLabel(dataObject.deadline) +
-	    //                         this.createEstimationRadioGroup(5) +
-	    //                         this.createRadioGroup(dataObject.priority) +
-	    //                         '</aside>\n';
+	    this.markup.innerHTML = '\n<aside class="modal">' + this.createModalMarkup(dataObject) + '</aside>\n';
 	  }
-	
-	  // TODO: сделать возможным вызов модалки подтверждения (если сначала была отрисована обычная учитывать это display: none)
 	
 	  /**
 	   * Return modal markup depends on modal type
@@ -5639,19 +5696,53 @@ webpackJsonp([1],Array(43).concat([
 	    value: function createModalMarkup(dataObject) {
 	      var types = {
 	        add: function add(data) {
-	          return ['<aside class="modal modal-add-edit">', this.createHeading('Add'),
-	          // this.
-	          '</aside>'].join('\n');
+	          return [this.createHeading('Add'), this.createInputWithLabel(data.title), this.createInputWithLabel(data.description), this.createRadioGroup(data.categories), this.createInputWithLabel(data.deadline), this.createEstimationRadioGroup(data.estimation), this.createRadioGroup(data.priority), this.createButtonMarkup('accept', '&#xe90f;'), this.createButtonMarkup('cancel', '&#xe910;')].join('\n');
 	        },
 	        edit: function edit(data) {
-	          return;
+	          return [this.createHeading('Add'), this.createInputWithLabel(data.title), this.createInputWithLabel(data.description), this.createRadioGroup(data.categories), this.createInputWithLabel(data.deadline), this.createEstimationRadioGroup(data.estimation), this.createRadioGroup(data.priority), this.createButtonMarkup('delete', '&#xe912;'), this.createButtonMarkup('accept', '&#xe90f;'), this.createButtonMarkup('cancel', '&#xe910;')].join('\n');
 	        },
 	        remove: function remove(data) {
-	          return;
+	          return [this.createHeading('Remove'), this.createParagraphMarkup(data.text), this.createButtonsWrapper(), this.createButtonMarkup('cancel', '&#xe910;')].join('\n');
 	        }
 	      };
 	
-	      return types[dataObject.type](dataObject.data);
+	      return types[dataObject.type].call(this, dataObject.data);
+	    }
+	
+	    /**
+	     * Create button markup
+	     * @param {string} type - Button type
+	     * @param {string} icon - Icon code
+	     * @return {string} Button markup
+	     */
+	
+	  }, {
+	    key: 'createButtonMarkup',
+	    value: function createButtonMarkup(type, icon) {
+	      return '<button class="modal-btn-' + type + '" type="button">' + icon + '</button>';
+	    }
+	
+	    /**
+	     * Create buttons wrapper markup
+	     * @return {string} Buttons wrapper markup
+	     */
+	
+	  }, {
+	    key: 'createButtonsWrapper',
+	    value: function createButtonsWrapper() {
+	      return '<div class="buttons-wrapper"></div>';
+	    }
+	
+	    /**
+	     * Create paragraph markup
+	     * @param {string} text - Text which will be append to paragraph
+	     * @returns {string} Paragraph markup
+	     */
+	
+	  }, {
+	    key: 'createParagraphMarkup',
+	    value: function createParagraphMarkup(text) {
+	      return '<p class="modal-question">' + text + '</p>';
 	    }
 	
 	    /**
@@ -5685,7 +5776,7 @@ webpackJsonp([1],Array(43).concat([
 	    value: function createInputWithLabel(dataProperty) {
 	      var name = dataProperty.name;
 	
-	      return ['<label for="modal-add-edit-task__' + name + '" class="modal-lbl">' + _utils2.default.capitalize(name) + '</label>', '<input type="' + dataProperty.type + '" class="modal-inpt" id="modal-add-edit-task__' + name + ' placeholder="Add ' + name + ' here" value="' + dataProperty.value + '">\n'].join('\n');
+	      return ['<label for="modal-add-edit-task__' + name + '" class="modal-lbl">' + _utils2.default.capitalize(name) + '</label>', '<input type="' + dataProperty.type + '" name="' + name + '" class="modal-inpt" id="modal-add-edit-task__' + name + '" placeholder="Add ' + name + ' here" value="' + dataProperty.value + '">\n'].join('\n');
 	    }
 	
 	    /**
@@ -5706,12 +5797,12 @@ webpackJsonp([1],Array(43).concat([
 	     */
 	
 	  }, {
-	    key: 'createRadionGroupList',
-	    value: function createRadionGroupList(groupName, dataArray) {
+	    key: 'createRadioGroupList',
+	    value: function createRadioGroupList(groupName, dataArray) {
 	      return dataArray.reduce(function (acc, el) {
-	        var name = el.name;
+	        var alias = el.alias;
 	
-	        return [acc, '<li class="modal-fset-list-item">', '<input type="radio" class="modal-fset-list-item-radio" name="' + groupName + '" id="modal-add-edit-task__radio-' + name + '">', '<label for="modal-add-edit-task__radio-' + name + '" class="modal-fset-list-item-lbl">' + _utils2.default.capitalize(el.title) + '</label>', '</li>'].join('\n');
+	        return [acc, '<li class="modal-fset-list-item">', '<input type="radio" class="modal-fset-list-item-radio" name="' + groupName + '" id="modal-add-edit-task__radio-' + alias + '">', '<label for="modal-add-edit-task__radio-' + alias + '" class="modal-fset-list-item-lbl">' + _utils2.default.capitalize(el.title) + '</label>', '</li>'].join('\n');
 	      }, '');
 	    }
 	
@@ -5723,14 +5814,14 @@ webpackJsonp([1],Array(43).concat([
 	  }, {
 	    key: 'createEstimationRadioGroup',
 	    value: function createEstimationRadioGroup(count) {
-	      var estimationGroup = '\n';
+	      var estimationGroup = [];
 	      var i = count + 1;
 	
 	      while (--i) {
-	        estimationGroup += ['<input type="radio" name="estimation" id="estimation-' + i + '" class="modal-estimation-list-item-radio">', '<label class="modal-estimation-list-item-lbl" for="estimation-' + i + '"></label>\n'].join('\n');
+	        estimationGroup = estimationGroup.concat(['<input type="radio" name="estimation" id="estimation-' + i + '" class="modal-estimation-list-item-radio">', '<label class="modal-estimation-list-item-lbl" for="estimation-' + i + '"></label>']);
 	      }
 	
-	      return ['<fieldset class="modal-estimation">', '<h4 class="modal-estimation-heading>Estimation</h4>', '<div class="modal-estimation-radio-wrapper">' + estimationGroup + '</div>', '</fieldset>'].join('\n');
+	      return ['<fieldset class="modal-estimation">', '<h4 class="modal-estimation-heading">Estimation</h4>', '<div class="modal-estimation-radio-wrapper">' + estimationGroup.join('\n') + '</div>', '</fieldset>'].join('\n');
 	    }
 	  }]);
 	
@@ -5785,22 +5876,42 @@ webpackJsonp([1],Array(43).concat([
 	    var dataObject = {
 	      type: data.type,
 	      data: data.data || {
-	        title: _modal.initInputsData.title,
-	        description: _modal.initInputsData.description,
+	        title: _modal.defaultInputsData.title,
+	        description: _modal.defaultInputsData.description,
 	        categories: {
 	          name: 'category',
-	          value: initCategoriesData
+	          value: null
 	        },
-	        deadline: _modal.initInputsData.deadline,
+	        deadline: _modal.defaultInputsData.deadline,
 	        estimation: 5,
 	        priority: {
 	          name: 'priority',
-	          value: initPriorityData
+	          value: null
 	        }
 	      }
 	    };
 	
-	    return _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this, dataObject));
+	    var _this = _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this, dataObject));
+	
+	    var categoriesFlag = false;
+	    var priorityFlag = false;
+	
+	    _data2.default.getData('categories').once('categories:getData', function (data) {
+	      categoriesFlag = true;
+	      this.dataStatic.data.categories.value = data;
+	      if (categoriesFlag && priorityFlag) this.events.trigger('model:dataReceived', this.dataStatic);
+	    }, _this);
+	
+	    _data2.default.getData('priority').once('priority:getData', function (data) {
+	      if (!data) {
+	        _data2.default.setData('priority', _modal.defaultPriorityData);
+	      }
+	
+	      priorityFlag = true;
+	      this.dataStatic.data.priority.value = data ? data : _modal.defaultPriorityData;
+	      if (categoriesFlag && priorityFlag) this.events.trigger('model:dataReceived', this.dataStatic);
+	    }, _this);
+	    return _this;
 	  }
 	
 	  /**
@@ -5812,6 +5923,37 @@ webpackJsonp([1],Array(43).concat([
 	    key: 'getData',
 	    value: function getData() {
 	      return this.dataStatic;
+	    }
+	
+	    /**
+	     * Validation data and fire event if data is valid
+	     * @param {object} dataObject
+	     */
+	
+	  }, {
+	    key: 'validate',
+	    value: function validate(dataObject) {
+	      if (!this.isValid(dataObject)) return;
+	
+	      this.events.trigger('model:dataIsValid', dataObject);
+	    }
+	
+	    /**
+	     * Validate data object
+	     * @param {object} dataObject
+	     * @return {boolean} Data validation flag
+	     */
+	
+	  }, {
+	    key: 'isValid',
+	    value: function isValid(dataObject) {
+	      var valid = true;
+	
+	      for (var prop in dataObject) {
+	        if (!dataObject[prop]) valid = false;
+	      }
+	
+	      return valid;
 	    }
 	  }]);
 	
@@ -5829,7 +5971,7 @@ webpackJsonp([1],Array(43).concat([
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var initInputsData = {
+	var defaultInputsData = {
 	  title: {
 	    name: 'title',
 	    type: 'text',
@@ -5847,7 +5989,22 @@ webpackJsonp([1],Array(43).concat([
 	  }
 	};
 	
-	exports.initInputsData = initInputsData;
+	var defaultPriorityData = [{
+	  alias: 'urgent',
+	  title: 'urgent'
+	}, {
+	  alias: 'high',
+	  title: 'high'
+	}, {
+	  alias: 'middle',
+	  title: 'middle'
+	}, {
+	  alias: 'low',
+	  title: 'low'
+	}];
+	
+	exports.defaultInputsData = defaultInputsData;
+	exports.defaultPriorityData = defaultPriorityData;
 
 /***/ },
 /* 137 */
@@ -8244,6 +8401,7 @@ webpackJsonp([1],Array(43).concat([
 	    value: function render() {
 	      this.viewport.appendChild(this.markup);
 	      this.createComponents();
+	      this.createDOMHandlers();
 	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'render', this).call(this);
 	    }
 	
@@ -8272,7 +8430,6 @@ webpackJsonp([1],Array(43).concat([
 	
 	      var taskList = new _task_list4.default(this.markup.querySelector('.main'));
 	      taskList.events.on('taskList:edit_clicked', function (id, dataObject) {
-	        // TODO: change events for MODAL
 	        var modal = new _modal2.default(this.viewport, { type: 'edit', data: dataObject });
 	
 	        modal.events.on('modal:submit', function (updatedDataObject) {
@@ -8304,25 +8461,26 @@ webpackJsonp([1],Array(43).concat([
 	          })();
 	        }
 	      }, this);
-	
-	      this.createDOMHandlers(taskList);
 	    }
 	
 	    /**
 	     * Create DOM handlers which will be attach when render will be fire
-	     * @param {ComponentController} taskList - taskList component
 	     */
 	
 	  }, {
 	    key: 'createDOMHandlers',
-	    value: function createDOMHandlers(taskList) {
+	    value: function createDOMHandlers() {
 	      var _this3 = this;
 	
+	      var taskList = this.componentsList.filter(function (component) {
+	        return component instanceof _task_list4.default;
+	      })[0];
 	      var addButtonHandler = function addButtonHandler(event) {
 	        var modal = new _modal2.default(_this3.viewport);
 	
 	        modal.events.on('modal:submit', function (dataObject) {
-	          taskList.addTask(dataObject);
+	          console.log(dataObject);
+	          // taskList.addTask(dataObject);
 	          modal.close();
 	        });
 	      };

@@ -19,16 +19,55 @@ export default class View extends ComponentView {
 
   /**
    * Render component
-   * @param {object} [dataObject] - Data object
+   * @param {object} dataObject - Data object
    */
   render(dataObject) {
     this.type = dataObject.type;
     this.template = new Template(dataObject);
 
+    this.show();
+
     this.container.appendChild(this.markup);
     this.container.classList.add('modal-opened');
+
+    this.events.on('view:acceptButton_clicked', function() {
+      this.events.trigger('view:add_edit_submit', this.getInputsData());
+    }, this);
+    this.events.on('view:cancelButton_clicked', function() {
+      this.events.trigger('view:cancel');
+    }, this);
+
     this.createDOMHandlers();
     super.render();
+  }
+
+  /**
+   * Return inputs data object
+   * @return {object} Inputs data object
+   */
+  getInputsData() {
+    let inputsData = Array.from(this.markup.querySelectorAll('input')).reduce((obj, input) => {
+      const name = input.name;
+      obj[name] = obj[name] ?
+        obj[name] :
+        [];
+
+      obj[name].push(input);
+
+      return obj;
+    }, {});
+
+    for (let prop in inputsData) {
+      let array = inputsData[prop];
+
+      inputsData[prop] = array.length === 1 ?
+        array[0].value.trim() :
+        array.filter(radio => radio.checked).map((radio) => {
+          return radio.id.match(/.*-(.*)$/)[1];
+        })[0];
+    }
+
+    return inputsData;
   }
 
   /**
@@ -48,28 +87,26 @@ export default class View extends ComponentView {
    * Create DOM handlers which will be attach when render will be fire
    */
   createDOMHandlers() {
-    const rootClickHandler = (event) => {
+    const backgroundClickHandler = (event) => {
+      if (event.target !== event.currentTarget) return;
+      this.events.trigger('view:cancel');
+    };
+    const buttonsClickHanlder = (event) => {
       const target = event.target;
-      // TODO: разделить обработчики нажатия на фон и на кнопки
-      // TODO: написать обработчик нажатия на кнопки и на фон, и пожымать события :remove, :submit, :cancel
-      if (target.classList.contains('modal-wrapper')) {
-        this.events.trigger('view:cancel');
-      }
 
-      if (target.tagName !== 'BUTTON') {
-        return;
-      }
-      event.stopPropagation();
-
+      if (target.tagName !== 'BUTTON') return;
       const className = target.className.match(/.*modal-btn-(.+)\s?/);
-      // TODO: дописать выборку части имени класса и выкидывать ивент view:${className}
-      console.log('Classname ', className);
+      this.events.trigger(`view:${className[1]}Button_clicked`);
     };
 
     this.domEventsList.push({
       element: this.markup,
       eventName: 'click',
-      callback: rootClickHandler
+      callback: backgroundClickHandler
+    }, {
+      element: this.markup,
+      eventName: 'click',
+      callback: buttonsClickHanlder
     });
   }
 
@@ -77,7 +114,23 @@ export default class View extends ComponentView {
    * Hide modal with animation
    */
   close() {
+    const aside = this.markup.querySelector('aside');
+    this.markup.style = 'transition: .3s ease-in-out; background-color: rgba(0,0,0,0);';
+    aside.style = 'transition: .3s ease-in-out; transform: translate(0%, -150%);';
+  }
 
+  /**
+   * Show modal with animation
+   */
+  show() {
+    const aside = this.markup.querySelector('aside');
+
+    this.markup.style = 'background-color: rgba(0,0,0,0);';
+    aside.style = 'transform: translate(0%, -150%);';
+    setTimeout(() => {
+      aside.style = 'transition: .3s ease-in-out; transform: translate(0%, 0%);'
+      this.markup.style = 'transition: .3s ease-in-out';
+    }, 10);
   }
 
 }
