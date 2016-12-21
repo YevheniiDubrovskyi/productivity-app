@@ -1,0 +1,24 @@
+CACHE MANIFEST
+
+https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic,cyrillic-ext,latin-ext
+https://fonts.googleapis.com/css?family=PT+Sans:400,700
+
+img/login_bg.jpg
+img/Logo_1.jpg
+img/Logo.svg
+img/label_sprite.png
+img/tomato.svg
+img/tomato-failed.svg
+img/tomato_fill.svg
+
+fonts/iconmoon/fonts/icomoon.eot
+fonts/iconmoon/fonts/icomoon.svg
+fonts/iconmoon/fonts/icomoon.ttf?giweb9
+fonts/iconmoon/fonts/icomoon.woff
+fonts/iconmoon/style.css
+
+js/1.1.bundle.js
+js/app.bundle.js
+
+NETWORK:
+*

@@ -64,6 +64,10 @@ module.exports = {
       {
         from: 'src/index.html',
         to: '../index.html'
+      },
+      {
+        from: 'src/manifest.cache',
+        to: '../manifest.cache'
       }
     ], {
       copyUnmodified: true

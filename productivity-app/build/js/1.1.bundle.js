@@ -878,7 +878,9 @@ webpackJsonp([1],Array(43).concat([
 	        _this.events.trigger(modelName + ':getData', _localstorageService2.default.getItem(modelName) || err);
 	      });
 	    } else {
-	      this.events.trigger(modelName + ':getData', _localstorageService2.default.getItem(modelName));
+	      setTimeout(function () {
+	        _this.events.trigger(modelName + ':getData', _localstorageService2.default.getItem(modelName));
+	      }, 10);
 	    }
 	
 	    return this.events;

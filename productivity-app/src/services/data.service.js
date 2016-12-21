@@ -33,7 +33,9 @@ const dataService = {
           this.events.trigger(`${modelName}:getData`, localStorageService.getItem(modelName) || err);
         });
     } else {
-      this.events.trigger(`${modelName}:getData`, localStorageService.getItem(modelName));
+      setTimeout(() => {
+        this.events.trigger(`${modelName}:getData`, localStorageService.getItem(modelName));
+      }, 10);
     }
 
     return this.events;

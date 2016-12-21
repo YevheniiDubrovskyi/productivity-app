@@ -31,7 +31,7 @@ const pingService = {
 };
 
 window.addEventListener('offline', () => {
-  pingService.events.trigger('offline')
+  pingService.events.trigger('offline');
 });
 window.addEventListener('online', () => {
   pingService.events.trigger('online');
