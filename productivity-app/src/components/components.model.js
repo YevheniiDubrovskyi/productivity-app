@@ -35,6 +35,14 @@ export default class ComponentModel {
   }
 
   /**
+   * Subscribe on changes data in storage
+   * @param {function} callback Callback which get data
+   */
+  subscribe(callback) {
+    dataService.subscribe(this.modelAlias).on(`${this.modelAlias}:dataReceived`, callback, this);
+  }
+
+  /**
    * Set data to storage
    * @param {*} data
    */

@@ -29,6 +29,9 @@ export default class ComponentController {
 
     this.view.destroy();
     this.model.destroy();
+
+    delete this.view;
+    delete this.view;
   }
 
   /**

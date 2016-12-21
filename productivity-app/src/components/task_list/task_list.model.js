@@ -10,6 +10,13 @@ export default class Model extends ComponentModel {
    */
   constructor() {
     super();
+    this.modelAlias = 'tasks';
+
+    this.subscribe((data) => {
+      if (!data) return;
+
+      this.update(data);
+    });
   }
 
 }

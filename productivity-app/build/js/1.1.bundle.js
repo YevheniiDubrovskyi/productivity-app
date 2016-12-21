@@ -134,63 +134,65 @@ webpackJsonp([1],Array(43).concat([
 		"./components/task/task.view.js": 144,
 		"./components/task_list/task_list.controller": 149,
 		"./components/task_list/task_list.controller.js": 149,
-		"./components/task_list/task_list.less": 153,
-		"./components/task_list/task_list.model": 152,
-		"./components/task_list/task_list.model.js": 152,
+		"./components/task_list/task_list.data": 152,
+		"./components/task_list/task_list.data.js": 152,
+		"./components/task_list/task_list.less": 154,
+		"./components/task_list/task_list.model": 153,
+		"./components/task_list/task_list.model.js": 153,
 		"./components/task_list/task_list.template": 151,
 		"./components/task_list/task_list.template.js": 151,
 		"./components/task_list/task_list.view": 150,
 		"./components/task_list/task_list.view.js": 150,
-		"./components/tooltip/tooltip.less": 155,
-		"./pages/login/login.controller": 158,
-		"./pages/login/login.controller.js": 158,
-		"./pages/login/login.less": 164,
-		"./pages/login/login.template": 162,
-		"./pages/login/login.template.js": 162,
-		"./pages/login/login.view": 160,
-		"./pages/login/login.view.js": 160,
-		"./pages/pages.controller": 159,
-		"./pages/pages.controller.js": 159,
-		"./pages/pages.template": 163,
-		"./pages/pages.template.js": 163,
-		"./pages/pages.view": 161,
-		"./pages/pages.view.js": 161,
-		"./pages/reports/reports.config": 166,
-		"./pages/reports/reports.config.js": 166,
-		"./pages/reports/reports.controller": 167,
-		"./pages/reports/reports.controller.js": 167,
-		"./pages/reports/reports.data": 170,
-		"./pages/reports/reports.data.js": 170,
-		"./pages/reports/reports.less": 171,
-		"./pages/reports/reports.template": 169,
-		"./pages/reports/reports.template.js": 169,
-		"./pages/reports/reports.view": 168,
-		"./pages/reports/reports.view.js": 168,
-		"./pages/settings/settings.controller": 173,
-		"./pages/settings/settings.controller.js": 173,
-		"./pages/settings/settings.data": 176,
-		"./pages/settings/settings.data.js": 176,
-		"./pages/settings/settings.less": 177,
-		"./pages/settings/settings.template": 175,
-		"./pages/settings/settings.template.js": 175,
-		"./pages/settings/settings.view": 174,
-		"./pages/settings/settings.view.js": 174,
-		"./pages/signout/signout.controller": 179,
-		"./pages/signout/signout.controller.js": 179,
-		"./pages/task_list/task_list.controller": 180,
-		"./pages/task_list/task_list.controller.js": 180,
-		"./pages/task_list/task_list.less": 183,
-		"./pages/task_list/task_list.template": 182,
-		"./pages/task_list/task_list.template.js": 182,
-		"./pages/task_list/task_list.view": 181,
-		"./pages/task_list/task_list.view.js": 181,
-		"./pages/timer/timer.controller": 185,
-		"./pages/timer/timer.controller.js": 185,
-		"./pages/timer/timer.less": 188,
-		"./pages/timer/timer.template": 187,
-		"./pages/timer/timer.template.js": 187,
-		"./pages/timer/timer.view": 186,
-		"./pages/timer/timer.view.js": 186,
+		"./components/tooltip/tooltip.less": 156,
+		"./pages/login/login.controller": 159,
+		"./pages/login/login.controller.js": 159,
+		"./pages/login/login.less": 165,
+		"./pages/login/login.template": 163,
+		"./pages/login/login.template.js": 163,
+		"./pages/login/login.view": 161,
+		"./pages/login/login.view.js": 161,
+		"./pages/pages.controller": 160,
+		"./pages/pages.controller.js": 160,
+		"./pages/pages.template": 164,
+		"./pages/pages.template.js": 164,
+		"./pages/pages.view": 162,
+		"./pages/pages.view.js": 162,
+		"./pages/reports/reports.config": 167,
+		"./pages/reports/reports.config.js": 167,
+		"./pages/reports/reports.controller": 168,
+		"./pages/reports/reports.controller.js": 168,
+		"./pages/reports/reports.data": 171,
+		"./pages/reports/reports.data.js": 171,
+		"./pages/reports/reports.less": 172,
+		"./pages/reports/reports.template": 170,
+		"./pages/reports/reports.template.js": 170,
+		"./pages/reports/reports.view": 169,
+		"./pages/reports/reports.view.js": 169,
+		"./pages/settings/settings.controller": 174,
+		"./pages/settings/settings.controller.js": 174,
+		"./pages/settings/settings.data": 177,
+		"./pages/settings/settings.data.js": 177,
+		"./pages/settings/settings.less": 178,
+		"./pages/settings/settings.template": 176,
+		"./pages/settings/settings.template.js": 176,
+		"./pages/settings/settings.view": 175,
+		"./pages/settings/settings.view.js": 175,
+		"./pages/signout/signout.controller": 180,
+		"./pages/signout/signout.controller.js": 180,
+		"./pages/task_list/task_list.controller": 181,
+		"./pages/task_list/task_list.controller.js": 181,
+		"./pages/task_list/task_list.less": 184,
+		"./pages/task_list/task_list.template": 183,
+		"./pages/task_list/task_list.template.js": 183,
+		"./pages/task_list/task_list.view": 182,
+		"./pages/task_list/task_list.view.js": 182,
+		"./pages/timer/timer.controller": 186,
+		"./pages/timer/timer.controller.js": 186,
+		"./pages/timer/timer.less": 189,
+		"./pages/timer/timer.template": 188,
+		"./pages/timer/timer.template.js": 188,
+		"./pages/timer/timer.view": 187,
+		"./pages/timer/timer.view.js": 187,
 		"./router": 26,
 		"./router.js": 26,
 		"./services/data.service": 74,
@@ -559,6 +561,9 @@ webpackJsonp([1],Array(43).concat([
 	
 	      this.view.destroy();
 	      this.model.destroy();
+	
+	      delete this.view;
+	      delete this.view;
 	    }
 	
 	    /**
@@ -727,6 +732,17 @@ webpackJsonp([1],Array(43).concat([
 	    key: 'getDataFromStorage',
 	    value: function getDataFromStorage(callback) {
 	      _data2.default.getData(this.modelAlias).once(this.modelAlias + ':getData', callback, this);
+	    }
+	
+	    /**
+	     * Subscribe on changes data in storage
+	     * @param {function} callback Callback which get data
+	     */
+	
+	  }, {
+	    key: 'subscribe',
+	    value: function subscribe(callback) {
+	      _data2.default.subscribe(this.modelAlias).on(this.modelAlias + ':dataReceived', callback, this);
 	    }
 	
 	    /**
@@ -2475,7 +2491,7 @@ webpackJsonp([1],Array(43).concat([
 	      this.dataStatic = this.dataStatic.map(function (el) {
 	        return {
 	          name: el.name,
-	          active: el.name === name ? true : false
+	          active: el.name === name
 	        };
 	      });
 	
@@ -6348,7 +6364,7 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _task_list2 = _interopRequireDefault(_task_list);
 	
-	var _task_list3 = __webpack_require__(152);
+	var _task_list3 = __webpack_require__(153);
 	
 	var _task_list4 = _interopRequireDefault(_task_list3);
 	
@@ -6368,29 +6384,87 @@ webpackJsonp([1],Array(43).concat([
 	
 	  /**
 	   * Create component controller
-	   * @param {HTMLElement} container - Appent to element
+	   * @param {HTMLElement} container - Append to element
 	   */
 	  function TaskList(container) {
 	    _classCallCheck(this, TaskList);
 	
 	    var _this = _possibleConstructorReturn(this, (TaskList.__proto__ || Object.getPrototypeOf(TaskList)).call(this));
 	
+	    _this.states = {
+	      INIT: 'init',
+	      TASK_ADDED: 'task_added',
+	      COMMON: 'common',
+	      REMOVING: 'removing'
+	    };
+	    _this.state = null;
 	    _this.model = new _task_list4.default();
 	    _this.view = new _task_list2.default(container);
 	
 	    _this.render();
+	    _this.setState(_this.states.INIT);
+	
+	    _this.view.events.on('view:rendered', function () {
+	      this.view.setState(this.state); // For hiding recently rendered component, which wait for data
+	    }, _this);
+	
+	    _this.model.events.on('model:updated', function (data) {
+	      this.update(data);
+	    }, _this.view);
 	    return _this;
 	  }
 	
 	  /**
-	   * Get global tasks count
-	   * @return {number} Global tasks count
+	   * Set component state. Fire events which listen by components
+	   * @param {string} state
 	   */
 	
 	
 	  _createClass(TaskList, [{
+	    key: 'setState',
+	    value: function setState(state) {
+	      if (!this.checkState(state)) return;
+	
+	      this.state = state;
+	      this.view.setState(state);
+	    }
+	
+	    /**
+	     * Check state existence
+	     * @param {string} state
+	     * @return {boolean} State existence flag
+	     */
+	
+	  }, {
+	    key: 'checkState',
+	    value: function checkState(state) {
+	      var states = this.states;
+	      var existenceFlag = false;
+	
+	      for (var prop in states) {
+	        if (states[prop] === state) existenceFlag = true;
+	      }
+	
+	      return existenceFlag;
+	    }
+	
+	    /**
+	     * Get global tasks count
+	     * @return {number} Global tasks count
+	     */
+	
+	  }, {
 	    key: 'getGlobalTasksCount',
 	    value: function getGlobalTasksCount() {}
+	
+	    /**
+	     * Get daily tasks count
+	     * @return {number} Daily tasks count
+	     */
+	
+	  }, {
+	    key: 'getDailyTasksCount',
+	    value: function getDailyTasksCount() {}
 	
 	    /**
 	     * Shows tasks buttons for removing
@@ -6398,7 +6472,9 @@ webpackJsonp([1],Array(43).concat([
 	
 	  }, {
 	    key: 'switchOnRemovingMode',
-	    value: function switchOnRemovingMode() {}
+	    value: function switchOnRemovingMode() {
+	      this.setState(this.states.REMOVING);
+	    }
 	
 	    /**
 	     * Remove marked tasks
@@ -6406,7 +6482,9 @@ webpackJsonp([1],Array(43).concat([
 	
 	  }, {
 	    key: 'switchOffRemovingMode',
-	    value: function switchOffRemovingMode() {}
+	    value: function switchOffRemovingMode() {
+	      this.setState(this.states.COMMON);
+	    }
 	
 	    /**
 	     * Switch on/off removing mode depends on current state
@@ -6414,7 +6492,13 @@ webpackJsonp([1],Array(43).concat([
 	
 	  }, {
 	    key: 'toggleRemovingMode',
-	    value: function toggleRemovingMode() {}
+	    value: function toggleRemovingMode() {
+	      if (this.state === this.states.REMOVING) {
+	        this.switchOffRemovingMode();
+	      } else {
+	        this.switchOnRemovingMode();
+	      }
+	    }
 	
 	    /**
 	     * Add task to collection
@@ -6423,7 +6507,9 @@ webpackJsonp([1],Array(43).concat([
 	
 	  }, {
 	    key: 'addTask',
-	    value: function addTask(dataObject) {}
+	    value: function addTask(dataObject) {
+	      this.model.addTask(dataObject);
+	    }
 	
 	    /**
 	     * Update task by id
@@ -6472,6 +6558,10 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _task_list2 = _interopRequireDefault(_task_list);
 	
+	var _data = __webpack_require__(74);
+	
+	var _data2 = _interopRequireDefault(_data);
+	
 	var _task = __webpack_require__(143);
 	
 	var _task2 = _interopRequireDefault(_task);
@@ -6480,7 +6570,11 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
+	var _task_list3 = __webpack_require__(152);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -6513,10 +6607,11 @@ webpackJsonp([1],Array(43).concat([
 	  _createClass(View, [{
 	    key: 'render',
 	    value: function render() {
-	      this.template = new _task_list2.default();
+	      this.template = new _task_list2.default(_task_list3.messagesData);
 	
 	      this.container.appendChild(this.markup);
 	      this.createComponents();
+	      this.setStatesForMessages();
 	      _get(View.prototype.__proto__ || Object.getPrototypeOf(View.prototype), 'render', this).call(this);
 	    }
 	
@@ -6526,7 +6621,87 @@ webpackJsonp([1],Array(43).concat([
 	
 	  }, {
 	    key: 'createComponents',
-	    value: function createComponents() {}
+	    value: function createComponents() {
+	      _data2.default.getData('priority').once('priority:getData', function (data) {
+	        var tabsData = data.map(function (element) {
+	          return {
+	            name: element.title,
+	            active: false
+	          };
+	        });
+	        tabsData.unshift({
+	          name: 'all',
+	          active: true
+	        });
+	
+	        var priorityFilterTabs = new (Function.prototype.bind.apply(_tabs2.default, [null].concat([true, this.markup.querySelector('.global-tasks .task-list-block-controls'), ''], _toConsumableArray(tabsData))))();
+	        this.hideOnStates(priorityFilterTabs, ['init']);
+	        this.componentsList.push(priorityFilterTabs);
+	
+	        this.events.trigger('view:rendered');
+	      }, this);
+	
+	      var mainFilterTabs = new (Function.prototype.bind.apply(_tabs2.default, [null].concat([true, this.markup.querySelector('.daily-tasks .task-list-block-controls'), ''], _toConsumableArray(_task_list3.mainFilterTabsData))))();
+	      this.hideOnStates(mainFilterTabs, ['init']);
+	      this.componentsList.push(mainFilterTabs);
+	    }
+	
+	    /**
+	     * Set states for messages
+	     */
+	
+	  }, {
+	    key: 'setStatesForMessages',
+	    value: function setStatesForMessages() {
+	      var firstTaskMessage = this.markup.querySelector('.first-task');
+	      var dragToTopMessage = this.markup.querySelector('.drag-to-top');
+	      var allDoneMessage = this.markup.querySelector('.all-done');
+	
+	      // this.hideOnStates(firstTaskMessage, [''])
+	      this.hideOnStates(dragToTopMessage, ['init']);
+	      this.hideOnStates(allDoneMessage, ['init']);
+	    }
+	
+	    /**
+	     * Set component state. Fire events which listen by components
+	     * @param {string} state
+	     */
+	
+	  }, {
+	    key: 'setState',
+	    value: function setState(state) {
+	      this.events.trigger('view:state_changed', state);
+	    }
+	
+	    /**
+	     * Subscribe on state change event and hide component on some states
+	     * @param {ComponentController | HTMLElement} component - Component or element which will be hide
+	     * @param {array} statesArray - Array of states(strings)
+	     */
+	
+	  }, {
+	    key: 'hideOnStates',
+	    value: function hideOnStates(component, statesArray) {
+	      var isElement = component instanceof HTMLElement;
+	      var hideStyle = 'display: none;';
+	
+	      this.events.on('view:state_changed', function (state) {
+	        if (statesArray.includes(state)) {
+	          if (isElement) {
+	            component.style = hideStyle;
+	          } else {
+	            component.inlineStyles = hideStyle;
+	          }
+	          return;
+	        }
+	
+	        if (isElement) {
+	          component.style = '';
+	        } else {
+	          component.inlineStyles = '';
+	        }
+	      });
+	    }
 	  }]);
 	
 	  return View;
@@ -6555,10 +6730,12 @@ webpackJsonp([1],Array(43).concat([
 	
 	  /**
 	   * Create component template
+	   * @param {array} messagesData - Messages data array
 	   */
-	  function Template() {
+	  function Template(messagesData) {
 	    _classCallCheck(this, Template);
 	
+	    this.messagesData = messagesData;
 	    this.markup = document.createElement('div');
 	    this.markup.classList.add('task-list');
 	    this.markup.innerHTML = this.createMarkupSkeleton();
@@ -6573,7 +6750,49 @@ webpackJsonp([1],Array(43).concat([
 	  _createClass(Template, [{
 	    key: 'createMarkupSkeleton',
 	    value: function createMarkupSkeleton() {
-	      return 'Place for task list markup';
+	      return [this.createTasksBlock('daily-tasks', true), this.createTasksBlock('global-tasks')].join('\n');
+	    }
+	
+	    /**
+	     * Create tasks block markup
+	     * @param {string} additionalClass
+	     * @param {boolean} createMessagesFlag
+	     * @return {string} Tabs block markup
+	     */
+	
+	  }, {
+	    key: 'createTasksBlock',
+	    value: function createTasksBlock(additionalClass, createMessagesFlag) {
+	      return ['<div class="task-list-block ' + additionalClass + '">', '<div class="task-list-block-controls"></div>', createMessagesFlag ? this.createAllMessages() : '', '</div>'].join('\n');
+	    }
+	
+	    /**
+	     * Create message paragraph
+	     * @param {string} additionalClass - Class which will be attach to element
+	     * @param {string} text - Message text
+	     * @param {string} iconPosition - Determine icon position (after, before, none(default))
+	     */
+	
+	  }, {
+	    key: 'createMessage',
+	    value: function createMessage(additionalClass, text) {
+	      var iconPosition = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+	
+	      return ['<div class="task-list-message ' + additionalClass + '">', '<p class="task-list-message-text ' + (iconPosition ? 'task-list-message-text__icon-' + iconPosition : '') + '">' + text + '</p>', '</div>'].join('\n');
+	    }
+	
+	    /**
+	     * Create all message paragraphs
+	     */
+	
+	  }, {
+	    key: 'createAllMessages',
+	    value: function createAllMessages() {
+	      var _this = this;
+	
+	      return this.messagesData.map(function (message) {
+	        return _this.createMessage(message.class, message.text, message.icon);
+	      }).join('\n');
 	    }
 	  }]);
 	
@@ -6584,6 +6803,50 @@ webpackJsonp([1],Array(43).concat([
 
 /***/ },
 /* 152 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var messagesData = [{
+	  class: 'first-task',
+	  text: 'Add your first task',
+	  icon: 'before'
+	}, {
+	  class: 'drag-to-top',
+	  text: 'Task added,<br>drag it to the top 5 in daily task list',
+	  icon: 'after'
+	}, {
+	  class: 'all-done',
+	  text: 'Excellent,<br>all daily tasks done! :)'
+	}];
+	
+	var mainFilterTabsData = [{
+	  name: 'to do',
+	  active: true
+	}, {
+	  name: 'done',
+	  active: false
+	}];
+	
+	// TODO: Переписать табы так чтобы можно было не указывать
+	// TODO: активный таб, в таком случае на табы при клике не вешается
+	// TODO: класс .active
+	// TODO: Также добавить флаг при котором происходит капитализация каждого слова
+	var selectionTabsData = [{
+	  name: 'select all'
+	}, {
+	  name: 'deselect all'
+	}];
+	
+	exports.messagesData = messagesData;
+	exports.mainFilterTabsData = mainFilterTabsData;
+	exports.selectionTabsData = selectionTabsData;
+
+/***/ },
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6616,7 +6879,16 @@ webpackJsonp([1],Array(43).concat([
 	  function Model() {
 	    _classCallCheck(this, Model);
 	
-	    return _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this));
+	    var _this = _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this));
+	
+	    _this.modelAlias = 'tasks';
+	
+	    _this.subscribe(function (data) {
+	      if (!data) return;
+	
+	      _this.update(data);
+	    });
+	    return _this;
 	  }
 	
 	  return Model;
@@ -6625,7 +6897,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Model;
 
 /***/ },
-/* 153 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
@@ -6651,14 +6923,14 @@ webpackJsonp([1],Array(43).concat([
 	}
 
 /***/ },
-/* 154 */,
-/* 155 */
+/* 155 */,
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(156);
+	var content = __webpack_require__(157);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(59)(content, {});
@@ -6678,7 +6950,7 @@ webpackJsonp([1],Array(43).concat([
 	}
 
 /***/ },
-/* 156 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(58)();
@@ -6692,8 +6964,8 @@ webpackJsonp([1],Array(43).concat([
 
 
 /***/ },
-/* 157 */,
-/* 158 */
+/* 158 */,
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6702,11 +6974,11 @@ webpackJsonp([1],Array(43).concat([
 	  value: true
 	});
 	
-	var _pages = __webpack_require__(159);
+	var _pages = __webpack_require__(160);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _login = __webpack_require__(160);
+	var _login = __webpack_require__(161);
 	
 	var _login2 = _interopRequireDefault(_login);
 	
@@ -6757,7 +7029,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Login;
 
 /***/ },
-/* 159 */
+/* 160 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -6824,7 +7096,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = PageController;
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6837,11 +7109,11 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _pages = __webpack_require__(161);
+	var _pages = __webpack_require__(162);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _login = __webpack_require__(162);
+	var _login = __webpack_require__(163);
 	
 	var _login2 = _interopRequireDefault(_login);
 	
@@ -6942,7 +7214,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = View;
 
 /***/ },
-/* 161 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7080,7 +7352,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = PageView;
 
 /***/ },
-/* 162 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7091,7 +7363,7 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _pages = __webpack_require__(163);
+	var _pages = __webpack_require__(164);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
@@ -7141,7 +7413,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Template;
 
 /***/ },
-/* 163 */
+/* 164 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -7170,7 +7442,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = PageTemplate;
 
 /***/ },
-/* 164 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
@@ -7196,8 +7468,8 @@ webpackJsonp([1],Array(43).concat([
 	}
 
 /***/ },
-/* 165 */,
-/* 166 */
+/* 166 */,
+/* 167 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -7470,7 +7742,7 @@ webpackJsonp([1],Array(43).concat([
 	};
 
 /***/ },
-/* 167 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7479,11 +7751,11 @@ webpackJsonp([1],Array(43).concat([
 	  value: true
 	});
 	
-	var _pages = __webpack_require__(159);
+	var _pages = __webpack_require__(160);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _reports = __webpack_require__(168);
+	var _reports = __webpack_require__(169);
 	
 	var _reports2 = _interopRequireDefault(_reports);
 	
@@ -7522,7 +7794,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Reports;
 
 /***/ },
-/* 168 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7535,11 +7807,11 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _pages = __webpack_require__(161);
+	var _pages = __webpack_require__(162);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _reports = __webpack_require__(169);
+	var _reports = __webpack_require__(170);
 	
 	var _reports2 = _interopRequireDefault(_reports);
 	
@@ -7551,9 +7823,9 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
-	var _reports3 = __webpack_require__(166);
+	var _reports3 = __webpack_require__(167);
 	
-	var _reports4 = __webpack_require__(170);
+	var _reports4 = __webpack_require__(171);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -7635,7 +7907,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = View;
 
 /***/ },
-/* 169 */
+/* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7646,7 +7918,7 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _pages = __webpack_require__(163);
+	var _pages = __webpack_require__(164);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
@@ -7694,7 +7966,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Template;
 
 /***/ },
-/* 170 */
+/* 171 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -7792,13 +8064,13 @@ webpackJsonp([1],Array(43).concat([
 	exports.tempTabsData = tempTabsData;
 
 /***/ },
-/* 171 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(172);
+	var content = __webpack_require__(173);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(59)(content, {});
@@ -7818,7 +8090,7 @@ webpackJsonp([1],Array(43).concat([
 	}
 
 /***/ },
-/* 172 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(58)();
@@ -7832,7 +8104,7 @@ webpackJsonp([1],Array(43).concat([
 
 
 /***/ },
-/* 173 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7841,11 +8113,11 @@ webpackJsonp([1],Array(43).concat([
 	  value: true
 	});
 	
-	var _pages = __webpack_require__(159);
+	var _pages = __webpack_require__(160);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _settings = __webpack_require__(174);
+	var _settings = __webpack_require__(175);
 	
 	var _settings2 = _interopRequireDefault(_settings);
 	
@@ -7892,7 +8164,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Settings;
 
 /***/ },
-/* 174 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7905,11 +8177,11 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _pages = __webpack_require__(161);
+	var _pages = __webpack_require__(162);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _settings = __webpack_require__(175);
+	var _settings = __webpack_require__(176);
 	
 	var _settings2 = _interopRequireDefault(_settings);
 	
@@ -7935,7 +8207,7 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
-	var _settings3 = __webpack_require__(176);
+	var _settings3 = __webpack_require__(177);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -8066,7 +8338,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = View;
 
 /***/ },
-/* 175 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8077,7 +8349,7 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _pages = __webpack_require__(163);
+	var _pages = __webpack_require__(164);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
@@ -8137,7 +8409,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Template;
 
 /***/ },
-/* 176 */
+/* 177 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -8156,13 +8428,13 @@ webpackJsonp([1],Array(43).concat([
 	exports.tabsData = tabsData;
 
 /***/ },
-/* 177 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(178);
+	var content = __webpack_require__(179);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(59)(content, {});
@@ -8182,7 +8454,7 @@ webpackJsonp([1],Array(43).concat([
 	}
 
 /***/ },
-/* 178 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(58)();
@@ -8196,7 +8468,7 @@ webpackJsonp([1],Array(43).concat([
 
 
 /***/ },
-/* 179 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8207,7 +8479,7 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _pages = __webpack_require__(159);
+	var _pages = __webpack_require__(160);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
@@ -8263,7 +8535,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Signout;
 
 /***/ },
-/* 180 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8272,11 +8544,11 @@ webpackJsonp([1],Array(43).concat([
 	  value: true
 	});
 	
-	var _pages = __webpack_require__(159);
+	var _pages = __webpack_require__(160);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _task_list = __webpack_require__(181);
+	var _task_list = __webpack_require__(182);
 	
 	var _task_list2 = _interopRequireDefault(_task_list);
 	
@@ -8322,7 +8594,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = TaskList;
 
 /***/ },
-/* 181 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8335,11 +8607,11 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _pages = __webpack_require__(161);
+	var _pages = __webpack_require__(162);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _task_list = __webpack_require__(182);
+	var _task_list = __webpack_require__(183);
 	
 	var _task_list2 = _interopRequireDefault(_task_list);
 	
@@ -8479,8 +8751,7 @@ webpackJsonp([1],Array(43).concat([
 	        var modal = new _modal2.default(_this3.viewport);
 	
 	        modal.events.on('modal:submit', function (dataObject) {
-	          console.log(dataObject);
-	          // taskList.addTask(dataObject);
+	          taskList.addTask(dataObject);
 	          modal.close();
 	        });
 	      };
@@ -8499,7 +8770,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = View;
 
 /***/ },
-/* 182 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8510,7 +8781,7 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _pages = __webpack_require__(163);
+	var _pages = __webpack_require__(164);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
@@ -8558,7 +8829,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Template;
 
 /***/ },
-/* 183 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
@@ -8584,8 +8855,8 @@ webpackJsonp([1],Array(43).concat([
 	}
 
 /***/ },
-/* 184 */,
-/* 185 */
+/* 185 */,
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8594,11 +8865,11 @@ webpackJsonp([1],Array(43).concat([
 	  value: true
 	});
 	
-	var _pages = __webpack_require__(159);
+	var _pages = __webpack_require__(160);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _timer = __webpack_require__(186);
+	var _timer = __webpack_require__(187);
 	
 	var _timer2 = _interopRequireDefault(_timer);
 	
@@ -8637,7 +8908,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Timer;
 
 /***/ },
-/* 186 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8650,11 +8921,11 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _pages = __webpack_require__(161);
+	var _pages = __webpack_require__(162);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _timer = __webpack_require__(187);
+	var _timer = __webpack_require__(188);
 	
 	var _timer2 = _interopRequireDefault(_timer);
 	
@@ -8715,7 +8986,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = View;
 
 /***/ },
-/* 187 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8726,7 +8997,7 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _pages = __webpack_require__(163);
+	var _pages = __webpack_require__(164);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
@@ -8776,7 +9047,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Template;
 
 /***/ },
-/* 188 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag

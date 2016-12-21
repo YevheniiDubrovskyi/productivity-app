@@ -96,8 +96,7 @@ export default class View extends PageView {
       const modal = new Modal(this.viewport);
 
       modal.events.on('modal:submit', function(dataObject) {
-        console.log(dataObject);
-        // taskList.addTask(dataObject);
+        taskList.addTask(dataObject);
         modal.close();
       });
     };

@@ -29,7 +29,7 @@ export default class Model extends ComponentModel {
     this.dataStatic = this.dataStatic.map((el) => {
       return {
         name: el.name,
-        active: el.name === name ? true : false
+        active: el.name === name
       };
     });
 
