@@ -35,7 +35,7 @@ const dataService = {
     } else {
       setTimeout(() => {
         this.events.trigger(`${modelName}:getData`, localStorageService.getItem(modelName));
-      }, 10);
+      }, 100);
     }
 
     return this.events;

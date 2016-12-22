@@ -146,9 +146,9 @@ export default class Template {
    */
   createEstimationRadioGroup(count) {
     let estimationGroup = [];
-    let i = count + 1;
+    let i = count;
 
-    while (--i) {
+    while (i--) {
       estimationGroup = estimationGroup.concat([`<input type="radio" name="estimation" id="estimation-${i}" class="modal-estimation-list-item-radio">`,
                                                 `<label class="modal-estimation-list-item-lbl" for="estimation-${i}"></label>`]);
     }

@@ -11,8 +11,7 @@ export default class ComponentModel {
    * @param {*} data - Any data
    */
   constructor(data) {
-    this.dataCollection = []; // For collection components
-    this.dataStatic = data ? data : {}; // For common components (For cases when data is pure)
+    this.dataStatic = data ? data : {};
     this.modelAlias = null; // For data saving in storage
     this.events = new EventBus();
   }
@@ -23,12 +22,11 @@ export default class ComponentModel {
   destroy() {
     delete this.events;
     delete this.dataStatic;
-    delete this.dataCollection;
   }
 
   /**
    * Get data from storage
-   * @param {function} Callback which get data
+   * @param {function} callback - Function which get data
    */
   getDataFromStorage(callback) {
     dataService.getData(this.modelAlias).once(`${this.modelAlias}:getData`, callback, this);
@@ -36,7 +34,7 @@ export default class ComponentModel {
 
   /**
    * Subscribe on changes data in storage
-   * @param {function} callback Callback which get data
+   * @param {function} callback - Function which get data
    */
   subscribe(callback) {
     dataService.subscribe(this.modelAlias).on(`${this.modelAlias}:dataReceived`, callback, this);
@@ -58,17 +56,6 @@ export default class ComponentModel {
   }
 
   /**
-   * !!! Method for collection components
-   * Add data to model and trigger event with added data
-   * @param {...} data - Any data, any type
-   */
-  addData(...data) {
-    this.dataCollection.push(...data);
-    this.events.trigger('model:added', ...data);
-  }
-
-  /**
-   * !!! Method for common components
    * Rewrite data and trigger event with new data
    * @param {Object} data - Data object
    */
@@ -82,7 +69,6 @@ export default class ComponentModel {
   }
 
   /**
-   * !!! Method for common components
    * Rewrite data in model (without event for preventing infinite loop in some cases)
    * @param {Object} data - Data object
    */

@@ -144,55 +144,55 @@ webpackJsonp([1],Array(43).concat([
 		"./components/task_list/task_list.view": 150,
 		"./components/task_list/task_list.view.js": 150,
 		"./components/tooltip/tooltip.less": 156,
-		"./pages/login/login.controller": 159,
-		"./pages/login/login.controller.js": 159,
-		"./pages/login/login.less": 165,
-		"./pages/login/login.template": 163,
-		"./pages/login/login.template.js": 163,
-		"./pages/login/login.view": 161,
-		"./pages/login/login.view.js": 161,
-		"./pages/pages.controller": 160,
-		"./pages/pages.controller.js": 160,
-		"./pages/pages.template": 164,
-		"./pages/pages.template.js": 164,
-		"./pages/pages.view": 162,
-		"./pages/pages.view.js": 162,
-		"./pages/reports/reports.config": 167,
-		"./pages/reports/reports.config.js": 167,
-		"./pages/reports/reports.controller": 168,
-		"./pages/reports/reports.controller.js": 168,
-		"./pages/reports/reports.data": 171,
-		"./pages/reports/reports.data.js": 171,
-		"./pages/reports/reports.less": 172,
-		"./pages/reports/reports.template": 170,
-		"./pages/reports/reports.template.js": 170,
-		"./pages/reports/reports.view": 169,
-		"./pages/reports/reports.view.js": 169,
-		"./pages/settings/settings.controller": 174,
-		"./pages/settings/settings.controller.js": 174,
-		"./pages/settings/settings.data": 177,
-		"./pages/settings/settings.data.js": 177,
-		"./pages/settings/settings.less": 178,
-		"./pages/settings/settings.template": 176,
-		"./pages/settings/settings.template.js": 176,
-		"./pages/settings/settings.view": 175,
-		"./pages/settings/settings.view.js": 175,
-		"./pages/signout/signout.controller": 180,
-		"./pages/signout/signout.controller.js": 180,
-		"./pages/task_list/task_list.controller": 181,
-		"./pages/task_list/task_list.controller.js": 181,
-		"./pages/task_list/task_list.less": 184,
-		"./pages/task_list/task_list.template": 183,
-		"./pages/task_list/task_list.template.js": 183,
-		"./pages/task_list/task_list.view": 182,
-		"./pages/task_list/task_list.view.js": 182,
-		"./pages/timer/timer.controller": 186,
-		"./pages/timer/timer.controller.js": 186,
-		"./pages/timer/timer.less": 189,
-		"./pages/timer/timer.template": 188,
-		"./pages/timer/timer.template.js": 188,
-		"./pages/timer/timer.view": 187,
-		"./pages/timer/timer.view.js": 187,
+		"./pages/login/login.controller": 160,
+		"./pages/login/login.controller.js": 160,
+		"./pages/login/login.less": 166,
+		"./pages/login/login.template": 164,
+		"./pages/login/login.template.js": 164,
+		"./pages/login/login.view": 162,
+		"./pages/login/login.view.js": 162,
+		"./pages/pages.controller": 161,
+		"./pages/pages.controller.js": 161,
+		"./pages/pages.template": 165,
+		"./pages/pages.template.js": 165,
+		"./pages/pages.view": 163,
+		"./pages/pages.view.js": 163,
+		"./pages/reports/reports.config": 168,
+		"./pages/reports/reports.config.js": 168,
+		"./pages/reports/reports.controller": 169,
+		"./pages/reports/reports.controller.js": 169,
+		"./pages/reports/reports.data": 172,
+		"./pages/reports/reports.data.js": 172,
+		"./pages/reports/reports.less": 173,
+		"./pages/reports/reports.template": 171,
+		"./pages/reports/reports.template.js": 171,
+		"./pages/reports/reports.view": 170,
+		"./pages/reports/reports.view.js": 170,
+		"./pages/settings/settings.controller": 175,
+		"./pages/settings/settings.controller.js": 175,
+		"./pages/settings/settings.data": 178,
+		"./pages/settings/settings.data.js": 178,
+		"./pages/settings/settings.less": 179,
+		"./pages/settings/settings.template": 177,
+		"./pages/settings/settings.template.js": 177,
+		"./pages/settings/settings.view": 176,
+		"./pages/settings/settings.view.js": 176,
+		"./pages/signout/signout.controller": 181,
+		"./pages/signout/signout.controller.js": 181,
+		"./pages/task_list/task_list.controller": 182,
+		"./pages/task_list/task_list.controller.js": 182,
+		"./pages/task_list/task_list.less": 185,
+		"./pages/task_list/task_list.template": 184,
+		"./pages/task_list/task_list.template.js": 184,
+		"./pages/task_list/task_list.view": 183,
+		"./pages/task_list/task_list.view.js": 183,
+		"./pages/timer/timer.controller": 187,
+		"./pages/timer/timer.controller.js": 187,
+		"./pages/timer/timer.less": 190,
+		"./pages/timer/timer.template": 189,
+		"./pages/timer/timer.template.js": 189,
+		"./pages/timer/timer.view": 188,
+		"./pages/timer/timer.view.js": 188,
 		"./router": 26,
 		"./router.js": 26,
 		"./services/data.service": 74,
@@ -704,8 +704,7 @@ webpackJsonp([1],Array(43).concat([
 	  function ComponentModel(data) {
 	    _classCallCheck(this, ComponentModel);
 	
-	    this.dataCollection = []; // For collection components
-	    this.dataStatic = data ? data : {}; // For common components (For cases when data is pure)
+	    this.dataStatic = data ? data : {};
 	    this.modelAlias = null; // For data saving in storage
 	    this.events = new _eventbus2.default();
 	  }
@@ -720,12 +719,11 @@ webpackJsonp([1],Array(43).concat([
 	    value: function destroy() {
 	      delete this.events;
 	      delete this.dataStatic;
-	      delete this.dataCollection;
 	    }
 	
 	    /**
 	     * Get data from storage
-	     * @param {function} Callback which get data
+	     * @param {function} callback - Function which get data
 	     */
 	
 	  }, {
@@ -736,7 +734,7 @@ webpackJsonp([1],Array(43).concat([
 	
 	    /**
 	     * Subscribe on changes data in storage
-	     * @param {function} callback Callback which get data
+	     * @param {function} callback - Function which get data
 	     */
 	
 	  }, {
@@ -767,26 +765,6 @@ webpackJsonp([1],Array(43).concat([
 	    }
 	
 	    /**
-	     * !!! Method for collection components
-	     * Add data to model and trigger event with added data
-	     * @param {...} data - Any data, any type
-	     */
-	
-	  }, {
-	    key: 'addData',
-	    value: function addData() {
-	      var _dataCollection, _events;
-	
-	      for (var _len = arguments.length, data = Array(_len), _key = 0; _key < _len; _key++) {
-	        data[_key] = arguments[_key];
-	      }
-	
-	      (_dataCollection = this.dataCollection).push.apply(_dataCollection, data);
-	      (_events = this.events).trigger.apply(_events, ['model:added'].concat(data));
-	    }
-	
-	    /**
-	     * !!! Method for common components
 	     * Rewrite data and trigger event with new data
 	     * @param {Object} data - Data object
 	     */
@@ -801,7 +779,6 @@ webpackJsonp([1],Array(43).concat([
 	    }
 	
 	    /**
-	     * !!! Method for common components
 	     * Rewrite data in model (without event for preventing infinite loop in some cases)
 	     * @param {Object} data - Data object
 	     */
@@ -880,7 +857,7 @@ webpackJsonp([1],Array(43).concat([
 	    } else {
 	      setTimeout(function () {
 	        _this.events.trigger(modelName + ':getData', _localstorageService2.default.getItem(modelName));
-	      }, 10);
+	      }, 100);
 	    }
 	
 	    return this.events;
@@ -5833,9 +5810,9 @@ webpackJsonp([1],Array(43).concat([
 	    key: 'createEstimationRadioGroup',
 	    value: function createEstimationRadioGroup(count) {
 	      var estimationGroup = [];
-	      var i = count + 1;
+	      var i = count;
 	
-	      while (--i) {
+	      while (i--) {
 	        estimationGroup = estimationGroup.concat(['<input type="radio" name="estimation" id="estimation-' + i + '" class="modal-estimation-list-item-radio">', '<label class="modal-estimation-list-item-lbl" for="estimation-' + i + '"></label>']);
 	      }
 	
@@ -6395,23 +6372,43 @@ webpackJsonp([1],Array(43).concat([
 	
 	    _this.states = {
 	      INIT: 'init',
+	      ALL_DONE: 'all_done',
 	      TASK_ADDED: 'task_added',
 	      COMMON: 'common',
 	      REMOVING: 'removing'
 	    };
 	    _this.state = null;
-	    _this.model = new _task_list4.default();
-	    _this.view = new _task_list2.default(container);
+	    _this.model = new _task_list4.default(_this.states);
+	    _this.view = new _task_list2.default(container, _this.states);
 	
 	    _this.render();
-	    _this.setState(_this.states.INIT);
 	
-	    _this.view.events.on('view:rendered', function () {
-	      this.view.setState(this.state); // For hiding recently rendered component, which wait for data
+	    _this.model.events.on('model:state_changed', function (state) {
+	      console.log('Model state change - ', state); // TODO: remove this later
+	      this.setState(state);
 	    }, _this);
 	
+	    _this.view.events.on('view:rendered', function () {
+	      this.setState(this.state); // For hiding recently rendered component, which wait for data
+	    }, _this);
+	
+	    // Fired when model updated from dataService
+	    // TODO: Можно подпилить пож этот ивент сортировку, сортировать по полю priority и кидать в ивент
 	    _this.model.events.on('model:updated', function (data) {
 	      this.update(data);
+	    }, _this.view);
+	
+	    // CRUD events
+	    _this.model.events.on('task_data:added', function (dataObject) {
+	      this.view.createTask(dataObject);
+	    }, _this);
+	
+	    _this.model.events.on('task_data:remove', function (id) {
+	      this.removeTask(id);
+	    }, _this.view);
+	
+	    _this.model.events.on('task_data:update', function (dataObject) {
+	      this.updateTask(dataObject);
 	    }, _this.view);
 	    return _this;
 	  }
@@ -6451,24 +6448,6 @@ webpackJsonp([1],Array(43).concat([
 	    }
 	
 	    /**
-	     * Get global tasks count
-	     * @return {number} Global tasks count
-	     */
-	
-	  }, {
-	    key: 'getGlobalTasksCount',
-	    value: function getGlobalTasksCount() {}
-	
-	    /**
-	     * Get daily tasks count
-	     * @return {number} Daily tasks count
-	     */
-	
-	  }, {
-	    key: 'getDailyTasksCount',
-	    value: function getDailyTasksCount() {}
-	
-	    /**
 	     * Shows tasks buttons for removing
 	     */
 	
@@ -6503,7 +6482,7 @@ webpackJsonp([1],Array(43).concat([
 	    }
 	
 	    /**
-	     * Add task to collection
+	     * Add task data. Starts chain for adding task instance to collection.
 	     * @param {object} dataObject - Data object for task
 	     */
 	
@@ -6515,13 +6494,16 @@ webpackJsonp([1],Array(43).concat([
 	
 	    /**
 	     * Update task by id
-	     * @param {string} id
-	     * @param {object} dataObject
+	     * @param {string} id - Task id
+	     * @param {object} dataObject - Task raw data
+	     * @param {string} [type] - Task type (daily|global)
 	     */
 	
 	  }, {
 	    key: 'updateTask',
-	    value: function updateTask(id, dataObject) {}
+	    value: function updateTask(id, dataObject, type) {
+	      this.model.updateTask(id, dataObject, type);
+	    }
 	
 	    /**
 	     * Remove task by id
@@ -6530,7 +6512,9 @@ webpackJsonp([1],Array(43).concat([
 	
 	  }, {
 	    key: 'removeTask',
-	    value: function removeTask(id) {}
+	    value: function removeTask(id) {
+	      this.model.removeTask(id);
+	    }
 	  }]);
 	
 	  return TaskList;
@@ -6594,11 +6578,15 @@ webpackJsonp([1],Array(43).concat([
 	  /**
 	   * Create component view
 	   * @param {HTMLElement} container - Append to element
+	   * @param {object} states - States object
 	   */
-	  function View(container) {
+	  function View(container, states) {
 	    _classCallCheck(this, View);
 	
-	    return _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this, container));
+	    var _this = _possibleConstructorReturn(this, (View.__proto__ || Object.getPrototypeOf(View)).call(this, container));
+	
+	    _this.states = states;
+	    return _this;
 	  }
 	
 	  /**
@@ -6637,15 +6625,63 @@ webpackJsonp([1],Array(43).concat([
 	        });
 	
 	        var priorityFilterTabs = new (Function.prototype.bind.apply(_tabs2.default, [null].concat([true, this.markup.querySelector('.global-tasks .task-list-block-controls'), ''], _toConsumableArray(tabsData))))();
-	        this.hideOnStates(priorityFilterTabs, ['init']);
+	        this.hideOnStates(priorityFilterTabs, [this.states.INIT]);
 	        this.componentsList.push(priorityFilterTabs);
 	
 	        this.events.trigger('view:rendered');
 	      }, this);
 	
 	      var mainFilterTabs = new (Function.prototype.bind.apply(_tabs2.default, [null].concat([true, this.markup.querySelector('.daily-tasks .task-list-block-controls'), ''], _toConsumableArray(_task_list3.mainFilterTabsData))))();
-	      this.hideOnStates(mainFilterTabs, ['init']);
+	      this.hideOnStates(mainFilterTabs, [this.states.INIT]);
 	      this.componentsList.push(mainFilterTabs);
+	    }
+	
+	    /**
+	     * Create task instance
+	     * @param {object} dataObject
+	     */
+	
+	  }, {
+	    key: 'createTask',
+	    value: function createTask(dataObject) {
+	      var task = new _task2.default(dataObject);
+	      this.componentsList.push(task);
+	    }
+	
+	    /**
+	     * Update task
+	     * @param {object} dataObject
+	     */
+	
+	  }, {
+	    key: 'updateTask',
+	    value: function updateTask(dataObject) {
+	      this.findTaskByID(dataObject.id).update(dataObject);
+	    }
+	
+	    /**
+	     * Remove task
+	     * @param {string} id
+	     */
+	
+	  }, {
+	    key: 'removeTask',
+	    value: function removeTask(id) {
+	      this.findTaskByID(id).destroy();
+	    }
+	
+	    /**
+	     * Find task by id
+	     * @param {string} id
+	     * @return {Task} Task instance
+	     */
+	
+	  }, {
+	    key: 'findTaskByID',
+	    value: function findTaskByID(id) {
+	      return this.componentsList.filter(function (component) {
+	        return component instanceof _task2.default && component.getID() === id;
+	      })[0];
 	    }
 	
 	    /**
@@ -6660,8 +6696,8 @@ webpackJsonp([1],Array(43).concat([
 	      var allDoneMessage = this.markup.querySelector('.all-done');
 	
 	      // this.hideOnStates(firstTaskMessage, [''])
-	      this.hideOnStates(dragToTopMessage, ['init']);
-	      this.hideOnStates(allDoneMessage, ['init']);
+	      this.hideOnStates(dragToTopMessage, [this.states.INIT]);
+	      this.hideOnStates(allDoneMessage, [this.states.INIT]);
 	    }
 	
 	    /**
@@ -6857,9 +6893,15 @@ webpackJsonp([1],Array(43).concat([
 	  value: true
 	});
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _components = __webpack_require__(73);
 	
 	var _components2 = _interopRequireDefault(_components);
+	
+	var _utils = __webpack_require__(28);
+	
+	var _utils2 = _interopRequireDefault(_utils);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -6877,21 +6919,176 @@ webpackJsonp([1],Array(43).concat([
 	
 	  /**
 	   * Create component model
+	   * @param {object} states - States object
 	   */
-	  function Model() {
+	  function Model(states) {
 	    _classCallCheck(this, Model);
 	
+	    // this.allDone = false;
 	    var _this = _possibleConstructorReturn(this, (Model.__proto__ || Object.getPrototypeOf(Model)).call(this));
 	
+	    _this.dataStatic = [];
+	    _this.states = states;
+	
 	    _this.modelAlias = 'tasks';
+	
+	    _this.tasksTypes = {
+	      GLOBAL: 'global',
+	      DAILY: 'daily'
+	    };
 	
 	    _this.subscribe(function (data) {
 	      if (!data) return;
 	
 	      _this.update(data);
 	    });
+	
+	    _this.events.on('task_data', function () {
+	      this.checkStatesConditions();
+	      this.save();
+	    }, _this);
+	
+	    _this.events.on('model:updated', function () {
+	      this.checkStatesConditions();
+	    }, _this);
+	
+	    _this.checkStatesConditions();
 	    return _this;
 	  }
+	
+	  /**
+	   * Check states conditions and
+	   */
+	
+	
+	  _createClass(Model, [{
+	    key: 'checkStatesConditions',
+	    value: function checkStatesConditions() {
+	      var globalTasksCount = this.getGlobalTasksCount();
+	      var dailyTasksCount = this.getDailyTasksCount();
+	
+	      if (!dailyTasksCount && !globalTasksCount) {
+	        this.events.trigger('model:state_changed', this.states.INIT);
+	      } else if (!dailyTasksCount && globalTasksCount) {
+	        this.events.trigger('model:state_change', this.states.TASK_ADDED);
+	      } else {
+	        this.events.trigger('model:state_change', this.states.COMMON);
+	      }
+	    }
+	
+	    /**
+	     * Add task data object to raw data object array
+	     * @param {object} rawDataObject
+	     */
+	
+	  }, {
+	    key: 'addTask',
+	    value: function addTask(rawDataObject) {
+	      var dataObject = rawDataObject;
+	
+	      dataObject.id = dataObject.id ? dataObject.id : _utils2.default.getID();
+	
+	      this.dataStatic.push({
+	        type: this.tasksTypes.GLOBAL,
+	        data: dataObject
+	      });
+	      this.events.trigger('task_data:added', dataObject);
+	    }
+	
+	    /**
+	     * Update task data object in data object array
+	     * @param {string} id - Task id
+	     * @param {object} rawDataObject - Data object without id
+	     * @param {object} [type] - Task type (daily|global)
+	     */
+	
+	  }, {
+	    key: 'updateTask',
+	    value: function updateTask(id, rawDataObject, type) {
+	      var index = this.findTaskDataByID(id);
+	
+	      if (type) {
+	        if (!this.checkType(type)) {
+	          throw new Error('TaskList.Model: Such type does not exist');
+	        }
+	        this.dataStatic[index].type = type;
+	      }
+	      this.dataStatic[index].data = rawDataObject;
+	      this.events.trigger('task_data:update', this.dataStatic[index]);
+	    }
+	
+	    /**
+	     * Check task type existence
+	     * @param {string} type - Task type
+	     * @return {boolean} Task type existence flag
+	     */
+	
+	  }, {
+	    key: 'checkType',
+	    value: function checkType(type) {
+	      return this.tasksTypes.includes(type);
+	    }
+	
+	    /**
+	     * Remove task data object from data object array
+	     * @param {string} id - Task id
+	     */
+	
+	  }, {
+	    key: 'removeTask',
+	    value: function removeTask(id) {
+	      this.dataStatic.splice(this.findTaskDataByID(id), 1);
+	      this.events.trigger('task_data:remove', id);
+	    }
+	
+	    /**
+	     * Return task data index in data object array by id
+	     * @param {string} id - Task id
+	     * @return {number} Data index in object data array
+	     */
+	
+	  }, {
+	    key: 'findTaskDataByID',
+	    value: function findTaskDataByID(id) {
+	      var index = -1;
+	
+	      this.dataStatic.forEach(function (dataObject, i) {
+	        index = dataObject.data.id === id ? i : index;
+	      });
+	
+	      return index;
+	    }
+	
+	    /**
+	     * Get global tasks count
+	     * @return {number} Global tasks count
+	     */
+	
+	  }, {
+	    key: 'getGlobalTasksCount',
+	    value: function getGlobalTasksCount() {
+	      var _this2 = this;
+	
+	      return this.dataStatic.filter(function (data) {
+	        return data.type === _this2.tasksTypes.GLOBAL;
+	      }).length;
+	    }
+	
+	    /**
+	     * Get daily tasks count
+	     * @return {number} Daily tasks count
+	     */
+	
+	  }, {
+	    key: 'getDailyTasksCount',
+	    value: function getDailyTasksCount() {
+	      var _this3 = this;
+	
+	      return this.dataStatic.filter(function (data) {
+	        return data.type === _this3.tasksTypes.DAILY;
+	      }).length;
+	    }
+	  }]);
 	
 	  return Model;
 	}(_components2.default);
@@ -6967,7 +7164,8 @@ webpackJsonp([1],Array(43).concat([
 
 /***/ },
 /* 158 */,
-/* 159 */
+/* 159 */,
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6976,11 +7174,11 @@ webpackJsonp([1],Array(43).concat([
 	  value: true
 	});
 	
-	var _pages = __webpack_require__(160);
+	var _pages = __webpack_require__(161);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _login = __webpack_require__(161);
+	var _login = __webpack_require__(162);
 	
 	var _login2 = _interopRequireDefault(_login);
 	
@@ -7031,7 +7229,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Login;
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -7098,7 +7296,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = PageController;
 
 /***/ },
-/* 161 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7111,11 +7309,11 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _pages = __webpack_require__(162);
+	var _pages = __webpack_require__(163);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _login = __webpack_require__(163);
+	var _login = __webpack_require__(164);
 	
 	var _login2 = _interopRequireDefault(_login);
 	
@@ -7216,7 +7414,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = View;
 
 /***/ },
-/* 162 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7354,7 +7552,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = PageView;
 
 /***/ },
-/* 163 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7365,7 +7563,7 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _pages = __webpack_require__(164);
+	var _pages = __webpack_require__(165);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
@@ -7415,7 +7613,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Template;
 
 /***/ },
-/* 164 */
+/* 165 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -7444,7 +7642,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = PageTemplate;
 
 /***/ },
-/* 165 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
@@ -7470,8 +7668,8 @@ webpackJsonp([1],Array(43).concat([
 	}
 
 /***/ },
-/* 166 */,
-/* 167 */
+/* 167 */,
+/* 168 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -7744,7 +7942,7 @@ webpackJsonp([1],Array(43).concat([
 	};
 
 /***/ },
-/* 168 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7753,11 +7951,11 @@ webpackJsonp([1],Array(43).concat([
 	  value: true
 	});
 	
-	var _pages = __webpack_require__(160);
+	var _pages = __webpack_require__(161);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _reports = __webpack_require__(169);
+	var _reports = __webpack_require__(170);
 	
 	var _reports2 = _interopRequireDefault(_reports);
 	
@@ -7796,7 +7994,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Reports;
 
 /***/ },
-/* 169 */
+/* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7809,11 +8007,11 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _pages = __webpack_require__(162);
+	var _pages = __webpack_require__(163);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _reports = __webpack_require__(170);
+	var _reports = __webpack_require__(171);
 	
 	var _reports2 = _interopRequireDefault(_reports);
 	
@@ -7825,9 +8023,9 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
-	var _reports3 = __webpack_require__(167);
+	var _reports3 = __webpack_require__(168);
 	
-	var _reports4 = __webpack_require__(171);
+	var _reports4 = __webpack_require__(172);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -7909,7 +8107,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = View;
 
 /***/ },
-/* 170 */
+/* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7920,7 +8118,7 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _pages = __webpack_require__(164);
+	var _pages = __webpack_require__(165);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
@@ -7968,7 +8166,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Template;
 
 /***/ },
-/* 171 */
+/* 172 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -8066,13 +8264,13 @@ webpackJsonp([1],Array(43).concat([
 	exports.tempTabsData = tempTabsData;
 
 /***/ },
-/* 172 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(173);
+	var content = __webpack_require__(174);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(59)(content, {});
@@ -8092,7 +8290,7 @@ webpackJsonp([1],Array(43).concat([
 	}
 
 /***/ },
-/* 173 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(58)();
@@ -8106,7 +8304,7 @@ webpackJsonp([1],Array(43).concat([
 
 
 /***/ },
-/* 174 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8115,11 +8313,11 @@ webpackJsonp([1],Array(43).concat([
 	  value: true
 	});
 	
-	var _pages = __webpack_require__(160);
+	var _pages = __webpack_require__(161);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _settings = __webpack_require__(175);
+	var _settings = __webpack_require__(176);
 	
 	var _settings2 = _interopRequireDefault(_settings);
 	
@@ -8166,7 +8364,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Settings;
 
 /***/ },
-/* 175 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8179,11 +8377,11 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _pages = __webpack_require__(162);
+	var _pages = __webpack_require__(163);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _settings = __webpack_require__(176);
+	var _settings = __webpack_require__(177);
 	
 	var _settings2 = _interopRequireDefault(_settings);
 	
@@ -8209,7 +8407,7 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
-	var _settings3 = __webpack_require__(177);
+	var _settings3 = __webpack_require__(178);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -8340,7 +8538,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = View;
 
 /***/ },
-/* 176 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8351,7 +8549,7 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _pages = __webpack_require__(164);
+	var _pages = __webpack_require__(165);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
@@ -8411,7 +8609,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Template;
 
 /***/ },
-/* 177 */
+/* 178 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -8430,13 +8628,13 @@ webpackJsonp([1],Array(43).concat([
 	exports.tabsData = tabsData;
 
 /***/ },
-/* 178 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(179);
+	var content = __webpack_require__(180);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(59)(content, {});
@@ -8456,7 +8654,7 @@ webpackJsonp([1],Array(43).concat([
 	}
 
 /***/ },
-/* 179 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(58)();
@@ -8470,7 +8668,7 @@ webpackJsonp([1],Array(43).concat([
 
 
 /***/ },
-/* 180 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8481,7 +8679,7 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _pages = __webpack_require__(160);
+	var _pages = __webpack_require__(161);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
@@ -8537,7 +8735,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Signout;
 
 /***/ },
-/* 181 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8546,11 +8744,11 @@ webpackJsonp([1],Array(43).concat([
 	  value: true
 	});
 	
-	var _pages = __webpack_require__(160);
+	var _pages = __webpack_require__(161);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _task_list = __webpack_require__(182);
+	var _task_list = __webpack_require__(183);
 	
 	var _task_list2 = _interopRequireDefault(_task_list);
 	
@@ -8596,7 +8794,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = TaskList;
 
 /***/ },
-/* 182 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8609,11 +8807,11 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _pages = __webpack_require__(162);
+	var _pages = __webpack_require__(163);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _task_list = __webpack_require__(183);
+	var _task_list = __webpack_require__(184);
 	
 	var _task_list2 = _interopRequireDefault(_task_list);
 	
@@ -8772,7 +8970,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = View;
 
 /***/ },
-/* 183 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8783,7 +8981,7 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _pages = __webpack_require__(164);
+	var _pages = __webpack_require__(165);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
@@ -8831,7 +9029,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Template;
 
 /***/ },
-/* 184 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
@@ -8857,8 +9055,8 @@ webpackJsonp([1],Array(43).concat([
 	}
 
 /***/ },
-/* 185 */,
-/* 186 */
+/* 186 */,
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8867,11 +9065,11 @@ webpackJsonp([1],Array(43).concat([
 	  value: true
 	});
 	
-	var _pages = __webpack_require__(160);
+	var _pages = __webpack_require__(161);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _timer = __webpack_require__(187);
+	var _timer = __webpack_require__(188);
 	
 	var _timer2 = _interopRequireDefault(_timer);
 	
@@ -8910,7 +9108,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Timer;
 
 /***/ },
-/* 187 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8923,11 +9121,11 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _pages = __webpack_require__(162);
+	var _pages = __webpack_require__(163);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _timer = __webpack_require__(188);
+	var _timer = __webpack_require__(189);
 	
 	var _timer2 = _interopRequireDefault(_timer);
 	
@@ -8988,7 +9186,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = View;
 
 /***/ },
-/* 188 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8999,7 +9197,7 @@ webpackJsonp([1],Array(43).concat([
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _pages = __webpack_require__(164);
+	var _pages = __webpack_require__(165);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
@@ -9049,7 +9247,7 @@ webpackJsonp([1],Array(43).concat([
 	exports.default = Template;
 
 /***/ },
-/* 189 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag

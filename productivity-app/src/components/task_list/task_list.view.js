@@ -16,9 +16,11 @@ export default class View extends ComponentView {
   /**
    * Create component view
    * @param {HTMLElement} container - Append to element
+   * @param {object} states - States object
    */
-  constructor(container) {
+  constructor(container, states) {
     super(container);
+    this.states = states;
   }
 
   /**
@@ -53,7 +55,7 @@ export default class View extends ComponentView {
                                           this.markup.querySelector('.global-tasks .task-list-block-controls'),
                                           '',
                                           ...tabsData);
-      this.hideOnStates(priorityFilterTabs, ['init']);
+      this.hideOnStates(priorityFilterTabs, [this.states.INIT]);
       this.componentsList.push(priorityFilterTabs);
 
       this.events.trigger('view:rendered');
@@ -63,8 +65,44 @@ export default class View extends ComponentView {
                                     this.markup.querySelector('.daily-tasks .task-list-block-controls'),
                                     '',
                                     ...mainFilterTabsData);
-    this.hideOnStates(mainFilterTabs, ['init']);
+    this.hideOnStates(mainFilterTabs, [this.states.INIT]);
     this.componentsList.push(mainFilterTabs);
+  }
+
+  /**
+   * Create task instance
+   * @param {object} dataObject
+   */
+  createTask(dataObject) {
+    const task = new Task(dataObject);
+    this.componentsList.push(task);
+  }
+
+  /**
+   * Update task
+   * @param {object} dataObject
+   */
+  updateTask(dataObject) {
+    this.findTaskByID(dataObject.id).update(dataObject);
+  }
+
+  /**
+   * Remove task
+   * @param {string} id
+   */
+  removeTask(id) {
+    this.findTaskByID(id).destroy();
+  }
+
+  /**
+   * Find task by id
+   * @param {string} id
+   * @return {Task} Task instance
+   */
+  findTaskByID(id) {
+    return this.componentsList.filter((component) => {
+      return component instanceof Task && component.getID() === id;
+    })[0];
   }
 
   /**
@@ -76,8 +114,8 @@ export default class View extends ComponentView {
     const allDoneMessage = this.markup.querySelector('.all-done');
 
     // this.hideOnStates(firstTaskMessage, [''])
-    this.hideOnStates(dragToTopMessage, ['init']);
-    this.hideOnStates(allDoneMessage, ['init']);
+    this.hideOnStates(dragToTopMessage, [this.states.INIT]);
+    this.hideOnStates(allDoneMessage, [this.states.INIT]);
   }
 
   /**
