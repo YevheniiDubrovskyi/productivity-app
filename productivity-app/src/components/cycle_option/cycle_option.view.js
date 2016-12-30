@@ -24,6 +24,7 @@ export default class View extends ComponentView {
     this.step = dataObject.step;
     this.suffix = dataObject.suffix;
     this.template = new Template(dataObject);
+    this.markup = this.getMarkup();
 
     this.container.appendChild(this.markup);
 

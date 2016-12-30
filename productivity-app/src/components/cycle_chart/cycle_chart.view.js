@@ -20,6 +20,7 @@ export default class View extends ComponentView {
    */
   render(data) {
     this.template = new Template();
+    this.markup = this.getMarkup();
 
     this.container.appendChild(this.markup);
     this.update(data);

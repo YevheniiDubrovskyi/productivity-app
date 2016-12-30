@@ -30,6 +30,7 @@ export default class View extends ComponentView {
    */
   render(dataArray) {
     this.template = new Template(dataArray);
+    this.markup = this.getMarkup();
     this.createDOMHandlers();
 
     if (this.appendFlag) {

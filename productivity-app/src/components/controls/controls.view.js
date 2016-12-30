@@ -21,9 +21,10 @@ export default class View extends ComponentView {
    */
   render(dataArray) {
     this.template = new Template(dataArray);
+    this.markup = this.getMarkup();
     this.createDOMHandlers();
 
-    this.container.appendChild(this.markup);
+    this.container.appendChild(this.getMarkup());
 
     this.events.on('view:dataRecived', function(...data) {
       if (data.length === 2) {

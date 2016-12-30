@@ -21,6 +21,7 @@ export default class View extends ComponentView {
    */
   render(dataObject) {
     this.template = new Template(dataObject);
+    this.markup = this.getMarkup();
 
     this.container.appendChild(this.markup);
     this.createDOMHandlers();

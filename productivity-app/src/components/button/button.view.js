@@ -1,6 +1,8 @@
 import ComponentView from '../components.view';
-import Template from './button.template';
+import template from './button.handlebars';
 // import './button.less';
+
+import $ from 'jquery';
 
 /**
  * Component view
@@ -29,7 +31,7 @@ export default class View extends ComponentView {
    * @param {objet} dataObject - Data object
    */
   render(dataObject) {
-    this.template = new Template(dataObject);
+    this.markup = $(template(dataObject))[0];
     this.createDOMHandlers();
 
     if (this.appendFlag) {

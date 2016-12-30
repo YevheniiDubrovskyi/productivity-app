@@ -52,6 +52,10 @@ module.exports = {
           'postcss-loader',
           'less-loader'
         ]
+      },
+      {
+        test: /\.handlebars$/,
+        loader: 'handlebars?helperDirs[]=' + __dirname + '/src/utils/helpers'
       }
     ]
   },
@@ -78,7 +82,7 @@ module.exports = {
       copyUnmodified: true
     }),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
-    // new webpack.NoErrorsPlugin(),
+
   ]
 
 };

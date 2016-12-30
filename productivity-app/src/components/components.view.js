@@ -51,7 +51,7 @@ export default class ComponentView {
    * @param {String} className - Class to add
    */
   addClassToRoot(className) {
-    this.markup.classList.add(className);
+    this.getMarkup().classList.add(className);
   }
 
   /**
@@ -60,23 +60,23 @@ export default class ComponentView {
    * @param {string} value - Data attribute value
    */
   setDataAttr(name, value) {
-    this.markup.setAttribute(`data-${name}`, value);
+    this.getMarkup().setAttribute(`data-${name}`, value);
   }
 
   /**
    * Set inline styles to root element
-   * @param {String} inlineStyles - Styles which will be applied to root element
+   * @param {string} inlineStyles - Styles which will be applied to root element
    */
   set inlineStyles(inlineStyles) {
-    this.markup.style = inlineStyles;
+    this.getMarkup().style = inlineStyles;
   }
 
   /**
    * Get component markup from template property
    * @return {HTMLElement} markup - Root component's HTMLElement
    */
-  get markup() {
-    return this.template.markup;
+  getMarkup() {
+    return (this.template && this.template.markup) || this.markup;
   }
 
   /**

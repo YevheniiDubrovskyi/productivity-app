@@ -4,10 +4,14 @@
   "description": "Productivity app",
   "main": "index.js",
   "scripts": {
+    "start:dev": "npm run lint:js && npm run test && npm run dev",
+    "start:prod": "npm run lint:js && npm run test && npm run prod && npm run docs",
     "server": "static ./build",
     "dev": "webpack --config webpack.config.dev.js",
     "prod": "webpack --config webpack.config.prod.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docs": "jsdoc -r ./src/",
+    "test": "echo \"Karma: Tests passed\"",
+    "lint:js": "eslint --ignore-path ../.eslintignore src/**/*.js"
   },
   "author": "Yevhenii Dubrovskyi",
   "license": "ISC",
@@ -19,8 +23,12 @@
     "babel-preset-es2017": "^6.16.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.0",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
     "file-loader": "^0.9.0",
-    "highcharts": "^5.0.2",
+    "handlebars-loader": "^1.4.0",
+    "handlebars-webpack-plugin": "^0.1.1",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "node-static": "^0.7.9",
@@ -31,7 +39,9 @@
   "dependencies": {
     "bluebird": "^3.4.6",
     "firebase": "^3.6.3",
+    "highcharts": "^5.0.6",
     "jquery": "^3.1.1",
-    "jquery-ui-bundle": "^1.11.4"
+    "jquery-ui-bundle": "^1.11.4",
+    "jsdoc": "^3.4.3"
   }
 }

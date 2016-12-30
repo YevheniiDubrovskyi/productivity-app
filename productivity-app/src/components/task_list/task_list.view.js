@@ -35,6 +35,8 @@ export default class View extends ComponentView {
     this.categories = categoriesDataArray;
 
     this.template = new Template(messagesData);
+    this.markup = this.getMarkup();
+
     this.dailyContainer = this.markup.querySelector('.daily-tasks');
     this.globalContainer = this.markup.querySelector('.global-tasks');
 

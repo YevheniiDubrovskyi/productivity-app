@@ -1,8 +1,10 @@
 import PageView from '../pages.view';
-import Template from './login.template';
+import template from './login.handlebars';
+// import Template from './login.template';
 // import './login.less';
 
 import Button from '../../components/button/button.controller';
+import $ from 'jquery';
 
 /**
  * Page view
@@ -11,11 +13,13 @@ export default class View extends PageView {
 
   /**
    * Create page view
-   * @param {HTMLELement} viewport - Append to element
+   * @param {HTMLElement} viewport - Append to element
    */
   constructor(viewport) {
     super(viewport);
-    this.template = new Template();
+    // this.template = new Template();
+    // this.markup = this.getMarkup();
+    this.markup = $(template())[0];
   }
 
   /**

@@ -33,8 +33,8 @@ export default class PageView {
    * Get page markup from template property
    * @return {HTMLElement} markup - Root page's HTMLElement
    */
-  get markup() {
-    return this.template.markup;
+  getMarkup() {
+    return (this.template && this.template.markup) || this.markup;
   }
 
   /**

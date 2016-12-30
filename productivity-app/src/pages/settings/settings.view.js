@@ -23,6 +23,7 @@ export default class View extends PageView {
   constructor(viewport) {
     super(viewport);
     this.template = new Template();
+    this.markup = this.getMarkup();
     this.slides = {
       firstTime: false,
     };
