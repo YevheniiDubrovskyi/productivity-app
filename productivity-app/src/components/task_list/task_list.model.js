@@ -1,6 +1,8 @@
 import ComponentModel from '../components.model';
 
 import utils from '../../utils/utils';
+import dataService from '../../services/data.service';
+import {tasksStatusList} from './task_list.data';
 
 /**
  * Component model
@@ -10,25 +12,24 @@ export default class Model extends ComponentModel {
   /**
    * Create component model
    * @param {object} states - States object
+   * @param {object} tasksTypes - Tasks types
    */
-  constructor(states) {
+  constructor(states, tasksTypes) {
     super();
     // this.allDone = false;
     this.dataStatic = [];
     this.states = states;
+    this.tasksTypes = tasksTypes;
 
     this.modelAlias = 'tasks';
 
-    this.tasksTypes = {
-      GLOBAL: 'global',
-      DAILY: 'daily'
-    };
+    this.events.once('model:data_received', function() { // Request data for components, when get data, request data for tasks
+      this.getDataFromStorage((data) => {
+        if (data) this.update(data);
+      });
 
-    this.subscribe((data) => {
-      if (!data) return;
-
-      this.update(data);
-    });
+      this.checkStatesConditions();
+    }, this);
 
     this.events.on('task_data', function() {
       this.checkStatesConditions();
@@ -39,7 +40,42 @@ export default class Model extends ComponentModel {
       this.checkStatesConditions();
     }, this);
 
-    this.checkStatesConditions();
+    this.getComponentsDataFromStorage();
+  }
+
+  /**
+   * Send data requests to server and fire event when all data received
+   */
+  getComponentsDataFromStorage() {
+    const receivedData = {
+      priority: null,
+      categories: null
+    };
+
+    dataService.getData('priority').once('priority:getData', function(data) {
+      receivedData.priority = data.map((dataObject) => {
+        return {
+          name: dataObject.title,
+          active: false
+        };
+      });
+      receivedData.priority.unshift({
+        name: 'all',
+        active: true
+      });
+
+      if (receivedData.categories) {
+        this.events.trigger('model:data_received', receivedData.priority, receivedData.categories);
+      }
+    }, this);
+
+    dataService.getData('categories').once('categories:getData', function(data) {
+      receivedData.categories = data;
+
+      if (receivedData.priority) {
+        this.events.trigger('model:data_received', receivedData.priority, receivedData.categories);
+      }
+    }, this);
   }
 
   /**
@@ -52,28 +88,34 @@ export default class Model extends ComponentModel {
     if (!dailyTasksCount && !globalTasksCount) {
       this.events.trigger('model:state_changed', this.states.INIT);
     } else if (!dailyTasksCount && globalTasksCount) {
-      this.events.trigger('model:state_change', this.states.TASK_ADDED);
+      this.events.trigger('model:state_changed', this.states.TASK_ADDED);
     } else {
-      this.events.trigger('model:state_change', this.states.COMMON);
+      this.events.trigger('model:state_changed', this.states.COMMON);
     }
   }
 
   /**
    * Add task data object to raw data object array
    * @param {object} rawDataObject
+   * @return {boolean} isGlobal flag
    */
   addTask(rawDataObject) {
     const dataObject = rawDataObject;
 
-    dataObject.id = dataObject.id ?
-      dataObject.id :
-      utils.getID();
+    if (!dataObject.id) {
+      dataObject.id = utils.getID();
+      dataObject.status = tasksStatusList.INIT;
+      dataObject.estimationUsed = 0;
+      dataObject.createDate = (new Date()).toString();
+      dataObject.startDate = null;
+      dataObject.deadline = (new Date(dataObject.deadline)).toString();
+    }
 
-    this.dataStatic.push({
+    const newLength = this.dataStatic.push({
       type: this.tasksTypes.GLOBAL,
       data: dataObject
     });
-    this.events.trigger('task_data:added', dataObject);
+    this.events.trigger('task_data:added', this.dataStatic[newLength - 1]);
   }
 
   /**
@@ -87,7 +129,7 @@ export default class Model extends ComponentModel {
 
     if (type) {
       if (!this.checkType(type)) {
-        throw new Error('TaskList.Model: Such type does not exist');
+        throw new Error('TaskList.Model: Such task type does not exist');
       }
       this.dataStatic[index].type = type;
     }

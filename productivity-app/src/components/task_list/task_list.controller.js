@@ -21,38 +21,35 @@ export default class TaskList extends ComponentController {
       COMMON: 'common',
       REMOVING: 'removing'
     };
+    this.tasksTypes = {
+      GLOBAL: 'global',
+      DAILY: 'daily'
+    };
     this.state = null;
-    this.model = new Model(this.states);
-    this.view = new View(container, this.states);
 
-    this.render()
+    this.model = new Model(this.states, this.tasksTypes);
+    this.view = new View(container, this.states, this.tasksTypes);
+
+    // Fired when model get all data for components
+    this.model.events.once('model:data_received', function(...data) {
+      this.render(...data);
+    }, this);
 
     this.model.events.on('model:state_changed', function(state) {
-      console.log('Model state change - ', state); // TODO: remove this later
+      if (this.state === state) return;
+
+      console.log('Task list (comp) model state change - ', state); // TODO: remove this later
       this.setState(state);
     }, this);
 
-    this.view.events.on('view:rendered', function() {
-      this.setState(this.state); // For hiding recently rendered component, which wait for data
-    }, this);
-
     // Fired when model updated from dataService
-    // TODO: Можно подпилить пож этот ивент сортировку, сортировать по полю priority и кидать в ивент
+    // TODO: Можно подпилить под этот ивент сортировку, сортировать по полю priority и кидать в ивент
     this.model.events.on('model:updated', function(data) {
       this.update(data);
     }, this.view);
 
-    // CRUD events
-    this.model.events.on('task_data:added', function(dataObject) {
-      this.view.createTask(dataObject);
-    }, this);
-
-    this.model.events.on('task_data:remove', function(id) {
-      this.removeTask(id);
-    }, this.view);
-
-    this.model.events.on('task_data:update', function(dataObject) {
-      this.updateTask(dataObject);
+    this.model.events.on('task_data', function(...params) {
+      this.events.trigger(params[0], ...params.slice(1));
     }, this.view);
   }
 

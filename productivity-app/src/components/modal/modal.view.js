@@ -91,7 +91,7 @@ export default class View extends ComponentView {
       if (event.target !== event.currentTarget) return;
       this.events.trigger('view:cancel');
     };
-    const buttonsClickHanlder = (event) => {
+    const buttonsClickHandler = (event) => {
       const target = event.target;
 
       if (target.tagName !== 'BUTTON') return;
@@ -106,7 +106,7 @@ export default class View extends ComponentView {
     }, {
       element: this.markup,
       eventName: 'click',
-      callback: buttonsClickHanlder
+      callback: buttonsClickHandler
     });
   }
 
@@ -128,7 +128,7 @@ export default class View extends ComponentView {
     this.markup.style = 'background-color: rgba(0,0,0,0);';
     aside.style = 'transform: translate(0%, -150%);';
     setTimeout(() => {
-      aside.style = 'transition: .3s ease-in-out; transform: translate(0%, 0%);'
+      aside.style = 'transition: .3s ease-in-out; transform: translate(0%, 0%);';
       this.markup.style = 'transition: .3s ease-in-out';
     }, 10);
   }

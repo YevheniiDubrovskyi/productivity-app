@@ -19,7 +19,7 @@ export default class Modal extends ComponentController {
     this.view = new View(container);
 
     this.model.events.on('model:dataReceived', function(data) {
-      console.log('Received data ', data);
+      console.trace('Modal controller received data ', data);
       this.render(data);
     }, this);
 

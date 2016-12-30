@@ -45,490 +45,98 @@
     }
   }
 }
-//.tasks-block {
-//  margin: 1.7em 0 2.1em 0;
-//}
-//
-//.tabs-block {
-//  position: relative;
-//  display: flex;
-//  margin: 0;
-//  justify-content: space-between;
-//}
-//
-//.daily-tasks .task-list {
-//  margin-top: 1em;
-//}
-//
-//.task-list {
-//  position: relative;
-//  margin: .8em 0 0 0;
-//
-//  &-item {
-//    font-size: 1rem;
-//    position: relative;
-//    display: flex;
-//    overflow: hidden;
-//    box-sizing: border-box;
-//    margin: 0 0 .5625em 0;
-//    background-color: @fontColor__primary;
-//    box-shadow: 0 5px 17px rgba(0, 0, 0, .4);
-//  }
-//}
-//
-//.done.task-list-item {
-//  background-color: #d4d9dc;
-//}
-//
-//.done .task-content-heading {
-//  text-decoration: line-through;
-//}
-//
-//.task-hidden-btns {
-//  position: absolute;
-//  z-index: 9;
-//  top: 0;
-//  left: 0;
-//  box-sizing: border-box;
-//  width: 5.48em;
-//  height: 100%;
-//  transition: .3s ease-in-out;
-//  transform: translate(-89%, 0);
-//}
-//
-//.deleting-state .task-hidden-btns {
-//  transform: translate(0, 0);
-//}
-//
-//.deleting-state .moved-to-trash .btn-close,
-//.task-hidden-btns__btn {
-//  font-size: 2.5em;
-//  position: absolute;
-//  top: 48%;
-//  left: 50%;
-//  transform: translate(-50%, -50%);
-//}
-//
-///* URGENT */
-//
-//.task-list-item.urgent-imp .task-pomidoro-count {
-//  background-color: #f75c4c;
-//}
-//
-//.task-list-item.urgent-imp .task-content-heading {
-//  color: #f75c4c;
-//}
-//
-///* HIGHT */
-//
-//.task-list-item.hight-imp .task-pomidoro-count {
-//  background-color: #ffa841;
-//}
-//
-//.task-list-item.hight-imp .task-content-heading {
-//  color: #ffa841;
-//}
-//
-///* MIDDLE */
-//
-//.task-list-item.middle-imp .task-pomidoro-count {
-//  background-color: #fddc43;
-//}
-//
-//.task-list-item.middle-imp .task-content-heading {
-//  color: #fddc43;
-//}
-//
-///* LOW */
-//
-//.task-list-item.low-imp .task-pomidoro-count {
-//  background-color: #1abc9c;
-//}
-//
-//.task-list-item.low-imp .task-content-heading {
-//  color: #1abc9c;
-//}
-//
-///* CATEGORIES */
-//
-//.work-category .task-hidden-btns {
-//  background-color: #ffb200;
-//}
-//
-//.education-category .task-hidden-btns {
-//  background-color: #59abe3;
-//}
-//
-//.hobby-category .task-hidden-btns {
-//  background-color: #b470d0;
-//}
-//
-//.sport-category .task-hidden-btns {
-//  background-color: #00d4d9;
-//}
-//
-//.other-category .task-hidden-btns {
-//  background-color: #00cbd0;
-//}
-//
-//.task-main-btns {
-//  position: relative;
-//}
-//
-//.task-hidden-btns__btn,
-//.task-main-btns__btn {
-//  font-family: @font__icon;
-//}
-//
-//.task-main-btns__btn:hover {
-//  color: #88a3b5;
-//}
-//
-//.task-main-btns__btn.btn-up {
-//  margin: 0 0 .5em 0;
-//}
-//
-//.task-content {
-//  box-sizing: border-box;
-//  padding: 1.3em .2rem 1em .2rem;
-//  flex-basis: 100%;
-//
-//  &-heading {
-//    font-size: 1.1875em;
-//    font-weight: 500;
-//    margin: 0 0 .4em 0;
-//    letter-spacing: .01em;
-//  }
-//
-//  &-text {
-//    line-height: 1.5em;
-//  }
-//}
-//
-//.task-content-text,
-//.task-main-btns,
-//.task-date {
-//  color: #a5a5a5;
-//}
-//
-//.task-main-btns,
-//.task-date {
-//  display: flex;
-//  flex-direction: column;
-//  justify-content: center;
-//}
-//
-//.task-main-btns {
-//  font-size: 1.15em;
-//  width: 5.75em;
-//}
-//
-//.task-date {
-//  font-weight: 700;
-//  width: 7.5em;
-//  padding: 0 0 0 .625em;
-//  text-align: center;
-//  letter-spacing: .04em;
-//  text-transform: uppercase;
-//}
-//
-//.task-date-number {
-//  font-family: @font__secondary;
-//  font-size: 1.6875em;
-//}
-//
-//.task-date-month {
-//  font-size: .6875em;
-//}
-//
-//.task-date-today {
-//  font-size: .7em;
-//}
-//
-//.daily-tasks .task-date-today {
-//  position: static;
-//  left: auto;
-//}
-//
-//.task-pomidoro-count {
-//  font-family: @font__secondary;
-//  font-size: 1.54em;
-//  font-weight: 700;
-//  position: relative;
-//  width: 4.6em;
-//}
-//
-//.task-pomidoro-count:hover {
-//  cursor: pointer;
-//}
-//
-//.task-pomidoro-count:hover .task-pomidoro-count__num {
-//  display: none;
-//}
-//
-//.done .task-pomidoro-count:hover {
-//  cursor: default;
-//}
-//
-//.done .task-pomidoro-count:hover .task-pomidoro-count__num,
-//.task-pomidoro-count__num {
-//  position: absolute;
-//  top: 51.5%;
-//  left: 50%;
-//  transform: translate(-50%, -50%);
-//}
-//
-//.done .task-pomidoro-count:hover:after,
-//.task-pomidoro-count:after {
-//  font-family: @font__icon;
-//  font-size: 1.9em;
-//  font-weight: 400;
-//  position: absolute;
-//  top: 50%;
-//  left: 50%;
-//  content: '\e90e';
-//  transform: translate(-50%, -50%);
-//}
-//
-//.task-pomidoro-count:hover:after {
-//  content: '\e90d';
-//}
-//
-//.global-tasks .tabs-block {
-//  margin-bottom: 2em;
-//}
-//
-//.global-tasks .to-do-tabs {
-//  font-size: 1.03em;
-//}
-//
-//.tabs-block-global-btn {
-//  font-family: @font__secondary;
-//  font-size: 1.25em;
-//  font-weight: 700;
-//  position: relative;
-//  padding: 0;
-//  transition: color .1s ease-in-out;
-//  color: #88a3b5;
-//}
-//
-//.tabs-block-global-btn:after {
-//  font-family: @font__icon;
-//  font-size: .55em;
-//  position: absolute;
-//  top: 50%;
-//  right: -1.5em;
-//  content: '\e906';
-//  transform: translate(0, -50%);
-//}
-//
-//.tabs-block-global-btn:hover {
-//  color: #fff;
-//}
-//
-//.global-tasks .tabs-block {
-//  flex-wrap: wrap;
-//}
-//
-//.global-tasks .sellecting-tabs {
-//  width: 100%;
-//  margin: 1.5em 0 0 0;
-//}
-//
-//.tasks-grp-by-category {
-//  margin: 0 0 1.4375rem 0;
-//}
-//
-//.tasks-grp-by-category__heading {
-//  font-size: 1rem;
-//  font-weight: 700;
-//  position: relative;
-//  padding: 0 0 0 1.5em;
-//  text-transform: uppercase;
-//}
-//
-//.tasks-grp-by-category__heading:before,
-//.tasks-grp-by-category__heading:after {
-//  position: absolute;
-//  top: 30%;
-//  left: -.26rem;
-//  content: '';
-//  transform: translate(0, -50%);
-//  border-radius: 50%;
-//}
-//
-//.tasks-grp-by-category__heading:before {
-//  z-index: 100;
-//  width: 1.0625em;
-//  height: 1.0625em;
-//}
-//
-//.tasks-grp-by-category__heading:after {
-//  z-index: 150;
-//  left: -.015rem;
-//  width: .32em;
-//  height: .32em;
-//  transition: .1s ease-in-out;
-//  border: 2px solid #2a3f50;
-//  border-radius: 50%;
-//}
-//
-//.tasks-grp-by-category .task-list:after {
-//  position: absolute;
-//  bottom: 0;
-//  left: 0;
-//  width: .5625rem;
-//  height: ~"calc(100% + 1.5625rem)";
-//  content: '';
-//}
-//
-///* CATEGORIES FOR GROUPS */
-//
-///* WORK */
-//
-//.work-category .tasks-grp-by-category__heading {
-//  color: #ffb200;
-//}
-//
-//.work-category .task-list:after,
-//.work-category .tasks-grp-by-category__heading:before {
-//  background-color: #ffb200;
-//}
-//
-///* SPORT */
-//
-//.sport-category .tasks-grp-by-category__heading {
-//  color: #00d4d9;
-//}
-//
-//.sport-category .task-list:after,
-//.sport-category .tasks-grp-by-category__heading:before {
-//  background-color: #00d4d9;
-//}
-//
-///* HOBBY */
-//
-//.hobby-category .tasks-grp-by-category__heading {
-//  color: #b470d0;
-//}
-//
-//.hobby-category .task-list:after,
-//.hobby-category .tasks-grp-by-category__heading:before {
-//  background-color: #b470d0;
-//}
-//
-///* EDUCATION */
-//
-//.education-category .tasks-grp-by-category__heading {
-//  color: #59abe3;
-//}
-//
-//.education-category .task-list:after,
-//.education-category .tasks-grp-by-category__heading:before {
-//  background-color: #59abe3;
-//}
-//
-///* OTHER */
-//
-//.other-category .tasks-grp-by-category__heading {
-//  color: #00cbd0;
-//}
-//
-//.other-cateogry .task-list:after,
-//.other-category .tasks-grp-by-category__heading:before {
-//  background-color: #00cbd0;
-//}
-//
-//.common-state--nothing-in-daily .drag-to-top-heading {
-//  position: static;
-//}
-//
-//.drag-to-top-heading {
-//  margin: 1em 0 5em 0;
-//}
-//
-//.common-state--all-done .all-done-heading {
-//  position: static;
-//}
-//
-//.all-done-heading {
-//  margin: .95em 0 2.7em 0;
-//}
-//
-//.drag-to-top-heading,
-//.all-done-heading {
-//  font-size: 2.26rem;
-//  font-weight: 300;
-//
-//  position: relative;
-//
-//  text-align: center;
-//  letter-spacing: .01em;
-//
-//  color: #8da5b8;
-//}
-//
-//.drag-to-top-heading__row,
-//.all-done-heading__row {
-//  display: block;
-//
-//  margin: 0 0 .4em 0;
-//}
-//
-//.drag-to-top-heading:after {
-//  font-family: 'icomoon';
-//  font-size: 1.7em;
-//
-//  position: absolute;
-//  bottom: -1.5em;
-//  left: 50%;
-//
-//  content: '\e901';
-//  -webkit-transform: translate(-50%, 0);
-//  -ms-transform: translate(-50%, 0);
-//  transform: translate(-50%, 0);
-//}
-//
-//.closed .tabs-block-global-btn:after {
-//  top: 32%;
-//
-//  -webkit-transform: rotate(-90deg);
-//  -ms-transform: rotate(-90deg);
-//  transform: rotate(-90deg);
-//}
-//
-//@media all and (max-width: @breakpoint__laptop) {
-//  .task-list {
-//
-//    &-item {
-//      font-size: .78rem;
-//    }
-//
-//    .task {
-//
-//      &-content {
-//        padding-top: 1.5em;
-//        padding-bottom: 1.2em;
-//      }
-//    }
-//  }
-//}
-//
-//@media all and (max-width: @breakpoint__mobile) {
-//  .main {
-//
-//    &-top-add-btn {
-//      font-size: 1rem;
-//      margin: 0;
-//      width: 8.5em;
-//      text-align: left;
-//    }
-//  }
-//
-//  .task-list {
-//
-//    &__item {
-//      font-size: .4rem;
-//    }
-//  }
-//}
+
+.tasks-grp-by-category {
+  margin: 0 0 1.4375rem 0;
+
+  &__heading {
+    font-size: 1rem;
+    font-weight: 700;
+    position: relative;
+    padding: 0 0 0 1.5em;
+    text-transform: uppercase;
+
+    &::after,
+    &::before {
+      position: absolute;
+      top: 30%;
+      left: -.26rem;
+      content: '';
+      transform: translate(0, -50%);
+      border-radius: 50%;
+    }
+
+    &:before {
+      z-index: 100;
+      width: 1.0625em;
+      height: 1.0625em;
+    }
+
+    &:after {
+      z-index: 150;
+      left: -.015rem;
+      width: .32em;
+      height: .32em;
+      transition: .1s ease-in-out;
+      border: 2px solid #2a3f50;
+      border-radius: 50%;
+    }
+  }
+}
+
+/* CATEGORIES FOR GROUPS */
+
+/* WORK */
+
+.work-category .tasks-grp-by-category__heading {
+  color: #ffb200;
+}
+
+.work-category .task-list:after,
+.work-category .tasks-grp-by-category__heading:before {
+  background-color: #ffb200;
+}
+
+/* SPORT */
+
+.sport-category .tasks-grp-by-category__heading {
+  color: #00d4d9;
+}
+
+.sport-category .task-list:after,
+.sport-category .tasks-grp-by-category__heading:before {
+  background-color: #00d4d9;
+}
+
+/* HOBBY */
+
+.hobby-category .tasks-grp-by-category__heading {
+  color: #b470d0;
+}
+
+.hobby-category .task-list:after,
+.hobby-category .tasks-grp-by-category__heading:before {
+  background-color: #b470d0;
+}
+
+/* EDUCATION */
+
+.education-category .tasks-grp-by-category__heading {
+  color: #59abe3;
+}
+
+.education-category .task-list:after,
+.education-category .tasks-grp-by-category__heading:before {
+  background-color: #59abe3;
+}
+
+/* OTHER */
+
+.other-category .tasks-grp-by-category__heading {
+  color: #00cbd0;
+}
+
+.other-cateogry .task-list:after,
+.other-category .tasks-grp-by-category__heading:before {
+  background-color: #00cbd0;
+}

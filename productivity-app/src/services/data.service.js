@@ -7,6 +7,7 @@ import pingService from './ping.service';
 
 const dataService = {
   events: new EventBus(),
+  // subscribedModels: [],
 
   /**
    * Get data from firebase and copy to localStorage
@@ -71,9 +72,19 @@ const dataService = {
     const UID = localStorageService.getItem('session').uid;
 
     firebaseService.subscribe(`${modelName}/${UID}`).on(`${modelName}/${UID}:dataReceived`, function(data) {
-      localStorageService.setItem(modelName, data);
+      localStorageService.setItem(modelName, data); // Attention !!!
       this.events.trigger(`${modelName}:dataReceived`, data);
     }, this);
+
+    // if (!this.subscribedModels.includes(modelName)) {
+    //   localStorageService.events.on(`${modelName}:changed`, function(data) {
+    //     if (pingService.hasConnection()) return; // To avoid cycle events
+    //
+    //     this.events.trigger(`${modelName}:dataReceived`, data);
+    //   }, this);
+    //
+    //   this.subscribedModels.push(modelName);
+    // }
 
     return this.events;
   }

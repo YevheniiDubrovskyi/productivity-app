@@ -31,7 +31,9 @@ export default class Template {
    */
   createTasksBlock(additionalClass, createMessagesFlag) {
     return [`<div class="task-list-block ${additionalClass}">`,
-            `<div class="task-list-block-controls"></div>`,
+            `<div class="task-list-block-controls">`,
+
+            `</div>`,
             createMessagesFlag ? this.createAllMessages() : '',
             `</div>`].join('\n');
   }
@@ -55,6 +57,22 @@ export default class Template {
     return this.messagesData.map((message) => {
       return this.createMessage(message.class, message.text, message.icon);
     }).join('\n');
+  }
+
+  /**
+   * Create section element for tasks group
+   * @param {string} alias - Category alias
+   * @param {string} title - Category title
+   * @return {HTMLElement} Section element
+   */
+  createCategorySection(alias, title) {
+    const section = document.createElement('section');
+
+    section.classList.add('tasks-grp-by-category');
+    section.classList.add(`${alias}-category`);
+    section.innerHTML = [`<h2 class="tasks-grp-by-category__heading">${title}</h2>`,
+                         `<ul class="task-list"></ul>`].join('\n');
+    return section;
   }
 
 }

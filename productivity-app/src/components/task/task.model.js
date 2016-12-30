@@ -7,10 +7,21 @@ export default class Model extends ComponentModel {
 
   /**
    * Create component model
-   * @param {object} data - Data object
+   * @param {object} dataObject - Data object
+   * @param {object} buttonsOptions - Data for buttons
    */
-  constructor(data) {
-    super(data);
+  constructor(dataObject, buttonsOptions) {
+    super({
+      data: dataObject,
+      buttons: buttonsOptions
+    });
   }
 
+  /**
+   * Get all model data
+   * @return {object} Model data
+   */
+  getData() {
+    return this.dataStatic;
+  }
 }

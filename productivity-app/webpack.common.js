@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const CopyWebPackPlugin = require('copy-webpack-plugin');
 
@@ -11,18 +12,18 @@ module.exports = {
     outputPath: path.join(__dirname, 'build')
   },
 
-  watch: true,
   cache: false,
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
 
   entry: {
-    app: './src/app'
+    app: ['./src/app'],
+    vendor: ['jquery', 'jquery-ui-bundle', 'highcharts', 'firebase']
   },
 
   output: {
     path: path.join(__dirname, 'build', 'js'),
     publicPath: 'js/',
-    filename: '[name].bundle.js',
+    filename: '[name].js',
   },
 
   module: {
@@ -38,6 +39,10 @@ module.exports = {
       {
         test: /\.(png|jpg|svg)$/,
         loader: 'file-loader?name=../img/[name].[ext]'
+      },
+      {
+        test: /\.(woff2?|ttf|eot)$/,
+        loader: 'file?name=../fonts/[name].[ext]'
       },
       {
         test: /\.less$/,
@@ -71,7 +76,9 @@ module.exports = {
       }
     ], {
       copyUnmodified: true
-    })
+    }),
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
+    // new webpack.NoErrorsPlugin(),
   ]
 
 };

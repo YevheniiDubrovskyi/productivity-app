@@ -23,7 +23,39 @@ export default class View extends ComponentView {
     this.template = new Template(dataObject);
 
     this.container.appendChild(this.markup);
+    this.createDOMHandlers();
     super.render();
+
+    this.events.on('view:dataRecived', function(data) {
+      this.setData(data);
+    }, this);
+  }
+
+  /**
+   * Create DOM Handlers which will be attach when render will be fire
+   */
+  createDOMHandlers() {
+    const rootClickHandler = (event) => {
+      const target = event.target;
+
+      if (target.tagName !== 'BUTTON') return;
+      const className = target.className.match(/.*btn-(.+)\s?/);
+      this.events.trigger('view:button_clicked', className[1]);
+    };
+
+    this.domEventsList.push({
+      element: this.markup,
+      eventName: 'click',
+      callback: rootClickHandler
+    });
+  }
+
+  /**
+   * Set new received data to markup
+   * @param {object} data
+   */
+  setData(data) {
+
   }
 
 }

@@ -1,0 +1,225 @@
+.task {
+  font-size: 1rem;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0 0 .5625em 0;
+  background-color: #fff;
+  box-shadow: 0 5px 17px rgba(0, 0, 0, .4);
+
+  &-list {
+    position: relative;
+    margin: .8em 0 0 0;
+  }
+
+  &-hidden-btns {
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 5.48em;
+    height: 100%;
+    transition: .3s ease-in-out;
+    transform: translate(-89%, 0);
+  }
+
+  &-content {
+    box-sizing: border-box;
+    padding: 1.3em .2rem 1em .2rem;
+    flex-basis: 100%;
+
+    &-heading {
+      font-size: 1.1875em;
+      font-weight: 500;
+      margin: 0 0 .4em 0;
+      letter-spacing: .01em;
+    }
+
+    &-text {
+      line-height: 1.5em;
+    }
+  }
+
+  &-content-text,
+  &-main-btns,
+  &-date {
+    color: #a5a5a5;
+  }
+
+  &-main-btns,
+  &-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &-main-btns {
+    font-size: 1.15em;
+    width: 5.75em;
+
+    &__btn {
+      font-family: @font__icon;
+    }
+  }
+
+  &-date {
+    font-weight: 700;
+    width: 7.5em;
+    padding: 0 0 0 .625em;
+    text-align: center;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+
+    &-number {
+      font-family: @font__secondary;
+      font-size: 1.6875em;
+    }
+
+    &-month {
+      font-size: .6875em;
+    }
+
+    &-today {
+      font-size: .7em;
+    }
+  }
+
+  &-pomodoro-count {
+    font-family: @font__secondary;
+    font-size: 1.54em;
+    font-weight: 700;
+    position: relative;
+    width: 4.6em;
+
+    &::after {
+      font-family: @font__icon;
+      font-size: 1.9em;
+      font-weight: 400;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: '\e90e';
+      transform: translate(-50%, -50%);
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      &::after {
+        content: '\e90d';
+      }
+    }
+
+    &:hover &__num {
+      display: none;
+    }
+  }
+}
+
+.tasks-grp-by-category {
+  .task-list {
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: .5625rem;
+      height: ~"calc(100% + 1.5625rem)";
+      content: '';
+    }
+  }
+}
+
+.btn-up {
+  margin: 0 0 .5em 0;
+}
+
+.done {
+  background-color: #d4d9dc;
+
+  .task {
+    &-content-heading {
+      text-decoration: line-through;
+    }
+
+    &-pomodoro-count:hover {
+      cursor: default;
+    }
+  }
+}
+
+.deleting-state .task-hidden-btns {
+  transform: translate(0, 0);
+}
+
+
+/* URGENT */
+
+.task.urgent-priority {
+  .task-pomodoro-count {
+    background-color: #f75c4c;
+  }
+
+  .task.urgent-imp .task-content-heading {
+    color: #f75c4c;
+  }
+}
+
+/* HIGHT */
+
+.task.high-priority {
+  .task-pomodoro-count {
+    background-color: #ffa841;
+  }
+
+  .task-content-heading {
+    color: #ffa841;
+  }
+}
+
+/* MIDDLE */
+
+.task.middle-priority {
+  .task-pomodoro-count {
+    background-color: #fddc43;
+  }
+
+  .task-content-heading {
+    color: #fddc43;
+  }
+}
+
+/* LOW */
+
+.task.low-priority {
+  .task-pomodoro-count {
+    background-color: #1abc9c;
+  }
+
+  .task-content-heading {
+    color: #1abc9c;
+  }
+}
+
+/* CATEGORIES */
+
+.work-category .task-hidden-btns {
+  background-color: #ffb200;
+}
+
+.education-category .task-hidden-btns {
+  background-color: #59abe3;
+}
+
+.hobby-category .task-hidden-btns {
+  background-color: #b470d0;
+}
+
+.sport-category .task-hidden-btns {
+  background-color: #00d4d9;
+}
+
+.other-category .task-hidden-btns {
+  background-color: #00cbd0;
+}

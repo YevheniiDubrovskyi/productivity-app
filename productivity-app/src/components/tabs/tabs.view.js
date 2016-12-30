@@ -98,7 +98,7 @@ export default class View extends ComponentView {
    * @return {HTMLElement} Tab element
    */
   getTabByName(name) {
-    return this.markup.querySelector(`[data-tab-name=${name}]`);
+    return this.markup.querySelector(`[data-tab-name="${name}"]`);
   }
 
 }

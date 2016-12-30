@@ -2,11 +2,9 @@ import ComponentView from '../components.view';
 import Template from './task_list.template';
 // import './task_list.less';
 
-import dataService from '../../services/data.service';
-
 import Task from '../task/task.controller';
 import Tabs from '../tabs/tabs.controller';
-import {messagesData, mainFilterTabsData, selectionTabsData} from './task_list.data';
+import {messagesData, mainFilterTabsData, selectionTabsData, tasksStatusList} from './task_list.data';
 
 /**
  * Component view
@@ -17,92 +15,161 @@ export default class View extends ComponentView {
    * Create component view
    * @param {HTMLElement} container - Append to element
    * @param {object} states - States object
+   * @param {object} tasksTypes - Task types
    */
-  constructor(container, states) {
+  constructor(container, states, tasksTypes) {
     super(container);
     this.states = states;
+    this.tasksTypes = tasksTypes;
+
+    this.dailyContainer = null;
+    this.globalContainer = null;
   }
 
   /**
    * Render component
+   * @param {array} priorityDataArray
+   * @param {array} categoriesDataArray
    */
-  render() {
+  render(priorityDataArray, categoriesDataArray) {
+    this.categories = categoriesDataArray;
+
     this.template = new Template(messagesData);
+    this.dailyContainer = this.markup.querySelector('.daily-tasks');
+    this.globalContainer = this.markup.querySelector('.global-tasks');
 
     this.container.appendChild(this.markup);
-    this.createComponents();
+    this.createComponents(priorityDataArray);
     this.setStatesForMessages();
     super.render();
+
+    this.events.on('view:dataRecived', function(tasksDataArray) {
+      this.removeAllTasks();
+      this.renderTasks(tasksDataArray);
+    }, this);
+
+    this.bindTaskDataEvents();
   }
 
   /**
    * Create inner components
+   * @param {array} priorityDataArray
    */
-  createComponents() {
-    dataService.getData('priority').once('priority:getData', function(data) {
-      const tabsData = data.map((element) => {
-        return {
-          name: element.title,
-          active: false
-        }
-      });
-      tabsData.unshift({
-        name: 'all',
-        active: true
-      });
+  createComponents(priorityDataArray) {
+    const states = this.states;
 
-      const priorityFilterTabs = new Tabs(true,
-                                          this.markup.querySelector('.global-tasks .task-list-block-controls'),
-                                          '',
-                                          ...tabsData);
-      this.hideOnStates(priorityFilterTabs, [this.states.INIT]);
-      this.componentsList.push(priorityFilterTabs);
-
-      this.events.trigger('view:rendered');
-    }, this);
+    const priorityFilterTabs = new Tabs(true,
+                                        this.markup.querySelector('.global-tasks .task-list-block-controls'),
+                                        '',
+                                        ...priorityDataArray);
+    this.hideOnStates(priorityFilterTabs, [states.INIT]);
+    this.componentsList.push(priorityFilterTabs);
 
     const mainFilterTabs = new Tabs(true,
                                     this.markup.querySelector('.daily-tasks .task-list-block-controls'),
                                     '',
                                     ...mainFilterTabsData);
-    this.hideOnStates(mainFilterTabs, [this.states.INIT]);
+    this.hideOnStates(mainFilterTabs, [states.INIT]);
     this.componentsList.push(mainFilterTabs);
   }
 
   /**
+   * Bind methods to task data events (CRUD)
+   */
+  bindTaskDataEvents() {
+    this.events.on('task_data:added', function(taskDataObject) {
+      this.addTask(taskDataObject);
+    }, this);
+  }
+
+  /**
+   * Destroy all tasks
+   */
+  removeAllTasks() {
+    this.componentsList.forEach((component) => {
+      if (component instanceof Task) component.destroy();
+    });
+
+    this.componentsList = this.componentsList.filter((component) => {
+      return !(component instanceof Task);
+    });
+
+    Array.from(this.globalContainer.querySelectorAll('.tasks-grp-by-category')).forEach((element) => {
+      this.globalContainer.removeChild(element);
+    });
+  }
+
+  /**
+   * Create all tasks from dataArray
+   * @param {array} tasksDataArray - Tasks data array
+   */
+  renderTasks(tasksDataArray) {
+    console.log('Render tasks ', tasksDataArray);
+
+    tasksDataArray.sort((current, next) => { // Sort all tasks
+      const currentDeadline = new Date(current.data.deadline);
+      const nextDeadline = new Date(next.data.deadline);
+
+      return currentDeadline > nextDeadline ?
+        1 :
+        -1;
+    }).forEach((dataObject) => {
+      this.addTask(dataObject);
+    });
+  }
+
+  /**
+   * Add task, abstraction for .createTask()
+   * @param {object} dataObject - Task data object
+   */
+  addTask(dataObject) {
+    const dailyList = this.dailyContainer.querySelector('.task-list');
+    const categories = this.categories;
+    const isGlobal = dataObject.type === this.tasksTypes.GLOBAL;
+    const isDone = dataObject.data.status === tasksStatusList.DONE;
+
+    const listItemElement = document.createElement('li');
+    listItemElement.classList.add('task-list-item');
+
+    if (isGlobal) {
+      const category = categories.filter((category) => { // Find category object by alias
+        return category.alias === dataObject.data.category;
+      })[0];
+
+      let categoryTaskList = this.globalContainer.querySelector(`.${category.alias}-category .task-list`);
+
+      if (categoryTaskList === null) {
+        categoryTaskList = this.template.createCategorySection(category.alias, category.title);
+        this.globalContainer.appendChild(categoryTaskList);
+
+        categoryTaskList.querySelector('.task-list').appendChild(listItemElement);
+      } else {
+        categoryTaskList.appendChild(listItemElement);
+      }
+    } else {
+      dailyList.appendChild(listItemElement);
+    }
+
+    this.createTask(listItemElement, dataObject.data, {
+      edit: !isDone,
+      toTop: isGlobal,
+      toTimer: !isDone
+    });
+  }
+
+  /**
    * Create task instance
-   * @param {object} dataObject
+   * @param {HTMLElement} container - Append to element
+   * @param {object} dataObject - Task data object
+   * @param {object} buttonsOptions - Buttons options
    */
-  createTask(dataObject) {
-    const task = new Task(dataObject);
+  createTask(container, dataObject, buttonsOptions) {
+    const task = new Task(container, dataObject, buttonsOptions);
+
+    task.events.on('task:button_clicked', function(buttonName) {
+      console.log('Task button clicked: ', buttonName);
+    });
     this.componentsList.push(task);
-  }
-
-  /**
-   * Update task
-   * @param {object} dataObject
-   */
-  updateTask(dataObject) {
-    this.findTaskByID(dataObject.id).update(dataObject);
-  }
-
-  /**
-   * Remove task
-   * @param {string} id
-   */
-  removeTask(id) {
-    this.findTaskByID(id).destroy();
-  }
-
-  /**
-   * Find task by id
-   * @param {string} id
-   * @return {Task} Task instance
-   */
-  findTaskByID(id) {
-    return this.componentsList.filter((component) => {
-      return component instanceof Task && component.getID() === id;
-    })[0];
   }
 
   /**
@@ -112,10 +179,11 @@ export default class View extends ComponentView {
     const firstTaskMessage = this.markup.querySelector('.first-task');
     const dragToTopMessage = this.markup.querySelector('.drag-to-top');
     const allDoneMessage = this.markup.querySelector('.all-done');
+    const states = this.states;
 
-    // this.hideOnStates(firstTaskMessage, [''])
-    this.hideOnStates(dragToTopMessage, [this.states.INIT]);
-    this.hideOnStates(allDoneMessage, [this.states.INIT]);
+    this.hideOnStates(firstTaskMessage, [states.TASK_ADDED]);
+    this.hideOnStates(dragToTopMessage, [states.INIT]);
+    this.hideOnStates(allDoneMessage, [states.INIT, states.TASK_ADDED]);
   }
 
   /**

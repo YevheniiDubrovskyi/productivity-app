@@ -39,4 +39,11 @@ const selectionTabsData = [
   }
 ];
 
-export {messagesData, mainFilterTabsData, selectionTabsData};
+const tasksStatusList = {
+  INIT: 'init',
+  DONE: 'done',
+  FAILED: 'failed',
+  ACTIVE: 'active'
+};
+
+export {messagesData, mainFilterTabsData, selectionTabsData, tasksStatusList};
