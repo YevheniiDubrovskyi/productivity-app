@@ -82,6 +82,10 @@ export default class View extends ComponentView {
     this.events.on('task_data:added', function(taskDataObject) {
       this.addTask(taskDataObject);
     }, this);
+
+    this.events.on('task_data:remove', function(id) {
+      this.removeTask(id);
+    }, this);
   }
 
   /**
@@ -106,8 +110,6 @@ export default class View extends ComponentView {
    * @param {array} tasksDataArray - Tasks data array
    */
   renderTasks(tasksDataArray) {
-    console.log('Render tasks ', tasksDataArray);
-
     tasksDataArray.sort((current, next) => { // Sort all tasks
       const currentDeadline = new Date(current.data.deadline);
       const nextDeadline = new Date(next.data.deadline);
@@ -116,47 +118,122 @@ export default class View extends ComponentView {
         1 :
         -1;
     }).forEach((dataObject) => {
-      this.addTask(dataObject);
+      this.addTask(dataObject, true);
     });
+  }
+
+  /**
+   * Remove task by ID
+   * @param {string} id - Task id
+   */
+  removeTask(id) {
+    const index = this.findTaskComponentByID(id);
+    const taskComponent = this.componentsList.splice(index, 1)[0];
+
+    const listItem = taskComponent.getMarkup().parentElement;
+    const list = listItem.parentElement;
+
+    taskComponent.destroy();
+    list.removeChild(listItem);
+
+    if (list.children.length) return;
+    const section = list.parentElement;
+    if (!section.classList.contains('task-grp-by-category')) return;
+
+    this.globalContainer.removeChild(section);
+  }
+
+  /**
+   * Find task component by ID
+   * @return {index} Task component index in components array
+   */
+  findTaskComponentByID(id) {
+    let index = -1;
+
+    this.componentsList.forEach((component, i) => {
+      if (!(component instanceof Task)) return;
+
+      const currentID = component.getID();
+      index = currentID === id ?
+        i :
+        index;
+    });
+
+    if (index === -1) {
+      throw new Error('TaskList:View - Task component with such id does not exist');
+    }
+
+    return index;
   }
 
   /**
    * Add task, abstraction for .createTask()
    * @param {object} dataObject - Task data object
+   * @param {boolean} [firstRenderFlag] - If true task will be add with less efforts
    */
-  addTask(dataObject) {
-    const dailyList = this.dailyContainer.querySelector('.task-list');
+  addTask(dataObject, firstRenderFlag = false) {
+    const dailyTaskList = this.dailyContainer.querySelector('.task-list');
     const categories = this.categories;
     const isGlobal = dataObject.type === this.tasksTypes.GLOBAL;
     const isDone = dataObject.data.status === tasksStatusList.DONE;
-
     const listItemElement = document.createElement('li');
+
+    let insertBeforeElement = null;
+    let taskList;
+
     listItemElement.classList.add('task-list-item');
 
-    if (isGlobal) {
+    if (isGlobal) { // Check task type (global | daily)
       const category = categories.filter((category) => { // Find category object by alias
         return category.alias === dataObject.data.category;
       })[0];
 
       let categoryTaskList = this.globalContainer.querySelector(`.${category.alias}-category .task-list`);
 
-      if (categoryTaskList === null) {
+      if (categoryTaskList === null) { // Check category task list existence
         categoryTaskList = this.template.createCategorySection(category.alias, category.title);
         this.globalContainer.appendChild(categoryTaskList);
-
-        categoryTaskList.querySelector('.task-list').appendChild(listItemElement);
-      } else {
-        categoryTaskList.appendChild(listItemElement);
+        categoryTaskList = categoryTaskList.querySelector('.task-list');
       }
+
+      if (!firstRenderFlag) { // Check first render flag (for optimization purpose)
+        insertBeforeElement = this.findInsertBeforeElement(new Date(dataObject.data.deadline), categoryTaskList);
+      }
+
+      taskList = categoryTaskList;
     } else {
-      dailyList.appendChild(listItemElement);
+      insertBeforeElement = this.findInsertBeforeElement(new Date(dataObject.data.deadline), dailyTaskList);
+      taskList = dailyTaskList;
     }
+
+    taskList.insertBefore(listItemElement, insertBeforeElement);
 
     this.createTask(listItemElement, dataObject.data, {
       edit: !isDone,
       toTop: isGlobal,
       toTimer: !isDone
     });
+  }
+
+  /**
+   * Return insertBefore element
+   * @param {Date} compareDeadline - Deadline date which will be compare
+   * @param {HTMLElement} tasksListElement - Tasks list element
+   * @return {HTMLElement | null} Insert before element
+   */
+  findInsertBeforeElement(compareDeadline, tasksListElement) {
+    let insertBeforeElement = null;
+
+    Array.from(tasksListElement.children).forEach((element) => {
+      const currentTaskDeadline = new Date(element.querySelector('time').getAttribute('datetime'));
+
+      insertBeforeElement = !insertBeforeElement &&
+                            compareDeadline < currentTaskDeadline ?
+        element :
+        insertBeforeElement;
+    });
+
+    return insertBeforeElement;
   }
 
   /**
@@ -168,9 +245,9 @@ export default class View extends ComponentView {
   createTask(container, dataObject, buttonsOptions) {
     const task = new Task(container, dataObject, buttonsOptions);
 
-    task.events.on('task:button_clicked', function(buttonName) {
-      console.log('Task button clicked: ', buttonName);
-    });
+    task.events.on('task:button_clicked', function(id, buttonName) {
+      this.trigger('task:button_clicked', id, buttonName);
+    }, this.events);
     this.componentsList.push(task);
   }
 
@@ -181,11 +258,13 @@ export default class View extends ComponentView {
     const firstTaskMessage = this.markup.querySelector('.first-task');
     const dragToTopMessage = this.markup.querySelector('.drag-to-top');
     const allDoneMessage = this.markup.querySelector('.all-done');
+    const globalButton = this.markup.querySelector('.task-list-block-controls-glbl-btn');
     const states = this.states;
 
-    this.hideOnStates(firstTaskMessage, [states.TASK_ADDED]);
-    this.hideOnStates(dragToTopMessage, [states.INIT]);
-    this.hideOnStates(allDoneMessage, [states.INIT, states.TASK_ADDED]);
+    this.hideOnStates(globalButton, [states.INIT]);
+    this.hideOnStates(firstTaskMessage, [states.TASK_ADDED, states.COMMON]);
+    this.hideOnStates(dragToTopMessage, [states.INIT, states.COMMON]);
+    this.hideOnStates(allDoneMessage, [states.INIT, states.TASK_ADDED, states.COMMON]);
   }
 
   /**

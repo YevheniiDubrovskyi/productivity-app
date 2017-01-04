@@ -22,6 +22,10 @@ export default class TaskList extends PageController {
         this.goToPage(alias);
       }
     }, this);
+
+    this.view.events.on('view:timer_clicked', function(id) {
+      this.goToPage(`timer/${id}`);
+    }, this);
   }
 
 }

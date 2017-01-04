@@ -1,5 +1,6 @@
 import PageView from '../pages.view';
-import Template from './task_list.template';
+import template from './task_list.handlebars';
+// import Template from './task_list.template';
 // import './task_list.less';
 
 import utils from '../../utils/utils';
@@ -8,6 +9,7 @@ import Controls from '../../components/controls/controls.controller';
 import {defaultControlsData} from '../../components/controls/controls.data';
 import TaskList from '../../components/task_list/task_list.controller';
 import Modal from '../../components/modal/modal.controller';
+import $ from 'jquery';
 
 /**
  * Page view
@@ -20,8 +22,9 @@ export default class View extends PageView {
    */
   constructor(viewport) {
     super(viewport);
-    this.template = new Template();
-    this.markup = this.getMarkup();
+    // this.template = new Template();
+    // this.markup = this.getMarkup();
+    this.markup = $(template())[0];
   }
 
   /**
@@ -58,20 +61,21 @@ export default class View extends PageView {
     this.componentsList.push(headerControls);
 
     const taskList = new TaskList(this.markup.querySelector('.main'));
-    taskList.events.on('taskList:edit_clicked', function(id, dataObject) {
-      const modal = new Modal(this.viewport, { type: 'edit', data: dataObject });
-
-      modal.events.on('modal:submit', function(updatedDataObject) {
-        taskList.updateTask(id, updatedDataObject);
-        modal.close();
-      });
-      modal.events.on('modal:remove', function() {
-        taskList.removeTask(id);
-        modal.close();
-      });
+    taskList.events.on('task_list:edit_clicked', function(id, dataObject) {
+      console.log('TaskList page, view, edit_clicked ', id, dataObject);
+      // const modal = new Modal(this.viewport, { type: 'edit', data: dataObject });
+      //
+      // modal.events.on('modal:submit', function(updatedDataObject) {
+      //   taskList.updateTask(id, updatedDataObject);
+      //   modal.close();
+      // });
+      // modal.events.on('modal:remove', function() {
+      //   taskList.removeTask(id);
+      //   modal.close();
+      // });
     }, this);
-    taskList.events.on('taskList:timer_clicked', function(id) {
-      this.goToPage(`timer/${id}`);
+    taskList.events.on('task_list:timer_clicked', function(id) {
+      this.events.trigger('view:timer_clicked', id);
     }, this);
     this.componentsList.push(taskList);
 
@@ -93,7 +97,7 @@ export default class View extends PageView {
    */
   createDOMHandlers() {
     const taskList = this.componentsList.filter(component => component instanceof TaskList)[0];
-    const addButtonHandler = (event) => {
+    const addButtonHandler = () => {
       const modal = new Modal(this.viewport);
 
       modal.events.on('modal:submit', function(dataObject) {

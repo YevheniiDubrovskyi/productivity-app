@@ -24,4 +24,12 @@ export default class Model extends ComponentModel {
   getData() {
     return this.dataStatic;
   }
+
+  /**
+   * Get task ID
+   * @return {string} Task id
+   */
+  getID() {
+    return this.dataStatic.data.id;
+  }
 }

@@ -56,7 +56,7 @@ export default class View extends ComponentView {
    * @param {object} data
    */
   setData(data) {
-
+    console.log('Task:View - set data ', data)
   }
 
 }

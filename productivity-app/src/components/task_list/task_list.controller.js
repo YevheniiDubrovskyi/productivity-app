@@ -30,6 +30,18 @@ export default class TaskList extends ComponentController {
     this.model = new Model(this.states, this.tasksTypes);
     this.view = new View(container, this.states, this.tasksTypes);
 
+    this.buttonsClickCallbacks = {
+      up(id) {
+        this.model.moveTaskToDaily(id);
+      },
+      edit(id) {
+        this.events.trigger('task_list:edit_clicked', id, this.model.getTaskData(id));
+      },
+      pomodoro(id) {
+        this.events.trigger('task_list:timer_clicked', id);
+      }
+    };
+
     // Fired when model get all data for components
     this.model.events.once('model:data_received', function(...data) {
       this.render(...data);
@@ -49,8 +61,12 @@ export default class TaskList extends ComponentController {
     }, this.view);
 
     this.model.events.on('task_data', function(...params) {
-      this.events.trigger(params[0], ...params.slice(1));
-    }, this.view);
+      this.trigger(params[0], ...params.slice(1));
+    }, this.view.events);
+
+    this.view.events.on('task:button_clicked', function(id, buttonName) {
+      this.buttonsClickCallbacks[buttonName].call(this, id);
+    }, this);
   }
 
   /**

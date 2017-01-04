@@ -26,15 +26,15 @@ export default class Template {
   /**
    * Create tasks block markup
    * @param {string} additionalClass
-   * @param {boolean} createMessagesFlag
+   * @param {boolean} dailyFlag
    * @return {string} Tabs block markup
    */
-  createTasksBlock(additionalClass, createMessagesFlag) {
+  createTasksBlock(additionalClass, dailyFlag = false) {
     return [`<div class="task-list-block ${additionalClass}">`,
             `<div class="task-list-block-controls">`,
-
+            !dailyFlag ? '<button class="task-list-block-controls-glbl-btn">Global list</button>' : '',
             `</div>`,
-            createMessagesFlag ? this.createAllMessages() : '',
+            dailyFlag ? this.createAllMessages() + '\n<ul class="task-list"></ul>' : '',
             `</div>`].join('\n');
   }
 

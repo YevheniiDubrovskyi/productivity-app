@@ -12,10 +12,10 @@ export default class EventBus {
 
   /**
    * Attach listenter for some event
-   * @param  {String} eventPath - The string containing two colon separated values
-   * @param  {Function} callback - Callback that will be called when event will be fired
-   * @param  {Object} [context] - Context that will be applied to callback
-   * @return {Object} this
+   * @param  {string} eventPath - The string containing two colon separated values
+   * @param  {function} callback - Callback that will be called when event will be fired
+   * @param  {object} [context] - Context that will be applied to callback
+   * @return {object} this
    */
   on(eventPath, callback, context) {
     const parsedPath = this.parseEventPath(eventPath);
@@ -56,9 +56,9 @@ export default class EventBus {
 
   /**
    * Detach listener for some event
-   * @param  {String} eventPath - The string containing two colon separated values
-   * @param  {Function} callback - Callback that will be deleted from event bus
-   * @return {Object} this
+   * @param  {otring} eventPath - The string containing two colon separated values
+   * @param  {function} callback - Callback that will be deleted from event bus
+   * @return {object} this
    */
   off(eventPath, callback) {
     const parsedPath = this.parseEventPath(eventPath);
@@ -79,10 +79,10 @@ export default class EventBus {
 
   /**
    * Attach listener for some event which will be detached after first execution
-   * @param  {String} eventPath - The string containing two colon separated values
-   * @param  {Function} callback - Callback that will be called when event will be fired
-   * @param  {Object} [context] - Context that will be applied to callback
-   * @return {Object} this
+   * @param  {string} eventPath - The string containing two colon separated values
+   * @param  {function} callback - Callback that will be called when event will be fired
+   * @param  {object} [context] - Context that will be applied to callback
+   * @return {object} this
    */
   once(eventPath, callback, context) {
     const parsedPath = this.parseEventPath(eventPath);
@@ -102,8 +102,8 @@ export default class EventBus {
 
   /**
    * Delete callback from callback object array
-   * @param  {Array} callbackArray - Callback object array
-   * @param  {Function} callback - Callback that will be deleted
+   * @param  {array} callbackArray - Callback object array
+   * @param  {function} callback - Callback that will be deleted
    */
   deleteCallback(callbackArray, callback) {
     let callbackIndex = -1;
@@ -119,9 +119,9 @@ export default class EventBus {
 
   /**
    * Fire namespace and key events
-   * @param  {String} eventPath - The string containing two colon separated values
-   * @param  {...} [data] - Data that will be passed in callbacks
-   * @return {Object} this
+   * @param  {string} eventPath - The string containing two colon separated values
+   * @param  {...*} [data] - Data that will be passed in callbacks
+   * @return {object} this
    */
   trigger(eventPath, ...data) {
     const parsedEventPath = this.parseEventPath(eventPath);
@@ -143,8 +143,8 @@ export default class EventBus {
 
   /**
    * Fire each events from array
-   * @param  {Array} callbacksArray - Array with callbacks which will be fired
-   * @param {...} [data] - Data that will be passed in callbacks
+   * @param  {array} callbacksArray - Array with callbacks which will be fired
+   * @param {...*} [data] - Data that will be passed in callbacks
    */
   fireCallbacksArray(callbacksArray, ...data) {
     callbacksArray.forEach((event) => {
@@ -157,10 +157,10 @@ export default class EventBus {
 
   /**
    * Parse event path
-   * @param  {String} eventPath - The string containing two colon separated values
-   * @return {Object} parsedPath - Object that contains two properites namespace and key
-   * @return {String} parsedPath.namespace - Event namespace
-   * @return {String} parsedPath.key - Event specifactor
+   * @param  {string} eventPath - The string containing two colon separated values
+   * @return {object} parsedPath - Object that contains two properites namespace and key
+   * @return {string} parsedPath.namespace - Event namespace
+   * @return {string} parsedPath.key - Event specifactor
    */
   parseEventPath(eventPath) {
     const splitPath = eventPath.trim().split(':');
@@ -172,8 +172,8 @@ export default class EventBus {
 
   /**
    * Return namespace object with callbacks
-   * @param {String} namespace - Event namespace
-   * @return {Null | Object} Null or namespaceCallbacks
+   * @param {string} namespace - Event namespace
+   * @return {null | object} Null or namespaceCallbacks
    */
   getNamespaceCallbacks(namespace) {
     let namespaceCallbacks = this.events[namespace];
@@ -183,9 +183,9 @@ export default class EventBus {
 
   /**
    * Return array of objects with callbacks for some key
-   * @param {Object} namespaceCallbacks - Namespace callbacks object
-   * @param {String} key - Event key
-   * @return {Null | Array} Null or keyCallbacks
+   * @param {object} namespaceCallbacks - Namespace callbacks object
+   * @param {string} key - Event key
+   * @return {null | array} Null or keyCallbacks
    */
   getKeyCallbacks(namespaceCallbacks, key) {
     const keyCallbacks = namespaceCallbacks.keys[key];

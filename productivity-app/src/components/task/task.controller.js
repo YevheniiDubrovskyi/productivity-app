@@ -26,7 +26,7 @@ export default class Task extends ComponentController {
     }, this.view);
 
     this.view.events.on('view:button_clicked', function(buttonName) {
-      this.events.trigger('task:button_clicked', buttonName);
+      this.events.trigger('task:button_clicked', this.getID(), buttonName);
     }, this);
   }
 
@@ -42,5 +42,22 @@ export default class Task extends ComponentController {
       buttons: buttonsOptions || currentModelData.buttons
     });
   }
+
+  /**
+   * Get component element
+   * @return {HTMLElement} Component element
+   */
+  getMarkup() {
+    return this.view.markup;
+  }
+
+  /**
+   * Get task id
+   * @return {string} id - Task id
+   */
+  getID() {
+    return this.model.getID();
+  }
+
 
 }

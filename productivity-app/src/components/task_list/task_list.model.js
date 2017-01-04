@@ -44,6 +44,17 @@ export default class Model extends ComponentModel {
   }
 
   /**
+   * Destroy task in global list and create it in daily
+   * @param {string} id - Task id
+   */
+  moveTaskToDaily(id) {
+    const taskData = this.getTaskData(id);
+
+    this.removeTask(id);
+    this.addTask(taskData, true);
+  }
+
+  /**
    * Send data requests to server and fire event when all data received
    */
   getComponentsDataFromStorage() {
@@ -96,10 +107,10 @@ export default class Model extends ComponentModel {
 
   /**
    * Add task data object to raw data object array
-   * @param {object} rawDataObject
-   * @return {boolean} isGlobal flag
+   * @param {object} rawDataObject - Raw task data
+   * @param {boolean} dailyFlag - If flag is true, task will be add as daily task, else as global
    */
-  addTask(rawDataObject) {
+  addTask(rawDataObject, dailyFlag = false) {
     const dataObject = rawDataObject;
 
     if (!dataObject.id) {
@@ -112,7 +123,7 @@ export default class Model extends ComponentModel {
     }
 
     const newLength = this.dataStatic.push({
-      type: this.tasksTypes.GLOBAL,
+      type: dailyFlag ? this.tasksTypes.DAILY : this.tasksTypes.GLOBAL,
       data: dataObject
     });
     this.events.trigger('task_data:added', this.dataStatic[newLength - 1]);
@@ -122,17 +133,10 @@ export default class Model extends ComponentModel {
    * Update task data object in data object array
    * @param {string} id - Task id
    * @param {object} rawDataObject - Data object without id
-   * @param {object} [type] - Task type (daily|global)
    */
-  updateTask(id, rawDataObject, type) {
+  updateTask(id, rawDataObject) {
     const index = this.findTaskDataByID(id);
 
-    if (type) {
-      if (!this.checkType(type)) {
-        throw new Error('TaskList.Model: Such task type does not exist');
-      }
-      this.dataStatic[index].type = type;
-    }
     this.dataStatic[index].data = rawDataObject;
     this.events.trigger('task_data:update', this.dataStatic[index]);
   }
@@ -169,7 +173,20 @@ export default class Model extends ComponentModel {
         index;
     });
 
+    if (index === -1) {
+      throw new Error('TaskList:Model - Task with such id does not exist');
+    }
+
     return index;
+  }
+
+  /**
+   * Return task data by id
+   * @param {string} id - Task id
+   * @return {object} Task data object
+   */
+  getTaskData(id) {
+    return Object.assign({}, this.dataStatic[this.findTaskDataByID(id)].data);
   }
 
   /**

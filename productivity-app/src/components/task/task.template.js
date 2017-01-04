@@ -11,6 +11,7 @@ export default class Template {
     this.markup = document.createElement('div');
     this.markup.classList.add('task');
     this.markup.classList.add(`${dataObject.data.priority}-priority`);
+    this.markup.classList.add(`${dataObject.data.category}-category`);
     this.markup.innerHTML = this.createMarkupSkeleton(dataObject);
   }
 
@@ -44,14 +45,11 @@ export default class Template {
    * @return {string} Date section markup
    */
   createDate(dataObject) {
-    const deadline = dataObject.data.deadline;
-    const deadlineDate = new Date(deadline);
-    const todayDate = new Date();
+    const deadline = dataObject.data.deadline.slice(0, 15);
+    const today = new Date().toString().slice(0, 15);
     let date;
 
-    if (deadlineDate.getMonth() === todayDate.getMonth() &&
-        deadlineDate.getDay() === todayDate.getDay() &&
-        deadlineDate.getFullYear() === todayDate.getFullYear()) {
+    if (deadline === today) {
       date = '<span class="task-date-today">Today</span>';
     } else {
       const splitedDeadline = deadline.split(' ');

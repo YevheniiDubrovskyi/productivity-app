@@ -7,7 +7,30 @@
       position: relative;
       display: flex;
       margin: 0;
-      justify-content: flex-end;
+
+      &-glbl-btn {
+        font-family: @font__secondary;
+        font-size: 1.25em;
+        font-weight: 700;
+        position: relative;
+        padding: 0;
+        transition: color .1s ease-in-out;
+        color: @fontColor__secondary;
+
+        &:hover {
+          color: @fontColor__primary;
+        }
+
+        &::after {
+          font-family: @font__icon;
+          font-size: .55em;
+          position: absolute;
+          top: 50%;
+          right: -1.5em;
+          content: '\e906';
+          transform: translate(0, -50%);
+        }
+      }
     }
   }
 
@@ -43,6 +66,18 @@
         }
       }
     }
+  }
+}
+
+.daily-tasks {
+  .task-list-block-controls {
+    justify-content: flex-end;
+  }
+}
+
+.global-tasks {
+  .task-list-block-controls {
+    justify-content: space-between;
   }
 }
 

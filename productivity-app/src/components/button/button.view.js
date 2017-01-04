@@ -28,7 +28,7 @@ export default class View extends ComponentView {
 
   /**
    * Render component
-   * @param {objet} dataObject - Data object
+   * @param {object} dataObject - Data object
    */
   render(dataObject) {
     this.markup = $(template(dataObject))[0];
@@ -45,7 +45,6 @@ export default class View extends ComponentView {
 
   /**
    * Create DOM handlers which will be attach when render will be fire
-   * @return {[type]} [description]
    */
   createDOMHandlers() {
     const btnClickHandler = () => {
