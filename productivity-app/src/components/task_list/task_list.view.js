@@ -138,7 +138,7 @@ export default class View extends ComponentView {
 
     if (list.children.length) return;
     const section = list.parentElement;
-    if (!section.classList.contains('task-grp-by-category')) return;
+    if (!section.classList.contains('tasks-grp-by-category')) return;
 
     this.globalContainer.removeChild(section);
   }
