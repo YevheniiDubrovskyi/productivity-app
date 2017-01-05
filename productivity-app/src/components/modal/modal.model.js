@@ -77,13 +77,30 @@ export default class Model extends ComponentModel {
    * @return {boolean} Data validation flag
    */
   isValid(dataObject) {
+    const todayDate = new Date();
+
     let valid = true;
+    let deadlineDate;
 
     for (let prop in dataObject) {
       if (!dataObject[prop]) valid = false;
     }
 
-    return valid
+    try {
+      deadlineDate = new Date(dataObject.deadline);
+    } catch(e) {}
+
+    if (deadlineDate.toString() === 'Invalid Date' ||
+        deadlineDate.getFullYear() <= todayDate.getFullYear() &&
+        deadlineDate.getMonth() <= todayDate.getMonth() &&
+        deadlineDate.getDay() < todayDate.getDay()
+    ) {
+      valid = false;
+    }
+
+    console.log('Valid - ', valid, ' dataObject - ', dataObject);
+
+    return valid;
   }
 
 }

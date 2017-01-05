@@ -37,12 +37,20 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|jpg|svg)$/,
+        test: /\.(png|jpg|svg)/,
         loader: 'file-loader?name=../img/[name].[ext]'
       },
       {
-        test: /\.(woff2?|ttf|eot)$/,
+        test: /\.(woff2?|ttf|eot)/,
         loader: 'file?name=../fonts/[name].[ext]'
+      },
+      {
+        test: /\.css$/,
+        loaders: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader'
+        ]
       },
       {
         test: /\.less$/,

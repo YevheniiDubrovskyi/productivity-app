@@ -42,7 +42,7 @@ export default class View extends ComponentView {
 
     this.container.appendChild(this.markup);
     this.createComponents(priorityDataArray);
-    this.setStatesForMessages();
+    this.setStatesForElements();
     super.render();
 
     this.events.on('view:dataRecived', function(tasksDataArray) {
@@ -140,7 +140,8 @@ export default class View extends ComponentView {
     const section = list.parentElement;
     if (!section.classList.contains('tasks-grp-by-category')) return;
 
-    this.globalContainer.removeChild(section);
+    const sectionParent = section.parentElement;
+    sectionParent.removeChild(section);
   }
 
   /**
@@ -192,7 +193,7 @@ export default class View extends ComponentView {
 
       if (categoryTaskList === null) { // Check category task list existence
         categoryTaskList = this.template.createCategorySection(category.alias, category.title);
-        this.globalContainer.appendChild(categoryTaskList);
+        this.globalContainer.querySelector('.task-list-block-categories').appendChild(categoryTaskList);
         categoryTaskList = categoryTaskList.querySelector('.task-list');
       }
 
@@ -252,9 +253,9 @@ export default class View extends ComponentView {
   }
 
   /**
-   * Set states for messages
+   * Set states for elements
    */
-  setStatesForMessages() {
+  setStatesForElements() {
     const firstTaskMessage = this.markup.querySelector('.first-task');
     const dragToTopMessage = this.markup.querySelector('.drag-to-top');
     const allDoneMessage = this.markup.querySelector('.all-done');
@@ -262,17 +263,32 @@ export default class View extends ComponentView {
     const states = this.states;
 
     this.hideOnStates(globalButton, [states.INIT]);
-    this.hideOnStates(firstTaskMessage, [states.TASK_ADDED, states.COMMON]);
-    this.hideOnStates(dragToTopMessage, [states.INIT, states.COMMON]);
-    this.hideOnStates(allDoneMessage, [states.INIT, states.TASK_ADDED, states.COMMON]);
+    this.hideOnStates(firstTaskMessage, [states.TASK_ADDED, states.COMMON, states.REMOVING]);
+    this.hideOnStates(dragToTopMessage, [states.INIT, states.COMMON, states.REMOVING]);
+    this.hideOnStates(allDoneMessage, [states.INIT, states.TASK_ADDED, states.COMMON, states.REMOVING]);
+
+    this.events.on('view:state_changed', function(state, previousState) {
+      const removingState = this.states.REMOVING;
+
+      if (previousState === removingState) {
+        this.markup.classList.remove('removing-state');
+        return;
+      }
+
+      if (state === removingState) {
+        this.markup.classList.add('removing-state');
+        return;
+      }
+    }, this);
   }
 
   /**
    * Set component state. Fire events which listen by components
    * @param {string} state
+   * @param {string} previousState
    */
-  setState(state) {
-    this.events.trigger('view:state_changed', state);
+  setState(state, previousState) {
+    this.events.trigger('view:state_changed', state, previousState);
   }
 
   /**
@@ -284,13 +300,16 @@ export default class View extends ComponentView {
     const isElement = component instanceof HTMLElement;
     const hideStyle = 'display: none;';
 
-    this.events.on('view:state_changed', function(state) {
+    this.events.on('view:state_changed', function(state, previousState) {
       if (statesArray.includes(state)) {
+        if (statesArray.includes(previousState)) return;
+
         if (isElement) {
           component.style = hideStyle;
         } else {
           component.inlineStyles = hideStyle;
         }
+
         return;
       }
 

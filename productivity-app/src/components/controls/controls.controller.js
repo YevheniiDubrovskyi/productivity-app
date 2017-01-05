@@ -58,16 +58,16 @@ export default class Controls extends ComponentController {
    * Hide button by alias
    * @param  {string} alias - Button alias
    */
-  hideBtn(alias) {
-    this.model.hideBtn(alias);
+  hideButton(alias) {
+    this.model.hideButton(alias);
   }
 
   /**
    * Show button by alias
    * @param  {string} alias - Button alias
    */
-  showBtn(alias) {
-    this.model.showBtn(alias);
+  showButton(alias) {
+    this.model.showButton(alias);
   }
 
 }

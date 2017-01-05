@@ -42,7 +42,6 @@ const selectionTabsData = [
 const tasksStatusList = {
   INIT: 'init',
   DONE: 'done',
-  FAILED: 'failed',
   ACTIVE: 'active'
 };
 

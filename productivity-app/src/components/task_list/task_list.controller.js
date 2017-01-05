@@ -25,6 +25,7 @@ export default class TaskList extends ComponentController {
       GLOBAL: 'global',
       DAILY: 'daily'
     };
+    this.previousState;
     this.state = null;
 
     this.model = new Model(this.states, this.tasksTypes);
@@ -50,7 +51,6 @@ export default class TaskList extends ComponentController {
     this.model.events.on('model:state_changed', function(state) {
       if (this.state === state) return;
 
-      console.log('Task list (comp) model state change - ', state); // TODO: remove this later
       this.setState(state);
     }, this);
 
@@ -75,9 +75,13 @@ export default class TaskList extends ComponentController {
    */
   setState(state) {
     if (!this.checkState(state)) return;
+    if (this.state === this.previousState) return;
 
+    this.previousState = this.state;
     this.state = state;
-    this.view.setState(state);
+    this.view.setState(this.state, this.previousState);
+
+    this.events.trigger('task_list:state_changed', this.state, this.previousState);
   }
 
   /**
@@ -107,7 +111,7 @@ export default class TaskList extends ComponentController {
    * Remove marked tasks
    */
   switchOffRemovingMode() {
-    this.setState(this.states.COMMON);
+    this.setState(this.previousState);
   }
 
   /**
@@ -133,10 +137,9 @@ export default class TaskList extends ComponentController {
    * Update task by id
    * @param {string} id - Task id
    * @param {object} dataObject - Task raw data
-   * @param {string} [type] - Task type (daily|global)
    */
-  updateTask(id, dataObject, type) {
-    this.model.updateTask(id, dataObject, type);
+  updateTask(id, dataObject) {
+    this.model.updateTask(id, dataObject);
   }
 
   /**

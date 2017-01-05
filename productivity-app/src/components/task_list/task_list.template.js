@@ -34,7 +34,9 @@ export default class Template {
             `<div class="task-list-block-controls">`,
             !dailyFlag ? '<button class="task-list-block-controls-glbl-btn">Global list</button>' : '',
             `</div>`,
-            dailyFlag ? this.createAllMessages() + '\n<ul class="task-list"></ul>' : '',
+            dailyFlag ?
+              this.createAllMessages() + '\n<ul class="task-list"></ul>' :
+              '<div class="task-list-block-categories"></div>',
             `</div>`].join('\n');
   }
 

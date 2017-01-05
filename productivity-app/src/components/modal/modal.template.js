@@ -105,9 +105,10 @@ export default class Template {
    */
   createInputWithLabel(dataProperty) {
     const name = dataProperty.name;
+    const type = dataProperty.type;
 
     return [`<label for="modal-add-edit-task__${name}" class="modal-lbl">${utils.capitalize(name)}</label>`,
-            `<input type="${dataProperty.type}" name="${name}" class="modal-inpt" id="modal-add-edit-task__${name}" placeholder="Add ${name} here" value="${dataProperty.value}">\n`].join('\n');
+            `<input ${type === 'date' ? 'id="datepicker"' : 'type="${type}"'} name="${name}" class="modal-inpt" id="modal-add-edit-task__${name}" placeholder="Add ${name} here" value="${dataProperty.value}">\n`].join('\n');
   }
 
   /**

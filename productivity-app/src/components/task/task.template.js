@@ -54,7 +54,7 @@ export default class Template {
     } else {
       const splitedDeadline = deadline.split(' ');
       const stringMonth = splitedDeadline[1];
-      const stringDay = splitedDeadline[2];
+      const stringDay = +splitedDeadline[2];
 
       date = [`<span class="task-date-number">${stringDay}</span>`,
               `<span class="task-date-month">${stringMonth}</span>`].join('\n');

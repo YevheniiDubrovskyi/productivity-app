@@ -77,7 +77,7 @@ export default class Model extends ComponentModel {
    * Set visible param to true for button by alias
    * @param  {string} alias - Button alias
    */
-  showBtn(alias) {
+  showButton(alias) {
     this.setBtnVisibility(alias, true);
   }
 
@@ -85,7 +85,7 @@ export default class Model extends ComponentModel {
    * Set visible param to false for button by alias
    * @param  {string} alias - Button alias
    */
-  hideBtn(alias) {
+  hideButton(alias) {
     this.setBtnVisibility(alias, false);
   }
 
@@ -94,7 +94,7 @@ export default class Model extends ComponentModel {
    * @param {string} alias - Button alias
    * @param {boolean} visibility - Visibility which will be set
    */
-  setBtnVisibility(alias, visiblity) {
+  setBtnVisibility(alias, visibility) {
     this.dataStatic.forEach((element) => {
       if (element.alias === alias) {
         element.visible = visibility;

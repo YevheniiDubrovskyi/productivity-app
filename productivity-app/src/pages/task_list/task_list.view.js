@@ -90,6 +90,19 @@ export default class View extends PageView {
         });
       }
     }, this);
+
+    taskList.events.on('task_list:state_changed', function(state, previousState) {
+      const states = taskList.states;
+
+      console.log('Task List page View, state - ', state);
+
+      if (state === taskList.states.COMMON ||
+          state === taskList.states.TASK_ADDED ||
+          state === taskList.states.ALL_DONE
+      ) {
+        headerControls.showButton('remove');
+      }
+    });
   }
 
   /**

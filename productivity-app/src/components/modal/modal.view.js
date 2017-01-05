@@ -3,6 +3,8 @@ import Template from './modal.template';
 // import './modal.less';
 
 import Button from '../../components/button/button.controller';
+import $ from 'jquery';
+import '../../../node_modules/jquery-ui-bundle/jquery-ui.css';
 
 /**
  * Component view
@@ -40,6 +42,13 @@ export default class View extends ComponentView {
 
     this.createDOMHandlers();
     super.render();
+
+    $(this.markup).find('#datepicker').datepicker({
+      monthNames: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'],
+      dateFormat: 'MM dd, yy',
+      maxDate: '+1y',
+      minDate: '+0d'
+    });
   }
 
   /**
