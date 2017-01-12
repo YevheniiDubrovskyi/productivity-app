@@ -25,23 +25,11 @@ export default class TaskList extends ComponentController {
       GLOBAL: 'global',
       DAILY: 'daily'
     };
-    this.previousState;
+    this.previousState = ''; // To be not equal to this.state
     this.state = null;
 
     this.model = new Model(this.states, this.tasksTypes);
     this.view = new View(container, this.states, this.tasksTypes);
-
-    this.buttonsClickCallbacks = {
-      up(id) {
-        this.model.moveTaskToDaily(id);
-      },
-      edit(id) {
-        this.events.trigger('task_list:edit_clicked', id, this.model.getTaskData(id));
-      },
-      pomodoro(id) {
-        this.events.trigger('task_list:timer_clicked', id);
-      }
-    };
 
     // Fired when model get all data for components
     this.model.events.once('model:data_received', function(...data) {
@@ -64,9 +52,34 @@ export default class TaskList extends ComponentController {
       this.trigger(params[0], ...params.slice(1));
     }, this.view.events);
 
-    this.view.events.on('task:button_clicked', function(id, buttonName) {
-      this.buttonsClickCallbacks[buttonName].call(this, id);
-    }, this);
+    this.view.events.on('task:button_clicked', this.executeButtonCallback, this);
+  }
+
+  /**
+   * Executes button callback by name
+   * @param {string} id - Task id
+   * @param {string} buttonName - Button name
+   */
+  executeButtonCallback(id, buttonName) {
+    const callbacks = {
+      up(id) {
+        this.model.moveTaskToDaily(id);
+      },
+      edit(id) {
+        this.events.trigger('task_list:edit_clicked', id, this.model.getTaskData(id));
+      },
+      pomodoro(id) {
+        this.events.trigger('task_list:timer_clicked', id);
+      },
+      trash(id) {
+        this.model.addToRemoveList(id);
+      },
+      close(id) {
+        this.model.excludeFromRemoveList(id);
+      }
+    };
+
+    callbacks[buttonName].call(this, id);
   }
 
   /**

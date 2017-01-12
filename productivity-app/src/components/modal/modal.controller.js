@@ -15,7 +15,13 @@ export default class Modal extends ComponentController {
   constructor(container, dataObject = { type: 'add' }) {
     super();
 
-    this.model = new Model(dataObject);
+    this.modalTypes = {
+      ADD: 'add',
+      EDIT: 'edit',
+      CONFIRM: 'confirm'
+    };
+
+    this.model = new Model(this.modalTypes, dataObject);
     this.view = new View(container);
 
     this.model.events.on('model:dataReceived', function(data) {

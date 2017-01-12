@@ -21,8 +21,23 @@
     box-sizing: border-box;
     width: 5.48em;
     height: 100%;
-    transition: .3s ease-in-out;
+    transition: .2s ease-in-out;
     transform: translate(-89%, 0);
+
+    &__btn {
+      font-size: 2.5em;
+      position: absolute;
+      font-family: @font__icon;
+      transition: .3s ease-in-out;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      &:hover {
+        cursor: default;
+      }
+    }
   }
 
   &-content {
@@ -61,6 +76,11 @@
 
     &__btn {
       font-family: @font__icon;
+      transition: .3s ease-in-out;
+
+      &:hover {
+        color: @primaryColorCommon__lighten;
+      }
     }
   }
 
@@ -92,6 +112,7 @@
     font-weight: 700;
     position: relative;
     width: 4.6em;
+    transition: .3s ease-in-out;
 
     &::after {
       font-family: @font__icon;
@@ -118,19 +139,6 @@
   }
 }
 
-.tasks-grp-by-category {
-  .task-list {
-    &::after {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: .5625rem;
-      height: ~"calc(100% + 1.5625rem)";
-      content: '';
-    }
-  }
-}
-
 .btn-up {
   margin: 0 0 .5em 0;
 }
@@ -151,75 +159,19 @@
 
 .removing-state .task-hidden-btns {
   transform: translate(0, 0);
-}
 
-
-/* URGENT */
-
-.task.urgent-priority {
-  .task-pomodoro-count {
-    background-color: #f75c4c;
-  }
-
-  .task-content-heading {
-    color: #f75c4c;
+  &__btn:hover {
+    cursor: pointer;
   }
 }
 
-/* HIGHT */
+.addTaskPriorityType(urgent, @priorityUrgent, @priorityUrgent__darken);
+.addTaskPriorityType(high, @priorityHigh, @priorityHigh__darken);
+.addTaskPriorityType(middle, @priorityMiddle, @priorityMiddle__darken);
+.addTaskPriorityType(low, @priorityLow, @priorityLow__darken);
 
-.task.high-priority {
-  .task-pomodoro-count {
-    background-color: #ffa841;
-  }
-
-  .task-content-heading {
-    color: #ffa841;
-  }
-}
-
-/* MIDDLE */
-
-.task.middle-priority {
-  .task-pomodoro-count {
-    background-color: #fddc43;
-  }
-
-  .task-content-heading {
-    color: #fddc43;
-  }
-}
-
-/* LOW */
-
-.task.low-priority {
-  .task-pomodoro-count {
-    background-color: #1abc9c;
-  }
-
-  .task-content-heading {
-    color: #1abc9c;
-  }
-}
-
-/* CATEGORIES */
-
-.work-category .task-hidden-btns {
-  background-color: #ffb200;
-}
-
-.education-category .task-hidden-btns {
-  background-color: #59abe3;
-}
-
-.hobby-category .task-hidden-btns {
-  background-color: #b470d0;
-}
-
-.sport-category .task-hidden-btns {
-  background-color: #00d4d9;
-}
-
-.other-category .task-hidden-btns {
-  background-color: #00cbd0;
-}
+.addTaskCategoryType(work, @categoryWork, @categoryWork__darken);
+.addTaskCategoryType(education, @categoryEducation, @categoryEducation__darken);
+.addTaskCategoryType(hobby, @categoryHobby, @categoryHobby__darken);
+.addTaskCategoryType(sport, @categorySport, @categorySport__darken);
+.addTaskCategoryType(other, @categoryOther, @categoryOther__darken);

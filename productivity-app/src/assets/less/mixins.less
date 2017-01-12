@@ -33,3 +33,45 @@
     background-position: @posX @posY + 19px;
   }
 }
+
+.addTaskPriorityType(@type, @color, @color__hover) {
+  .task.@{type}-priority {
+    .task-pomodoro-count {
+      background-color: @color;
+
+      &:hover {
+        background-color: @color__hover;
+      }
+    }
+
+    .task-content-heading {
+      color: @color;
+    }
+  }
+}
+
+.addTaskCategoryType(@type, @color, @color__hover) {
+  .@{type}-category .task-hidden-btns__btn {
+    background-color: @color;
+  }
+
+  .removing-state .@{type}-category .task-hidden-btns__btn:hover {
+    background-color: @color__hover;
+  }
+}
+
+.addTaskListCategory(@type, @color, @posX, @posY) {
+  .@{type}-category {
+    .tasks-grp-by-category__heading {
+      color: @color;
+
+      &::after {
+        background-position: @posX @posY;
+      }
+    }
+
+    .task-list::after {
+      background-color: @color;
+    }
+  }
+}

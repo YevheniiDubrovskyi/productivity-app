@@ -15,10 +15,10 @@
         position: relative;
         padding: 0;
         transition: color .1s ease-in-out;
-        color: @fontColor__secondary;
+        color: @primaryColorCommon__lighten;
 
         &:hover {
-          color: @fontColor__primary;
+          color: @white;
         }
 
         &::after {
@@ -45,7 +45,7 @@
       font-weight: 300;
       line-height: 1.35em;
       letter-spacing: .01em;
-      color: @fontColor__secondary;
+      color: @primaryColorCommon__lighten;
       text-align: center;
 
       &__icon {
@@ -91,87 +91,33 @@
     padding: 0 0 0 1.5em;
     text-transform: uppercase;
 
-    &::after,
-    &::before {
+    &::after {
       position: absolute;
-      top: 30%;
-      left: -.26rem;
       content: '';
-      transform: translate(0, -50%);
-      border-radius: 50%;
-    }
-
-    &:before {
+      left: -.25rem;
       z-index: 100;
-      width: 1.0625em;
-      height: 1.0625em;
+      top: -.125rem;
+      width: 1.125rem;
+      height: 1.125rem;
+      background: url(../../assets/img/label_sprite.png);
+      background-repeat: no-repeat;
     }
+  }
 
-    &:after {
-      z-index: 150;
-      left: -.015rem;
-      width: .32em;
-      height: .32em;
-      transition: .1s ease-in-out;
-      border: 2px solid #2a3f50;
-      border-radius: 50%;
+  .task-list {
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: .5625rem;
+      height: ~"calc(100% + 1.5625rem)";
+      content: '';
     }
   }
 }
 
-/* CATEGORIES FOR GROUPS */
-
-/* WORK */
-
-.work-category .tasks-grp-by-category__heading {
-  color: #ffb200;
-}
-
-.work-category .task-list:after,
-.work-category .tasks-grp-by-category__heading:before {
-  background-color: #ffb200;
-}
-
-/* SPORT */
-
-.sport-category .tasks-grp-by-category__heading {
-  color: #00d4d9;
-}
-
-.sport-category .task-list:after,
-.sport-category .tasks-grp-by-category__heading:before {
-  background-color: #00d4d9;
-}
-
-/* HOBBY */
-
-.hobby-category .tasks-grp-by-category__heading {
-  color: #b470d0;
-}
-
-.hobby-category .task-list:after,
-.hobby-category .tasks-grp-by-category__heading:before {
-  background-color: #b470d0;
-}
-
-/* EDUCATION */
-
-.education-category .tasks-grp-by-category__heading {
-  color: #59abe3;
-}
-
-.education-category .task-list:after,
-.education-category .tasks-grp-by-category__heading:before {
-  background-color: #59abe3;
-}
-
-/* OTHER */
-
-.other-category .tasks-grp-by-category__heading {
-  color: #00cbd0;
-}
-
-.other-category .task-list:after,
-.other-category .tasks-grp-by-category__heading:before {
-  background-color: #00cbd0;
-}
+.addTaskListCategory(work, @categoryWork, -1px, -1px);
+.addTaskListCategory(education, @categoryEducation, -77px, -1px);
+.addTaskListCategory(hobby, @categoryHobby, -58px, -1px);
+.addTaskListCategory(sport, @categorySport, -39px, -1px);
+.addTaskListCategory(other, @categoryOther, -20px, -1px);

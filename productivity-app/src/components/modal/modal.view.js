@@ -73,7 +73,11 @@ export default class View extends ComponentView {
       inputsData[prop] = array.length === 1 ?
         array[0].value.trim() :
         array.filter(radio => radio.checked).map((radio) => {
-          return radio.id.match(/.*-(.*)$/)[1];
+          const value = radio.value;
+
+          return value.includes('estimation') ?
+            value.split('-')[1] :
+            value;
         })[0];
     }
 

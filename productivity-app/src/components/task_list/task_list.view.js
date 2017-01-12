@@ -50,7 +50,9 @@ export default class View extends ComponentView {
       this.renderTasks(tasksDataArray);
     }, this);
 
-    this.bindTaskDataEvents();
+    this.events.on('task_data', function(...params) {
+      this.executeDataCallback(params[0].split(':')[1], ...params.slice(1));
+    }, this);
   }
 
   /**
@@ -76,16 +78,24 @@ export default class View extends ComponentView {
   }
 
   /**
-   * Bind methods to task data events (CRUD)
+   * Execute data callback by name
+   * @param {string} eventKey - Event key
+   * @param {...*} eventData - Data from event
    */
-  bindTaskDataEvents() {
-    this.events.on('task_data:added', function(taskDataObject) {
-      this.addTask(taskDataObject);
-    }, this);
+  executeDataCallback(eventKey, ...eventData) {
+    const callbacks = {
+      added(taskDataObject) {
+        this.addTask(taskDataObject);
+      },
+      remove(id) {
+        this.removeTask(id);
+      },
+      update(id, taskDataObject) {
+        this.updateTask(id, taskDataObject);
+      }
+    };
 
-    this.events.on('task_data:remove', function(id) {
-      this.removeTask(id);
-    }, this);
+    callbacks[eventKey].call(this, ...eventData);
   }
 
   /**
@@ -142,6 +152,18 @@ export default class View extends ComponentView {
 
     const sectionParent = section.parentElement;
     sectionParent.removeChild(section);
+  }
+
+  /**
+   * Update task by id
+   * @param {string} id - Task id
+   * @param {object} dataObject - New task data object
+   */
+  updateTask(id, dataObject) {
+    const index = this.findTaskComponentByID(id);
+    const taskComponent = this.componentsList[index];
+
+    taskComponent.update(dataObject);
   }
 
   /**

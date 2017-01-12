@@ -23,11 +23,11 @@
       font-family: @font__secondary;
       padding: 0 .5em;
       transition: .1s ease-in-out;
-      color: @fontColor__secondary;
+      color: @primaryColorCommon__lighten;
 
       &.active,
       &:hover {
-        color: @fontColor__primary;
+        color: @white;
       }
 
       &:after {
@@ -36,7 +36,7 @@
         top: -.01rem;
         right: -.21em;
         content: '|';
-        color: @fontColor__secondary !important;
+        color: @primaryColorCommon__lighten !important;
       }
     }
   }

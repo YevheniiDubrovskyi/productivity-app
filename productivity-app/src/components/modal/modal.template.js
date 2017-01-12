@@ -12,7 +12,7 @@ export default class Template {
   constructor(dataObject) {
     this.markup = document.createElement('div');
     this.markup.classList.add('modal-wrapper');
-    this.markup.innerHTML = `\n<aside class="modal">${this.createModalMarkup(dataObject)}</aside>\n`;
+    this.markup.innerHTML = `\n<aside class="modal">\n${this.createModalMarkup(dataObject)}\n</aside>\n`;
   }
 
   /**
@@ -25,36 +25,36 @@ export default class Template {
         return [this.createHeading('Add'),
                 this.createInputWithLabel(data.title),
                 this.createInputWithLabel(data.description),
-                this.createRadioGroup(data.categories),
+                this.createRadioGroup(data.category),
                 this.createInputWithLabel(data.deadline),
                 this.createEstimationRadioGroup(data.estimation),
                 this.createRadioGroup(data.priority),
                 this.createButtonMarkup('accept', '&#xe90f;'),
-                this.createButtonMarkup('cancel', '&#xe910;')].join('\n');
+                this.createButtonMarkup('cancel', '&#xe910;')];
       },
 
       edit(data) {
         return [this.createHeading('Add'),
                 this.createInputWithLabel(data.title),
                 this.createInputWithLabel(data.description),
-                this.createRadioGroup(data.categories),
+                this.createRadioGroup(data.category),
                 this.createInputWithLabel(data.deadline),
                 this.createEstimationRadioGroup(data.estimation),
                 this.createRadioGroup(data.priority),
                 this.createButtonMarkup('delete', '&#xe912;'),
                 this.createButtonMarkup('accept', '&#xe90f;'),
-                this.createButtonMarkup('cancel', '&#xe910;')].join('\n');
+                this.createButtonMarkup('cancel', '&#xe910;')];
       },
 
       remove(data) {
         return [this.createHeading('Remove'),
                 this.createParagraphMarkup(data.text),
                 this.createButtonsWrapper(),
-                this.createButtonMarkup('cancel', '&#xe910;')].join('\n');
+                this.createButtonMarkup('cancel', '&#xe910;')];
       }
     };
 
-    return types[dataObject.type].call(this, dataObject.data);
+    return types[dataObject.type].call(this, dataObject.data).join('\n');
   }
 
   /**
@@ -108,7 +108,7 @@ export default class Template {
     const type = dataProperty.type;
 
     return [`<label for="modal-add-edit-task__${name}" class="modal-lbl">${utils.capitalize(name)}</label>`,
-            `<input ${type === 'date' ? 'id="datepicker"' : 'type="${type}"'} name="${name}" class="modal-inpt" id="modal-add-edit-task__${name}" placeholder="Add ${name} here" value="${dataProperty.value}">\n`].join('\n');
+            `<input ${type === 'date' ? 'id="datepicker" type="text"' : `type="${type}"`} name="${name}" class="modal-inpt" id="modal-add-edit-task__${name}" placeholder="Add ${name} here" value="${dataProperty.value}">\n`].join('\n');
   }
 
   /**
@@ -119,7 +119,7 @@ export default class Template {
     return [`<fieldset class="modal-fset">`,
             `<h4 class="modal-fset-heading">${utils.capitalize(dataProperty.name)}</h4>`,
             `<ul class="modal-fset-list">`,
-            this.createRadioGroupList(dataProperty.name, dataProperty.value),
+            this.createRadioGroupList(dataProperty.name, dataProperty.value, dataProperty.range),
             `</ul>`,
             `</fieldset>`].join('\n');
   }
@@ -127,15 +127,16 @@ export default class Template {
   /**
    * Create radio group list
    * @param {string} groupName - Group name
+   * @param {string} checkedValue - String which matches with checked value
    * @param {array} dataArray - Data array
    */
-  createRadioGroupList(groupName, dataArray) {
+  createRadioGroupList(groupName, checkedValue, dataArray) {
     return dataArray.reduce((acc, el) => {
       const alias = el.alias;
 
       return [acc,
               `<li class="modal-fset-list-item">`,
-              `<input type="radio" class="modal-fset-list-item-radio" name="${groupName}" id="modal-add-edit-task__radio-${alias}">`,
+              `<input type="radio" class="modal-fset-list-item-radio" name="${groupName}" id="modal-add-edit-task__radio-${alias}" value="${alias}" ${alias === checkedValue ? 'checked': ''}>`,
               `<label for="modal-add-edit-task__radio-${alias}" class="modal-fset-list-item-lbl">${utils.capitalize(el.title)}</label>`,
               `</li>`].join('\n');
     }, '');
@@ -143,14 +144,14 @@ export default class Template {
 
   /**
    * Create fieldset with estimation radio group
-   * @param {number} count - Estimation range
+   * @param {object} estimation - Estimation object
    */
-  createEstimationRadioGroup(count) {
+  createEstimationRadioGroup(estimation) {
     let estimationGroup = [];
-    let i = count + 1;
+    let i = estimation.total + 1;
 
     while (--i) {
-      estimationGroup = estimationGroup.concat([`<input type="radio" name="estimation" id="estimation-${i}" class="modal-estimation-list-item-radio">`,
+      estimationGroup = estimationGroup.concat([`<input type="radio" name="estimation" id="estimation-${i}" class="modal-estimation-list-item-radio" value="estimation-${i}" ${estimation.checked == i ? 'checked' : ''}>`,
                                                 `<label class="modal-estimation-list-item-lbl" for="estimation-${i}"></label>`]);
     }
 

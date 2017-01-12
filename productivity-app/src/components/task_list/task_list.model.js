@@ -48,6 +48,8 @@ export default class Model extends ComponentModel {
    * @param {string} id - Task id
    */
   moveTaskToDaily(id) {
+    if (this.getDailyTasksCount() === 5) return;
+
     const taskData = this.getTaskData(id);
 
     this.removeTask(id);
@@ -136,18 +138,25 @@ export default class Model extends ComponentModel {
    */
   updateTask(id, rawDataObject) {
     const index = this.findTaskDataByID(id);
+    const taskData = this.dataStatic[index];
+    const previousCategory = taskData.category;
+    const previousDeadline = taskData.deadline;
 
-    this.dataStatic[index].data = rawDataObject;
-    this.events.trigger('task_data:update', this.dataStatic[index]);
-  }
+    for (let prop in rawDataObject) {
+      if (!rawDataObject.hasOwnProperty(prop)) continue;
 
-  /**
-   * Check task type existence
-   * @param {string} type - Task type
-   * @return {boolean} Task type existence flag
-   */
-  checkType(type) {
-    return this.tasksTypes.includes(type);
+      taskData.data[prop] = rawDataObject[prop];
+    }
+
+    taskData.data.deadline = (new Date(taskData.data.deadline)).toString();
+    if (previousCategory === taskData.data.category &&
+        previousDeadline === taskData.data.deadline
+    ) {
+      this.events.trigger('task_data:update', id, this.dataStatic[index]);
+    } else {
+      this.removeTask(id);
+      this.addTask(taskData.data, taskData.type === this.tasksTypes.DAILY);
+    }
   }
 
   /**

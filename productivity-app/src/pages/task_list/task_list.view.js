@@ -62,17 +62,16 @@ export default class View extends PageView {
 
     const taskList = new TaskList(this.markup.querySelector('.main'));
     taskList.events.on('task_list:edit_clicked', function(id, dataObject) {
-      console.log('TaskList page, view, edit_clicked ', id, dataObject);
-      // const modal = new Modal(this.viewport, { type: 'edit', data: dataObject });
-      //
-      // modal.events.on('modal:submit', function(updatedDataObject) {
-      //   taskList.updateTask(id, updatedDataObject);
-      //   modal.close();
-      // });
-      // modal.events.on('modal:remove', function() {
-      //   taskList.removeTask(id);
-      //   modal.close();
-      // });
+      const modal = new Modal(this.viewport, { type: 'edit', data: dataObject });
+
+      modal.events.on('modal:submit', function(updatedDataObject) {
+        taskList.updateTask(id, updatedDataObject);
+        this.close();
+      }, modal);
+      modal.events.on('modal:remove', function() {
+        taskList.removeTask(id);
+        this.close();
+      }, modal);
     }, this);
     taskList.events.on('task_list:timer_clicked', function(id) {
       this.events.trigger('view:timer_clicked', id);
