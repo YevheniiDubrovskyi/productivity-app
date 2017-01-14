@@ -16,23 +16,9 @@ const defaultInputsData = {
   }
 };
 
-const defaultPriorityData = [
-  {
-    alias: 'urgent',
-    title: 'urgent'
-  },
-  {
-    alias: 'high',
-    title: 'high'
-  },
-  {
-    alias: 'middle',
-    title: 'middle',
-  },
-  {
-    alias: 'low',
-    title: 'low'
-  }
-];
+const confirmMessages = {
+  removeMode: 'Are you sure you want<br>to remove selected<br>task(s)?',
+  edit: 'Are you sure you want<br>to remove current<br>task(s)?'
+};
 
-export {defaultInputsData, defaultPriorityData};
+export {defaultInputsData, confirmMessages};

@@ -2,7 +2,7 @@ import ComponentModel from '../components.model';
 
 import utils from '../../utils/utils';
 import dataService from '../../services/data.service';
-import {tasksStatusList} from './task_list.data';
+import {tasksStatusList, defaultPriorityData} from './task_list.data';
 
 /**
  * Component model
@@ -66,6 +66,11 @@ export default class Model extends ComponentModel {
     };
 
     dataService.getData('priority').once('priority:getData', function(data) {
+      if (!data) {
+        dataService.setData('priority', defaultPriorityData);
+        data = defaultPriorityData;
+      }
+
       receivedData.priority = data.map((dataObject) => {
         return {
           name: dataObject.title,
@@ -80,6 +85,7 @@ export default class Model extends ComponentModel {
       if (receivedData.categories) {
         this.events.trigger('model:data_received', receivedData.priority, receivedData.categories);
       }
+      this.events.trigger('model:priority_data_received', data);
     }, this);
 
     dataService.getData('categories').once('categories:getData', function(data) {
@@ -139,8 +145,9 @@ export default class Model extends ComponentModel {
   updateTask(id, rawDataObject) {
     const index = this.findTaskDataByID(id);
     const taskData = this.dataStatic[index];
-    const previousCategory = taskData.category;
-    const previousDeadline = taskData.deadline;
+    const previousCategory = taskData.data.category;
+    const previousDeadline = taskData.data.deadline;
+    const previousPriority = taskData.data.priority;
 
     for (let prop in rawDataObject) {
       if (!rawDataObject.hasOwnProperty(prop)) continue;
@@ -150,7 +157,8 @@ export default class Model extends ComponentModel {
 
     taskData.data.deadline = (new Date(taskData.data.deadline)).toString();
     if (previousCategory === taskData.data.category &&
-        previousDeadline === taskData.data.deadline
+        previousDeadline === taskData.data.deadline &&
+        previousPriority === taskData.data.priority
     ) {
       this.events.trigger('task_data:update', id, this.dataStatic[index]);
     } else {

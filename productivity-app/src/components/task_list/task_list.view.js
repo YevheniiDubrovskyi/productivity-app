@@ -24,6 +24,7 @@ export default class View extends ComponentView {
 
     this.dailyContainer = null;
     this.globalContainer = null;
+    this.fullPriorityData = null;
   }
 
   /**
@@ -124,9 +125,14 @@ export default class View extends ComponentView {
       const currentDeadline = new Date(current.data.deadline);
       const nextDeadline = new Date(next.data.deadline);
 
-      return currentDeadline > nextDeadline ?
-        1 :
-        -1;
+      return currentDeadline.toString() === nextDeadline.toString() ?
+        this.fullPriorityData[current.data.priority] < this.fullPriorityData[next.data.priority] ?
+          1 :
+          -1
+        :
+        currentDeadline < nextDeadline ?
+          -1 :
+          1;
     }).forEach((dataObject) => {
       this.addTask(dataObject, true);
     });
@@ -220,12 +226,12 @@ export default class View extends ComponentView {
       }
 
       if (!firstRenderFlag) { // Check first render flag (for optimization purpose)
-        insertBeforeElement = this.findInsertBeforeElement(new Date(dataObject.data.deadline), categoryTaskList);
+        insertBeforeElement = this.findInsertBeforeElement(new Date(dataObject.data.deadline), dataObject.data.priority, categoryTaskList);
       }
 
       taskList = categoryTaskList;
     } else {
-      insertBeforeElement = this.findInsertBeforeElement(new Date(dataObject.data.deadline), dailyTaskList);
+      insertBeforeElement = this.findInsertBeforeElement(new Date(dataObject.data.deadline), dataObject.data.priority, dailyTaskList);
       taskList = dailyTaskList;
     }
 
@@ -241,19 +247,28 @@ export default class View extends ComponentView {
   /**
    * Return insertBefore element
    * @param {Date} compareDeadline - Deadline date which will be compare
+   * @param {number} rawComparePriority - Priority value which will be compare
    * @param {HTMLElement} tasksListElement - Tasks list element
    * @return {HTMLElement | null} Insert before element
    */
-  findInsertBeforeElement(compareDeadline, tasksListElement) {
+  findInsertBeforeElement(compareDeadline, rawComparePriority, tasksListElement) {
+    const comparePriority = this.fullPriorityData[rawComparePriority];
     let insertBeforeElement = null;
 
     Array.from(tasksListElement.children).forEach((element) => {
-      const currentTaskDeadline = new Date(element.querySelector('time').getAttribute('datetime'));
+      if (insertBeforeElement) {
+        return;
+      }
 
-      insertBeforeElement = !insertBeforeElement &&
-                            compareDeadline < currentTaskDeadline ?
-        element :
-        insertBeforeElement;
+      const currentTaskDeadline = new Date(element.querySelector('time').getAttribute('datetime'));
+      const currentTaskPriority = +this.fullPriorityData[element.children[0].getAttribute('data-task-priority')];
+
+      if (compareDeadline.toString() === currentTaskDeadline.toString() &&
+          comparePriority > currentTaskPriority ||
+          compareDeadline < currentTaskDeadline
+      ) {
+          insertBeforeElement = element;
+      }
     });
 
     return insertBeforeElement;
@@ -285,23 +300,21 @@ export default class View extends ComponentView {
     const states = this.states;
 
     this.hideOnStates(globalButton, [states.INIT]);
-    this.hideOnStates(firstTaskMessage, [states.TASK_ADDED, states.COMMON, states.REMOVING]);
-    this.hideOnStates(dragToTopMessage, [states.INIT, states.COMMON, states.REMOVING]);
-    this.hideOnStates(allDoneMessage, [states.INIT, states.TASK_ADDED, states.COMMON, states.REMOVING]);
+    this.hideOnStates(firstTaskMessage, [states.TASK_ADDED, states.COMMON]);
+    this.hideOnStates(dragToTopMessage, [states.INIT, states.COMMON]);
+    this.hideOnStates(allDoneMessage, [states.INIT, states.TASK_ADDED, states.COMMON]);
+  }
 
-    this.events.on('view:state_changed', function(state, previousState) {
-      const removingState = this.states.REMOVING;
-
-      if (previousState === removingState) {
-        this.markup.classList.remove('removing-state');
-        return;
-      }
-
-      if (state === removingState) {
-        this.markup.classList.add('removing-state');
-        return;
-      }
-    }, this);
+  /**
+   * Enable or disable removing mode
+   * @param {boolean} flag - Removing mode flag
+   */
+  setRemovingModeTo(flag) {
+    if (flag) {
+      this.markup.classList.add('removing-state');
+    } else {
+      this.markup.classList.remove('removing-state');
+    }
   }
 
   /**
@@ -322,10 +335,8 @@ export default class View extends ComponentView {
     const isElement = component instanceof HTMLElement;
     const hideStyle = 'display: none;';
 
-    this.events.on('view:state_changed', function(state, previousState) {
+    this.events.on('view:state_changed', function(state) {
       if (statesArray.includes(state)) {
-        if (statesArray.includes(previousState)) return;
-
         if (isElement) {
           component.style = hideStyle;
         } else {

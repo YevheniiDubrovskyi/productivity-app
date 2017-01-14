@@ -30,14 +30,7 @@ const mainFilterTabsData = [
 // TODO: активный таб, в таком случае на табы при клике не вешается
 // TODO: класс .active
 // TODO: Также добавить флаг при котором происходит капитализация каждого слова
-const selectionTabsData = [
-  {
-    name: 'select all',
-  },
-  {
-    name: 'deselect all'
-  }
-];
+const selectionTabsData = ['select all', 'deselect all'];
 
 const tasksStatusList = {
   INIT: 'init',
@@ -45,4 +38,27 @@ const tasksStatusList = {
   ACTIVE: 'active'
 };
 
-export {messagesData, mainFilterTabsData, selectionTabsData, tasksStatusList};
+const defaultPriorityData = [
+  {
+    title: 'urgent',
+    alias: 'urgent',
+    weight: 4
+  },
+  {
+    title: 'high',
+    alias: 'high',
+    weight: 3
+  },
+  {
+    title: 'middle',
+    alias: 'middle',
+    weight: 2
+  },
+  {
+    title: 'low',
+    alias: 'low',
+    weight: 1
+  }
+];
+
+export {messagesData, mainFilterTabsData, selectionTabsData, tasksStatusList, defaultPriorityData};

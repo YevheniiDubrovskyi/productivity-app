@@ -27,6 +27,13 @@ export default class View extends ComponentView {
     this.createDOMHandlers();
     super.render();
 
+    this.subscribeToEvents();
+  }
+
+  /**
+   * Subscribe to own events
+   */
+  subscribeToEvents() {
     this.events.on('view:dataRecived', function(data) {
       this.setData(data);
     }, this);

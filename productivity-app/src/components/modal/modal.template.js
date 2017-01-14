@@ -22,7 +22,8 @@ export default class Template {
   createModalMarkup(dataObject) {
     const types = {
       add(data) {
-        return [this.createHeading('Add'),
+        return ['<div class="modal-inner-markup__add">',
+                this.createHeading('Add'),
                 this.createInputWithLabel(data.title),
                 this.createInputWithLabel(data.description),
                 this.createRadioGroup(data.category),
@@ -30,27 +31,32 @@ export default class Template {
                 this.createEstimationRadioGroup(data.estimation),
                 this.createRadioGroup(data.priority),
                 this.createButtonMarkup('accept', '&#xe90f;'),
-                this.createButtonMarkup('cancel', '&#xe910;')];
+                this.createButtonMarkup('cancel', '&#xe910;'),
+                '</div>'];
       },
 
       edit(data) {
-        return [this.createHeading('Add'),
+        return ['<div class="modal-inner-markup__edit">',
+                this.createHeading('Add'),
                 this.createInputWithLabel(data.title),
                 this.createInputWithLabel(data.description),
                 this.createRadioGroup(data.category),
                 this.createInputWithLabel(data.deadline),
                 this.createEstimationRadioGroup(data.estimation),
                 this.createRadioGroup(data.priority),
-                this.createButtonMarkup('delete', '&#xe912;'),
+                this.createButtonMarkup('remove', '&#xe912;'),
                 this.createButtonMarkup('accept', '&#xe90f;'),
-                this.createButtonMarkup('cancel', '&#xe910;')];
+                this.createButtonMarkup('cancel', '&#xe910;'),
+                '</div>'];
       },
 
-      remove(data) {
-        return [this.createHeading('Remove'),
-                this.createParagraphMarkup(data.text),
+      confirm(data) {
+        return ['<div class="modal-inner-markup__confirm">',
+                this.createHeading('Remove'),
+                this.createParagraphMarkup(data.question),
                 this.createButtonsWrapper(),
-                this.createButtonMarkup('cancel', '&#xe910;')];
+                this.createButtonMarkup('cancel', '&#xe910;'),
+                '</div>'];
       }
     };
 

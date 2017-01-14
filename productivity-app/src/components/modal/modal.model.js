@@ -1,7 +1,7 @@
 import ComponentModel from '../components.model';
 
 import dataService from '../../services/data.service';
-import {defaultInputsData, defaultPriorityData} from './modal.data';
+import {defaultInputsData, confirmMessages} from './modal.data';
 
 /**
  * Component model
@@ -67,41 +67,54 @@ export default class Model extends ComponentModel {
         return dataObject;
       },
       confirm(data) {
-
+        return {
+          type: data.type,
+          data: {
+            question: confirmMessages.removeMode
+          }
+        };
       }
     };
 
     super(initFunctions[data.type](data, modalTypes));
     this.modalTypes = modalTypes;
+    this.initEditDeadline = this.dataStatic.type === this.modalTypes.EDIT ?
+      this.dataStatic.data.deadline.value :
+      null;
 
-    if (this.dataStatic.type === this.modalTypes.ADD ||
-        this.dataStatic.type === this.modalTypes.EDIT
+    this.getDataFromStorage();
+  }
+
+  /**
+   * Loads data from storage if modal type equals to 'edit' or 'add'
+   */
+  getDataFromStorage() {
+    if (this.dataStatic.type !== this.modalTypes.ADD &&
+        this.dataStatic.type !== this.modalTypes.EDIT
     ) {
-      let categoriesFlag = false;
-      let priorityFlag = false;
-
-      // Get data from DB for categories
-      dataService.getData('categories').once('categories:getData', function(data) {
-        categoriesFlag = true;
-        this.dataStatic.data.category.range = data;
-        // Fire event if both data received
-        if (categoriesFlag && priorityFlag) this.events.trigger('model:dataReceived', this.dataStatic);
-      }, this);
-
-      // Get data from DB for priority
-      dataService.getData('priority').once('priority:getData', function(data) {
-        if (!data) {
-          dataService.setData('priority', defaultPriorityData);
-        }
-
-        priorityFlag = true;
-        this.dataStatic.data.priority.range = data ?
-          data :
-          defaultPriorityData;
-        // Fire event if both data received
-        if (categoriesFlag && priorityFlag) this.events.trigger('model:dataReceived', this.dataStatic);
-      }, this);
+      return;
     }
+
+    let categoriesFlag = false;
+    let priorityFlag = false;
+
+    // Get data from DB for categories
+    dataService.getData('categories').once('categories:getData', function(data) {
+      categoriesFlag = true;
+      this.dataStatic.data.category.range = data;
+
+      // Fire event if both data received
+      if (categoriesFlag && priorityFlag) this.events.trigger('model:dataReceived', this.dataStatic);
+    }, this);
+
+    // Get data from DB for priority
+    dataService.getData('priority').once('priority:getData', function(data) {
+      priorityFlag = true;
+      this.dataStatic.data.priority.range = data;
+
+      // Fire event if both data received
+      if (categoriesFlag && priorityFlag) this.events.trigger('model:dataReceived', this.dataStatic);
+    }, this);
   }
 
   /**
@@ -116,7 +129,6 @@ export default class Model extends ComponentModel {
    * @param {object} dataObject
    */
   validate(dataObject) {
-    console.log('Modal:model.validate - ', dataObject)
     if (!this.isValid(dataObject)) return;
 
     this.events.trigger('model:dataIsValid', dataObject);
@@ -134,8 +146,11 @@ export default class Model extends ComponentModel {
       if (!dataObject[prop]) valid = false;
     }
 
-    if (!this.isValidDate(dataObject.deadline)) {
-      valid = false;
+    const deadline = dataObject.deadline;
+    if (!this.isValidDate(deadline)) {
+      valid = this.initEditDeadline === deadline ?
+        valid :
+        false;
     }
 
     return valid;

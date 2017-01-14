@@ -2,6 +2,7 @@ import ComponentView from '../components.view';
 import Template from './modal.template';
 // import './modal.less';
 
+import {confirmMessages} from './modal.data';
 import Button from '../../components/button/button.controller';
 import $ from 'jquery';
 import '../../../node_modules/jquery-ui-bundle/jquery-ui.css';
@@ -33,13 +34,7 @@ export default class View extends ComponentView {
     this.container.appendChild(this.markup);
     this.container.classList.add('modal-opened');
 
-    this.events.on('view:acceptButton_clicked', function() {
-      this.events.trigger('view:add_edit_submit', this.getInputsData());
-    }, this);
-    this.events.on('view:cancelButton_clicked', function() {
-      this.events.trigger('view:cancel');
-    }, this);
-
+    this.bindButtonsClickHandlers();
     this.createDOMHandlers();
     super.render();
 
@@ -49,6 +44,31 @@ export default class View extends ComponentView {
       maxDate: '+1y',
       minDate: '+0d'
     });
+  }
+
+  /**
+   * Get modal element
+   * @return {HTMLElement} Modal element
+   */
+  getModalElement() {
+    return this.markup.querySelector('.modal');
+  }
+
+  /**
+   * Bind buttons click handlers to local eventbus
+   */
+  bindButtonsClickHandlers() {
+    this.events.on('view:acceptButton_clicked', function() {
+      this.events.trigger('view:add_edit_submit', this.getInputsData());
+    }, this);
+
+    this.events.on('view:cancelButton_clicked', function() {
+      this.events.trigger('view:cancel');
+    }, this);
+
+    this.events.on('view:removeButton_clicked', function() {
+      this.switchToConfirm();
+    }, this);
   }
 
   /**
@@ -93,9 +113,25 @@ export default class View extends ComponentView {
   }
 
   /**
-   * Hide current inner markup and show confirmation markup
+   * Show prompt and hide current modal
    */
-  switchToRemove() {}
+  switchToConfirm() {
+    const confirmModalMarkup = this.template.createModalMarkup({
+      type: 'confirm',
+      data: {
+        question: confirmMessages.edit
+      }
+    });
+
+    this.markup.querySelector('.modal-inner-markup__edit').style = 'display: none;';
+    this.getModalElement().appendChild(confirmModalMarkup);
+    // this.template.
+  }
+
+  /**
+   * Destroy prompt and show previous modal
+   */
+  switchFromConfirm() {}
 
   /**
    * Create DOM handlers which will be attach when render will be fire

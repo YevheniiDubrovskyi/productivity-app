@@ -18,22 +18,36 @@ export default class TaskList extends ComponentController {
       INIT: 'init',
       ALL_DONE: 'all_done',
       TASK_ADDED: 'task_added',
-      COMMON: 'common',
-      REMOVING: 'removing'
+      COMMON: 'common'
     };
     this.tasksTypes = {
       GLOBAL: 'global',
       DAILY: 'daily'
     };
-    this.previousState = ''; // To be not equal to this.state
+    this.removingMode = false;
     this.state = null;
 
     this.model = new Model(this.states, this.tasksTypes);
     this.view = new View(container, this.states, this.tasksTypes);
 
+    this.subscribeToEvents();
+  }
+
+  /**
+   * Subscribe to model, view and own events
+   */
+  subscribeToEvents() {
     // Fired when model get all data for components
     this.model.events.once('model:data_received', function(...data) {
       this.render(...data);
+    }, this);
+
+    this.model.events.once('model:priority_data_received', function(priorityData) {
+      this.view.fullPriorityData = priorityData.reduce((acc, el) => {
+        acc[el.title] = el.weight;
+
+        return acc;
+      }, {});
     }, this);
 
     this.model.events.on('model:state_changed', function(state) {
@@ -72,10 +86,14 @@ export default class TaskList extends ComponentController {
         this.events.trigger('task_list:timer_clicked', id);
       },
       trash(id) {
-        this.model.addToRemoveList(id);
+        if (this.removingMode) {
+          this.model.addToRemoveList(id);
+        }
       },
       close(id) {
-        this.model.excludeFromRemoveList(id);
+        if (this.removingMode) {
+          this.model.excludeFromRemoveList(id);
+        }
       }
     };
 
@@ -87,14 +105,16 @@ export default class TaskList extends ComponentController {
    * @param {string} state
    */
   setState(state) {
-    if (!this.checkState(state)) return;
-    if (this.state === this.previousState) return;
+    if (!this.checkState(state) ||
+        this.state === state
+    ) {
+      return;
+    }
 
-    this.previousState = this.state;
     this.state = state;
-    this.view.setState(this.state, this.previousState);
+    this.view.setState(this.state);
 
-    this.events.trigger('task_list:state_changed', this.state, this.previousState);
+    this.events.trigger('task_list:state_changed', this.state);
   }
 
   /**
@@ -114,28 +134,11 @@ export default class TaskList extends ComponentController {
   }
 
   /**
-   * Shows tasks buttons for removing
-   */
-  switchOnRemovingMode() {
-    this.setState(this.states.REMOVING);
-  }
-
-  /**
-   * Remove marked tasks
-   */
-  switchOffRemovingMode() {
-    this.setState(this.previousState);
-  }
-
-  /**
-   * Switch on/off removing mode depends on current state
+   * Enable or disable removing mode
    */
   toggleRemovingMode() {
-    if (this.state === this.states.REMOVING) {
-      this.switchOffRemovingMode();
-    } else {
-      this.switchOnRemovingMode();
-    }
+    this.removingMode = !this.removingMode;
+    this.view.setRemovingModeTo(this.removingMode);
   }
 
   /**
